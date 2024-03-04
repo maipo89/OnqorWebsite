@@ -1,0 +1,41 @@
+//// colors
+// departments
+$development: rgba(102, 16, 242, 1);
+$marketing: rgba(240, 180, 0, 1);
+$design: rgba(229, 0, 126, 1);
+$production: rgba(102, 16, 242, 1);
+$operations: rgba(0, 170, 255, 1);
+$store: rgba(2, 194, 41, 1);
+// primary
+$darksmoke: rgba(18, 18, 18, 1);
+$darksmokelight: rgba(16, 25, 13, 1);
+$darksmokelightest: rgba(69, 69, 69, 1);
+$offwhite: rgba(248, 248, 248, 1);
+
+//// variables 
+$mobile: 375px;
+$tablet: 834px;
+$desktop: 1440px;
+
+// keyframes
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes fade-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@mixin padding {
+    padding: 48px 0;
+    @media (max-width: $desktop) {
+        padding: 32px 0;
+    }
+}
+@mixin margin {
+    margin: 48px 0;
+    @media (max-width: $desktop) {
+        margin: 32px 0;
+    }
+}

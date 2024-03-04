@@ -1,0 +1,27 @@
+.single-case-studies {
+    &__hero {
+        width: 100%;
+        background-color: black;
+        color: white;
+        height: 900px;
+        position: relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+  
+        .container {
+            z-index: 1;
+            padding: 128px 0;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.8); /* Black with 50% opacity */
+            z-index: 1;
+        }
+    }
+}

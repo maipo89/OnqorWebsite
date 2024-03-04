@@ -1,0 +1,206 @@
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Orbitron&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+// other 
+@import 'variables';
+@import 'archive';
+@import 'single-case-studies';
+
+// blocks scss
+@import 'blocks/case-studies';
+@import 'blocks/slider-clients';
+@import 'blocks/photography';
+@import 'blocks/related-projects';
+@import 'blocks/services';
+@import 'blocks/testimonials';
+@import 'blocks/testimonials-projects'; 
+@import 'blocks/stats'; 
+@import 'blocks/hero-case-studies'; 
+@import 'blocks/banner'; 
+@import 'blocks/images-text'; 
+@import 'blocks/videography'; 
+
+body {
+    margin: 0;
+    padding: 0;
+}
+ 
+// font css
+h1,h2,h3,h4,h5,h6,p,a,span,li {
+    font-family: Poppins;
+    margin: 0;
+}
+h1 {
+    font-size: 100px;
+    font-weight: 300;
+    line-height: 150px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+h2 {
+    font-size: 75px;
+    font-weight: 300;
+    line-height: 113px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+h3 {
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 75px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.h3 {
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 75px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.subtitle1 {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 42px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.subtitle2 {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 33px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.subtitle3 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.body1 {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.body2, p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.body3 {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.body4 {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.button {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+// btns
+.btn-primary {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0em;
+    padding: 8px 24px 8px 24px;
+    border-radius: 8px;
+    background-color: white;
+    color: $darksmoke;
+    border: 1px solid $darksmoke;
+    &:hover {
+        border: 1px solid white;
+        background-color: $darksmoke;
+        color: white;
+    }
+} 
+.btn-secondary {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0em;
+    padding: 8px 24px 8px 24px;
+    border-radius: 8px;
+    border: 1px solid $darksmoke;
+    background-color: $darksmoke;
+    &:hover {
+        background-color: white;
+        color: $darksmoke;
+    }
+}
+.btn-alt {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    &:hover {
+        text-decoration: underline;
+        color: $operations;
+    }
+}
+
+
+
+// other css
+.container {
+    padding: 0;
+    max-width: 1320px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    &.fdc {
+        flex-direction: column;
+    }
+    &.jcfs {
+        justify-content: flex-start;
+    }
+    &.jcfe {
+        justify-content: flex-end;
+    }
+    &.aifs {
+        align-items: flex-start;
+    }
+    &.aife {
+        align-items: flex-end;
+    }
+    &.aic {
+        align-items: center;
+    }
+    &.center {
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.slick-dots {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+

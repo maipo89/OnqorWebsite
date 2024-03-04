@@ -1,0 +1,30 @@
+.banner {
+    @include margin;
+    padding: 72px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    .container {
+        max-width: 1028px;
+    }
+    h2 {
+        margin: 0 0 16px 0;
+        position: relative;
+        span {
+            background-color: black;
+            position: relative;
+            z-index: 1;
+        }
+    }
+    svg {
+        position: absolute;
+        right: 25px;
+        bottom: 0;
+    }
+    &__text {
+        column-count: 2; /* Number of columns */
+        column-gap: 48px; /* Space between columns */
+        width: 100%; /* Adjust the width as necessary */
+        margin: auto; /* For centering, if desired */
+    }
+}

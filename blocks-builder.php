@@ -64,6 +64,11 @@ if (have_rows('sections')) :
             <?php include 'blocks/RelatedProjects.php'; ?>
         <?php endif;
 
+        // Case: Paragraph layout.
+        if (get_row_layout() == 'text') : ?>
+            <?php include 'blocks/Text.php'; ?>
+        <?php endif;
+
 	// End loop.
 	endwhile; 
 endif;

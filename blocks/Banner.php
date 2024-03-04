@@ -4,9 +4,10 @@
          $img = get_sub_field('img');
          $imgVisual = $img['sizes']['medium'];
 ?>
-    <div class="banner">
+    <div class="banner
+        <?php if( get_sub_field('no_columns') ) { ?> no-columns <?php  } ?>
+    ">
         <div class="container ">
-      
             <h2 class="h3">
                 <span>
                     <?php echo $basic['title'] ?>
@@ -20,7 +21,6 @@
             </div>
         </div>  
     </div>  
-
 
 <?php endwhile; ?> 
 <?php endif; ?> 

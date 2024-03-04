@@ -18,6 +18,7 @@
 @import 'blocks/banner'; 
 @import 'blocks/images-text'; 
 @import 'blocks/videography'; 
+@import 'blocks/text'; 
 
 body {
     margin: 0;
@@ -143,7 +144,7 @@ h3 {
     border: 1px solid $darksmoke;
     background-color: $darksmoke;
     &:hover {
-        background-color: white;
+        background-color: $offwhite;
         color: $darksmoke;
     }
 }
@@ -163,14 +164,15 @@ h3 {
 
 // other css
 .container {
-    padding: 0;
-    max-width: 1320px;
+    padding: 0 32px;
+    max-width: 1360px;
     margin: 0 auto;
     width: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    overflow: hidden;
     &.fdc {
         flex-direction: column;
     }

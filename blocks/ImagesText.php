@@ -14,8 +14,10 @@
         <?php include('ImagesText/_ImageTriple.php'); ?>
         <?php include('ImagesText/_ImageSteps.php'); ?>
         <?php include('ImagesText/_AntsColumns.php'); ?>
+        <?php include('ImagesText/_AntsText.php'); ?>
         <?php include('ImagesText/_Branding.php'); ?>
         <?php include('ImagesText/_ImageOverlap.php'); ?>
+        <?php include('ImagesText/_ImageOverlapTwo.php'); ?>
 
    </div>
 

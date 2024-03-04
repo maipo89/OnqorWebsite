@@ -8,26 +8,35 @@
         ?>
             <div class="image-single">
                 <div class="container ">
-                    <div class="title">
-                        <p><?php echo $basic['number'] ?></p>
-                        <h2 class="h3"><?php echo $basic['title'] ?></h2>
+                    <!-- title text -->
+                    <div class="<?php if( get_sub_field('text_center') ) { ?> text-center <?php  } ?>">
+                        <div class="title">
+                            <p class="body1"><?php echo $basic['number'] ?></p>
+                            <h2 class="h3"><?php echo $basic['title'] ?></h2>
+                        </div>
+                        <div class="<?php if( get_sub_field('columns_text_four') ) { ?> col-four <?php  } ?>
+                                    <?php if( get_sub_field('columns_text_three') ) { ?> col-three <?php  } ?>
+                        " >
+                            <div class="image-single__text">
+                                <?php echo the_sub_field('text') ?>
+                            </div>
+                        </div>
                     </div>
-                    <div class="<?php if( get_sub_field('columns_text_four') ) { ?> col-four <?php  } ?>
-                                <?php if( get_sub_field('columns_text_three') ) { ?> col-three <?php  } ?>
-                    " >
-                    <div class="image-single__text">
-                        <?php echo the_sub_field('text') ?>
-                    </div>
-                    </div>
+
+                    <!-- image -->
                     <div class="image-single__images">
                         <img src="<?php echo $imgVisual ?>"/>
                     </div>
-                    <div class="<?php if( get_sub_field('columns_text_four') ) { ?> col-four <?php  } ?>
-                                <?php if( get_sub_field('columns_text_three') ) { ?> col-three <?php  } ?>
-                                subtext
-                    " >
-                        <?php echo the_sub_field('subtext') ?>
-                    </div>
+
+                    <!-- subtext -->
+                    <?php if( get_sub_field('subtext') ) { ?>
+                        <div class="<?php if( get_sub_field('columns_text_four') ) { ?> col-four <?php  } ?>
+                                    <?php if( get_sub_field('columns_text_three') ) { ?> col-three <?php  } ?>
+                                    subtext
+                        " >
+                            <?php echo the_sub_field('subtext') ?>
+                        </div>
+                    <?php  } ?>
                 </div>  
             </div>  
     <?php endwhile; ?> 

@@ -8,7 +8,10 @@
         ?>
             <div class="image-left-right">
                 <div class="container ">
-                    <div class="image-left-right__content">
+                    <div class="image-left-right__content
+                    <?php if( get_sub_field('image_right') ) { ?> image-right <?php  } ?>
+                    <?php if( get_sub_field('narrow') ) { ?> narrow <?php  } ?>
+                    ">
                         <img src="<?php echo $imgVisual ?>"/>
                         <div class="image-left-right__content__text">
                             <div class="title">

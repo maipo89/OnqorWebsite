@@ -16,7 +16,7 @@ if( have_rows('hero_case_studies') ): ?>
             </div>
             <div class="container">
                 <!-- list -->
-                <h3><?php echo $basic['title'] ?></h3>
+                <h2><?php echo $basic['title'] ?></h2>
                 <ul>
                     <?php if( have_rows('list') ): ?>
                         <?php while( have_rows('list') ): the_row(); ?>
@@ -45,7 +45,9 @@ if( have_rows('hero_case_studies') ): ?>
                     <?php include('HeroCaseStudies/_Video.php'); ?>
 
                     <!-- subtext -->
-                    <div class="hero-case-studies__subtext">
+                    <div class="hero-case-studies__subtext 
+                    <?php if ($selected_value == 'image_stats'): ?> svg-shift <?php endif; ?> 
+                    ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="413" height="138" viewBox="0 0 413 138" fill="none">
                                 <path d="M3 0L2.99999 135L413 135" stroke="black" stroke-width="5" stroke-dasharray="50 50"/>
                         </svg>

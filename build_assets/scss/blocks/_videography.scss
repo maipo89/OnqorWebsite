@@ -4,9 +4,12 @@
         display: flex;
         h2 {
             margin: 0 0 32px 0;
+            @media (max-width: $tabletLarge) {
+                margin: 0 0 24px 0;
+            }
         }
         p {
-             margin: 33px 12px 0 0;
+            margin: 33px 12px 0 0;
         }
     }
     .text-columns {
@@ -15,10 +18,61 @@
         width: 100%; /* Adjust the width as necessary */
         margin: 0 0 32px 0;
     }
+    &__text {
+        margin: 0 0 32px 0;
+        @media (max-width: $tabletLarge) {
+            margin: 0 0 24px 0;
+        }
+    }
     &__video { 
         margin: 32px 0 0 0;
         width: 100%;
-        height: 1114px;
+        height: 1080px;
         background-color: lavender;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media (max-width: $desktop) {
+            height: 578px;
+        }
+        @media (max-width: $tabletLarge) {
+            height: 432px;
+            margin: 24px 0 0 0;
+        }
+        @media (max-width: $tabletSmall) {
+            height: 243px;
+        }
+        @media (max-width: $mobileLarge) {
+            height: 180px;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }  
+
+        .video-controls {
+            display: none; /* Hide controls by default */
+        }
+        
+        .video-playing .video-controls {
+            display: block; /* Only show controls when video is playing */
+        }
+        &__play {
+            position: absolute;
+            .PauseButton {
+                display: none;
+            }
+            .PlayButton, .PauseButton {
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        } 
     }
 }

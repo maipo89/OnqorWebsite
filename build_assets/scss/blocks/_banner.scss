@@ -4,6 +4,12 @@
     width: 100%;
     background-color: black;
     color: white;
+    @media (max-width: $desktop) {
+        padding: 64px 0;
+    }
+    @media (max-width: $tabletLarge) {
+        padding: 48px 0;
+    }
     &.no-columns {
         .banner__text {
             column-count: 1;
@@ -25,11 +31,17 @@
         position: absolute;
         right: 25px;
         bottom: 0;
+        @media (max-width: $desktop) {
+            display: none;
+        }
     }
     &__text {
         column-count: 2; /* Number of columns */
         column-gap: 48px; /* Space between columns */
         width: 100%; /* Adjust the width as necessary */
         margin: auto; /* For centering, if desired */
+        @media (max-width: $tabletSmall) {
+            column-count: 1;
+        }
     }
 }

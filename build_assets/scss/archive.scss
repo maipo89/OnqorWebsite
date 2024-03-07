@@ -13,7 +13,7 @@
     .article {  
         color: white;
         display: flex;
-        @media (max-width: $tablet) {
+        @media (max-width: $tabletLarge) {
             width: 100%;
         }
         img { 

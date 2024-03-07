@@ -2,12 +2,21 @@
     @include padding;
     h2 {
         margin: 0 0 48px 0;
+        @media (max-width: $desktop) {
+            text-align: center;
+        }
+        @media (max-width: $tabletSmall) {
+            margin: 0 0 32px 0;
+        }
     }
     &__wrapper {
         display: grid;
         grid-gap: 32px;
         grid-template-columns: repeat(3, 1fr);
         width: 100%;
+        @media (max-width: $desktop) {
+            display: none;
+        }
         &__item {
             width: 100%;
             &:hover {
@@ -28,6 +37,9 @@
                 margin: 0 0 32px 0;
                 border-radius: 8px;
                 object-fit: cover;
+                @media (max-width: $desktop) {
+                    margin: 0 0 16px 0;
+                }
             }
             div {
                 display: flex;
@@ -36,4 +48,79 @@
             }
         }
     }
+    // slider
+    &__slider {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        margin: 0 0 0 0;
+        padding-bottom: 42px;
+        display: none;
+        @media (max-width: $desktop) {
+            display: block;
+        }
+        .slick-dots {
+            bottom: 0;
+        }
+        .slick-slide {
+            img {
+                // -webkit-transform: scale(0.8);
+                // -moz-transform: scale(0.8);
+                // transform: scale(0.8);
+                // transition: ease.6s;
+            }
+            div {
+                @media (max-width: $desktop) {
+                    opacity: 0;
+                    transition: ease .4s;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    h3 {
+                        margin: 0 0 16px 0;
+                    }
+                    button {
+                        margin: 0 0 32px 0;
+                    }
+                }
+            }
+        }
+        .slick-current {
+            img {
+                // -webkit-transform: scale(1);
+                // -moz-transform: scale(1);
+                // transform: scale(1);
+                // transition: ease.6s;
+            }
+            div {
+                @media (max-width: $desktop) {
+                    opacity: 1;
+                    transition: ease .4s;
+                }
+            }
+        }
+    
+        img {
+            object-fit: cover;
+            height: 250px;
+            // width: 236px;
+            border-radius: 8px;
+            @media (max-width: $tabletLarge) {
+                height: 200px;
+            }
+            @media (max-width: $mobileLarge) {
+                height: 142px;
+            }
+        }
+        .slick-list {
+            padding: 0 !important;
+            .slick-track {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                grid-gap: 32px;
+            }
+        }
+    } 
 }

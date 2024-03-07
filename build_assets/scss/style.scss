@@ -36,6 +36,15 @@ h1 {
     line-height: 150px;
     letter-spacing: 0em;
     text-align: left;
+    @media (max-width: $desktop) { 
+        font-size: 75px;
+    }
+    @media (max-width: $tabletSmall) { 
+        font-size: 28px;
+    }
+    @media (max-width: $mobileLarge) { 
+        font-size: 22px;
+    }
 }
 h2 {
     font-size: 75px;
@@ -43,6 +52,12 @@ h2 {
     line-height: 113px;
     letter-spacing: 0em;
     text-align: left;
+    @media (max-width: $tabletSmall) { 
+        font-size: 28px;
+    }
+    @media (max-width: $mobileLarge) { 
+        font-size: 22px;
+    }
 }
 h3 {
     font-size: 50px;
@@ -165,7 +180,7 @@ h3 {
 // other css
 .container {
     padding: 0 32px;
-    max-width: 1360px;
+    max-width: 1364px;
     margin: 0 auto;
     width: 100%;
     position: relative;
@@ -199,10 +214,39 @@ h3 {
 
 .slick-dots {
     display: flex;
-    flex-wrap: wrap;
     list-style: none;
     position: absolute;
-    top: 0;
     right: 0;
+    left: 0;
+    padding: 0px;
+    margin: 0 auto;
+    list-style-type: none;
+    grid-gap: 7px;
+    align-items: center;
+    justify-content: center;
+    li {
+        &.slick-active {
+            button {
+                background-color: $operations;
+
+            }
+        }
+        &:focus {
+            outline: none;
+        }
+        button {
+            background-color: rgba(185, 185, 185, 1);
+            border: none;
+            display: block;
+            padding: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            text-indent: -9999px;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
 }
 

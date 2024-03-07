@@ -29,8 +29,13 @@
                         </div>
                         <div class="image-triple-offset__images__column">
                             <img src="<?php echo $imgVisual ?>"/>
-                            <?php echo the_sub_field('subtext') ?>
+                            <div clas="image-triple-offset__subtext-desktop">
+                                <?php echo the_sub_field('subtext') ?>
+                            </div>
                         </div>
+                    </div>
+                    <div clas="image-triple-offset__subtext-mobile">
+                        <?php echo the_sub_field('subtext') ?>
                     </div>
                     
                 </div>  

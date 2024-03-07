@@ -18,24 +18,33 @@
     }
     .container {
         z-index: 1;
+        @media (max-width: $desktop) {
+            align-items: center;
+            justify-content: center;
+            h2 {
+                text-align: center;
+            }
+        }
     }
     // divider
     &__divider {
         z-index: 1;
         position: relative;
         overflow: hidden;
+        padding: 0 0 48px 0;
         .divider {
             background-color: white;
             width: 100%;
             position: absolute;
             bottom: 0;
             left: 0;
-            height: calc(100% - 200px);
+            height: calc(100% - 248px);
+            padding-bottom: 48px;
         }
     }
     // title
     .title {
-        padding: 128px 0;
+        padding: 128px 32px;
         h1 {
             margin:  0 0 32px 0;
             text-align: center;
@@ -55,33 +64,56 @@
         flex-wrap: wrap;
         margin: 32px 0 72px 0;
         padding: 0;
+        grid-row-gap: 16px;
+        @media (max-width: $desktop) {
+            align-items: center;
+            justify-content: center;
+        }
         li {
             margin: 0 16px ;
         }
     }
     // subetext
+    .svg-shift {
+        svg {
+            left: -418px;
+        }
+    }
     &__subtext {
         position: relative;
         display: flex;
         width: 100%;
         color: black;
-        margin: 48px 0 0 434px;
+        padding-left: 16px;
+        margin: 48px 0 0 418px;
+        @media (max-width: $desktop) {
+            margin: 64px auto 0 auto;
+            padding: 0;
+            align-items: center;
+            justify-content: center;
+        }
         svg {
             position: absolute;
-            left: -434px;
+            left: -318px;
             top: -48px;
             height: 135px;
             width: 410px;
+            @media (max-width: $desktop) {
+                display: none;
+             }
         }
         div {
             max-width: 720px;
             align-self: flex-end;
         }
-        h4 {
+        h4 { 
             margin: 0 0 32px 0;
         }
         p {
             margin: 0 0 32px 0 ;
+            background-color: white;
+            z-index: 1;
+            position: relative;
         }
         button {
             display: block;
@@ -96,17 +128,31 @@
         flex-direction: column; 
         align-items: flex-start; 
         justify-content: flex-start; 
-        padding: 0;
-        max-width: 1320px;
+        padding: 0 32px;
+        max-width: 1364px;
         margin: 0 auto;
         width: 100%;
         position: relative;
         // image stats
         .image-stats {
             display: flex;
+            width: 100%;
+            @media (max-width: $desktop) {
+               flex-direction: column;
+               align-items: center;
+               justify-content: center;
+            }
             &__images {
                 display: flex;
                 margin: 0 32px 0 0;
+                @media (max-width: $desktop) {
+                    display: grid;
+                    grid-template-columns: repeat(2,1fr);
+                    grid-gap: 32px;
+                    margin: 0 auto 0 auto;
+                    width: 100%;
+                    max-width: 960px;
+                }
                 img {
                     height: 470px;
                     width: 321px;
@@ -115,6 +161,14 @@
                     object-fit: cover;
                     &:nth-child(1) {
                         margin: 0 32px 0 0;
+                        @media (max-width: $desktop) {
+                            margin: 0 0 0 0;
+                        }
+                    }
+                    @media (max-width: $desktop) {
+                        width: 100%;
+                        max-width: unset;
+                        height: 580px;
                     }
                 }
             }
@@ -124,12 +178,19 @@
                 flex-wrap: wrap;
                 grid-template-columns: repeat(2,auto);
                 margin: auto 0 0;
+                @media (max-width: $desktop) {
+                    margin: 24px 0 0 0;
+                    grid-gap: 8px;
+                }
                 div {
                     padding: 16px 64px;
                     background-color: $offwhite;
                     border-radius: 8px;
                     align-items: start;
                     justify-items: start;
+                    @media (max-width: $desktop) {
+                        padding: 16px 48px;
+                    }
                     .subtitle1 {
                         color: $operations;
                         margin: 0 0 4px 0;

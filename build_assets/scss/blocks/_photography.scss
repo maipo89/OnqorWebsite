@@ -11,7 +11,52 @@
     }
     p {
         margin: 0 0 64px 0;
+        @media (max-width: $tabletLarge) {
+            margin: 0 0 48px 0;
+        }
     }
+    // slider
+    &__slider {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        margin: 0 0 0 0;
+        padding-bottom: 42px;
+        display: none;
+        @media (max-width: $desktop) {
+            display: block;
+        }
+     
+        .slick-dots {
+            bottom: 0;
+        }
+        img {
+            object-fit: cover;
+            height: 1248px;
+            border-radius: 8px;
+            @media (max-width: $desktop) {
+                height: 1248px;
+            }
+            @media (max-width: $tabletLarge) {
+                height: 900px;
+            }
+            @media (max-width: $tabletSmall) {
+                height: 557px;
+            }
+            @media (max-width: $mobileLarge) {
+                height: 406px;
+            }
+        }
+        .slick-list {
+            padding: 0 !important;
+            .slick-track {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    } 
+    // options
     &.images-center {
         .columns-three, .columns-two {
             justify-content: center; /* Center grid items horizontally */
@@ -41,8 +86,11 @@
         position: relative;
         grid-gap: 32px;
         grid-template-columns: repeat(2, 1fr);
+        @media (max-width: $desktop) {
+            display: none;
+        }
         img {
-            height: 819px;
+            height: 820px;
             object-fit: cover;
             width: 100%;
             border-radius: 8px;
@@ -55,8 +103,11 @@
         position: relative;
         grid-gap: 32px;
         grid-template-columns: repeat(3, 1fr);
+        @media (max-width: $desktop) {
+            display: none;
+        }
         img {
-            height: 819px;
+            height: 620px;
             object-fit: cover;
             width: 100%;
             border-radius: 8px;

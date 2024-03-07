@@ -1,4 +1,11 @@
 .testimonials-projects {
+    padding: 0 0 48px 0;
+    @media (max-width: $desktop) {
+        padding: 0 0 32px 0;
+    }
+    .container {
+        overflow: visible;
+    }
     img {
         width: 100%;
         background-color: lavender;
@@ -9,17 +16,33 @@
         background-color: $darksmoke;
         color: white;
         padding: 64px 0 48px 0;
+        @media (max-width: $tabletLarge) {
+            padding: 36px 0 36px 0;
+        }
         svg {
             width: 410px;
             position: absolute;
             left: -434px;
             top: -64px;
+            z-index: 1;
+            @media (max-width: $desktop) {
+                left: -234px;
+            }
+            @media (max-width: $tabletLarge) {
+                display: none;
+            }
         }
         &__container {
             max-width: 705px;
             position: relative;
+            @media (max-width: $tabletLarge) {
+                max-width: unset;
+            }
             h3 {
                 margin: 0 0 32px 0;
+                @media (max-width: $tabletLarge) {
+                    margin: 0 0 24px 0;
+                }
             }
             p {
                 font-size: 16px;
@@ -27,9 +50,15 @@
                 line-height: 24px;
                 letter-spacing: 0em;
                 text-align: left;
+                position: relative;
+                z-index: 2;
+                background-color: black;
             }
             .subtitle3 {
                 margin: 32px 0 0 0;
+                @media (max-width: $tabletLarge) {
+                    margin: 24px 0 0 0;
+                }
             }
         }
     }

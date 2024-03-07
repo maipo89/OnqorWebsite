@@ -6,6 +6,10 @@
     p {
         max-width: 981px;
         text-align: center;
+        @media (max-width: $desktop) {
+            max-width: unset;
+            text-align: left;
+        }
     }
     .title {
         max-width: 981px;
@@ -17,17 +21,33 @@
             margin: 33px 12px 0 0;
         }
     }
+  
     > .container {
         > p {
             margin: 0 0 32px 0;
         }
+        &.center {
+            @media (max-width: $desktop) {
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+        } 
     }
     &__stats {
         background-color: $offwhite;
         width: 100%;
         padding: 32px 0 96px 0;
+        @media (max-width: $desktop) {
+            padding: 32px 0 48px 0;
+        }
+        @media (max-width: $tabletLarge) {
+            padding: 32px 0 32px 0;
+        }
         &__title {
             margin: 32px 0 59px 0;
+            @media (max-width: $tabletSmall) {
+                margin: 5px 0 37px 0;
+            }
             display: flex;
             align-items: flex-end;
             justify-content: center;
@@ -35,7 +55,10 @@
                 margin: 0 19px 0 0;
                 max-height: 53px;
                 object-fit: cover;
-            }
+                @media (max-width: $tabletSmall) {
+                    max-height: 32px;
+                }
+            } 
             p {
                 font-size: 28px;
                 font-weight: 400;

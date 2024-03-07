@@ -17,8 +17,7 @@
         <?php include('ImagesText/_AntsText.php'); ?>
         <?php include('ImagesText/_Branding.php'); ?>
         <?php include('ImagesText/_ImageOverlap.php'); ?>
-        <?php include('ImagesText/_ImageOverlapTwo.php'); ?>
-
+        <?php include('ImagesText/_ImageOverlapAlt.php'); ?>
    </div>
 
 <?php endwhile; ?> 

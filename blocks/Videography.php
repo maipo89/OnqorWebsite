@@ -10,14 +10,33 @@
                 <p class="body1"><?php echo $basic['number'] ?></p>
                 <h2 class="h3"><?php echo $basic['title'] ?></h2>
             </div>
-            <div class="<?php if( get_sub_field('text_columns') ) { ?> text-columns <?php  } ?>">
+            <div class="videography__text <?php if( get_sub_field('text_columns') ) { ?> text-columns <?php  } ?>">
                 <?php echo $basic['text'] ?>
             </div>
         </div>  
         <div class="videography__video">
+            <?php if( get_sub_field('embed') ) { ?> 
+                <?php echo $basic['embed'] ?>
+            <?php  } ?>
+            <?php if( get_sub_field('video') ) { ?> 
+                <?php 
+                    $link_data = get_sub_field('video'); 
+                    if(!empty($link_data)){ $link = $link_data['url'];  ?>
+                    <video width="954" height="535" playsinline class="video">
+                        <source src="<?php echo $link; ?>">   
+                    </video>
+                <?php } ?>
+
+                <div class="videography__video__play">
+                    <?php include('Videography/PlayButton.php'); ?>
+                    <?php include('Videography/PauseButton.php'); ?>
+                </div>
+            <?php  } ?>
+
         </div>
     </div>  
 
 
 <?php endwhile; ?> 
 <?php endif; ?> 
+

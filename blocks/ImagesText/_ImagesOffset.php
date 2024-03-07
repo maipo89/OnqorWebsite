@@ -12,6 +12,10 @@
                         <p class="body1"><?php echo $basic['number'] ?></p>
                         <h2 class="h3"><?php echo $basic['title'] ?></h2>
                     </div>
+                    <div class="images-offset__text-mobile">
+                        <?php echo the_sub_field('subtext') ?>
+                    </div>
+
                     <div class="images-offset__images">
                         <?php
                             $images = get_sub_field('images');
@@ -23,7 +27,9 @@
                             }
                         ?>
                     </div>
-                    <?php echo the_sub_field('subtext') ?>
+                    <div class="images-offset__text-desktop">
+                        <?php echo the_sub_field('subtext') ?>
+                    </div>
 
                 </div>  
             </div>  

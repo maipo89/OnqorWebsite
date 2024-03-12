@@ -9,10 +9,12 @@
                 <?php if( get_sub_field('images_center') ) { ?> images-center <?php  } ?>
     ">
         <div class="container ">
-            <div class="title">
-                <p class="body1"><?php echo $basic['number'] ?></p>
-                <h2 class="h3"><?php echo $basic['title'] ?></h2>
-            </div>
+            <?php if( $basic['title'] ) { ?>
+                <div class="title">
+                    <p class="body1"><?php echo $basic['number'] ?></p>
+                    <h2 class="h3"><?php echo $basic['title'] ?></h2>
+                </div>
+            <?php  } ?>
             <?php echo $basic['text'] ?>
             <!-- image options -->
             <?php include('Photography/_ColumnsThree.php'); ?>

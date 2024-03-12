@@ -11,10 +11,14 @@
             <!-- images -->
             <div class="image-video__media">
                 <img src="<?php echo $imgVisual ?>"/>
-                <video controls>
-                    <source src="your_video's_name.mp4" type="video/mp4">
-                    Error Message
-                </video>
+                <!-- video -->
+                <?php $link_data = get_sub_field('video'); 
+                if(!empty($link_data)){ $link = $link_data['url'];  ?>
+                    <video controls>
+                        <source src="<?php echo $link; ?>" type="video/mp4">
+                        Error Message
+                    </video>
+                <?php } ?>
             </div>
                                 
         <?php endwhile; ?> 

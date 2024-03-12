@@ -17,7 +17,7 @@ if( have_rows('hero_case_studies') ): ?>
             <div class="container">
                 <!-- list -->
                 <h2><?php echo $basic['title'] ?></h2>
-                <ul>
+                <ul class="hero-case-studies__list">
                     <?php if( have_rows('list') ): ?>
                         <?php while( have_rows('list') ): the_row(); ?>
                             <li class="body2"><?php echo the_sub_field('item') ?></li>

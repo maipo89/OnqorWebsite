@@ -16,7 +16,7 @@
                     <img src="<?php echo $imgVisual ?>"/>
 
                     <!-- colors -->
-                    <div class="layout-one__colors__wrapper">
+                    <!-- <div class="layout-one__colors__wrapper">
                         <div class="layout-one__colors">
                             <?php if( have_rows('colors') ): ?>
                                 <?php while( have_rows('colors') ): the_row(); 
@@ -29,7 +29,7 @@
                                 <?php endwhile; ?> 
                             <?php endif; ?> 
                         </div>
-                    </div>
+                    </div> -->
       
                 </div>  
             </div>  

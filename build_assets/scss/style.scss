@@ -33,7 +33,7 @@ h1,h2,h3,h4,h5,h6,p,a,span,li {
 h1 {
     font-size: 100px;
     font-weight: 300;
-    line-height: 150px;
+    // line-height: 150px;
     letter-spacing: 0em;
     text-align: left;
     @media (max-width: $desktop) { 
@@ -49,7 +49,7 @@ h1 {
 h2 {
     font-size: 75px;
     font-weight: 300;
-    line-height: 113px;
+    // line-height: 113px;
     letter-spacing: 0em;
     text-align: left;
     @media (max-width: $tabletSmall) { 
@@ -188,7 +188,7 @@ h3 {
     flex-direction: column;
     flex-wrap: wrap;
     overflow: hidden;
-    &.fdc {
+    &.fdc { 
         flex-direction: column;
     }
     &.jcfs {

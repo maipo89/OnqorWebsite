@@ -72,6 +72,10 @@
         .title {
             text-align: center;
             justify-content: center;
+            @media (max-width: $desktop) {
+                text-align: left;
+                justify-content: flex-start;
+            }
         }
         .container > p {
             text-align: center;
@@ -87,7 +91,7 @@
         grid-gap: 32px;
         grid-template-columns: repeat(2, 1fr);
         @media (max-width: $desktop) {
-            display: none;
+            display: none !important;
         }
         img {
             height: 820px;
@@ -104,7 +108,7 @@
         grid-gap: 32px;
         grid-template-columns: repeat(3, 1fr);
         @media (max-width: $desktop) {
-            display: none;
+            display: none !important;
         }
         img {
             height: 620px;

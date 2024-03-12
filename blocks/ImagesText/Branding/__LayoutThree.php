@@ -25,7 +25,6 @@
                     <div class="layout-three__images">
                         <!-- left -->
                         <div class="layout-three__images__left">
-
                             <div class="layout-three__images__left__colors">
                                 <div class="colors">
                                     <?php if( have_rows('colors') ): ?>
@@ -41,22 +40,32 @@
                                 </div>
                                 <img src="<?php echo $imgVisualOne ?>"/>
                             </div>
-
                             <img src="<?php echo $imgVisualTwo ?>"/>
                         </div>
 
                         <!-- right -->
                         <div class="layout-three__images__right">
-           
                             <img src="<?php echo $imgVisualThree ?>"/>
-                            <?php echo the_sub_field('text') ?>
-                 
+                            <div class="wizywig">
+                                <?php echo the_sub_field('text') ?>
+                            </div>
                         </div>
-
                     </div>
-             
-                    <!-- colors -->
-            
+                    
+                    <!-- tablet text -->
+                    <div class="wizywig layout-three__text-mobile">
+                        <?php echo the_sub_field('text') ?>
+                    </div>
+
+                    <!-- mobile -->
+                    <!-- slider -->
+                        <div class="layout-three__mobile">
+                            <div class="layout-three__mobile__slider">
+                                <img src="<?php echo $imgVisualOne ?>"/>
+                                <img src="<?php echo $imgVisualTwo ?>"/>
+                                <img src="<?php echo $imgVisualThree ?>"/>
+                            </div>
+                        </div>
                 </div>  
             </div>  
     <?php endwhile; ?> 

@@ -18,7 +18,7 @@
                     <div class="layout-two__text">
                         <?php echo the_sub_field('text') ?>
                     </div>
-                    <!-- image -->
+                    <!-- images desktop-->
                     <div class="layout-two__images">
                         <div class="layout-two__images__left">
                             <?php
@@ -33,6 +33,7 @@
                         </div>
                         <div class="layout-two__images__right">
                             <img src="<?php echo $imgVisual ?>"/>
+                            <!-- colors -->
                             <div class="layout-two__colors">
                                 <?php if( have_rows('colors') ): ?>
                                     <?php while( have_rows('colors') ): the_row(); 
@@ -40,7 +41,7 @@
                                         $imgVisual = $img['sizes']['medium'];
                                     ?>
                                         <div style="background-color: <?php echo the_sub_field('color')?>"
-                                            class="layout-one__colors__item">
+                                            class="layout-two__colors__item">
                                         </div>
                                     <?php endwhile; ?> 
                                 <?php endif; ?> 
@@ -48,8 +49,32 @@
                         </div>
 
                     </div>
-             
-                    <!-- colors -->
+
+                    <!-- mobile -->
+                    <!-- slider -->
+                    <div class="layout-two__mobile">
+                            <div class="layout-two__mobile__slider">
+                                <?php
+                                    $media = get_sub_field('images'); 
+                                    foreach($media as $image) {
+                                        echo '<img src="',esc_url($image['sizes']['medium']),'" alt="',esc_attr($image['alt']),'">';
+                                    }
+                                ?> 
+                            </div>
+                            <!-- colors -->
+                            <div class="layout-two__colors">
+                                <?php if( have_rows('colors') ): ?>
+                                    <?php while( have_rows('colors') ): the_row(); 
+                                        $img = get_sub_field('image');
+                                        $imgVisual = $img['sizes']['medium'];
+                                    ?>
+                                        <div style="background-color: <?php echo the_sub_field('color')?>"
+                                            class="layout-two__colors__item">
+                                        </div>
+                                    <?php endwhile; ?> 
+                                <?php endif; ?> 
+                            </div>
+                    </div>
             
                 </div>  
             </div>  

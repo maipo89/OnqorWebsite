@@ -20,7 +20,9 @@
                             <p><?php echo $basic['number'] ?></p>
                             <h2 class="h3"><?php echo $basic['title'] ?></h2>
                         </div>
-                        <?php echo the_sub_field('text') ?>
+                        <div class="wizywig">
+                            <?php echo the_sub_field('text') ?>
+                        </div>
                     </div>
                     <img src="<?php echo $imgVisualOne ?>"/>
                     <img src="<?php echo $imgVisualTwo ?>"/>

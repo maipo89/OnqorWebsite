@@ -17,9 +17,13 @@
         column-gap: 32px; /* Space between columns */
         width: 100%; /* Adjust the width as necessary */
         margin: 0 0 32px 0;
+        @media (max-width: $tabletSmall) {
+            column-count: 1; 
+        }
     }
     &__text {
         margin: 0 0 32px 0;
+        width: 100%;
         @media (max-width: $tabletLarge) {
             margin: 0 0 24px 0;
         }

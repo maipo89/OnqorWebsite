@@ -14,11 +14,21 @@
                 <!-- video -->
                 <?php $link_data = get_sub_field('video'); 
                 if(!empty($link_data)){ $link = $link_data['url'];  ?>
-                    <video controls>
+                    <video controls class="video">
                         <source src="<?php echo $link; ?>" type="video/mp4">
                         Error Message
                     </video>
                 <?php } ?>
+            </div>
+
+            <!-- mobile slider -->
+            <div class="hero-case-studies__slider">
+                <img src="<?php echo $imgVisual ?>"/>
+                <!-- video -->
+                <video controls class="video">
+                    <source src="<?php echo $link; ?>" type="video/mp4">
+                    Error Message
+                </video>
             </div>
                                 
         <?php endwhile; ?> 

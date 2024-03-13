@@ -4,6 +4,7 @@
 @import 'variables';
 @import 'archive';
 @import 'single-case-studies';
+@import 'four04'; 
 
 // blocks scss
 @import 'blocks/case-studies';
@@ -19,6 +20,7 @@
 @import 'blocks/images-text'; 
 @import 'blocks/videography'; 
 @import 'blocks/text'; 
+@import 'blocks//embed'; 
 
 body {
     margin: 0;

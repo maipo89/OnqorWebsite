@@ -9,16 +9,25 @@
                 <?php if( get_sub_field('images_center') ) { ?> images-center <?php  } ?>
     ">
         <div class="container ">
+            <!-- title -->
             <?php if( $basic['title'] ) { ?>
                 <div class="title">
                     <p class="body1"><?php echo $basic['number'] ?></p>
                     <h2 class="h3"><?php echo $basic['title'] ?></h2>
                 </div>
             <?php  } ?>
-            <?php echo $basic['text'] ?>
+
+            <!-- text -->
+            <?php if( $basic['text'] ) { ?>
+                <div class="wizywig">
+                    <?php echo $basic['text'] ?>
+                </div>
+            <?php  } ?>
+
             <!-- image options -->
             <?php include('Photography/_ColumnsThree.php'); ?>
             <?php include('Photography/_ColumnsTwo.php'); ?>
+            <?php include('Photography/_Abstract.php'); ?>
         </div>  
     </div>  
 

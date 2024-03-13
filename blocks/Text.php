@@ -9,7 +9,9 @@
     <div class="text-basic">  
         <div class="container">
              <div class="title">
-               <p class="body1"><?php echo $basic['number'] ?></p>
+               <?php if( $basic['number'] ) { ?>
+                  <p class="body1"><?php echo $basic['number'] ?></p>
+               <?php  } ?>
                <h2 class="h3"><?php echo $basic['title'] ?></h2>
             </div>
             <?php echo $basic['text'] ?>

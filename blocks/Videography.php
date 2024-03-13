@@ -22,7 +22,7 @@
                 <?php 
                     $link_data = get_sub_field('video'); 
                     if(!empty($link_data)){ $link = $link_data['url'];  ?>
-                    <video width="954" height="535" playsinline class="video">
+                    <video playsinline class="video">
                         <source src="<?php echo $link; ?>">   
                     </video>
                 <?php } ?>

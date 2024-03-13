@@ -32,6 +32,7 @@
     video {
         object-fit: cover;
     }
+    // slider 
     &__slider {  
         position: relative;
         overflow: hidden;
@@ -46,6 +47,14 @@
             bottom: 0;
         }
         img {
+            object-fit: cover;
+            height: 449px;
+            border-radius: 8px;
+            @media (max-width: $mobileLarge) {
+                height: 367px;
+            }
+        }
+        video {
             object-fit: cover;
             height: 449px;
             border-radius: 8px;
@@ -87,6 +96,12 @@
     // title
     .title {
         padding: 128px 32px;
+        @media (max-width: $tabletLarge) {
+            padding: 128px 32px 96px;
+        }
+        @media (max-width: $tabletSmall) {
+            padding: 96px 32px;
+        }
         h1 {
             margin:  0 0 32px 0;
             text-align: center;
@@ -277,11 +292,20 @@
                 display: grid;
                 grid-gap: 32px;
                 grid-template-columns: repeat(2, auto);
+                @media (max-width: $desktop) {
+                    display: none;
+                }
                 img {
                     height: 470px;
                     width: 100%;
                     border-radius: 8px;
                     object-fit: cover;
+                    @media (max-width: $desktop) {
+                        height: 580px;
+                    }
+                    @media (max-width: $tabletLarge) {
+                        height: 479px;
+                    }
                 }
             }
         }
@@ -297,7 +321,20 @@
             }
         }
         // image small
-
+        .image-small {
+            display: flex;
+            width: 100%;
+            img {
+                height: 478px;
+                max-width: 336px;
+                background-color: lavender;
+                width: 100%;
+                border-radius: 8px;
+                @media (max-width: $desktop) {
+                    max-width: unset;
+                }
+            }
+        }
         // image triple
         .image-triple {
             width: 100%;
@@ -305,21 +342,34 @@
                 display: grid;
                 grid-gap: 32px;
                 grid-template-columns: repeat(3, auto);
+                @media (max-width: $tabletLarge) {
+                    display: none;
+                }
                 img {
-                    height: 682px;
+                    height: 532px;
                     width: 100%;
                     border-radius: 8px;
                     object-fit: cover;
+                    @media (max-width: $desktop) {
+                        height: 415px;
+                    }
+                    @media (max-width: $tabletLarge) {
+                        height: 317px;
+                    }
                 }
             }
         }
         // image video
         .image-video {
             display: flex;
+            width: 100%;
             &__media {
                 display: grid;
                 grid-gap: 32px;
                 grid-template-columns: repeat(2, auto);
+                @media (max-width: $tabletSmall) {
+                    display: none;
+                }
                 img {
                     height: 470px;
                     width: 321px;
@@ -331,6 +381,7 @@
                     height: 468px;
                     background-color: lavender;
                     width: 100%;
+                    border-radius: 8px;
                 }
             }
         }
@@ -342,9 +393,18 @@
                 display: flex;
                 width: 100%;
                 video {
-                    height: 470px;
+                    height: 685px;
                     background-color: lavender;
                     width: 100%;
+                    @media (max-width: $desktop) {
+                        height: 580px;
+                    }
+                    @media (max-width: $tabletLarge) {
+                        height: 479px;
+                    }
+                    @media (max-width: $tabletSmall) {
+                        height: 350px;
+                    }
                 }
             }
         }

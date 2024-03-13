@@ -117,4 +117,40 @@
             border-radius: 8px;
         }
     }
+    // columns three
+    .abstract {
+        display: flex;
+        width: 100%;
+        position: relative;
+        flex-wrap: wrap;
+        height: 1702px;
+        @media (max-width: $desktop) {
+            display: none !important;
+        }
+        img {
+            height: 819px;
+            object-fit: cover;
+            width: 50%;
+            border-radius: 8px;
+            position: absolute;
+            @media (max-width: $desktop) {
+                position: relative;
+            }
+            &:nth-child(1) {
+                left: 72px;
+                top: 0;
+                z-index: 3;
+            }
+            &:nth-child(2) {
+                top: 392px;
+                right: 72px;
+                z-index: 2;
+            }
+            &:nth-child(3) {
+                left: 187px;
+                bottom: 0;
+                z-index: 1;
+            }
+        }
+    }
 }

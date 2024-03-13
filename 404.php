@@ -1,43 +1,21 @@
 <?php get_header(); ?>
-
-			<div id="content">
-
-				<div id="inner-content" class="wrap cf">
-
-					<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
-
-						<article id="post-not-found" class="hentry cf">
-
-							<header class="article-header">
-
-								<h1><?php _e( 'Epic 404 - Article Not Found', 'bonestheme' ); ?></h1>
-
-							</header>
-
-							<section class="entry-content">
-
-								<p><?php _e( 'The article you were looking for was not found, but maybe try looking again!', 'bonestheme' ); ?></p>
-
-							</section>
-
-							<section class="search">
-
-									<p><?php get_search_form(); ?></p>
-
-							</section>
-
-							<footer class="article-footer">
-
-									<p><?php _e( 'This is the 404.php template.', 'bonestheme' ); ?></p>
-
-							</footer>
-
-						</article>
-
-					</main>
-
-				</div>
-
+	<div class="four04">
+		<div class="container">
+			<svg class="" xmlns="http://www.w3.org/2000/svg" width="172" height="315" viewBox="0 0 172 315" fill="none">
+				<path d="M171.5 2.5H2.5V312H147" stroke="#00AAFF" stroke-width="5" stroke-dasharray="50 50"/>
+			</svg>
+			<div class="title">
+				<h1>404</h1>
+				<p class="h3">Sorry, we can’t find what you’re looking for</p>
+				<p class="subtitle1">Looking for any of these?</p>
 			</div>
-
+			<div class="four04__buttons">
+				<a><button class="btn-primary">Homepage</button></a>
+				<a><button class="btn-primary">Service Pages</button></a>
+				<a><button class="btn-primary">CaseStudies</button></a>
+				<a><button class="btn-primary">Get in Touch</button></a>
+			</div>
+		</div>
+		<div class="spotlight" id="spotlight"></div>
+	</div>
 <?php get_footer(); ?>

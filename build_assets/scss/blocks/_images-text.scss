@@ -3,6 +3,7 @@
     // images offset
     img {
         object-fit: cover;
+        border-radius: 8px;
     }
     .images-offset {
         &__text {
@@ -117,6 +118,9 @@
             // image right option
             &.image-right {
                 flex-direction: row-reverse;
+                @media (max-width: $tabletSmall) {
+                    flex-direction: column;
+                }
                 .image-left-right__content__text {
                     p {
                         text-align: right;
@@ -157,6 +161,7 @@
             margin: 0 0 32px 0;
         }
         &__images {
+            overflow: hidden;
             img {
                 margin: 32px 0 0px 0;
                 width: 100%;
@@ -183,6 +188,9 @@
             column-gap: 48px; /* Space between columns */
             width: 100%; /* Adjust the width as necessary */
             margin: auto; /* For centering, if desired */
+            @media (max-width: $tabletSmall) {
+                column-count: 1; /* Number of columns */
+            }
         }
         .col-four {
             column-count: 4; /* Number of columns */

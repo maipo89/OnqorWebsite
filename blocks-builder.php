@@ -69,6 +69,26 @@ if (have_rows('sections')) :
             <?php include 'blocks/Text.php'; ?>
         <?php endif;
 
+        // Case: Paragraph layout.
+        if (get_row_layout() == 'cta') : ?>
+            <?php include 'blocks/Cta.php'; ?>
+        <?php endif;
+
+        // Case: Paragraph layout.
+        if (get_row_layout() == 'embed') : ?>
+            <?php include 'blocks/Embed.php'; ?>
+        <?php endif;
+
+        // Case: Paragraph layout.
+        if (get_row_layout() == 'hero') : ?>
+            <?php include 'blocks/Hero.php'; ?>
+        <?php endif;
+
+        // Case: Paragraph layout.
+        if (get_row_layout() == 'tabs') : ?>
+            <?php include 'blocks/Tabs.php'; ?>
+        <?php endif;
+
 	// End loop.
 	endwhile; 
 endif;

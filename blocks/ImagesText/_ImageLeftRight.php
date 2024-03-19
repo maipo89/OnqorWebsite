@@ -15,7 +15,9 @@
                         <img src="<?php echo $imgVisual ?>"/>
                         <div class="image-left-right__content__text">
                             <div class="title">
-                                <p class="body1"><?php echo $basic['number'] ?></p>
+                                <?php if( $basic['number'] ) { ?> 
+                                    <p class="body1"><?php echo $basic['number'] ?></p>
+                                <?php  } ?>
                                 <h2 class="h3"><?php echo $basic['title'] ?></h2>
                             </div>
                             <?php echo get_sub_field('text')?>

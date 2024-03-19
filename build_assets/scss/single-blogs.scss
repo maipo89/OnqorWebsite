@@ -1,0 +1,51 @@
+.single-blogs {
+    .h3 {
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    &__back {
+        padding: 96px 0 0 0;
+        @media (max-width: $desktop) {
+            margin: 0 0 72px 0;
+        }
+        @media (max-width: $tabletLarge) {
+            margin: 0 0 48px 0;
+        }
+        a {
+            display: flex;
+            align-items: center;
+            color: black;
+            svg {
+                margin: 0 7px 0 0;
+            }
+        }
+    }
+    &__hero {
+        width: 100%;
+        background-color: black;
+        color: white;
+        position: relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+        h1 {
+            margin: 0 0 32px 0;
+        }
+        .container {
+            z-index: 1;
+            padding: 96px 0 72px;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.8); /* Black with 50% opacity */
+            z-index: 1;
+        }
+    }
+} 

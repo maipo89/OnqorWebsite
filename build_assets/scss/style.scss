@@ -4,6 +4,7 @@
 @import 'variables';
 @import 'archive';
 @import 'single-case-studies';
+@import 'single-blogs';
 @import 'four04'; 
 
 // blocks scss
@@ -20,7 +21,9 @@
 @import 'blocks/images-text'; 
 @import 'blocks/videography'; 
 @import 'blocks/text'; 
-@import 'blocks//embed'; 
+@import 'blocks/embed'; 
+@import 'blocks/hero'; 
+@import 'blocks/tabs'; 
 
 body {
     margin: 0;
@@ -132,6 +135,19 @@ h3 {
     text-align: left;
 }
 
+// wizywig
+.wizywig {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 32px; 
+    @media (max-width: $tabletSmall) {
+        grid-gap: 16px; 
+    }
+    ul {
+        padding-inline-start: 20px;
+    }   
+}
+
 // btns
 .btn-primary {
     font-family: Poppins;
@@ -177,8 +193,6 @@ h3 {
     }
 }
 
-
-
 // other css
 .container {
     padding: 0 32px;
@@ -192,6 +206,9 @@ h3 {
     overflow: hidden;
     &.fdc { 
         flex-direction: column;
+    }
+    &.fdr { 
+        flex-direction: row;
     }
     &.jcfs {
         justify-content: flex-start;

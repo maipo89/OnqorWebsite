@@ -11,7 +11,9 @@
                     <!-- title text -->
                     <div class="<?php if( get_sub_field('text_center') ) { ?> text-center <?php  } ?>">
                         <div class="title">
-                            <p class="body1"><?php echo $basic['number'] ?></p>
+                            <?php if( $basic['number'] ) { ?> 
+                                <p class="body1"><?php echo $basic['number'] ?></p>
+                            <?php  } ?>
                             <h2 class="h3"><?php echo $basic['title'] ?></h2>
                         </div>
                         <div class="<?php if( get_sub_field('columns_text_four') ) { ?> col-four <?php  } ?>

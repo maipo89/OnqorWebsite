@@ -1,14 +1,17 @@
 .archive {
     position: relative;
     #articles-container {
-        padding: 0;
+        padding: 48px 32px;
         display: grid;
         margin: 0 auto;
         width: 100%;
         position: relative;
         grid-gap: 96px 48px;
-        max-width: 1320px;
+        max-width: 1364px;
         grid-template-columns: repeat(3, 1fr);
+        @media (max-width: $desktop) {
+            padding: 32px;
+        }
     }
     .article {  
         color: white;
@@ -25,6 +28,104 @@
         .subtitle2 {
             margin: 24px 0 0 0;
             color: black;
+        }
+    }
+    // blogs
+    &__blogs {
+        &__hero {
+            background-color: black;
+            color: white;
+            h1 {
+                margin: 0 0 81px 0;
+            }
+            h2 {
+                margin: 0 0 16px 0;
+                color: $operations;
+            }
+            button {
+                margin: 0 0 65px 0;
+            }
+            // featured slider
+            &__slider {
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                margin: 64px 0 64px 0;
+                // max-width: 882px;
+                color: white;
+                &__item {
+                    @media(max-width: $desktop) { 
+                        margin: 32px 0 32px 0;
+                    }
+                    a {
+                        color: white;
+                        display: flex;
+                        flex-direction: row;
+                        grid-gap: 50px;
+                        width: 100%;
+                        @media(max-width: $tabletSmall) { 
+                            flex-direction: column;
+                        }
+                    }
+                    img {
+                        width: 530px;
+                        height: 315px;
+                        object-fit: cover;
+                        @media(max-width: $desktop) { 
+                            width: 311px;
+                            height: 299px;
+                        }
+                        @media(max-width: $tabletLarge) { 
+                            width: 276px;
+                            height: 269px;
+                        }
+                        @media(max-width: $tabletSmall) { 
+                            height: 200px;
+                            width: 100%;
+                        }
+                    }
+                    .text {
+                        width: 50%;
+                        @media(max-width: $tabletSmall) { 
+                            width: 100%;
+                        }
+                        h3 {
+                            margin: 0 0 32px 0;
+                        }
+                        p {
+                            margin: 0 0 32px 0;
+                        }
+                    }
+                }
+                .slick-list {
+                    padding: 0 !important;
+                    .slick-track {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+                .slick-dots {
+                    bottom: 0;
+                    left: 580px;
+                    right: unset;
+                    @media(max-width: $desktop) { 
+                        width: 311px;
+                        height: 299px;
+                    }
+                    @media(max-width: $tabletLarge) { 
+                        width: 276px;
+                        height: 269px;
+                    }
+                    @media(max-width: $tabletSmall) { 
+                        height: 200px;
+                        width: 100%;
+                    }
+                    button {
+                        margin: 0;
+                    }
+                }
+            }
         }
     }
     // casestudies

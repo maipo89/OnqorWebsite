@@ -1,0 +1,54 @@
+.tabs {
+    @include padding;
+    &__buttons {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 0 0 64px 0;
+        @media (max-width: $desktop) {
+            margin: 0 0 48px 0;
+        }
+        @media (max-width: $tabletLarge) {
+            margin: 0 0 32px 0;
+        }
+        button {
+            background-color: white;
+            border: 1px solid $darksmoke;
+            padding: 10px 0;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+            &:first-child {
+                border-top-left-radius: 8px;
+                border-bottom-left-radius: 8px;
+            }
+            &:last-child {
+                border-top-right-radius: 8px;
+                border-bottom-right-radius: 8px;
+            }
+            &:focus {
+                outline: none !important;
+            }
+            &.active {
+                background-color: $darksmoke;
+                color: $offwhite;
+            }
+        }
+    }
+    &__content {
+        &__item {
+            h3 {
+                margin: 0 0 16px 0;
+            }
+            p {
+                column-count: 3; /* Number of columns */
+                column-gap: 48px; /* Space between columns */
+                width: 100%; /* Adjust the width as necessary */
+                margin: auto; /* For centering, if desired */
+                @media (max-width: $tabletSmall) {
+                    column-count: 1; /* Number of columns */
+                }
+            }
+        }
+    }
+}

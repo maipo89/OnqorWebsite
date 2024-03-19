@@ -51,6 +51,17 @@ $(document).ready(function() {
         infinite: true,
         cssEase: 'linear',
     }); 
+
+    // featured blogs slider
+    $('.archive__blogs__hero__slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        centerMode: true,
+        dots: true,
+        infinite: true,
+        cssEase: 'linear',
+    }); 
  
     // photgraphy mobile slider 
     $('.photography__slider').slick({

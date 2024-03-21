@@ -1,16 +1,23 @@
 .archive {
     position: relative;
-    #articles-container {
-        padding: 48px 32px;
-        display: grid;
-        margin: 0 auto;
-        width: 100%;
-        position: relative;
-        grid-gap: 96px 48px;
-        max-width: 1364px;
-        grid-template-columns: repeat(3, 1fr);
-        @media (max-width: $desktop) {
-            padding: 32px;
+    .articles-wrapper {
+        min-height: 1080px;
+        #articles-container {
+            padding: 48px 32px;
+            display: grid;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            grid-gap: 96px 48px;
+            max-width: 1364px;
+            overflow: hidden;
+            grid-template-columns: repeat(3, 1fr);
+            @media (max-width: $desktop) {
+                padding: 32px;
+            }
+            @media (max-width: $tabletSmall) {
+                grid-template-columns: repeat(1, 1fr);
+            }
         }
     }
     .article {  
@@ -19,11 +26,23 @@
         @media (max-width: $tabletLarge) {
             width: 100%;
         }
+        div {
+            width: 100%;
+        }
         img { 
             background-color: lavender;
             width: 100%;
             height: 533px;
             object-fit: cover;
+            @media (max-width: $desktop) {
+                height: 372px;
+            }
+            @media (max-width: $tabletLarge) {
+                height: 274px;
+            }
+            @media (max-width: $tabletSmall) {
+                height: 400px;
+            }
         }
         .subtitle2 {
             margin: 24px 0 0 0;
@@ -32,6 +51,16 @@
     }
     // blogs
     &__blogs {
+        // dropdown
+        .dropdown {
+            margin: 96px 0 0 0;
+            @media(max-width: $tabletLarge) { 
+                margin: 64px 0 0 0;
+            }
+            @media(max-width: $tabletSmall) { 
+                margin: 48px 0 0 0;
+            }
+        } 
         &__hero {
             background-color: black;
             color: white;
@@ -133,6 +162,13 @@
         &__header {
             background-color: black;
             color: white;
+            margin: 0 0 32px 0;
+            .container {
+                @media(max-width: $desktop) { 
+                    justify-content: center;
+                    align-items: center;
+                } 
+            }
             h1 {
                 margin: 0 0 81px 0;
             }
@@ -148,16 +184,41 @@
                 position: relative;
                 overflow: hidden;
                 width: 100%;
-                margin: 64px 0 64px 0;
+                margin: 0px 0 64px 0;
                 max-width: 882px;
+                @media(max-width: $desktop) { 
+                    max-width: 691px;
+                    text-align: center;
+                    padding: 0 0 42px 0;
+                    margin: 32px 0 72px 0;
+                }
+                @media(max-width: $tabletLarge) { 
+                    margin: 32px 0 64px 0;
+                    padding: 0 0 34px 0;
+                }
                 h3 {
                     margin: 0 0 32px 0;
+                    @media(max-width: $desktop) { 
+                        text-align: center;
+                    }
                 }
                 p {
                     margin: 0 0 32px 0;
+                    @media(max-width: $desktop) { 
+                        text-align: center;
+                    }
                 }
-                @media(max-width: $desktop) { 
-                    margin: 32px 0 32px 0;
+                button {
+                    margin: 0 0 0 0;
+                }
+                .slick-dots {
+                    left: unset;
+                    top: 59px;
+                    @media(max-width: $desktop) { 
+                        top: unset;
+                        bottom: 0;
+                        left: 0;
+                    }
                 }
                 .slick-list {
                     padding: 0 !important;

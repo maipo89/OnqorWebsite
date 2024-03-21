@@ -48,32 +48,58 @@
 									<?php endwhile; ?>
 								<?php else: ?>
 							<p>No related blogs found.</p>
-							<?php endif; wp_reset_postdata(); ?>
+							<?php endif; wp_reset_postdata(); ?> 
                         </div>
-					</div>
+					</div>  
                 </div>
 
-				<!--  -->
+			 <!-- blog filter -->
+			 	<div class="container center">
+                    <!-- dropdown filter -->
+                    <div class="dropdown">
+                        <div id="category-dropdown" name="study_category" class="dropdown__filter">
+                            Select a Category
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none">
+                                <path d="M1 1.5L8 8.5L15 1.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="dropdown__options">
+                            <div class="dropdown__options__items">
+                                <div value="all">All Categories</div>
+                                <?php 
+                                $terms = get_terms('category', array('hide_empty' => true));
+                                foreach ($terms as $term) {
+                                    echo '<div value="' . $term->slug . '">' . $term->name . '</div>';
+                                }
+                                ?>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
 
                 <!-- posts -->
-				<div id="articles-container">
-						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-						<?php $post_categories = get_the_category(); ?>
-							<article class="article <?php foreach ($post_categories as $cat) { echo esc_attr($cat->slug) . ' '; } ?>" id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article">
-                                <a href="<?php the_permalink(); ?>">
-									<div>
-										<?php if (has_post_thumbnail()) : ?>
-										    <a href="<?php the_permalink(); ?>">
-											    <?php the_post_thumbnail(); ?>
-										    </a>
-										<?php endif; ?>
-										<h3 class="subtitle2"><?php the_title(); ?></h3>
-									</div>
-                                </a>
-							</article>
-						<?php endwhile; ?>
-						<?php endif; ?>
+				<div class="articles-wrapper">
+					<div id="articles-container">
+							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+							<?php $post_categories = get_the_category(); ?>
+								<article class="article <?php foreach ($post_categories as $cat) { echo esc_attr($cat->slug) . ' '; } ?>" id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article">
+									<a href="<?php the_permalink(); ?>">
+										<div>
+											<?php if (has_post_thumbnail()) : ?>
+												<a href="<?php the_permalink(); ?>">
+													<?php the_post_thumbnail(); ?>
+												</a>
+											<?php endif; ?>
+											<h3 class="subtitle2"><?php the_title(); ?></h3>
+										</div>
+									</a>
+								</article>
+							<?php endwhile; ?>
+							<?php endif; ?>
+					</div>
 				</div>
+
 				<?php include('blocks/RelatedBlogs.php'); ?>
 			</div>
 <?php get_footer(); ?>

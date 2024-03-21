@@ -123,16 +123,15 @@ function bones_comments( $comment, $args, $depth ) {
 // Load the theme stylesheets
 function theme_styles()  
 { 
-
   // Load all of the styles that need to appear on all pages
   wp_enqueue_style( 'main', get_template_directory_uri() . '/dist/styles/all.min.min.css' );
-  
   wp_enqueue_script( 'main', get_template_directory_uri() . '/dist/scripts/all.min.min.js', true );
-
-
-
+  // Localize script for AJAX
+  wp_localize_script('main', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
 }
 add_action('wp_enqueue_scripts', 'theme_styles');
+
+
 
 // Function to create a custom post type for Case Studies
 function create_custom_post_type_case_studies() {
@@ -217,13 +216,143 @@ function create_custom_post_type_case_studies() {
 add_action('init', 'create_custom_post_type_case_studies');
 add_action('init', 'create_custom_post_type_blogs');
 
-// Function to register the custom taxonomy 'department'
-function my_custom_taxonomy_department() {
-    // ... (Keep this part of your code as it is)
+// custom taxonomy
+function theme_slug_register_taxonomy() {
+  register_taxonomy(
+      'study_category',  // Taxonomy name
+      'case-studies',    // Post type
+      array(
+          'label'        => __('Study Categories', 'theme-slug'),
+          'rewrite'      => array('slug' => 'study-category'),
+          'hierarchical' => true,
+      )
+  );
 }
+add_action('init', 'theme_slug_register_taxonomy');
+
+// case studies filter 
+function filter_case_studies() {
+  $categorySlug = $_POST['category'];
+  
+  $args = array(
+      'post_type' => 'case-studies',
+      'posts_per_page' => -1, // Adjust as necessary
+  );
+
+  // If the category is not 'all', filter by the selected category
+  if ($categorySlug !== 'all') {
+      $args['tax_query'] = array(
+          array(
+              'taxonomy' => 'study_category',
+              'field'    => 'slug',
+              'terms'    => $categorySlug,
+          ),
+      );
+  }
+
+  $query = new WP_Query($args);
+
+  if($query->have_posts()) : 
+      while($query->have_posts()): $query->the_post();
+          // Output your custom post HTML structure
+          ?>
+          <article class="article" id="post-<?php the_ID(); ?>">
+              <a href="<?php the_permalink(); ?>">
+                  <div>
+                      <?php if (has_post_thumbnail()) : ?>
+                          <a href="<?php the_permalink(); ?>">
+                              <?php the_post_thumbnail(); ?>
+                          </a>
+                      <?php endif; ?>
+                      <h3 class="subtitle2"><?php the_title(); ?></h3>
+                  </div>
+              </a>
+          </article>
+          <?php
+      endwhile;
+  endif;
+
+  wp_reset_postdata();
+  die();
+}
+
+add_action('wp_ajax_filter_case_studies', 'filter_case_studies');
+add_action('wp_ajax_nopriv_filter_case_studies', 'filter_case_studies');
+
+// filter blogs 
+function filter_blogs() {
+  $categorySlug = $_POST['category'];
+
+  $args = array(
+      'post_type' => 'blogs', // Adjusted to target 'blogs' custom post type
+      'posts_per_page' => -1, // You can adjust this as necessary
+  );
+
+  // Check if a specific category is selected and it's not 'all'
+  if ($categorySlug !== 'all') {
+      $args['tax_query'] = array(
+          array(
+              'taxonomy' => 'category', // Ensure this is the correct taxonomy for your CPT
+              'field'    => 'slug',
+              'terms'    => $categorySlug,
+          ),
+      );
+  }
+
+  $query = new WP_Query($args);
+
+  if($query->have_posts()) : 
+      while($query->have_posts()): $query->the_post();
+          ?>
+ 	          <article class="article id="post-<?php the_ID(); ?>">
+									<a href="<?php the_permalink(); ?>">
+										<div>
+											<?php if (has_post_thumbnail()) : ?>
+												<a href="<?php the_permalink(); ?>">
+													<?php the_post_thumbnail(); ?>
+												</a>
+											<?php endif; ?>
+											<h3 class="subtitle2"><?php the_title(); ?></h3>
+										</div>
+									</a>
+							</article>
+          <?php
+      endwhile;
+  else:
+      // Optionally, echo a message if no posts were found
+      echo '<p>No blogs found in this category.</p>';
+  endif;
+
+  wp_reset_postdata();
+  die();
+}
+
+add_action('wp_ajax_filter_blogs', 'filter_blogs');
+add_action('wp_ajax_nopriv_filter_blogs', 'filter_blogs');
+
+
+
+// menu support
+add_theme_support( 'menus' );
+
+// logo support
+function theme_slug_setup() {
+  add_theme_support('custom-logo', array(
+      'height'      => 30,
+      'width'       => 170,
+      'flex-height' => true,
+      'flex-width'  => true,
+      'header-text' => array('site-title', 'site-description'),
+  ));
+}
+add_action('after_setup_theme', 'theme_slug_setup');
 
 // Hook the custom taxonomy registration function to the 'init' action
 add_action('init', 'my_custom_taxonomy_department', 0);
+
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page(); 
+}
 
 // Multiple thumbnails for case studies
 if (class_exists('MultiPostThumbnails')) {

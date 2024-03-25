@@ -3,7 +3,7 @@
     <?php if( have_rows('ants_text') ): ?>
         <?php while( have_rows('ants_text') ): the_row(); 
             $img = get_sub_field('image');
-            $imgVisual = $img['sizes']['medium'];
+            $imgVisual = $img['sizes']['large'];
             $selected_value = get_sub_field('options');
         ?>
             <div class="ants-text">

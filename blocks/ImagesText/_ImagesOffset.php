@@ -2,8 +2,6 @@
 <?php if ($selected_value == 'images_offset'): ?>
     <?php if( have_rows('images_offset') ): ?>
         <?php while( have_rows('images_offset') ): the_row(); 
-            $img = get_sub_field('img');
-            $imgVisual = $img['sizes']['medium'];
             $selected_value = get_sub_field('options');
         ?>
             <div class="images-offset">

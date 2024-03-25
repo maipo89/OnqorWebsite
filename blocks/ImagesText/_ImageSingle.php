@@ -3,7 +3,7 @@
     <?php if( have_rows('image_single') ): ?>
         <?php while( have_rows('image_single') ): the_row(); 
             $img = get_sub_field('image');
-            $imgVisual = $img['sizes']['medium'];
+            $imgVisual = $img['sizes']['large'];
             $selected_value = get_sub_field('options');
         ?>
             <div class="image-single">

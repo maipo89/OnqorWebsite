@@ -4,7 +4,7 @@
 					if( have_rows('footer', 'options') ): ?>
 						<?php while( have_rows('footer', 'options') ): the_row(); 
 							$img = get_sub_field('logo');
-							$imgVisual = $img['sizes']['medium'];	
+							$imgVisual = $img['sizes']['small'];	
 					?>
 					<div class="container">
 						<!-- footer columns -->
@@ -50,7 +50,7 @@
 								<?php if( have_rows('logos') ): ?>
 									<?php while( have_rows('logos') ): the_row(); 
 										$logo = get_sub_field('logo');
-										$logoVisual = $logo['sizes']['medium'];	
+										$logoVisual = $logo['sizes']['tiny'];	
 									?>
 									    <img src="<?php echo $logoVisual ?>"/>
 									<?php endwhile; ?> 
@@ -78,7 +78,7 @@
 								<?php if( have_rows('icons') ): ?>
 									<?php while( have_rows('icons') ): the_row(); 
 										$icon = get_sub_field('icon');
-										$iconVisual = $icon['sizes']['medium'];	
+										$iconVisual = $icon['sizes']['tiny'];	
 									?>
 									    <img src="<?php echo $iconVisual ?>"/>
 									<?php endwhile; ?> 

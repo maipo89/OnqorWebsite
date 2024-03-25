@@ -1,8 +1,6 @@
 <?php $basic= get_sub_field('images_text'); 
    if( have_rows('images_text') ): ?>
       <?php while( have_rows('images_text') ): the_row(); 
-         $img = get_sub_field('img');
-         $imgVisual = $img['sizes']['medium'];
          $selected_value = get_sub_field('options');
 ?>
 

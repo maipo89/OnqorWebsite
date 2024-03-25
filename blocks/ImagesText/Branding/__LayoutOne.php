@@ -2,7 +2,7 @@
     <?php if( have_rows('layout_one') ): ?>
         <?php while( have_rows('layout_one') ): the_row(); 
             $img = get_sub_field('image');
-            $imgVisual = $img['sizes']['medium'];
+            $imgVisual = $img['sizes']['large'];
         ?>
             <div class="layout-one">
                 <div class="container ">

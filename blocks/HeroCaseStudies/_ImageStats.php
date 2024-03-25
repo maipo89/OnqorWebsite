@@ -4,8 +4,6 @@
         <?php $basic = get_sub_field('image_stats'); 
         if( have_rows('image_stats') ): ?>
             <?php while( have_rows('image_stats') ): the_row(); 
-                $img = get_sub_field('img');
-                $imgVisual = $img['sizes']['medium'];
                 $selected_value = get_sub_field('options');
             ?>
             <!-- images -->

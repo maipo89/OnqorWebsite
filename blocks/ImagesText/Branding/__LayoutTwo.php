@@ -2,7 +2,7 @@
     <?php if( have_rows('layout_two') ): ?>
         <?php while( have_rows('layout_two') ): the_row(); 
             $img = get_sub_field('image');
-            $imgVisual = $img['sizes']['medium'];
+            $imgVisual = $img['sizes']['large'];
             $selected_value = get_sub_field('options');
         ?>
             <div class="layout-two">
@@ -26,7 +26,7 @@
                                 $image_counter = 1; // Initialize counter
                                     foreach($images as $image) {
                                     // Use the counter to add a unique class to each image
-                                        echo '<img class="image-' . $image_counter . '" src="' . esc_url($image['sizes']['small']) . '" alt="' . esc_attr($image['alt']) . '">';
+                                        echo '<img class="image-' . $image_counter . '" src="' . esc_url($image['sizes']['medium']) . '" alt="' . esc_attr($image['alt']) . '">';
                                         $image_counter++; // Increment counter
                                     }
                                 ?>
@@ -37,8 +37,6 @@
                             <div class="layout-two__colors">
                                 <?php if( have_rows('colors') ): ?>
                                     <?php while( have_rows('colors') ): the_row(); 
-                                        $img = get_sub_field('image');
-                                        $imgVisual = $img['sizes']['medium'];
                                     ?>
                                         <div style="background-color: <?php echo the_sub_field('color')?>"
                                             class="layout-two__colors__item">

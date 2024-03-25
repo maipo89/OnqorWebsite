@@ -2,7 +2,7 @@
    if( have_rows('photography') ): ?>
       <?php while( have_rows('photography') ): the_row(); 
          $img = get_sub_field('img');
-         $imgVisual = $img['sizes']['medium'];
+         $imgVisual = $img['sizes']['large'];
          $selected_value = get_sub_field('options');
 ?>
     <div class="photography

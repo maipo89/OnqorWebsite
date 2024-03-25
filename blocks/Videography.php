@@ -2,7 +2,7 @@
    if( have_rows('videography') ): ?>
       <?php while( have_rows('videography') ): the_row(); 
          $img = get_sub_field('img');
-         $imgVisual = $img['sizes']['medium'];
+         $imgVisual = $img['sizes']['xlarge'];
 ?>
     <div class="videography ">
         <div class="container">

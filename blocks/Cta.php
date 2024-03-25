@@ -1,8 +1,6 @@
 <?php $basic= get_sub_field('cta'); 
    if( have_rows('cta') ): ?>
       <?php while( have_rows('cta') ): the_row(); 
-         $img = get_sub_field('img');
-         $imgVisual = $img['sizes']['medium'];
          $selected_value = get_sub_field('options');
 ?>
 

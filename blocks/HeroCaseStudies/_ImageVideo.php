@@ -5,7 +5,7 @@
         if( have_rows('image_video') ): ?>
             <?php while( have_rows('image_video') ): the_row(); 
                 $img = get_sub_field('image');
-                $imgVisual = $img['sizes']['medium'];
+                $imgVisual = $img['sizes']['small'];
                 $selected_value = get_sub_field('options');
             ?>
             <!-- images -->

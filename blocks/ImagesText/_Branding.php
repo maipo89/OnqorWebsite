@@ -1,8 +1,6 @@
 <?php if ($selected_value == 'branding'): ?>
    <?php if( have_rows('branding') ): ?>
         <?php while( have_rows('branding') ): the_row(); 
-            $img = get_sub_field('image');
-            $imgVisual = $img['sizes']['medium'];
             $selected_value = get_sub_field('options');
         ?>
 

@@ -4,8 +4,6 @@
         <?php $basic = get_sub_field('video'); 
         if( have_rows('video') ): ?>
             <?php while( have_rows('video') ): the_row(); 
-                $img = get_sub_field('image');
-                $imgVisual = $img['sizes']['medium'];
                 $selected_value = get_sub_field('options');
             ?>
             <!-- images -->

@@ -4,6 +4,7 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         margin: 0 0 64px 0;
+        height: 100%;
         @media (max-width: $desktop) {
             margin: 0 0 48px 0;
         }

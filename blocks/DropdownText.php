@@ -1,9 +1,6 @@
 <?php $basic= get_sub_field('dropdown_text'); 
    if( have_rows('dropdown_text') ): ?>
       <?php while( have_rows('dropdown_text') ): the_row(); 
-         $img = get_sub_field('img');
-         $imgVisual = $img['sizes']['medium'];
-         $selected_value = get_sub_field('options');
 ?>
 
     <div class="dropdown-text">  

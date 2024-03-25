@@ -42,7 +42,7 @@
 													<h3 class="h3"><?php the_title(); ?></h3>
 													<p><?php the_excerpt(); ?></p>
 													<p>Read more</p>
-												</div>
+												</div> 
 											</a>
 										</div>
 									<?php endwhile; ?>
@@ -87,9 +87,7 @@
 									<a href="<?php the_permalink(); ?>">
 										<div>
 											<?php if (has_post_thumbnail()) : ?>
-												<a href="<?php the_permalink(); ?>">
-													<?php the_post_thumbnail(); ?>
-												</a>
+												<?php the_post_thumbnail(); ?>
 											<?php endif; ?>
 											<h3 class="subtitle2"><?php the_title(); ?></h3>
 										</div>

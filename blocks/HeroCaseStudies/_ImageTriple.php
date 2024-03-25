@@ -4,7 +4,7 @@
         if( have_rows('image_triple') ): ?>
             <?php while( have_rows('image_triple') ): the_row(); 
                 $img = get_sub_field('image');
-                $imgVisual = $img['sizes']['medium'];
+                $imgVisual = $img['sizes']['small'];
                 $selected_value = get_sub_field('options');
             ?>
             <!-- images -->

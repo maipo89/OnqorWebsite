@@ -2,7 +2,7 @@
    if( have_rows('image_text_columns') ): ?>
       <?php while( have_rows('image_text_columns') ): the_row(); 
          $img = get_sub_field('image');
-         $imgVisual = $img['sizes']['medium'];
+         $imgVisual = $img['sizes']['large'];
 ?>
     <div class="image-text-columns">
         <div class="container">

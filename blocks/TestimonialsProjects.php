@@ -2,7 +2,7 @@
    if( have_rows('testimonials_projects') ): ?>
       <?php while( have_rows('testimonials_projects') ): the_row(); 
          $img = get_sub_field('image');
-         $imgVisual = $img['sizes']['medium'];
+         $imgVisual = $img['sizes']['xlarge'];
 ?>
     <div class="testimonials-projects">
         <img src="<?php echo $imgVisual ?>" />

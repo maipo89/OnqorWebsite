@@ -2,8 +2,7 @@
 if( have_rows('tabs') ): ?>
     <?php $tab_count = 0; // Initialize tab counter ?>
     <?php while( have_rows('tabs') ): the_row(); 
-        $img = get_sub_field('img');
-        $imgVisual = $img['sizes']['medium'];
+
         $selected_value = get_sub_field('options');
     ?>
 

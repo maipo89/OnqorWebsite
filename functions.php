@@ -5,7 +5,9 @@
 // Thumbnail sizes
 add_image_size( 'bones-thumb-600', 600, 150, true );
 add_image_size( 'bones-thumb-300', 300, 100, true );
-add_image_size( 'small', 300 );
+add_image_size( 'tiny', 100 );
+add_image_size( 'xsmall', 300 );
+add_image_size( 'small', 500 );
 add_image_size( 'medium', 900 );
 add_image_size( 'large', 1300 );
 add_image_size( 'xlarge', 1920 );

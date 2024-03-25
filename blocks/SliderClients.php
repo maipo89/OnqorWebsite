@@ -2,7 +2,7 @@
    if( have_rows('slider_clients') ): ?>
       <?php while( have_rows('slider_clients') ): the_row(); 
          $img = get_sub_field('img');
-         $imgVisual = $img['sizes']['medium'];
+         $imgVisual = $img['sizes']['small'];
 ?>
     <div class="slider-clients ">
         <div class="container center">

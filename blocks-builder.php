@@ -89,6 +89,11 @@ if (have_rows('sections')) :
             <?php include 'blocks/Tabs.php'; ?>
         <?php endif;
 
+         // Case: Paragraph layout.
+         if (get_row_layout() == 'dropdown_text') : ?>
+            <?php include 'blocks/DropdownText.php'; ?>
+        <?php endif;
+
 	// End loop.
 	endwhile; 
 endif;

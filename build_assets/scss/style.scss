@@ -26,6 +26,7 @@
 @import 'blocks/embed'; 
 @import 'blocks/hero'; 
 @import 'blocks/tabs'; 
+@import 'blocks/dropdown-text'; 
 
 body {
     margin: 0;
@@ -163,7 +164,7 @@ h3 {
     color: $darksmoke;
     border: 1px solid $darksmoke;
     &:hover {
-        border: 1px solid white;
+        border: 1px solid $darksmoke;
         background-color: $darksmoke;
         color: white;
     }
@@ -198,6 +199,27 @@ h3 {
 // dropdowns
 .dropdown {
     width: fit-content;
+    &.dark {
+        .dropdown__filter {
+            background-color: black;
+            border-color: white;
+            svg {
+                path {
+                    stroke: white;
+                }
+            }
+        }
+        .dropdown__options {
+            &__items {
+                background-color: black;
+                border-color: white;
+                color: white;
+                div {
+                    border-color: white;
+                }
+            }
+        }
+    }
     &__filter {
         background-color: white;
         padding: 8px 24px;

@@ -5,9 +5,10 @@
 // Thumbnail sizes
 add_image_size( 'bones-thumb-600', 600, 150, true );
 add_image_size( 'bones-thumb-300', 300, 100, true );
-add_image_size( 'small', 300, 300, true );
-add_image_size( 'medium', 900, 900, true );
-add_image_size( 'large', 1920, 1080, true );
+add_image_size( 'small', 300 );
+add_image_size( 'medium', 900 );
+add_image_size( 'large', 1300 );
+add_image_size( 'xlarge', 1920 );
 
 /*
 to add more sizes, simply copy a line from above
@@ -258,14 +259,18 @@ function filter_case_studies() {
           ?>
           <article class="article" id="post-<?php the_ID(); ?>">
               <a href="<?php the_permalink(); ?>">
-                  <div>
-                      <?php if (has_post_thumbnail()) : ?>
-                          <a href="<?php the_permalink(); ?>">
-                              <?php the_post_thumbnail(); ?>
-                          </a>
-                      <?php endif; ?>
-                      <h3 class="subtitle2"><?php the_title(); ?></h3>
-                  </div>
+              <div >
+					<?php if (has_post_thumbnail()) : ?>
+						<div class="article__img">
+						<?php the_post_thumbnail(); ?>
+                            <div class="article__img__hover">
+                                <h3 class="subtitle1"><?php the_title(); ?></h3>
+                                 <button class="btn-secondary">View Project</button>
+                            </div>
+                        </div>
+						<?php endif; ?>
+						<h3 class="subtitle2"><?php the_title(); ?></h3>
+				    </div>
               </a>
           </article>
           <?php

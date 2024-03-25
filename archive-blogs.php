@@ -39,7 +39,7 @@
 												<?php endif; ?>
 												<div class="text">
 													<p>Featured Blog</p>
-													<h3 class="subtitle2"><?php the_title(); ?></h3>
+													<h3 class="h3"><?php the_title(); ?></h3>
 													<p><?php the_excerpt(); ?></p>
 													<p>Read more</p>
 												</div>

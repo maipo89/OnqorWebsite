@@ -1,0 +1,12 @@
+.dropdown-text {
+    @include padding;
+    .dropdown {
+        margin: 48px 0 0 0;
+    }
+    &__text {
+        @include padding;
+        h2 {
+            margin: 0 0 24px 0;
+        }
+    }
+}

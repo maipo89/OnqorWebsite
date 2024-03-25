@@ -21,57 +21,63 @@
                         <h1>Case Studies</h1>
                         <h2 class="subtitle2">Featured Case Studies</h2>
                         <div class="archive__case-studies__header__slider">
-                            <div>
-                                <h3>L’actif Case Study</h3>
-                                <p>L’ACTIF is an athleisure wear brand conceptualised by a team of creatives who are passionate about fashion, science, and movement. L’ACTIF creates high tech, high performing apparel that empowers the wearer to live their most active life.</p>
-                                <a><button class="button btn-secondary">View Full Case Study</button></a>
+                            <?php 
+                            $current_id = get_the_ID(); // Get current case study ID to exclude it from the query
 
-                            </div>
+                            $args = array(
+                                'post_type' => 'case-studies', // Your custom post type
+                                'posts_per_page' => 3, // Number of posts to show
+                                'post__not_in' => array($current_id), // Exclude current post
+                                'orderby' => 'rand', // Order by random
+                            );
 
-                            <div>
-                                <h3>L’actif Case Study</h3>
-                                <p>L’ACTIF is an athleisure wear brand conceptualised by a team of creatives who are passionate about fashion, science, and movement. L’ACTIF creates high tech, high performing apparel that empowers the wearer to live their most active life.</p>
-                                <a><button class="button btn-secondary">View Full Case Study</button></a>
-
-                            </div>
-
-                            <div>
-                                <h3>L’actif Case Study</h3>
-                                <p>L’ACTIF is an athleisure wear brand conceptualised by a team of creatives who are passionate about fashion, science, and movement. L’ACTIF creates high tech, high performing apparel that empowers the wearer to live their most active life.</p>
-                                <a><button class="button btn-secondary">View Full Case Study</button></a>
-                            </div>
+                            $related_case_studies = new WP_Query($args);
+                                if($related_case_studies->have_posts()) : 
+                                    while($related_case_studies->have_posts()) : $related_case_studies->the_post(); ?>
+                                            <div>
+                                                <h3><?php the_title(); ?></h3>
+                                                <p><?php the_excerpt(); ?></p>
+                                                <a href="<?php the_permalink(); ?>"><button class="button btn-secondary">View Full Case Study</button></a>
+                                            </div>
+                                    <?php endwhile; ?>
+                                <?php else: ?>
+                            <p>No related case studies found.</p>
+                            <?php endif; wp_reset_postdata(); ?>
                         </div>
                     </div>
                 </div>
                   
-                <!-- casestudies -->
-                <div class="container fdr jcsb">
-                    <h2 class="subtitle1">All Case Studies</h2> 
- 
-                    <!-- dropdown filter -->
-                    <div class="dropdown">
-                        <div id="category-dropdown" name="study_category" class="dropdown__filter">
-                            Select a Category
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none">
-                                <path d="M1 1.5L8 8.5L15 1.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="dropdown__options">
-                            <div class="dropdown__options__items">
-                                <div value="all">All Categories</div>
-                                <?php 
-                                $terms = get_terms('study_category', array('hide_empty' => true));
-                                foreach ($terms as $term) {
-                                    echo '<div value="' . $term->slug . '">' . $term->name . '</div>';
-                                }
-                                ?>
+                <!-- filter -->
+                <div class="archive__case-studies__filter">
+                    <div class="container fdr jcsb">
+                        <h2 class="subtitle1">All Case Studies</h2> 
+    
+                        <!-- dropdown filter -->
+                        <div class="dropdown dark">
+                            <div id="category-dropdown" name="study_category" class="dropdown__filter">
+                                Select a Category
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none">
+                                    <path d="M1 1.5L8 8.5L15 1.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
                             </div>
-                        </div>
+                            <div class="dropdown__options">
+                                <div class="dropdown__options__items">
+                                    <div value="all">All Categories</div>
+                                    <?php 
+                                    $terms = get_terms('study_category', array('hide_empty' => true));
+                                    foreach ($terms as $term) {
+                                        echo '<div value="' . $term->slug . '">' . $term->name . '</div>';
+                                    }
+                                    ?>
+                                </div>
+                            </div>
 
+                        </div>
                     </div>
                 </div>
+           
  
-
+                <!-- casestudies -->
                 <div class="articles-wrapper">
                     <div id="articles-container">
                         <!-- posts -->
@@ -79,11 +85,15 @@
 						<?php $post_categories = get_the_category(); ?>
 							<article class="article <?php foreach ($post_categories as $cat) { echo esc_attr($cat->slug) . ' '; } ?>" id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article">
                                 <a href="<?php the_permalink(); ?>">
-									<div>
+									<div >
 										<?php if (has_post_thumbnail()) : ?>
-										    <a href="<?php the_permalink(); ?>">
+										    <div class="article__img">
 											    <?php the_post_thumbnail(); ?>
-										    </a>
+                                                <div class="article__img__hover">
+                                                    <h3 class="subtitle1"><?php the_title(); ?></h3>
+                                                    <button class="btn-secondary">View Project</button>
+                                                </div>
+                                            </div>
 										<?php endif; ?>
 										<h3 class="subtitle2"><?php the_title(); ?></h3>
 									</div>

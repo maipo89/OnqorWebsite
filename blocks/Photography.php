@@ -12,7 +12,7 @@
             <!-- title -->
             <?php if( $basic['title'] ) { ?>
                 <div class="title">
-                    <p class="body1"><?php echo $basic['number'] ?></p>
+                    <!-- <p class="body1"><?php echo $basic['number'] ?></p> -->
                     <h2 class="h3"><?php echo $basic['title'] ?></h2>
                 </div>
             <?php  } ?>

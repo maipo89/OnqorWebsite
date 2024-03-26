@@ -18,7 +18,7 @@
 
                 <div class="archive__blogs__hero">
 					<div class="container">
-						<div class="archive__blogs__hero__slider">
+						<div class="archive__blogs__hero__slider universal__slider">
 							<?php 
 							$current_id = get_the_ID(); // Get current post ID to exclude it from the query
 
@@ -54,7 +54,7 @@
                 </div>
 
 			 <!-- blog filter -->
-			 	<div class="container center">
+			 	<div class="container center overflow-visible">
                     <!-- dropdown filter -->
                     <div class="dropdown">
                         <div id="category-dropdown" name="study_category" class="dropdown__filter">
@@ -101,3 +101,4 @@
 				<?php include('blocks/RelatedBlogs.php'); ?>
 			</div>
 <?php get_footer(); ?>
+ 

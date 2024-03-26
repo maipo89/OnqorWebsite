@@ -34,7 +34,7 @@
         </div>
 
         <!-- slider -->
-        <div class="related-projects__slider">
+        <div class="related-projects__slider universal__slider">
             <?php 
             $args['posts_per_page'] = 5; // Adjust number of posts for the slider
 

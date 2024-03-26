@@ -7,7 +7,7 @@
             <div class="images-offset">
                 <div class="container ">
                     <div class="title">
-                        <p class="body1"><?php echo $basic['number'] ?></p>
+                        <!-- <p class="body1"><?php echo $basic['number'] ?></p> -->
                         <h2 class="h3"><?php echo $basic['title'] ?></h2>
                     </div>
                     <div class="images-offset__text-mobile">

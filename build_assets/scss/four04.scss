@@ -2,9 +2,9 @@
     background-color: $offwhite;
     padding: 66px 0 184px 0;
     overflow: hidden;
-    min-height: 810px;
+    min-height: 70vh;
     @media (max-width: $desktop) {
-        min-height:  738px;
+        min-height: 70vh;
     }
     @media (max-width: $tabletLarge) {
         padding: 57px 0 76px 0;
@@ -61,7 +61,8 @@
         display: grid;
         grid-template-columns: repeat(4, auto);
         grid-gap: 35px;
-        width: fit-content;
+        width: -webkit-fit-content;
+  width: fit-content;
         @media (max-width: $tabletSmall) {
             grid-template-columns: repeat(1, auto);
         }

@@ -48,9 +48,9 @@ if( have_rows('hero_case_studies') ): ?>
                     <div class="hero-case-studies__subtext 
                     <?php if ($selected_value == 'image_stats'): ?> svg-shift <?php endif; ?> 
                     ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="413" height="138" viewBox="0 0 413 138" fill="none">
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="413" height="138" viewBox="0 0 413 138" fill="none">
                                 <path d="M3 0L2.99999 135L413 135" stroke="black" stroke-width="5" stroke-dasharray="50 50"/>
-                        </svg>
+                        </svg> -->
                         <div>
                             <h4 class="subtitle1"><?php echo $basic['subtitle'] ?>The Challenge</h4>
                             <?php echo $basic['subtext'] ?>

@@ -202,28 +202,27 @@
                         justify-content: center;
                     }
                 }
-                .slick-dots {
-                    bottom: 0;
+                .slick-dots-container {
+                    bottom: 3px;
                     left: 580px;
                     right: unset;
                     @media(max-width: $desktop) { 
                         left: 361px;
                         height: 0;
-                        bottom: 40px;
+                        bottom: 43px;
                     }
                     @media(max-width: $tabletLarge) { 
                         left: 326px;
-                        height: 0;
-                        bottom: 40px;
                     }
                     @media(max-width: $tabletSmall) { 
                         left: 0;
                         right: 0;
-                        height: 0;
-                        bottom: 40px;
                     }
-                    button {
-                        margin: 0;
+                    .slick-dots {
+                        position: relative;
+                        button {
+                            margin: 0;
+                        }
                     }
                 }
             }
@@ -296,21 +295,21 @@
                 button {
                     margin: 0 0 0 0;
                 }
-                .slick-dots {
-                    left: unset;
-                    top: 59px;
-                    @media(max-width: $desktop) { 
-                        top: unset;
-                        bottom: 0;
-                        left: 0;
-                    }
-                }
                 .slick-list {
                     padding: 0 !important;
                     .slick-track {
                         display: flex;
                         align-items: flex-start;
                         justify-content: center;
+                    }
+                }
+                .slick-dots-container {
+                    left: unset;
+                    top: 59px;
+                        @media(max-width: $desktop) { 
+                            top: unset;
+                            bottom: 3px;
+                            left: 0;
                     }
                 }
             }

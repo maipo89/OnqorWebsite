@@ -23,6 +23,7 @@
                 button {
                     background-color: white;
                     color: $darksmoke;
+                    border-color: $darksmoke;
                 }
             }
             h3, a {
@@ -59,8 +60,8 @@
         @media (max-width: $desktop) {
             display: block;
         }
-        .slick-dots {
-            bottom: 0;
+        .slick-dots-container {  
+            bottom: 3px;
         }
         .slick-slide {
             img {

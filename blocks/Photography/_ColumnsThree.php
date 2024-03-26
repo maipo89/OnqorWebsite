@@ -12,7 +12,7 @@
                 ?>
             </div>
 
-            <div class="photography__slider">
+            <div class="photography__slider universal__slider">
                 <?php
                     $media = get_sub_field('images'); 
                     foreach($media as $image) {

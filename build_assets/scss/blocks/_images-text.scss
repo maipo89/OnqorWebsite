@@ -354,8 +354,8 @@
             @media (max-width: $tabletSmall) {
                 display: block;
             }
-            .slick-dots {
-                bottom: 0;
+            .slick-dots-container { 
+                bottom: 3px;
             }
             img {
                 object-fit: cover;
@@ -854,8 +854,8 @@
                 @media (max-width: $tabletSmall) {
                     padding-bottom: 112px;
                 }
-                .slick-dots {
-                    bottom: 0;
+                .slick-dots-container {  
+                    bottom: 3px;
                 }
                 img {
                     object-fit: cover;
@@ -1036,8 +1036,8 @@
                 width: 100%; 
                 margin: 0 0 0 0;
                 padding-bottom: 42px;
-                .slick-dots {
-                    bottom: 0;
+                .slick-dots-container {  
+                    bottom: 3px;
                 }
                 img {
                     object-fit: cover;

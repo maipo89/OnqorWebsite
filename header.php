@@ -61,7 +61,7 @@
 									'fallback_cb' => ''                             // fallback function (if there is one)
 							)); ?>
 						</nav>
-						<a><button class="btn-secondary">Get in Touch</button></a>
+						<a><button class="btn-primary">Get in Touch</button></a>
 					</div>
 
 					<!-- hamburger -->

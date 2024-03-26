@@ -7,7 +7,7 @@
     <div class="slider-clients ">
         <div class="container center">
         <?php echo $basic['text'] ?>
-            <div class="slider-clients__slider" dir="rtl">
+            <div class="slider-clients universal__slider" dir="rtl">
                 <?php
                     $logos = get_sub_field('clients');
                     foreach($logos as $image) {

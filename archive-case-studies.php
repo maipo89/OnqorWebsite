@@ -20,7 +20,7 @@
                     <div class="container fdc">
                         <h1>Case Studies</h1>
                         <h2 class="subtitle2">Featured Case Studies</h2>
-                        <div class="archive__case-studies__header__slider">
+                        <div class="archive__case-studies__header__slider universal__slider">
                             <?php 
                             $current_id = get_the_ID(); // Get current case study ID to exclude it from the query
 
@@ -49,7 +49,7 @@
                   
                 <!-- filter -->
                 <div class="archive__case-studies__filter">
-                    <div class="container fdr jcsb">
+                    <div class="container fdr jcsb overflow-visible">
                         <h2 class="subtitle1">All Case Studies</h2> 
     
                         <!-- dropdown filter -->

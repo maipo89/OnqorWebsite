@@ -16,6 +16,7 @@
 				<a><button class="btn-primary">Get in Touch</button></a>
 			</div>
 		</div>
-		<div class="spotlight" id="spotlight"></div>
+
+		
 	</div>
 <?php get_footer(); ?>

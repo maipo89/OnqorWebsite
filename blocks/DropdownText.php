@@ -4,7 +4,7 @@
 ?>
 
     <div class="dropdown-text">  
-        <div class="container center">  
+        <div class="container center overflow-visible">  
                 <!-- dropdown -->
                         <div class="dropdown">
                             <div id="category-dropdown" name="text-category" class="dropdown__filter">

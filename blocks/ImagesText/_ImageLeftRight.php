@@ -16,7 +16,7 @@
                         <div class="image-left-right__content__text">
                             <div class="title">
                                 <?php if( $basic['number'] ) { ?> 
-                                    <p class="body1"><?php echo $basic['number'] ?></p>
+                                    <!-- <p class="body1"><?php echo $basic['number'] ?></p> -->
                                 <?php  } ?>
                                 <h2 class="h3"><?php echo $basic['title'] ?></h2>
                             </div>

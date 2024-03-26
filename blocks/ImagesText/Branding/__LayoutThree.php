@@ -15,7 +15,7 @@
             <div class="layout-three">
                 <div class="container ">
                     <div class="title">
-                        <p><?php echo $basic['number'] ?></p>
+                        <!-- <p><?php echo $basic['number'] ?></p> -->
                         <h2 class="h3"><?php echo $basic['title'] ?></h2>
                     </div>
                     <div class="layout-three__text">
@@ -60,7 +60,7 @@
                     <!-- mobile -->
                     <!-- slider -->
                         <div class="layout-three__mobile">
-                            <div class="layout-three__mobile__slider">
+                            <div class="layout-three__mobile__slider universal__slider">
                                 <img src="<?php echo $imgVisualOne ?>"/>
                                 <img src="<?php echo $imgVisualTwo ?>"/>
                                 <img src="<?php echo $imgVisualThree ?>"/>

@@ -36,7 +36,7 @@
 
 
         <!-- slider -->
-        <div class="related-projects__slider">
+        <div class="related-projects__slider universal__slider">
             <?php 
             $current_id = get_the_ID(); // Get current case study ID to exclude it from the query
 

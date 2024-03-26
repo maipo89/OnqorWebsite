@@ -7,7 +7,7 @@
             <div class="image-steps">
                 <div class="container ">
                     <div class="title">
-                        <p class="body1"><?php echo $basic['number'] ?></p>
+                        <!-- <p class="body1"><?php echo $basic['number'] ?></p> -->
                         <h2 class="h3"><?php echo $basic['title'] ?></h2>
                     </div>
                     <div class="image-steps__steps">
@@ -24,9 +24,9 @@
                             <?php endif; ?> 
                     </div>
 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="421" height="324" viewBox="0 0 421 324" fill="none">
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="421" height="324" viewBox="0 0 421 324" fill="none">
                     <path d="M421 3L3.00003 2.99996L3 324" stroke="black" stroke-width="5" stroke-dasharray="50 50"/>
-                    </svg>
+                    </svg> -->
                 </div>  
             </div>  
     <?php endwhile; ?> 

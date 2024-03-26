@@ -8,11 +8,11 @@
             <div class="layout-two">
                 <div class="container ">
                     <div class="title">
-                        <p><?php echo $basic['number'] ?></p>
+                        <!-- <p><?php echo $basic['number'] ?></p> -->
                         <h2 class="h3"><?php echo $basic['title'] ?></h2>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1032" height="72" viewBox="0 0 1032 72" fill="none">
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="1032" height="72" viewBox="0 0 1032 72" fill="none">
                             <path d="M1029 72L1029 3.00002L-3.92315e-05 3" stroke="black" stroke-width="5" stroke-dasharray="50 50"/>
-                        </svg>
+                        </svg> -->
                     </div>
 
                     <div class="layout-two__text">
@@ -51,7 +51,7 @@
                     <!-- mobile -->
                     <!-- slider -->
                     <div class="layout-two__mobile">
-                            <div class="layout-two__mobile__slider">
+                            <div class="layout-two__mobile__slider universal__slider">
                                 <?php
                                     $media = get_sub_field('images'); 
                                     foreach($media as $image) {

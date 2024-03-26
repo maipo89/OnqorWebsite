@@ -21,7 +21,7 @@
             </div>
 
             <!-- slider -->
-            <div class="hero-case-studies__slider">
+            <div class="hero-case-studies__slider universal__slider">
                 <?php
                     $images = get_sub_field('images');
                     $image_counter = 1; // Initialize counter

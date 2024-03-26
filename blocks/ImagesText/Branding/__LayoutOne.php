@@ -7,7 +7,7 @@
             <div class="layout-one">
                 <div class="container ">
                     <div class="title">
-                        <p><?php echo $basic['number'] ?></p>
+                        <!-- <p><?php echo $basic['number'] ?></p> -->
                         <h2 class="h3"><?php echo $basic['title'] ?></h2>
                     </div>
 

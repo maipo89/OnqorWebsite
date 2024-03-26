@@ -12,7 +12,7 @@
                     <img src="<?php echo $imgVisual ?>"/>
                     <div class="image-overlap__text">
                         <div class="title">
-                            <p><?php echo $basic['number'] ?></p>
+                            <!-- <p><?php echo $basic['number'] ?></p> -->
                             <h2 class="h3"><?php echo $basic['title'] ?></h2>
                         </div>
                         <div class="wizywig">

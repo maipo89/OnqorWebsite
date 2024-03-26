@@ -26,9 +26,8 @@
         @media (max-width: $desktop) {
             display: block;
         }
-     
-        .slick-dots {
-            bottom: 0;
+        .slick-dots-container {  
+            bottom: 3px;
         }
         img {
             object-fit: cover;

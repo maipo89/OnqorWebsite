@@ -22,7 +22,7 @@
             </div>
 
             <!-- mobile slider -->
-            <div class="hero-case-studies__slider">
+            <div class="hero-case-studies__slider universal__slider">
                 <img src="<?php echo $imgVisual ?>"/>
                 <!-- video -->
                 <video controls class="video">

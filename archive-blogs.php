@@ -53,7 +53,7 @@
 					</div>  
                 </div>
 
-			 <!-- blog filter -->
+			 	<!-- blog filter -->
 			 	<div class="container center overflow-visible">
                     <!-- dropdown filter -->
                     <div class="dropdown">
@@ -85,9 +85,15 @@
 							<?php $post_categories = get_the_category(); ?>
 								<article class="article <?php foreach ($post_categories as $cat) { echo esc_attr($cat->slug) . ' '; } ?>" id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article">
 									<a href="<?php the_permalink(); ?>">
-										<div>
+										<div >
 											<?php if (has_post_thumbnail()) : ?>
-												<?php the_post_thumbnail(); ?>
+												<div class="article__img">
+													<?php the_post_thumbnail(); ?>
+													<div class="article__img__hover">
+														<h3 class="subtitle1"><?php the_title(); ?></h3>
+														<button class="btn-secondary">View Blog</button>
+													</div>
+												</div>
 											<?php endif; ?>
 											<h3 class="subtitle2"><?php the_title(); ?></h3>
 										</div>

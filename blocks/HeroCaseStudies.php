@@ -6,9 +6,13 @@ if( have_rows('hero_case_studies') ): ?>
     ?>
         <!-- hero section -->
 	   <!-- background -->
-       <?php if ( has_post_thumbnail() ) : ?>
-        <div style="background-image: url('<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(), 'full' ) ); ?>')" class="hero-case-studies">
-        <?php endif; ?>
+       <?php if (class_exists('MultiPostThumbnails')) : 
+        $image_id = MultiPostThumbnails::get_post_thumbnail_id('case-studies', 'cover-image', get_the_ID());
+        $image_url = wp_get_attachment_image_url($image_id, 'xlarge'); // You can specify a size instead of 'full'
+        if ($image_url) : ?>
+                <div style="background-image: url('<?php echo esc_url($image_url); ?>')" class="hero-case-studies">
+            <?php endif; 
+        endif; ?>
             <div class="container aic fdc title">
             <!-- title -->
                 <h1><?php the_title(); ?> <span>Case Study</span></h1>
@@ -57,7 +61,7 @@ if( have_rows('hero_case_studies') ): ?>
                             <p>
                             As a relatively new brand, L’ACTIF’s main challenge was brand awareness. The client needed to build a presence on social media, firmly establishing the brand in the athleisure space. After launching in Saudi Arabia, the client was looking to expand L’ACTIF’s audience, penetrating the UK market and engaging with UK consumers.
                             </p>
-                            <a><button class="btn-primary"><?php echo $basic['cta'] ?>Get in touch</button></a>
+                            <a class="anim-pulse"><button class="btn-primary"><?php echo $basic['cta'] ?>Get in touch</button></a>
                         </div>
                     </div>
                 </div>

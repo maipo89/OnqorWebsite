@@ -13,12 +13,15 @@
             max-height: 30px;
             object-fit: contain;
             width: -webkit-fit-content;
-  width: fit-content;
+            width: fit-content;
         }
         .menu {
             display: flex;
             align-items: center;
             grid-gap: 85px;
+            a {
+                 text-decoration: none;
+            }
             @media (max-width: $desktop) {
                 position: absolute;
                 background-color: black;

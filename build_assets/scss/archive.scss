@@ -233,6 +233,34 @@
         &__header {
             background-color: black;
             color: white;
+            margin: 0 0 -356px 0;
+            padding: 0 0 356px 0;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            transition: background-image 0.3s ease-in-out;
+            position: relative;
+            @media(max-width: $desktop) { 
+                margin: 0 0 0px 0;
+                padding: 0 0 0px 0;
+            }
+            @media(max-width: $tabletLarge) { 
+                margin: 0 0 -0px 0;
+                padding: 0 0 0px 0;
+            }
+            @media(max-width: $tabletSmall) { 
+                margin: 0 0 -0px 0;
+                padding: 0 0 0px 0;
+            }
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.8); /* Adjust the opacity as needed */
+                pointer-events: none; /* Allows clicking through the overlay to the content underneath */
+            }
             .container {
                 @media(max-width: $desktop) { 
                     justify-content: center;
@@ -261,10 +289,13 @@
             // featured slider
             &__slider {
                 position: relative;
-                overflow: hidden;
+                // overflow: hidden;
                 width: 100%;
                 margin: 0px 0 64px 0;
                 max-width: 882px;
+                img {
+                    display: none;
+                }
                 @media(max-width: $desktop) { 
                     max-width: 691px;
                     text-align: center;
@@ -306,30 +337,43 @@
                 .slick-dots-container {
                     left: unset;
                     top: 59px;
-                        @media(max-width: $desktop) { 
-                            top: unset;
-                            bottom: 3px;
-                            left: 0;
+                    z-index: 2000;
+                    @media(max-width: $desktop) { 
+                        top: unset;
+                        bottom: 3px;
+                        left: 0;
                     }
                 }
             }
         }
         &__filter {
-            background-color: black;
             color: white;
-            margin: 0 0 -314px 0;
-            padding: 0 0 314px 0;
             @media(max-width: $desktop) { 
-                margin: 0 0 -232px 0;
-                padding: 0 0 232px 0;
-            }
-            @media(max-width: $tabletLarge) { 
-                margin: 0 0 -169px 0;
-                padding: 0 0 169px 0;
-            }
-            @media(max-width: $tabletSmall) { 
-                margin: 0 0 -232px 0;
-                padding: 0 0 232px 0;
+                padding: 32px 0 0 0;
+                .dropdown__filter {
+                    background-color: white !important;
+                    border: 1px solid $darksmoke !important;
+                    color: black !important;
+                    svg {
+                        path {
+                            stroke: black !important;
+                        }
+                    }
+                }
+                .dropdown__options {
+                    &__items {
+                        background-color: white !important;
+                        border-color: black !important;
+                        color: black !important;
+                        div {
+                            border-color: black !important;
+                        }
+                    }
+                }
+                h2 {
+                    margin: 0 0 16px 0;
+                    color: black;
+                }
             }
         }
     }

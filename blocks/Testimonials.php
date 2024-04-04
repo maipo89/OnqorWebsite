@@ -1,14 +1,50 @@
+<?php $basic= get_sub_field('testimonials'); 
+   if( have_rows('testimonials') ): ?>
+      <?php while( have_rows('testimonials') ): the_row(); 
+?>
 <div class="testimonials">
     <div class="container">
         <h2>What do our clients think?</h2>
-        <div>
-            <img />
-            <div>
-                <h3>London Filmed</h3>
-                <p>“We commissioned ONQOR to build and design our website. Joe and his team went above and beyond throughout the whole process, meeting regularly to creatively collaborate in order to realise our shared vision. It’s been an incredibly positive experience, learning a lot about website design and SEO along the way. We have already recommended ONQOR to people in our network and would recommend their services to any company looking to build a new website with a high emphasis on SEO.”</p>
-                <p>-Nick Forster, Co-Founder</p>
-                <a><button class="btn-primary">View Case Study</button></a>
-            </div>
+        <div class="testimonials__buttons">
+            <?php $tab_count = 0; // Initialize tab counter ?>
+            <?php if( have_rows('client') ): ?>
+                <?php while( have_rows('client') ): the_row(); 
+                     $img = get_sub_field('logo');
+                     $imgVisual = $img['sizes']['small'];
+                ?>
+                    <div  data-tab="tab-<?php echo $tab_count; ?>">
+                        <img src="<?php echo $imgVisual ?>"/>
+                    </div>
+                    <?php $tab_count++; ?>
+                <?php endwhile; ?> 
+            <?php endif; ?> 
+        </div>
+
+        <div class="testimonials__tabs">
+            <?php $tab_count = 0; // Reset tab counter for content matching ?>
+            <?php if( have_rows('client') ): ?>
+                <?php while( have_rows('client') ): the_row(); 
+                     $img = get_sub_field('image');
+                     $imgVisual = $img['sizes']['medium'];
+                     $link = get_sub_field('button_link'); // This returns an array
+                ?>
+                    <div class="testimonials__tabs__item" id="tab-<?php echo $tab_count; ?>">
+                        <img src="<?php echo $imgVisual ?>"/>
+                        <div class="testimonials__tabs__item__text">
+                            <h3><?php echo the_sub_field('title'); ?></h3>
+                            <div class="wizywig">
+                                <?php echo the_sub_field('text'); ?>
+                            </div>
+                            <p class="subtitle3"><?php echo the_sub_field('author'); ?></p>
+                            <a href="<?php echo esc_url($link['url']); ?>"><button class="btn-primary"><?php echo the_sub_field('button_text'); ?></button></a>
+                        </div>
+                        <?php $tab_count++; ?>
+                    </div>
+                <?php endwhile; ?> 
+            <?php endif; ?> 
+     
         </div>
     </div>
 </div>
+<?php endwhile; ?> 
+<?php endif; ?> 

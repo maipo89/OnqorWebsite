@@ -1,0 +1,68 @@
+.testimonials {
+    @include padding;
+    h2 {
+        margin: 0 0 38px 0;
+        @media (max-width: $desktop) {
+            margin: 0 0 32px 0;
+        }
+    }
+    &__buttons {
+        display: flex;
+        grid-gap: 64px;
+        flex-wrap: wrap;
+        align-self: flex-end;
+        margin: 0 0 54px 0;
+        @media (max-width: $desktop) {
+            align-self: flex-start;
+        }
+        div {
+            padding: 0 0 16px 0;
+            &:hover {
+                cursor: pointer;
+            }
+            &.active {
+                border-bottom: 6px solid $operations;
+            }
+            img {
+                // background-color: lavender;
+                max-width: 175px;
+                height: 39px;
+                object-fit: contain;
+                @media (max-width: $desktop) {
+                    height: 30px;
+                    max-width: 130px;
+                }
+            }
+        }
+    }
+    &__tabs {
+        &__item {
+            display: flex;
+            flex-direction: row;
+            grid-gap: 42px;
+            &__text {
+                width: 100%;
+                h3 {
+                    margin: 0 0 32px;
+                }
+                .subtitle3  {
+                    margin: 24px 0 72px 0;
+                }
+            }
+            img {
+                max-width: 476px;
+                height: 434px;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 8px;
+                background-color: lavender;
+                @media (max-width: $desktop) {
+                    max-width: 357px;
+                }
+                @media (max-width: $tabletLarge) {
+                    display: none;
+                }
+            }
+        }
+    }
+}

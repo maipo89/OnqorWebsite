@@ -55,6 +55,11 @@ if (have_rows('sections')) :
         <?php endif;
 
         // Case: Paragraph layout.
+           if (get_row_layout() == 'testimonials') : ?>
+            <?php include 'blocks/Testimonials.php'; ?>
+        <?php endif;
+
+        // Case: Paragraph layout.
         if (get_row_layout() == 'text_triple_image') : ?>
             <?php include 'blocks/TextTripleImage.php'; ?>
         <?php endif;

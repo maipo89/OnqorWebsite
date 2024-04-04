@@ -41,16 +41,7 @@ $(document).ready(function() {
             },
         ]
     });
-    // featured casestudy slider
-    $('.archive__case-studies__header__slider').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        centerMode: true,
-        dots: true,
-        infinite: true,
-        cssEase: 'linear',
-    }); 
+
 
     // featured blogs slider
     $('.archive__blogs__hero__slider').slick({
@@ -130,3 +121,34 @@ $(document).ready(function() {
     });
 });
 
+$(document).ready(function() {
+    // Initialize the slider
+    $('.archive__case-studies__header__slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        autoplaySpeed: 4000,
+        centerMode: true,
+        autoplay: true,
+        loop: true,
+        dots: true,
+        fade: true,
+        infinite: true,
+        cssEase: 'linear'
+    });
+
+    // Update background image on page load
+    updateHeaderBackground();
+
+    // Update background image on slide change
+    $('.archive__case-studies__header__slider').on('afterChange', function(event, slick, currentSlide){
+        updateHeaderBackground();
+    });
+});
+
+function updateHeaderBackground() {
+    // Get the cover image URL of the currently active slide
+    var coverImageUrl = $('.slick-current .case-study-thumbnail').data('cover-image');
+    // Set the background image of archive__case-studies__header
+    $('.archive__case-studies__header').css('background-image', 'url(' + coverImageUrl + ')');
+}

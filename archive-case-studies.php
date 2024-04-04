@@ -16,7 +16,8 @@
 
 			<div class="archive archive__case-studies ">
                 <!-- header -->
-                <div class="archive__case-studies__header">
+                <div class="archive__case-studies__header" >
+                    <div class="overlay"></div> 
                     <div class="container fdc">
                         <h1>Case Studies</h1>
                         <h2 class="subtitle2">Featured Case Studies</h2>
@@ -32,16 +33,22 @@
                             );
 
                             $related_case_studies = new WP_Query($args);
-                                if($related_case_studies->have_posts()) : 
-                                    while($related_case_studies->have_posts()) : $related_case_studies->the_post(); ?>
-                                            <div>
-                                                <h3><?php the_title(); ?></h3>
-                                                <p><?php the_excerpt(); ?></p>
-                                                <a href="<?php the_permalink(); ?>"><button class="button btn-secondary">View Full Case Study</button></a>
-                                            </div>
-                                    <?php endwhile; ?>
-                                <?php else: ?>
-                            <p>No related case studies found.</p>
+                            if($related_case_studies->have_posts()) : 
+                                while($related_case_studies->have_posts()) : $related_case_studies->the_post(); ?>
+                                    <div>
+                                        <h3><?php the_title(); ?></h3>
+                                        <?php 
+                                        $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+                                        $cover_image_url = MultiPostThumbnails::get_post_thumbnail_url(get_post_type(), 'cover-image');
+                                        ?>
+                                        <!-- Set the cover image URL as a data attribute -->
+                                        <img class="case-study-thumbnail" src="<?php echo $thumbnail_url; ?>" data-cover-image="<?php echo $cover_image_url; ?>" alt="<?php the_title(); ?>">
+                                        <p><?php the_excerpt(); ?></p>
+                                        <a  href="<?php the_permalink(); ?>"><button class="button btn-secondary">View Full Case Study</button></a>
+                                    </div>
+                                <?php endwhile; ?>
+                            <?php else: ?>
+                                <p>No related case studies found.</p>
                             <?php endif; wp_reset_postdata(); ?>
                         </div>
                     </div>

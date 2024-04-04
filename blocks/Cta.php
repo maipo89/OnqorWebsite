@@ -6,7 +6,7 @@
 
     <div class="cta">  
         <div class="container">
-            <a href="<?php echo $basic['btn_link'] ?>"><button class="btn-primary"><?php echo $basic['btn_text'] ?></button></a>
+            <a class="anim-pulse" href="<?php echo $basic['btn_link'] ?>"><button class="btn-primary"><?php echo $basic['btn_text'] ?></button></a>
         </div>
    </div>
 

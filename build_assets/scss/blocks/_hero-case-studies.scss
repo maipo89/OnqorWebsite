@@ -75,7 +75,7 @@
     &__divider {
         z-index: 1;
         position: relative;
-        overflow: hidden;
+        // overflow: hidden;
         @media (max-width: $desktop) {
             height: 100%;
             padding: 72px 0 32px 0;

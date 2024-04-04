@@ -262,17 +262,17 @@ function filter_case_studies() {
           <article class="article" id="post-<?php the_ID(); ?>">
               <a href="<?php the_permalink(); ?>">
               <div >
-					<?php if (has_post_thumbnail()) : ?>
-						<div class="article__img">
-						<?php the_post_thumbnail(); ?>
+					        <?php if (has_post_thumbnail()) : ?>
+						          <div class="article__img">
+						            <?php the_post_thumbnail(); ?>
                             <div class="article__img__hover">
                                 <h3 class="subtitle1"><?php the_title(); ?></h3>
                                  <button class="btn-secondary">View Project</button>
                             </div>
                         </div>
-						<?php endif; ?>
-						<h3 class="subtitle2"><?php the_title(); ?></h3>
-				    </div>
+						        <?php endif; ?>
+						      <h3 class="subtitle2"><?php the_title(); ?></h3>
+				        </div>
               </a>
           </article>
           <?php
@@ -312,10 +312,16 @@ function filter_blogs() {
       while($query->have_posts()): $query->the_post();
           ?>
  	          <article class="article id="post-<?php the_ID(); ?>">
-									<a href="<?php the_permalink(); ?>">
-										<div>
+                <a href="<?php the_permalink(); ?>">
+										<div >
 											<?php if (has_post_thumbnail()) : ?>
+												<div class="article__img">
 													<?php the_post_thumbnail(); ?>
+													<div class="article__img__hover">
+														<h3 class="subtitle1"><?php the_title(); ?></h3>
+														<button class="btn-secondary">View Blog</button>
+													</div>
+												</div>
 											<?php endif; ?>
 											<h3 class="subtitle2"><?php the_title(); ?></h3>
 										</div>

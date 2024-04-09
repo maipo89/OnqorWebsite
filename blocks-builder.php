@@ -99,6 +99,11 @@ if (have_rows('sections')) :
             <?php include 'blocks/DropdownText.php'; ?>
         <?php endif;
 
+        // Case: Paragraph layout.
+         if (get_row_layout() == 'services') : ?>
+            <?php include 'blocks/Services.php'; ?>
+        <?php endif;
+
 	// End loop.
 	endwhile; 
 endif;

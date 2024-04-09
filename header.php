@@ -31,6 +31,8 @@
 		<?php // drop Google Analytics Here ?>
 		<?php // end analytics ?>
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	    <script src="//cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    	<script src="//cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script> 
 		<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	</head>
 

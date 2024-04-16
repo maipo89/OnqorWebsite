@@ -19,7 +19,7 @@
                          style="background-image: url('<?php echo $cover_image_url; ?>');"
                     >
                         <!-- links -->
-                        <div class="case-studies__item__links">
+                        <div class="case-studies__item__links anim-fadein">
                             <?php if( have_rows('links') ): ?>
                                 <?php while( have_rows('links') ): the_row(); ?>
                                     <a><button class="btn-secondary"><?php echo the_sub_field('btn_text') ?></button></a>
@@ -28,7 +28,7 @@
                         </div>
 
                         <!-- case study relation title here -->
-                        <div class="case-studies__item__text">
+                        <div class="case-studies__item__text anim-fadein">
                             <h2><?php echo $title; ?></h2>
                             <p><?php echo $excerpt; ?></p>
                             <a href="<?php echo $case_study_link; ?>"><button class="btn-secondary">View Case Study</button></a>
@@ -41,7 +41,7 @@
                                         $end_value = get_sub_field('stat');
                                         $counter_index = 0;
                                 ?>
-                                    <div class="anim-fade">
+                                    <div class="anim-horizontal">
                                         <h3 class="anim-counter" data-end="<?php echo $end_value; ?>" >0%</h3>
                                         <p class="body1"><?php the_sub_field('title') ?></p>
                                     </div>

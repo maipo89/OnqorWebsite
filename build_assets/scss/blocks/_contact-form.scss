@@ -1,0 +1,18 @@
+.contact-form {
+    @include padding;
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        grid-gap: 60px;
+        h2 {
+        }
+        .pipedriveWebForms {
+            background-color: black;
+            border: 1px solid white;
+            border-radius: 8px;
+            max-width: 500px;
+            padding: 32px
+        }
+    }
+}

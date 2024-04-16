@@ -6,6 +6,7 @@
 							$img = get_sub_field('logo');
 							$imgVisual = $img['sizes']['small'];	
 					?>
+					<?php include('blocks/ContactFormFooter.php'); ?>
 					<div class="container">
 						<!-- footer columns -->
 						<div class="footer__columns">

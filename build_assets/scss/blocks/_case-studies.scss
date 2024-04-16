@@ -16,7 +16,6 @@
         align-items: center; 
         justify-content: center; 
         position: relative;
-        // opacity: 0;
         // &:nth-child(odd) {
         //     transform: translateX(300px);
         // }
@@ -56,6 +55,7 @@
             display: flex;
             grid-gap: 8px;
             z-index: 2;
+            opacity: 0;
             button {
                 background-color: transparent;
                 &:hover {
@@ -100,6 +100,7 @@
         &__text {
             padding: 0 296px 0 0;
             z-index: 2;
+            opacity: 0;
             button {
                 margin: 24px auto 0 auto;
                 display: block;

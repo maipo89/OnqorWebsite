@@ -27,7 +27,7 @@
                     </video>
                 <?php } ?>
 
-                <div class="videography__video__play">
+                <div class="videoplayer">
                     <?php include('Videography/PlayButton.php'); ?>
                     <?php include('Videography/PauseButton.php'); ?>
                 </div>

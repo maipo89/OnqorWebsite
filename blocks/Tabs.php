@@ -21,12 +21,18 @@ if( have_rows('tabs') ): ?>
             </div>
 
             <?php $tab_count = 0; // Reset tab counter for content matching ?>
-
+            
             <!-- tabs content -->
             <div class="tabs__content">
                 <?php if( have_rows('tab') ): ?>
-                    <?php while( have_rows('tab') ): the_row(); ?>
+                    <?php while( have_rows('tab') ): the_row(); 
+                             $img = get_sub_field('image');
+                             $imgVisual = $img['sizes']['large'];
+                    ?>
                         <div id="tab-<?php echo $tab_count; ?>" class="tabs__content__item tab-content">
+                            <?php if($imgVisual) :?>
+                                <img src="<?php echo $imgVisual?> "/>
+                            <?php endif; ?> 
                             <h3 class="h3"><?php echo the_sub_field('tab_title'); ?></h3>
                             <?php echo the_sub_field('tab_text'); ?>
                         </div>

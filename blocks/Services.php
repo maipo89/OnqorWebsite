@@ -7,58 +7,25 @@
         ?>
             <div class="services">
                 <div class="container center">
-                    
-                    <div class="services__item">
-                        <h2>Design<span>.</span></h2>
-                        <ul>
-                            <a><li>Website,</li></a>
-                            <a><li>Website,</li></a>
-                            <a><li>Website,</li></a>
-                            <a><li>Website</li></a>
-                        </ul>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="72" height="49" viewBox="0 0 72 49" fill="none">
-                            <path d="M2 24.5L70 24.5M70 24.5L47.7692 2.00001M70 24.5L47.7692 47" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-
-                    <div class="services__item">
-                        <h2>Design<span>.</span></h2>
-                        <ul>
-                            <a><li>Website,</li></a>
-                            <a><li>Website,</li></a>
-                            <a><li>Website,</li></a>
-                            <a><li>Website</li></a>
-                        </ul>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="72" height="49" viewBox="0 0 72 49" fill="none">
-                            <path d="M2 24.5L70 24.5M70 24.5L47.7692 2.00001M70 24.5L47.7692 47" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-
-                    <div class="services__item">
-                        <h2>Design<span>.</span></h2>
-                        <ul>
-                            <a><li>Website,</li></a>
-                            <a><li>Website,</li></a>
-                            <a><li>Website,</li></a>
-                            <a><li>Website</li></a>
-                        </ul>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="72" height="49" viewBox="0 0 72 49" fill="none">
-                            <path d="M2 24.5L70 24.5M70 24.5L47.7692 2.00001M70 24.5L47.7692 47" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-
-                    <div class="services__item">
-                        <h2>Design<span>.</span></h2>
-                        <ul>
-                            <a><li>Website,</li></a>
-                            <a><li>Website,</li></a>
-                            <a><li>Website,</li></a>
-                            <a><li>Website</li></a>
-                        </ul>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="72" height="49" viewBox="0 0 72 49" fill="none">
-                            <path d="M2 24.5L70 24.5M70 24.5L47.7692 2.00001M70 24.5L47.7692 47" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
+                    <?php if( have_rows('service') ): ?>
+                        <?php while( have_rows('service') ): the_row(); ?>
+                            <div class="services__item">
+                                <div>
+                                    <a><h2><?php echo get_sub_field('link')['title']; ?><span>.</span></h2></a>
+                                    <!-- <?php var_dump(get_sub_field('link')) ?> -->
+                                    <ul>
+                                        <a><li>Website,</li></a>
+                                        <a><li>Website,</li></a>
+                                        <a><li>Website,</li></a>
+                                        <a><li>Website</li></a>
+                                    </ul>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="72" height="49" viewBox="0 0 72 49" fill="none">
+                                    <path d="M2 24.5L70 24.5M70 24.5L47.7692 2.00001M70 24.5L47.7692 47" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        <?php endwhile; ?> 
+                    <?php endif; ?>
 
                 </div>  
             </div>  

@@ -27,6 +27,7 @@
 @import 'blocks/hero'; 
 @import 'blocks/tabs'; 
 @import 'blocks/dropdown-text'; 
+@import 'blocks/contact-form'; 
 
 body {
     margin: 0;
@@ -383,6 +384,19 @@ h3 {
         justify-content: center;
     }
 }
+
+// videoplayer 
+.videoplayer {
+    position: absolute;
+    .PauseButton {
+        display: none;
+    }
+    .PlayButton, .PauseButton {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+} 
 // slider dots
 .slick-dots-container {
     position: absolute;

@@ -7,6 +7,7 @@
     <div class="hero">
         <?php include('Hero/_TextImage.php'); ?>
         <?php include('Hero/_HeroVideo.php'); ?>
+        <?php include('Hero/_PlayVideo.php'); ?>
     </div>
 
 <?php endwhile; ?> 

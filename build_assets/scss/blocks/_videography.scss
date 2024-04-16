@@ -67,16 +67,5 @@
         .video-playing .video-controls {
             display: block; /* Only show controls when video is playing */
         }
-        &__play {
-            position: absolute;
-            .PauseButton {
-                display: none;
-            }
-            .PlayButton, .PauseButton {
-                &:hover {
-                    cursor: pointer;
-                }
-            }
-        } 
     }
 }

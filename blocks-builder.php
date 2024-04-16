@@ -104,6 +104,11 @@ if (have_rows('sections')) :
             <?php include 'blocks/Services.php'; ?>
         <?php endif;
 
+        // Case: Paragraph layout.
+        if (get_row_layout() == 'contact_form') : ?>
+            <?php include 'blocks/ContactForm.php'; ?>
+        <?php endif;
+
 	// End loop.
 	endwhile; 
 endif;

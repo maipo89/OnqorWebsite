@@ -1,8 +1,8 @@
 $(document).ready(function(){
     gsap.registerPlugin(ScrollTrigger);
 
-    // left right fade in
-    $('.anim-fade').each(function(index, item) {
+    // left right shift anim
+    $('.anim-horizontal').each(function(index, item) {
         var tl = gsap.timeline({
             scrollTrigger: {
                 trigger: item,
@@ -13,7 +13,20 @@ $(document).ready(function(){
         });
         tl.to(item, { x: 0 * index, opacity: 1, duration: 0.5 }); 
     });
-
+    
+    // fade anim
+    $('.anim-fadein').each(function(index, fade) {
+        var tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: fade,
+                start: "top 80%", 
+                end: "bottom 20%", 
+                markers: true
+            }
+        });
+        tl.to(fade, { opacity: 1, duration: 0.5 }); 
+    });
+    
     // number counter (use class anim-counter)
     gsap.utils.toArray(".anim-counter").forEach(function(counter) {
         var end = parseInt(counter.getAttribute('data-end'));
@@ -41,6 +54,16 @@ $(document).ready(function(){
             console.error("Invalid data-end attribute for counter:", counter);
         }
     });
+
+    // add span to second/fourth word
+    var oldContent = document.getElementById('dynamicTitle').textContent;
+    var words = oldContent.split(' ');
+
+    words[1] = '<span>' + words[1] + '</span>';
+    words[3] = '<span>' + words[3] + '</span>';
+
+    var newContent = words.join(' ');
+    document.getElementById('dynamicTitle').innerHTML = newContent;
     
 });
 

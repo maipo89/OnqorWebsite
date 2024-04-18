@@ -24,6 +24,7 @@
 @import 'blocks/videography'; 
 @import 'blocks/text'; 
 @import 'blocks/embed'; 
+@import 'blocks/cta'; 
 @import 'blocks/hero'; 
 @import 'blocks/tabs'; 
 @import 'blocks/dropdown-text'; 
@@ -61,12 +62,13 @@ h2 {
     // line-height: 113px;
     letter-spacing: 0em;
     text-align: left;
-    @media (max-width: $tabletSmall) { 
+    @media (max-width: $mobileLarge) { 
         font-size: 28px;
     }
-    @media (max-width: $mobileLarge) { 
+    @media (max-width: $tabletSmall) { 
         font-size: 22px;
     }
+
 }
 h3 {
     font-size: 50px;

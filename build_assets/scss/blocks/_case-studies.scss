@@ -7,7 +7,8 @@
     }
     &__item {
         width: 100%;
-        height: 616px;
+        height: fit-content;
+        min-height: 616px;
         position: relative;
         background-repeat: no-repeat;
         background-size: cover;
@@ -16,12 +17,25 @@
         align-items: center; 
         justify-content: center; 
         position: relative;
+        padding: 0 24px;
         // &:nth-child(odd) {
         //     transform: translateX(300px);
         // }
         // &:nth-child(even) {
         //     transform: translateX(-300px);
         // }
+        @media (max-width: $desktop) {
+            height: 435px;
+        }
+        @media (max-width: $tabletLarge) {
+            height: 326px;
+        }
+        @media (max-width: $tabletSmall) {
+            height: 183px;
+        }
+        @media (max-width: $mobileLarge) {
+            height: 136px;
+        }
         &.stats-left {
             .case-studies__item {
                 &__stats {
@@ -30,10 +44,17 @@
                 }
                 &__text {
                     padding: 0 0 0 296px;
+                    @media (max-width: $desktop) {
+                        padding: 115px 0 0 0;
+                    }
                 }
                 &__links {
                     right: 0;
                     left: unset;
+                    @media (max-width: $desktop) {
+                        right: unset;
+                        left: 0;
+                    }
                 }
             }
         }
@@ -54,8 +75,11 @@
             padding: 32px;
             display: flex;
             grid-gap: 8px;
-            z-index: 2;
+            z-index: 3;
             opacity: 0;
+            @media (max-width: $tabletSmall) {
+                display: none;
+            }
             button {
                 background-color: transparent;
                 &:hover {
@@ -77,6 +101,15 @@
             background-color: black;
             width: 296px;
             z-index: 2;
+            @media (max-width: $desktop) {
+                flex-direction: row;
+                width: unset;
+                background-color: transparent;
+                position: relative;
+                height: unset;
+                align-items: flex-start;
+                padding: 32px 32px 72px 32px;
+            }
             div {
                 opacity: 0;
                 &:nth-child(odd) {
@@ -91,9 +124,20 @@
                     font-weight: 600;
                     color: $operations;
                     text-align: center;
+                    @media (max-width: $tabletLarge) {
+                        font-size: 40px;
+                        line-height: normal;
+                    }
+                    @media (max-width: $tabletSmall) {
+                        font-size: 24px;
+                    }
                 }
                 p {
                     text-align: center;
+                    @media (max-width: $tabletLarge) {
+                        font-size: 16px;
+                        line-height: normal;
+                    }
                 }
             }
         }
@@ -101,6 +145,9 @@
             padding: 0 296px 0 0;
             z-index: 2;
             opacity: 0;
+            @media (max-width: $desktop) {
+                padding: 115px 0 0 0;
+            }
             button {
                 margin: 24px auto 0 auto;
                 display: block;

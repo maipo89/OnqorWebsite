@@ -5,14 +5,22 @@
         justify-content: space-between;
         flex-direction: row;
         grid-gap: 60px;
-        h2 {
+        @media (max-width: $tabletLarge) {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
         .pipedriveWebForms {
             background-color: black;
             border: 1px solid white;
             border-radius: 8px;
+            min-width: 500px;
             max-width: 500px;
-            padding: 32px
+            padding: 32px;
+            width: 100%;
+            @media (max-width: $tabletLarge) {
+                min-width: unset;
+            }
         }
     }
-}
+} 

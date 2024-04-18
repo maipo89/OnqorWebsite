@@ -5,8 +5,11 @@
 ?>
 
     <div class="cta">  
-        <div class="container">
-            <a class="anim-pulse" href="<?php echo $basic['btn_link'] ?>"><button class="btn-primary"><?php echo $basic['btn_text'] ?></button></a>
+        <div class="container center">
+            <a class="anim-pulse" href="<?php echo $basic['btn_link'] ?>"><button class="btn-secondary"><?php echo $basic['btn_text'] ?></button></a>
+            <?php if( get_sub_field('text') ) : ?> 
+                <?php echo $basic['text']?>
+            <?php endif; ?>     
         </div>
    </div>
 

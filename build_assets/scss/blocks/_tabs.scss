@@ -44,6 +44,20 @@
                 height: 622px;
                 background-color: lavender;
                 margin: 0 0 48px 0;
+                object-fit: cover;
+                @media (max-width: $desktop) {
+                    height: 457px;
+                }
+                @media (max-width: $tabletLarge) {
+                    height: 360px;
+                    margin: 0 0 32px 0;
+                }
+                @media (max-width: $tabletSmall) {
+                    height: 366px;
+                }
+                @media (max-width: $mobileLarge) {
+                    height: 250px;
+                }
             }
             h3 {
                 margin: 0 0 16px 0;

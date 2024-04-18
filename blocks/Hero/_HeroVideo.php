@@ -31,8 +31,8 @@
                 <!-- title  -->
                 <div class="container">
                     <div class="hero-video__text">
-                        <div>
-                            <h1> <?php echo get_sub_field('title') ?></h1>
+                        <div >
+                            <h1 id="dynamicTitle"> <?php echo get_sub_field('title') ?></h1>
                             <p><?php echo get_sub_field('text') ?></p>
                             <div class="hero-video__text__logos">
                                 <?php
@@ -43,7 +43,7 @@
                                 ?>  
                             </div>
                         </div>
-                        <a><button class="btn-primary">Discuss a Project</button></a>
+                        <a><button class="btn-secondary">Discuss a Project</button></a>
                     </div>
                 </div>
       

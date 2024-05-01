@@ -1,0 +1,100 @@
+.other-services {
+    background-color: black;
+    @include padding;
+    color: white;
+    h2 {
+        margin: 0 0 32px 0;
+    }
+    .wizywig {
+        margin: 0 0 64px 0;
+        max-width: 748px;
+    }
+    img {
+        object-fit: cover;
+    }
+    &__wrapper {
+        display: flex;
+        grid-gap: 32px;
+    }
+    // current tab image
+    &__service {
+        div {
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            display: flex;
+            width: 297px;
+            height: 296px;
+            &::after {
+                content: "";
+                background-size: cover;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.6);
+                z-index: 2;
+                border-radius: 8px;
+            }
+            button {
+                position: absolute;
+                right: 0;
+                left: 0;
+                margin: auto;
+                width: fit-content;
+                top: 0;
+                bottom: 0;
+                height: min-content;
+                z-index: 3;
+                background-color: transparent;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 8px;
+                z-index: 1;
+            }
+        }
+    }
+    // tabs
+    &__sub {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 32px;
+        width: 100%;
+        // tab buttons
+        &__buttons {
+            display: flex;
+            grid-gap: 16px;
+            button {
+                outline: none;
+                border: none;
+                background-color: transparent;
+                color: white;
+                bottom: 0;
+                &:hover {
+                    cursor: pointer;
+                }
+                &.active {
+                    border-bottom: 3px solid $operations;
+                }
+            }
+        }
+        // tab content
+        &__items {
+            display: grid;
+            grid-template-columns: repeat( 4, 1fr);
+            grid-gap: 16px;
+            width: 100%;
+            div {
+                display: flex;
+                grid-gap: 24px;
+                flex-direction: column;
+                img {
+                    width: 100%;
+                    height: 125px;
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+}

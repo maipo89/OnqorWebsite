@@ -8,6 +8,7 @@
 @import 'four04'; 
 @import 'header'; 
 @import 'footer'; 
+@import 'services-page'; 
 
 // blocks scss
 @import 'blocks/case-studies';
@@ -29,6 +30,7 @@
 @import 'blocks/tabs'; 
 @import 'blocks/dropdown-text'; 
 @import 'blocks/contact-form'; 
+@import 'blocks/other-services'; 
 
 body {
     margin: 0;
@@ -57,7 +59,7 @@ h1 {
     }
 }
 h2 {
-    font-size: 75px;
+    font-size: 50px;
     font-weight: 300;
     // line-height: 113px;
     letter-spacing: 0em;

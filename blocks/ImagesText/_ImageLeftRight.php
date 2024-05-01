@@ -21,6 +21,9 @@
                                 <h2 class="h3"><?php echo $basic['title'] ?></h2>
                             </div>
                             <?php echo get_sub_field('text')?>
+                            <?php if(get_sub_field('btn_text')) { ?> 
+                                <a><button class="btn-secondary"><?php echo get_sub_field('btn_text') ?></button></a>
+                            <?php  } ?>
                         </div>
                     </div>
                 </div>  

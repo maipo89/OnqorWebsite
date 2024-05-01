@@ -82,9 +82,10 @@ $(document).ready(function() {
         slidesToScroll: 1,
         centerMode: true,
         dots: true,
-        infinite: true,
         arrows: false,
+        infinite: false,
         cssEase: 'linear',
+        initialSlide: 1
     }); 
 
      //  branding layout two slider

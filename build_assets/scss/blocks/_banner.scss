@@ -2,6 +2,7 @@
     @include margin;
     padding: 72px;
     width: 100%;
+    position: relative;
     background-color: black;
     color: white;
     @media (max-width: $desktop) {
@@ -15,24 +16,52 @@
             column-count: 1;
         }
     }
-    .container {
-        max-width: 1028px;
-    }
-    h2 {
-        margin: 0 0 16px 0;
-        position: relative;
-        span {
+    &.text-right {
+        background-color: white;
+        padding: 0 72px;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
             background-color: black;
-            position: relative;
-            z-index: 1;
+            height: 100%;
+            width: 50%;
+            top: 0;
+        }
+        .container {
+            justify-content: space-between;
+            grid-gap: 82px;
+            max-width: 1364px;
+            flex-direction: row;
+            padding: 72px 80px 72px 32px ;
+            background-color: black;
+            border-radius: 8px;
+        }
+        .banner__text {
+            max-width: 585px;
+            width: calc(50% - 41px);
+        }
+        .banner__title {
+            max-width: 616px;
+            width: calc(50% - 41px);
         }
     }
-    svg {
-        position: absolute;
-        right: 25px;
-        bottom: 0;
-        @media (max-width: $desktop) {
-            display: none;
+    .container {
+        max-width: 1028px;
+        
+    }
+    &__title {
+        h2 {
+            margin: 0 0 16px 0;
+            position: relative;
+            span {
+                background-color: black;
+                position: relative;
+                z-index: 1;
+            }
+        }
+        button {
+            margin: 32px 0 0 0;
         }
     }
     &__text {

@@ -114,6 +114,9 @@
             }
             &__text {
                 width: 100%;
+                button {
+                    margin: 32px 0 0 0;
+                }
             }
             // image right option
             &.image-right {
@@ -166,6 +169,9 @@
                 margin: 32px 0 0px 0;
                 width: 100%;
                 object-fit: contain;
+                &.margin-top-none {
+                    margin: 0;
+                }
                 @media (max-width: $tabletSmall) {
                     margin: 0 0 24px 0;
                 }

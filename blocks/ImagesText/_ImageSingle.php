@@ -19,15 +19,17 @@
                         <div class="<?php if( get_sub_field('columns_text_four') ) { ?> col-four <?php  } ?>
                                     <?php if( get_sub_field('columns_text_three') ) { ?> col-three <?php  } ?>
                         " >
-                            <div class="image-single__text">
-                                <?php echo the_sub_field('text') ?>
-                            </div>
+                            <?php if( get_sub_field('columns_text_four') ) : ?>
+                                <div class="image-single__text">
+                                    <?php echo the_sub_field('text') ?>
+                                </div>
+                            <?php endif; ?> 
                         </div>
                     </div>
 
                     <!-- image -->
                     <div class="image-single__images">
-                        <img src="<?php echo $imgVisual ?>"/>
+                        <img class="<?php if( !get_sub_field('text') ) { ?> margin-top-none <?php  } ?>"  src="<?php echo $imgVisual ?>"/>
                     </div>
 
                     <!-- subtext -->

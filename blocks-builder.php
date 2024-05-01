@@ -65,11 +65,6 @@ if (have_rows('sections')) :
         <?php endif;
 
         // Case: Paragraph layout.
-        if (get_row_layout() == 'related_projects') : ?>
-            <?php include 'blocks/RelatedProjects.php'; ?>
-        <?php endif;
-
-        // Case: Paragraph layout.
         if (get_row_layout() == 'text') : ?>
             <?php include 'blocks/Text.php'; ?>
         <?php endif;
@@ -108,6 +103,16 @@ if (have_rows('sections')) :
         if (get_row_layout() == 'contact_form') : ?>
             <?php include 'blocks/ContactForm.php'; ?>
         <?php endif;
+
+         // Case: Paragraph layout.
+         if (get_row_layout() == 'other_services') : ?>
+            <?php include 'blocks/OtherServices.php'; ?>
+        <?php endif;
+
+        // Case: Paragraph layout.
+        if (get_row_layout() == 'related_projects') : ?>
+            <?php include 'blocks/RelatedProjects.php'; ?>
+         <?php endif;
 
 	// End loop.
 	endwhile; 

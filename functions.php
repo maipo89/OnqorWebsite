@@ -384,5 +384,10 @@ if (class_exists('MultiPostThumbnails')) {
     );
 }
 
+add_action('init', 'my_add_excerpts_to_pages');
+function my_add_excerpts_to_pages() {
+    add_post_type_support('page', 'excerpt');
+}
+
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

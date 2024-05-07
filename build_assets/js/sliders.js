@@ -42,7 +42,6 @@ $(document).ready(function() {
         ]
     });
 
-
     // featured blogs slider
     $('.archive__blogs__hero__slider').slick({
         slidesToShow: 1,
@@ -65,13 +64,24 @@ $(document).ready(function() {
         cssEase: 'linear',
     }); 
 
-    // photgraphy mobile slider
+    // text triple slider
     $('.text-triple-image__slider').slick({
         infinite: true,
         slidesToScroll: 1,
         centerMode: true,
         dots: true,
         infinite: true,
+        arrows: false,
+        cssEase: 'linear',
+    }); 
+
+    // list image slider
+    $('.list-image__list__slider').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        dots: true,
         arrows: false,
         cssEase: 'linear',
     }); 
@@ -110,7 +120,7 @@ $(document).ready(function() {
         cssEase: 'linear',
     });
 
-    //  branding layout three slider
+    //  hero case study slider
      $('.hero-case-studies__slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,

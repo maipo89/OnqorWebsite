@@ -22,7 +22,7 @@
                             </div>
                             <?php echo get_sub_field('text')?>
                             <?php if(get_sub_field('btn_text')) { ?> 
-                                <a><button class="btn-secondary"><?php echo get_sub_field('btn_text') ?></button></a>
+                                <a href="<?php echo get_sub_field('btn_link')['url'] ?>"><button class="btn-secondary"><?php echo get_sub_field('btn_text') ?></button></a>
                             <?php  } ?>
                         </div>
                     </div>

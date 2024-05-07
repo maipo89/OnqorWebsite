@@ -25,17 +25,31 @@
                                         <?php endwhile; ?> 
                                     <?php endif; ?> 
                                 </div>
+
+                                <!-- mobile slider -->
+                                <div class="list-image__list__slider">
+                                    <?php if( have_rows('list') ): ?>
+                                        <?php while( have_rows('list') ): the_row(); ?>
+                                            <div class="list-image__list__item">
+                                                <h2 class="subtitle1"><?php echo the_sub_field('title'); ?></h2>
+                                                <?php echo the_sub_field('list_items'); ?>
+                                            </div>
+                                        <?php endwhile; ?> 
+                                    <?php endif; ?> 
+                                </div>
+
+
                                 <div class="wizywig">
                                     <?php echo the_sub_field('text') ?>
                                 </div>
-                                <a><button class="btn-secondary">Get in Touch</button></a>
+                                <a href="<?php echo get_sub_field('btn_link')['url']?>" ><button class="btn-secondary">Get in Touch</button></a>
                             </div>
 
                             <img src="<?php echo $imgVisual ?>"/>
                         </div>
 
                 </div>  
-            </div>  
+            </div>   
     <?php endwhile; ?> 
     <?php endif; ?> 
 <?php endif; ?> 

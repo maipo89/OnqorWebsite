@@ -15,7 +15,7 @@
                     </span>    
                 </h2>
                 <?php if( $basic['btn_text'] ) : ?>  
-                    <a><button class="btn-primary"><?php echo $basic['btn_text'] ?></button></a>
+                    <a class="anim-pulse anim-pulse-<?php echo $pulse_color; ?>"><button class="btn-secondary" style="border-color: <?php echo $page_color; ?>"><?php echo $basic['btn_text'] ?></button></a>
                 <?php endif; ?> 
             </div>
 

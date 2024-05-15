@@ -6,7 +6,12 @@
 							$img = get_sub_field('logo');
 							$imgVisual = $img['sizes']['small'];	
 					?>
-					<?php include('blocks/ContactFormFooter.php'); ?>
+					<?php
+						$template_name = get_page_template_slug();
+						if ($template_name !== 'page-contact.php') { // Change 'template-contact.php' to the actual template filename
+							include('blocks/ContactFormFooter.php');
+						}
+					?>
 					<div class="container">
 						<!-- footer columns -->
 						<div class="footer__columns">

@@ -39,6 +39,7 @@
         background-color: black;
         color: white;
         width: 100%;
+
         &__video {
             height: 850px;
             width: 100%;
@@ -72,6 +73,9 @@
                grid-gap: 24px;
                align-items: center;
                justify-content: center;
+            }
+            button {
+                width: max-content;
             }
             & > div {
                 width: 100%;
@@ -261,14 +265,48 @@
             }
         }
     }
+    // lst image
     .list-image {
         @include padding;
         background-color: black;
         color: white;
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+        a {
+            &:hover {
+                text-decoration: none;
+            }
+            .anim-pulse {
+                &:after {
+                    z-index: -1;
+                }
+                &:hover {
+                    background-color: $darksmoke;
+                    color: white;
+                }
+            }
+        }
+        .container {
+            overflow: visible;
+        }
+        &::after {
+            content: "";
+            display: block;
+            left: 0;
+            top: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 0.8;
+            z-index: 2;
+        }
         h1 {
             padding: 0 0 16px 0;
             margin: 0 0 48px 0;
             width: 100%;
+            z-index: 3;
             border-bottom: 1px solid white;
             @media (max-width: $desktop) {
                 border-bottom: 0px solid white;
@@ -279,6 +317,7 @@
             display: flex;
             justify-content: space-between;
             width: 100%;
+            z-index: 3;
             @media (max-width: $desktop) {
                 align-items: center;
                 justify-content: center;
@@ -301,13 +340,19 @@
                 margin: 0 auto;
                 button {
                     margin: 32px auto 0;
-                    display: block;
+                    display: flex
                 }
                 .wizywig {
                     margin: 16px 0 0 0;
                     p {
                         text-align: center;
                     }
+                }
+            }
+            .wizywig {
+                margin: 48px 0 0 0;
+                @media (max-width: $desktop) { 
+                    margin: 32px 0 0 0;
                 }
             }
         }
@@ -357,6 +402,119 @@
                             width: fit-content;
                         }
                     }
+                }
+            }
+        }
+    }
+    .hero-basic {
+        background-color: black;
+        padding: 96px 0 72px 0;
+        color: white;
+        position: relative;
+        overflow: visible;
+
+        &::after {
+            content: "";
+            display: block;
+            left: 0;
+            top: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 0.8;
+            z-index: 2;
+        }
+        a {
+            &:hover {
+                text-decoration: none;
+            }
+            .anim-pulse {
+                &:after {
+                    z-index: -1;
+                }
+                &:hover {
+                    background-color: $darksmoke;
+                    color: white;
+                }
+            }
+        }
+
+        &__buttons {
+            z-index: 3;
+            display: flex;
+            grid-gap: 32px;
+            a {
+                position: relative;
+                overflow: hidden;
+                border-radius: 8px;
+                button {
+                    height: 56px;
+                }
+                span {
+                    position: absolute;
+                    height: 4px;
+                    width: 100%;
+                    bottom: 0px;
+                    background-color: $operations;
+                    z-index: 2;
+                }
+            }
+            @media (max-width: $tabletSmall) { 
+               display: none;
+            }
+        }
+        img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+        }
+        .container {
+            overflow: visible;
+        }
+        .subtitle1 {
+            z-index: 3;
+            width: fit-content;
+            border-bottom: 4px solid transparent;
+            @media (max-width: $tabletSmall) { 
+                text-align: center;
+                margin: 0 auto;
+            }
+        }
+        h1 {
+            z-index: 3;
+            @media (max-width: $tabletSmall) { 
+                text-align: center;
+            }
+        }
+        h3 {
+            z-index: 3;
+            margin: 32px 0 32px 0;
+            @media (max-width: $desktop) { 
+                display: none;
+            }
+        }
+        .wizywig {
+            margin: 32px 0;
+            max-width: 800px;
+            z-index: 3;
+            width: 100%;
+            @media (max-width: $tabletSmall) { 
+                margin: 16px 0;
+                p {
+                    text-align: center;
+                }
+            }
+        }
+        a {
+            z-index: 3;
+            button {
+                @media (max-width: $tabletSmall) { 
+                    margin: 0 auto;
+                    display: flex;
                 }
             }
         }

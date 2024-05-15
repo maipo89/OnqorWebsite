@@ -1,0 +1,77 @@
+.video-gallery {
+    @include padding;
+    video {
+        object-fit: cover;
+    }
+    &__slider {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        margin: 0 0 0 0;
+        padding-bottom: 16px;
+        display: block;
+        @media (max-width: $tabletSmall) { 
+            display: none;
+        }
+        .slick-list {
+            padding: 0 !important;
+            .slick-track {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        &__item {
+            height: 742px;
+            video {
+                height:100%;
+                width: 100%;
+            }
+        }
+    }
+    &__buttons {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        margin: 0 0 0 0;
+        display: block;
+        .slick-dots {
+            display: none !important;
+        }
+        @media (max-width: $tabletSmall) { 
+            padding-bottom: 32px;
+            .slick-dots {
+                display: flex !important;
+                bottom: -30px;
+            }
+        }
+        .slick-list {
+            padding: 0 !important;
+            .slick-track {
+                display: flex;
+                align-items: center;
+                grid-gap: 16px;
+                justify-content: center;
+            }
+        }
+        &__item {
+            height: 176px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            @media (max-width: $tabletSmall) { 
+                height: 221px;
+            }
+            svg {
+                height: 25px;
+                width: 25px;
+                position: absolute;
+            }
+            video {
+                height:100%;
+                width: 100%;
+            }
+        }
+    }
+}

@@ -130,7 +130,9 @@
                     }
                     .title {
                         justify-content: flex-end;
-                        text-align: right;
+                        h2 {
+                            text-align: right;
+                        }
                     }
                 }
             }
@@ -177,6 +179,9 @@
                 }
             }
         }
+        .subtitle {
+            margin: 32px 0;
+        }
         .text-center {
             max-width: 881px;
             text-align: center;
@@ -212,6 +217,9 @@
         }
         .subtext {
             margin: 48px auto auto auto;
+            &.small-margin {
+                margin: 0 auto auto auto;
+            }
             @media (max-width: $tabletSmall) {
                 margin: 32px auto auto auto;
             }

@@ -31,12 +31,14 @@
 @import 'blocks/dropdown-text'; 
 @import 'blocks/contact-form'; 
 @import 'blocks/other-services'; 
+@import 'blocks/list'; 
+@import 'blocks/video-gallery'; 
 
 body {
     margin: 0;
     padding: 0;
 }
- 
+
 // font css
 h1,h2,h3,h4,h5,h6,p,a,span,li {
     font-family: Poppins;
@@ -46,6 +48,7 @@ h1 {
     font-size: 100px;
     font-weight: 300;
     // line-height: 150px;
+    line-height: normal;
     letter-spacing: 0em;
     text-align: left;
     @media (max-width: $desktop) { 
@@ -54,23 +57,22 @@ h1 {
     @media (max-width: $tabletSmall) { 
         font-size: 28px;
     }
-    @media (max-width: $mobileLarge) { 
-        font-size: 22px;
-    }
 }
 h2 {
-    font-size: 50px;
+    font-size: 75px;
     font-weight: 300;
-    // line-height: 113px;
     letter-spacing: 0em;
+    line-height: normal;
     text-align: left;
+    @media (max-width: $desktop) { 
+        font-size: 50px;
+    }
+    @media (max-width: $tabletLarge) { 
+        font-size: 28px;
+    }
     @media (max-width: $mobileLarge) { 
         font-size: 28px;
     }
-    @media (max-width: $tabletSmall) { 
-        font-size: 22px;
-    }
-
 }
 h3 {
     font-size: 50px;
@@ -82,9 +84,13 @@ h3 {
 .h3 {
     font-size: 50px;
     font-weight: 300;
-    line-height: 75px;
+    line-height: normal;
     letter-spacing: 0em;
     text-align: left;
+    margin-bottom: 0;
+    @media (max-width: $desktop) { 
+        font-size: 28px;
+    }
     @media (max-width: $tabletLarge) { 
         font-size: 28px;
         font-style: normal;
@@ -116,9 +122,12 @@ h3 {
 .body1 {
     font-size: 20px;
     font-weight: 300;
-    line-height: 30px;
+    line-height: normal;
     letter-spacing: 0em;
     text-align: left;
+    @media (max-width: $tabletLarge) { 
+        font-size: 16px;
+    }
 }
 .body2, p {
     font-size: 16px;
@@ -172,6 +181,26 @@ h3 {
     align-items: center;
     justify-content: center;
     width: fit-content;
+    &-production {
+        &::after {
+            background-color: $production !important;
+        }
+    }
+    &-design {
+        &::after {
+            background-color: $design !important;
+        }
+    }
+    &-marketing {
+        &::after {
+            background-color: $marketing !important;
+        }
+    }
+    &-development {
+        &::after {
+            background-color: $development !important;
+        }
+    }
     &::after {
         content: '';
         position: absolute;
@@ -203,7 +232,7 @@ h3 {
     line-height: 24px;
     letter-spacing: 0em;
     padding: 8px 24px 8px 24px;
-    border-radius: 8px;
+    border-radius: 8px; 
     background-color: white;
     color: $darksmoke;
     border: 1px solid $darksmoke;
@@ -218,6 +247,7 @@ h3 {
         background-color: $darksmoke;
         color: white;
         transition: .2s;
+        text-decoration: none !important;
     }
 } 
 .btn-secondary {
@@ -226,8 +256,12 @@ h3 {
     font-weight: 300;
     line-height: 24px;
     letter-spacing: 0em;
+    position: relative;
     padding: 8px 24px 8px 24px;
     border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid $offwhite;
     background-color: $darksmoke;
     transition: .2s;
@@ -386,6 +420,9 @@ h3 {
     &.center {
         align-items: center;
         justify-content: center;
+    }
+    &.no-wrap {
+        flex-wrap: nowrap;
     }
 }
 

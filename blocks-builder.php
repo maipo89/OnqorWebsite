@@ -35,6 +35,11 @@ if (have_rows('sections')) :
         <?php endif;
 
         // Case: Paragraph layout.
+        if (get_row_layout() == 'video_gallery') : ?>
+            <?php include 'blocks/VideoGallery.php'; ?>
+        <?php endif;
+ 
+        // Case: Paragraph layout.
         if (get_row_layout() == 'videography') : ?>
             <?php include 'blocks/Videography.php'; ?>
         <?php endif;
@@ -113,6 +118,11 @@ if (have_rows('sections')) :
         if (get_row_layout() == 'related_projects') : ?>
             <?php include 'blocks/RelatedProjects.php'; ?>
          <?php endif;
+
+        // Case: Paragraph layout.
+        if (get_row_layout() == 'list') : ?>
+            <?php include 'blocks/List.php'; ?>
+        <?php endif; 
 
 	// End loop.
 	endwhile; 

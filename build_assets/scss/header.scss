@@ -26,7 +26,7 @@
                 position: absolute;
                 background-color: black;
                 top: 100%;
-                z-index: 2;
+                z-index: 4;
                 width: calc(100%);
                 max-height: 0;
                 padding: 0 32px;
@@ -87,7 +87,7 @@
                         }
                     }
                     li {
-                        position: relative; 
+                        // position: relative; 
                         @media (max-width: $desktop) {
                             &:not(.menu-item-has-children) {
                                 display: flex;
@@ -108,18 +108,25 @@
                         }
                     }
                     .menu-item-has-children {
-                        position: relative;
+                        // position: relative;
+                        display: flex;
+                        align-items: center;
+                        @media (max-width: $desktop) {
+                            position: relative;
+                            display: block;
+                        }
                         &:hover {
                             cursor: pointer;
                         }
                         &::after {
                             content: "";
                             display: inline-block;
-                            width: 14px;
-                            height: 8px;
+                            width: 10.5px;
+                            height: 6px;
+                            margin: 0 0 0 8px;
                             background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M13 1L7 7L1 1" stroke="%23F8F8F8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
                             background-size: cover;
-                            position: absolute;
+                            // position: absolute;
                             right: -32px; /* Adjust based on your layout */
                             top: 7px; /* Adjust based on your layout */
                             transition: .4s ease;
@@ -127,6 +134,7 @@
                             @media (max-width: $desktop) {
                                 right: 0;
                                 top: 10px; /* Adjust based on your layout */
+                                position: absolute;
                             }
                         }
                         &.open {
@@ -136,41 +144,42 @@
                             }
                             .sub-menu {
                                 max-height: 2000px;
+                                transition: ease.4s;
+                                li {
+                                    opacity: 1;
+                                    transition: ease.6s;
+                                }
                             }
                         }
                         svg {
                             position: absolute;
                             right: 0;
                             top: 10px;
-                            transition: ease .4s;
-                        }
-                        .sub-menu {
+                            transition: ease .4s; 
+                        } 
+                        > .sub-menu {
                             max-height: 0;
                             transition: ease .2s;
                             overflow: hidden;
+                            width: 1112px;
                             position: absolute;
                             top: 100%;
                             list-style: none;
-                            padding-inline-start: 0;
-                            display: flex;
-                            grid-gap: 16px;
-                            flex-direction: column;
-                            background-color: black;
-                            border-radius: 8px;
-                            z-index: 2;
-                            left: -24px;
-                            padding: 0 24px;
-                            &::before {
-                                content: "";
-                                display: block;
+                            display: grid;
+                            grid-template-columns: repeat(4, auto);
+                            grid-gap: 48px;
+                            background-color: $darksmoke;
+                            z-index: 10000;
+                            left: 0;
+                            right: 0;
+                            margin: 0 auto;
+                            padding: 0 64px;
+                            @media (max-width: $desktop) {
+                                display: flex;
+                                background-color: black;
+                                flex-direction: column;
                                 width: 100%;
-                                height: 8px;
-                            }
-                            &::after {
-                                content: "";
-                                display: block;
-                                width: 100%;
-                                height: 8px;
+                                grid-gap: 16px;
                             }
                             @media (max-width: $desktop) {
                                 position: relative;
@@ -190,16 +199,88 @@
                                     height: 0px;
                                 }
                             } 
+                            li {
+                                opacity: 0;
+                                transition: ease.6s;
+                            }
                             > li {
-                                padding: 0 0 16px 0;
+                                // padding: 0 0 16px 0;
+                                @media (max-width: $desktop) {
+                                    position: relative;
+                                }
                                 border-bottom: 1px solid white;
                                 &:last-child {
                                     border: none;
-                                    padding: 0;
                                 }
                                 @media (max-width: $desktop) { 
                                     border: none;
                                     padding: 0;
+                                }
+                            }
+                            // second layer submenu
+                            .menu-item-has-children {
+                                display: block;
+                                height: calc(100% - 128px);
+                                border: none;
+                                border-right: 1px solid white;
+                                width: 100%;
+                                padding: 0 32px 0 0;
+                                min-width: 25%;
+                                margin: 64px 0;
+                                @media (max-width: $desktop) {
+                                    position: relative;
+                                    border-right: none;
+                                    padding: 0;
+                                    margin: 0;
+                                }
+                                &:last-child {
+                                    border-right: none;
+                                }
+                                a {
+                                    font-size: 28px;
+                                    font-style: normal;
+                                    font-weight: 600;
+                                    line-height: normal;
+                                    &:hover {
+                                        text-decoration: underline;
+                                        cursor: pointer;
+                                    }
+                                    @media (max-width: $desktop) {
+                                        font-size: 18px;
+                                        font-style: normal;
+                                        font-weight: 300;
+                                        line-height: normal;
+                                    }
+                                }
+                                li {
+                                    border: none;
+                                }
+                                &::after {
+                                    display: none;
+                                }
+                            }
+                            .sub-menu {
+                                position: relative;
+                                width: 100%;
+                                flex-direction: column;
+                                grid-gap: 16px;
+                                padding: 0;
+                                display: flex;
+                                top: 0;
+                                padding: 32px 0 0 0;
+                                @media (max-width: $desktop) {
+                                    padding: 16px 0 0 0;
+                                    display: none;
+                                    width: 100%;
+                                }
+                                a {
+                                    font-size: 16px;
+                                    font-style: normal;
+                                    font-weight: 300;
+                                    line-height: normal;
+                                    &:hover {
+                                        text-decoration: underline;
+                                    }
                                 }
                             }
                         }
@@ -293,6 +374,52 @@
                     width: 0%;
                     left: 50%;
                 }
+            }
+        }
+    }
+    .dot {
+
+        a {
+            display: flex;
+            align-items: center;
+            grid-gap: 8px
+        }
+        .arrow {
+            content: "";
+            display: none;
+            width: 12px;
+            height: 8px;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M0.999999 4L11 4M11 4L7.73077 1M11 4L7.73077 7" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            @media (max-width: $desktop) {
+                display: block;
+            }
+        }
+        .dot-span {
+            display: block;
+            @media (max-width: $desktop) {
+                display: none;
+            }
+        }
+        &-marketing {
+            span {
+                color: $marketing;
+            }
+        }
+        &-production {
+            span {
+                color: $production;
+            }
+        }
+        &-development {
+            span {
+                color: $development;
+            }
+        }
+        &-design {
+            span {
+                color: $design;
             }
         }
     }

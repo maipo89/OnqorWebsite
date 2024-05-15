@@ -5,6 +5,9 @@
         @media (max-width: $desktop) {
             margin: 0 0 32px 0;
         }
+        @media (max-width: $tabletSmall) {
+            text-align: center;
+        }
     }
     &__buttons {
         display: flex;
@@ -14,6 +17,9 @@
         margin: 0 0 54px 0;
         @media (max-width: $desktop) {
             align-self: flex-start;
+        }
+        @media (max-width: $tabletSmall) {
+            display: none;
         }
         div {
             padding: 0 0 16px 0;
@@ -36,17 +42,39 @@
         }
     }
     &__tabs {
+        display: block;
+        &.desk {
+            @media (max-width: $tabletSmall) {
+                display: none; 
+            }
+        }
         &__item {
             display: flex;
             flex-direction: row;
             grid-gap: 42px;
+            @media (max-width: $tabletSmall) {
+                display: block !important;
+            }
             &__text {
                 width: 100%;
                 h3 {
                     margin: 0 0 32px;
+                    @media (max-width: $tabletSmall) {
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;
+                        margin: 0 0 24px;
+                        text-align: center;
+                    }
                 }
                 .subtitle3  {
                     margin: 24px 0 72px 0;
+                    font-weight: 700;
+                    @media (max-width: $tabletSmall) {
+                        font-size: 12px;
+                        margin: 24px 0 24px 0;
+                    }
                 }
             }
             img {
@@ -61,6 +89,52 @@
                 }
                 @media (max-width: $tabletLarge) {
                     display: none;
+                }
+            }
+        }
+        &__slider {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            margin: 0 0 0 0;
+            padding-bottom: 42px;
+            display: none;
+            @media (max-width: $tabletSmall) {
+                display: block;
+            }
+            @media (max-width: $desktop) {
+                max-width: 674px;
+                margin: 0 auto;
+            }
+            .slick-dots {  
+                bottom: -32px
+            }
+            .slick-track {
+                grid-gap: 32px;
+                @media (max-width: $tabletSmall) {
+                    grid-gap: 16px;
+                }
+            }
+            .slick-list {
+                padding: 0 !important;
+                .slick-track {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+            .slick-slide {
+                img {
+                    width: 100%;
+                    height: 125px;
+                    border-radius: 8px;
+                }
+                button {
+                    margin: 0 auto;
+                }
+                p {
+                    // margin: 16px 0;
+                    text-align: center;
                 }
             }
         }

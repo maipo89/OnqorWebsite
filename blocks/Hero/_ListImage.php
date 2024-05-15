@@ -5,22 +5,30 @@
             $img = get_sub_field('image');
             $imgVisual = $img['sizes']['medium'];
             $selected_value = get_sub_field('options');
+
+            $background_image = get_the_post_thumbnail_url(get_the_ID(), 'full');
         ?>
-            <div class="list-image">
+            <div class="list-image" style="background-image: url('<?php echo $background_image; ?>');">
                 <div class="container">
                         <h1 class="h3"><?php echo the_sub_field('title') ?></h1>
 
                         <!-- content wrapper -->
                         <div class="list-image__content">
-
                             <!-- list wrapper -->
                             <div class="list-image__wrapper">
                                 <div class="list-image__list">
                                     <?php if( have_rows('list') ): ?>
                                         <?php while( have_rows('list') ): the_row(); ?>
                                             <div class="list-image__list__item">
-                                                <h2 class="subtitle1"><?php echo the_sub_field('title'); ?></h2>
-                                                <?php echo the_sub_field('list_items'); ?>
+                                                <h2 class="subtitle1" style="color: <?php echo $page_color; ?>"><?php echo the_sub_field('title'); ?></h2>
+                                                <div class="wizywig">
+                                                    <?php
+                                                    $list_items_content = get_sub_field('list_items');
+                                                    $marker_style = 'color:' . $page_color;
+                                                    $styled_list_items_content = "<style>ul li::marker { $marker_style }</style>$list_items_content";
+                                                    echo $styled_list_items_content;
+                                                    ?>
+                                                </div>
                                             </div>
                                         <?php endwhile; ?> 
                                     <?php endif; ?> 
@@ -31,7 +39,7 @@
                                     <?php if( have_rows('list') ): ?>
                                         <?php while( have_rows('list') ): the_row(); ?>
                                             <div class="list-image__list__item">
-                                                <h2 class="subtitle1"><?php echo the_sub_field('title'); ?></h2>
+                                                <h2 class="subtitle1" style="color: <?php echo $page_color; ?>"><?php echo the_sub_field('title'); ?></h2>
                                                 <?php echo the_sub_field('list_items'); ?>
                                             </div>
                                         <?php endwhile; ?> 
@@ -42,7 +50,9 @@
                                 <div class="wizywig">
                                     <?php echo the_sub_field('text') ?>
                                 </div>
-                                <a href="<?php echo get_sub_field('btn_link')['url']?>" ><button class="btn-secondary">Get in Touch</button></a>
+                                <a href="<?php echo get_sub_field('btn_link')['url']?>" >
+                                    <button class="btn-secondary anim-pulse anim-pulse-<?php echo $pulse_color; ?>" style="border-color: <?php echo $page_color; ?>">Get in Touch</button>
+                                </a>
                             </div>
 
                             <img src="<?php echo $imgVisual ?>"/>

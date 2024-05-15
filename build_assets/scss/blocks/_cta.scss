@@ -11,4 +11,18 @@
         max-width: 1045px;
         text-align: center;
     }
+    .anim-pulse {
+        &:hover {
+            background-color: $darksmoke;
+            color: white;
+        }
+        button {
+            border-color: $operations;
+            &:hover {
+                background-color: $darksmoke;
+                color: white;
+                border-color: $operations;
+            }
+        }
+    }
 }

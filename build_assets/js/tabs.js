@@ -57,40 +57,134 @@ $(document).ready(function($) {
     });
 });
 
-
-$(document).ready(function($) {
-    // Initially hide all tab content
-    $('.other-services__sub__items').hide();
-    $('.other-services__service div').hide();
-   
-    // Show the first tab content and add active class to the first tab button by default
-    $('.other-services__sub__items').first().show();
-    $('.other-services__service div').first().show();
-    $('.other-services__sub__buttons button').first().addClass('active');
-
-    // Tab link click function
-    $('.other-services__sub__buttons button').click(function(e) {
-        e.preventDefault();
-        
-        // Remove active class from all tab buttons
-        $('.other-services__sub__buttons button').removeClass('active');
-
-        // Add active class to the current tab button
-        $(this).addClass('active');
-
-        // Get the current tab ID
-        var currentTab = $(this).data('button');
-
-        // Hide all tab content
+window.onload = function() {
+    $(document).ready(function($) {
+        // Initially hide all tab content
         $('.other-services__sub__items').hide();
+        $('.other-services__sub__items__slider').hide();
         $('.other-services__service div').hide();
+    
+        // Show the first tab content and add active class to the first tab button by default
+        $('.other-services__sub__items').first().show();
+        $('.other-services__sub__items__slider').first().addClass('active');
+        $('.other-services__service div').first().show();
+        $('.other-services__sub__buttons button').first().addClass('active');
 
-        // Show the current tab content
-        $(".other-services__sub__items").filter(function() {
-            return $(this).data('tab') === currentTab;
-        }).show();
-        $(".other-services__service div").filter(function() {
-            return $(this).data('service') === currentTab;
-        }).show();
+        // Default to Marketing category and trigger tab click
+        var defaultCategoryIndex = 0; // Index of Marketing category
+        $('.other-services__sub__buttons button').eq(defaultCategoryIndex).trigger('click');
+
+        // Dropdown functionality
+        $('#category-dropdown').on('click', function() {
+            $(this).toggleClass('open');
+        });
+
+        $('.other-services .dropdown__options__items div').on('click', function() {
+            var tabIndex = $(this).data('button');
+            var categoryName = $(this).text();
+            
+            // Update dropdown text
+            $('#category-dropdown').html(categoryName + '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 1.5L8 8.5L15 1.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+        
+            // Trigger click event on corresponding tab button
+            $('.other-services__sub__buttons button').eq(tabIndex).trigger('click');
+        
+            // Close dropdown
+            $('#category-dropdown').removeClass('open');
+            $('.dropdown__options').removeClass('active');
+        
+            // Initialize the slider for the selected category
+            if ($.fn.slick) {
+                $('.other-services__sub__items__slider').filter(function() {
+                    return $(this).data('tab') === tabIndex;
+                }).addClass('active').slick('unslick').slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    dots: true,
+                    cssEase: 'linear',
+                    infinite: false,
+                    loop: true,
+                    arrows: false,
+                    responsive: [
+                        {
+                            breakpoint: 430,
+                            settings: {
+                                slidesToShow: 1,
+                            }
+                        },
+                        {
+                            breakpoint: 768,
+                            settings: { 
+                                slidesToShow: 2,
+                            }
+                        },
+                    ]
+                });
+                 // Show the SVG chevron
+                $('#category-dropdown .dropdown__icon').show();
+            } else {
+                console.log('Slick slider library not loaded yet.');
+                // You can retry initialization or show an error message here
+            }
+        });
+        
+
+        // Tab link click function
+        $('.other-services__sub__buttons button').click(function(e) {
+            e.preventDefault();
+            // Remove active class from all tab buttons
+            $('.other-services__sub__buttons button').removeClass('active');
+            $('.other-services__sub__items__slider').removeClass('active');
+            // Add active class to the current tab button
+            $(this).addClass('active');
+
+            // Get the current tab ID
+            var currentTab = $(this).data('button');
+
+            // Hide all tab content
+            $('.other-services__sub__items').hide();
+      
+            $('.other-services__service div').hide();
+
+            // Show the current tab content
+            $(".other-services__sub__items").filter(function() {
+                return $(this).data('tab') === currentTab;
+            }).show();
+            $(".other-services__service div").filter(function() {
+                return $(this).data('service') === currentTab;
+            }).show();
+
+            if ($.fn.slick) {
+                $('.other-services__sub__items__slider').filter(function() {
+                    return $(this).data('tab') === currentTab;
+                }).addClass('active').slick('unslick').slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    dots: true,
+                    cssEase: 'linear',
+                    infinite: false,
+                    loop: true,
+                    arrows: false,
+                    responsive: [
+                        {
+                        breakpoint: 430,
+                        settings: {
+                                slidesToShow: 1,
+                            }
+                        },
+                        {
+                        breakpoint: 768,
+                        settings: { 
+                            slidesToShow: 2,
+                            }
+                        },
+                    ]
+                });
+            } else {
+                console.log('Slick slider library not loaded yet.');
+                // You can retry initialization or show an error message here
+            }
+        });
+        $('.other-services__sub__buttons button[data-button="3"]').trigger('click');
     });
-});
+};

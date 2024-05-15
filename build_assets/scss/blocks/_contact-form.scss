@@ -1,5 +1,69 @@
 .contact-form {
+    padding: 72px 0 96px 0;
+    background-color: black;
+    color: white;
+    @media (max-width: $tabletLarge) {
+        padding: 64px 0 64px 0;
+    }
+    .fdr {
+        grid-gap: 106px;
+        @media (max-width: $tabletLarge) {
+            grid-gap: 72px;
+        }
+        @media (max-width: $tabletLarge) {
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            flex-wrap: wrap !important;
+            grid-gap: 64px;
+        }
+    }
+    .body1 {
+        text-align: center;
+        max-width: 1082px;
+        margin: 0 auto 72px auto
+    }
+    .or {
+        margin: auto;
+    }
+    &__form {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        grid-gap: 24px;
+        @media (max-width: $tabletLarge) {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .pipedriveWebForms {
+            background-color: black;
+            border: 1px solid white;
+            border-radius: 8px;
+            min-width: 500px;
+            max-width: 500px;
+            padding: 32px;
+            width: 100%;
+            @media (max-width: $tabletLarge) {
+                min-width: unset;
+            }
+        }
+    }
+    &__book {
+        display: flex;
+        grid-gap: 24px;
+        flex-direction: column;
+        button {
+            width: fit-content;
+        }
+    } 
+} 
+.contact-form-footer {
     @include padding;
+    &.home-footer {
+        background-color: white;
+        color: black;
+    }
     &__wrapper {
         display: flex;
         justify-content: space-between;
@@ -23,4 +87,4 @@
             }
         }
     }
-} 
+}

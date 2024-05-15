@@ -14,7 +14,10 @@
                             <?php if( $basic['number'] ) { ?> 
                                 <!-- <p class="body1"><?php echo $basic['number'] ?></p> -->
                             <?php  } ?>
-                            <h2 class="h3"><?php echo $basic['title'] ?></h2>
+                            <?php if( $basic['title'] ) { ?> 
+                                <h2 class="h3"><?php echo $basic['title'] ?></h2>
+                            <?php  } ?>
+
                         </div>
                         <div class="<?php if( get_sub_field('columns_text_four') ) { ?> col-four <?php  } ?>
                                     <?php if( get_sub_field('columns_text_three') ) { ?> col-three <?php  } ?>
@@ -31,11 +34,16 @@
                     <div class="image-single__images">
                         <img class="<?php if( !get_sub_field('text') ) { ?> margin-top-none <?php  } ?>"  src="<?php echo $imgVisual ?>"/>
                     </div>
+                    <!-- subtitle -->
+                    <?php if( get_sub_field('subtitle')) { ?> 
+                        <h2 class="h3 subtitle"><?php echo get_sub_field('subtitle') ?></h2>
+                    <?php  } ?>
 
                     <!-- subtext -->
                     <?php if( get_sub_field('subtext') ) { ?>
                         <div class="<?php if( get_sub_field('columns_text_four') ) { ?> col-four <?php  } ?>
                                     <?php if( get_sub_field('columns_text_three') ) { ?> col-three <?php  } ?>
+                                    <?php if( get_sub_field('subtitle') ) { ?> small-margin <?php  } ?>
                                     subtext
                         " >
                             <?php echo the_sub_field('subtext') ?>

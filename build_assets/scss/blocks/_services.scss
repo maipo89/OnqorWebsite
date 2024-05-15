@@ -21,6 +21,11 @@
         div {
             display: flex;
             grid-gap: 48px;
+            width: 100%;
+            @media (max-width: $tabletSmall) { 
+                flex-direction: column;
+                grid-gap: 10px;
+            }
             ul {
                 display: flex;
                 list-style: none;
@@ -28,7 +33,15 @@
                 justify-content: center;
                 margin: 0;
                 padding: 0;
+                flex-wrap: wrap;
                 grid-gap: 8px;
+                @media (max-width: $tabletSmall) { 
+                    justify-content: flex-start;
+                }
+                a {
+                    color: white;
+                    font-weight: 300;
+                }
             }
         }
     }

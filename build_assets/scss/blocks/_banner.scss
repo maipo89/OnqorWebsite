@@ -19,6 +19,13 @@
     &.text-right {
         background-color: white;
         padding: 0 72px;
+        @media (max-width: $desktop) {
+            background-color: black;
+            padding: 64px 0;
+        }
+        @media (max-width: $tabletLarge) {
+            padding: 48px 0;
+        }
         &::before {
             content: '';
             position: absolute;
@@ -36,14 +43,30 @@
             padding: 72px 80px 72px 32px ;
             background-color: black;
             border-radius: 8px;
+            @media (max-width: $desktop) {
+                flex-direction: column;
+                grid-gap: 32px;
+                padding: 0 32px;
+            }
         }
         .banner__text {
             max-width: 585px;
             width: calc(50% - 41px);
+            @media (max-width: $desktop) {
+                max-width: unset;
+                width: 100%;
+            }
         }
         .banner__title {
             max-width: 616px;
             width: calc(50% - 41px);
+            @media (max-width: $desktop) {
+                max-width: unset;
+                width: 100%;
+                button {
+                    display: none;
+                }
+            }
         }
     }
     .container {
@@ -60,8 +83,14 @@
                 z-index: 1;
             }
         }
-        button {
+        a {
             margin: 32px 0 0 0;
+            button {
+                &:hover {
+                    background-color: $darksmoke;
+                    color: white;
+                }
+            }
         }
     }
     &__text {

@@ -4,10 +4,22 @@
     color: white;
     h2 {
         margin: 0 0 32px 0;
+        @media (max-width: $desktop) {
+           text-align: center;
+        }
     }
     .wizywig {
         margin: 0 0 64px 0;
         max-width: 748px;
+        @media (max-width: $desktop) {
+            margin: 0 auto 64px auto;
+            p {
+                text-align: center;
+            }
+        }
+        @media (max-width: $tabletSmall) {
+            margin: 0 auto 32px auto;
+        }
     }
     img {
         object-fit: cover;
@@ -15,9 +27,13 @@
     &__wrapper {
         display: flex;
         grid-gap: 32px;
+        width: 100%;
     }
     // current tab image
     &__service {
+        @media (max-width: $desktop) {
+            display: none;
+        }
         div {
             align-items: center;
             justify-content: center;
@@ -46,6 +62,7 @@
                 height: min-content;
                 z-index: 3;
                 background-color: transparent;
+          
             }
             img {
                 width: 100%;
@@ -61,16 +78,28 @@
         flex-direction: column;
         grid-gap: 32px;
         width: 100%;
+        @media (max-width: $tabletSmall) {
+            grid-gap: 48px;
+        }
         // tab buttons
         &__buttons {
             display: flex;
             grid-gap: 16px;
+            @media (max-width: $desktop) {
+                align-items: center;
+                justify-content: center;
+            }
+            @media (max-width: $tabletSmall) {
+                display: none;
+            }
             button {
                 outline: none;
                 border: none;
                 background-color: transparent;
                 color: white;
                 bottom: 0;
+                padding: 0;
+                border-bottom: 3px solid black;
                 &:hover {
                     cursor: pointer;
                 }
@@ -79,12 +108,76 @@
                 }
             }
         }
+        &__dropdown {
+            display: none;
+            margin: 0 auto;
+            color: black;
+            @media (max-width: $tabletSmall) {
+                display: block;
+            }
+            #category-dropdown {
+                div {
+                    color: black;
+                }
+            }
+        }
         // tab content
         &__items {
-            display: grid;
+            display: grid; 
             grid-template-columns: repeat( 4, 1fr);
             grid-gap: 16px;
             width: 100%;
+            @media (max-width: $desktop) {
+                display: none !important;
+            }
+            &__slider {
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                margin: 0 0 0 0;
+                padding-bottom: 42px;
+                display: none !important;
+                @media (max-width: $desktop) {
+                    max-width: 674px;
+                    margin: 0 auto;
+                }
+                &.active {
+                    @media (max-width: $desktop) {
+                        display: block !important;
+                    }
+                }
+                .slick-dots {  
+                    bottom: -32px
+                }
+                .slick-track {
+                    grid-gap: 32px;
+                    @media (max-width: $tabletSmall) {
+                        grid-gap: 16px;
+                    }
+                }
+                .slick-list {
+                    padding: 0 !important;
+                    .slick-track {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+                .slick-slide {
+                    img {
+                        width: 100%;
+                        height: 125px;
+                        border-radius: 8px;
+                    }
+                    button {
+                        margin: 0 auto;
+                    }
+                    p {
+                        margin: 16px 0;
+                        text-align: center;
+                    }
+                }
+            }
             div {
                 display: flex;
                 grid-gap: 24px;

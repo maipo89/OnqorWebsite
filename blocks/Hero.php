@@ -9,6 +9,7 @@
         <?php include('Hero/_HeroVideo.php'); ?>
         <?php include('Hero/_PlayVideo.php'); ?>
         <?php include('Hero/_ListImage.php'); ?>
+        <?php include('Hero/_HeroBasic.php'); ?>
     </div>
 
 <?php endwhile; ?> 

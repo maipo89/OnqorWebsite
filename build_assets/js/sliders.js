@@ -98,6 +98,31 @@ $(document).ready(function() {
         initialSlide: 1
     }); 
 
+    // other services slider
+    $('.other-services__sub__items__slider').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        dots: true,
+        cssEase: 'linear',
+        infinite: false,
+        loop: true,
+        arrows: false,
+        responsive: [
+            {
+            breakpoint: 430,
+            settings: {
+                    slidesToShow: 1,
+                }
+            },
+            {
+            breakpoint: 768,
+            settings: { 
+                    slidesToShow: 2,
+                }
+            },
+        ]
+    }); 
+
      //  branding layout two slider
     $('.layout-two__mobile__slider').slick({
         slidesToShow: 1,
@@ -129,6 +154,49 @@ $(document).ready(function() {
         infinite: true,
         arrows: false,
         cssEase: 'linear',
+    });
+
+    //  testimonials
+     $('.testimonials__tabs__slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        dots: true,
+        infinite: true,
+        arrows: false,
+        cssEase: 'linear',
+    });
+
+    // video gallery
+    $('.video-gallery__slider').slick({
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        centerMode: true,
+        fade: true,
+        cssEase: 'linear',
+    });
+
+    $('.video-gallery__buttons').slick({
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        arrows: false,
+        focusOnSelect: true,
+        cssEase: 'linear',
+        dots: true,
+        responsive: [
+            {
+            breakpoint: 768,
+            settings: {
+                    slidesToShow: 1,
+                }
+            },
+        ]
+    });
+    $('.video-gallery__buttons').on('afterChange', function(event, slick, currentSlide) {
+        $('.video-gallery__slider').slick('slickGoTo', currentSlide);
     });
 });
 
@@ -163,3 +231,4 @@ function updateHeaderBackground() {
     // Set the background image of archive__case-studies__header
     $('.archive__case-studies__header').css('background-image', 'url(' + coverImageUrl + ')');
 }
+

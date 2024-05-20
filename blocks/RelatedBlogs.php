@@ -16,7 +16,7 @@
             $related_blogs = new WP_Query($args);
                 if($related_blogs->have_posts()) : 
                     while($related_blogs->have_posts()) : $related_blogs->the_post(); ?>
-                        <div class="related-projects__wrapper__item">
+                        <div class="related-projects__wrapper__item anim-fadeinstagger">
                             <a href="<?php the_permalink(); ?>">
                                 <?php if(has_post_thumbnail()): ?>
                                     <?php the_post_thumbnail('thumbnail'); ?>
@@ -41,7 +41,7 @@
             $related_blogs = new WP_Query($args);
                 if($related_blogs->have_posts()) : 
                     while($related_blogs->have_posts()) : $related_blogs->the_post(); ?>
-                        <div class="related-projects__wrapper__item">
+                        <div class="related-projects__wrapper__item anim-fadeinstagger">
                             <a href="<?php the_permalink(); ?>">
                                 <?php if(has_post_thumbnail()): ?>
                                     <?php the_post_thumbnail('thumbnail'); ?>

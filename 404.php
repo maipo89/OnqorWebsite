@@ -11,10 +11,22 @@
 				<p class="subtitle1">Looking for any of these?</p>
 			</div>
 			<div class="four04__buttons">
-				<a class="anim-pulse"><button class="btn-primary">Homepage</button></a>
-				<a class="anim-pulse"><button class="btn-primary">Service Pages</button></a>
-				<a class="anim-pulse"><button class="btn-primary">CaseStudies</button></a>
-				<a class="anim-pulse"><button class="btn-primary">Get in Touch</button></a>
+				<?php $footer= get_field('404', 'options'); 
+					if( have_rows('404', 'options') ): ?>
+						<?php while( have_rows('404', 'options') ): the_row(); 	?>
+						 <?php if( have_rows('buttons') ): ?>
+                    		<?php while( have_rows('buttons') ): the_row(); 
+								$link = get_sub_field('btn_link');
+							?>
+								<a class="anim-pulse" href="<?php echo esc_url($link['url']); ?>">
+									<button class="btn-secondary">
+										<?php echo get_sub_field('btn_text') ?>
+									</button>
+								</a>
+							<?php endwhile; ?> 
+               			<?php endif; ?> 
+					<?php endwhile; ?> 
+				<?php endif; ?> 
 			</div>
 		</div>
 

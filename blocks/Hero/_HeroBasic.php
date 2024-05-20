@@ -18,7 +18,7 @@
                 <?php echo get_the_post_thumbnail(get_the_ID(), 'xlarge'); ?>
                 <div class="container">
                     <?php if($parent_page_name) : ?>
-                        <p class="subtitle1" style="border-bottom-color: <?php echo $page_color; ?>"><?php echo $parent_page_name; ?></p>
+                        <p class="subtitle2" style="border-bottom-color: <?php echo $page_color; ?>"><?php echo $parent_page_name; ?></p>
                     <?php endif; ?> 
                     <h1 ><?php echo the_sub_field('title') ?></h1>
                     <div class="wizywig">

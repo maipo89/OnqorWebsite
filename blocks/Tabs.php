@@ -33,7 +33,7 @@ if( have_rows('tabs') ): ?>
                             <?php if($imgVisual) :?>
                                 <img src="<?php echo $imgVisual?> "/>
                             <?php endif; ?> 
-                            <h3 class="h3"><?php echo the_sub_field('tab_title'); ?></h3>
+                            <h3 class="subtitle1"><?php echo the_sub_field('tab_title'); ?></h3>
                             <?php echo the_sub_field('tab_text'); ?>
                         </div>
                         <?php $tab_count++; ?>

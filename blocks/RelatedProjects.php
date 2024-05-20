@@ -17,7 +17,7 @@
             $related_case_studies = new WP_Query($args);
                 if($related_case_studies->have_posts()) : 
                     while($related_case_studies->have_posts()) : $related_case_studies->the_post(); ?>
-                        <div class="related-projects__wrapper__item">
+                        <div class="related-projects__wrapper__item anim-fadeinstagger">
                             <a href="<?php the_permalink(); ?>">
                                 <?php if(has_post_thumbnail()): ?>
                                     <?php the_post_thumbnail('thumbnail'); ?>
@@ -50,7 +50,7 @@
             $related_case_studies = new WP_Query($args);
                 if($related_case_studies->have_posts()) : 
                     while($related_case_studies->have_posts()) : $related_case_studies->the_post(); ?>
-                        <div class="related-projects__wrapper__item">
+                        <div class="related-projects__wrapper__item anim-fadeinstagger">
                             <a href="<?php the_permalink(); ?>">
                                 <?php if(has_post_thumbnail()): ?>
                                     <?php the_post_thumbnail('thumbnail'); ?>

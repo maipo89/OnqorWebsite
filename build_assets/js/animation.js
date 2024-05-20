@@ -26,6 +26,20 @@ $(document).ready(function(){
         });
         tl.to(fade, { opacity: 1, duration: 0.5 }); 
     });
+
+    
+    $('.anim-fadeinstagger').each(function(index, item) {
+        var tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: item,
+                start: "top 90%", 
+                end: "bottom 20%", 
+                markers: true
+            }
+        });
+        tl.to(item, { opacity: 1, duration: 0.5, batch: 0.9 }); // Use batch instead of stagger
+    });
+    
     
     // number counter (use class anim-counter)
     gsap.utils.toArray(".anim-counter").forEach(function(counter) {
@@ -59,8 +73,8 @@ $(document).ready(function(){
     var oldContent = document.getElementById('dynamicTitle').textContent;
     var words = oldContent.split(' ');
 
-    words[1] = '<span>' + words[1] + '</span>';
-    words[3] = '<span>' + words[3] + '</span>';
+    words[2] = '<span>' + words[2] + '</span>';
+    words[4] = '<span>' + words[4] + '</span>';
 
     var newContent = words.join(' ');
     document.getElementById('dynamicTitle').innerHTML = newContent;

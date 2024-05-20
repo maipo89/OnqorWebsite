@@ -21,8 +21,15 @@
                         <!-- links -->
                         <div class="case-studies__item__links anim-fadein">
                             <?php if( have_rows('links') ): ?>
-                                <?php while( have_rows('links') ): the_row(); ?>
-                                    <a><button class="btn-secondary"><?php echo the_sub_field('btn_text') ?></button></a>
+                                <?php while( have_rows('links') ): the_row(); 
+                                    $button_text = get_sub_field('btn_text');
+                                    $button_link = get_sub_field('btn_link'); 
+                                ?>
+                                    <a href="<?php echo the_sub_field('btn_link')[url]; ?>">
+                                        <button class="btn-secondary">
+                                            <?php echo the_sub_field('btn_text') ?>
+                                        </button>
+                                    </a>
                                 <?php endwhile; ?> 
                             <?php endif; ?> 
                         </div>

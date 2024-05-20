@@ -5,6 +5,11 @@
     .container {
         grid-gap: 40px;
     }
+    a {
+        &:hover {
+            text-decoration: none;
+        }
+    }
     &__item {
         width: 100%;
         height: fit-content;

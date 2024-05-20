@@ -22,6 +22,10 @@
             <div class="banner__text">
                 <?php echo the_sub_field('text') ?>
             </div>
+
+            <?php if( $basic['btn_text'] ) : ?>  
+                <a class="anim-pulse btn-mobile anim-pulse-<?php echo $pulse_color; ?>"><button class="btn-secondary" style="border-color: <?php echo $page_color; ?>"><?php echo $basic['btn_text'] ?></button></a>
+            <?php endif; ?> 
         </div>  
     </div>  
 

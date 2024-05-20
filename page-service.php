@@ -40,9 +40,11 @@
 				if ($children_query->have_posts()) :
 					while ($children_query->have_posts()) :
 						$children_query->the_post();
+						$service_color = get_field('service_color', get_the_ID());
 				?>
 						<div  style="background-image: url('<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'small')); ?>');">
 							<h2 class="subtitle1"><?php the_title(); ?></h2>
+							<span style="background-color: <?php echo $service_color; ?>"></span>
 						</div>
 
 					<?php endwhile;
@@ -99,13 +101,16 @@
 								while ($grandchildren_query->have_posts()) :
 									$grandchildren_query->the_post();
 							?>
-									<div class="services-page__item__child__item">
-									<?php $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'small'); ?>
-										<?php if ($thumbnail_url) : ?>
-											<img src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title_attribute(); ?>" />
-										<?php endif; ?>
-										<h4 class="subtitle3"><?php the_title(); ?></h4>
-									</div>
+									<a href="<?php the_permalink(); ?>">
+										<div class="services-page__item__child__item">
+										<?php $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'small'); ?>
+											<?php if ($thumbnail_url) : ?>
+												<img src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title_attribute(); ?>" />
+											<?php endif; ?>
+											<h4 class="subtitle3"><?php the_title(); ?></h4>
+											<button class="btn-primary">view</button>
+										</div>
+									</a>
 								<?php endwhile;
 							endif;
 							wp_reset_postdata(); ?>

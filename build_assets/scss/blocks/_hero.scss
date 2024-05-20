@@ -273,6 +273,13 @@
         position: relative;
         background-size: cover;
         background-repeat: no-repeat;
+        padding: 96px 0 64px 0;
+        @media (max-width: $desktop) { 
+            padding: 72px 0 48px 0;
+        }
+        @media (max-width: $tabletLarge) { 
+            padding: 64px 0 64px 0;
+        }
         a {
             &:hover {
                 text-decoration: none;
@@ -408,11 +415,16 @@
     }
     .hero-basic {
         background-color: black;
-        padding: 96px 0 72px 0;
         color: white;
         position: relative;
         overflow: visible;
-
+        padding: 96px 0 72px 0;
+        @media (max-width: $desktop) { 
+            padding: 64px 0 72px 0;
+        }
+        @media (max-width: $tabletLarge) { 
+            padding: 64px 0 64px 0;
+        }
         &::after {
             content: "";
             display: block;
@@ -475,7 +487,7 @@
         .container {
             overflow: visible;
         }
-        .subtitle1 {
+        .subtitle2 {
             z-index: 3;
             width: fit-content;
             border-bottom: 4px solid transparent;
@@ -515,6 +527,130 @@
                 @media (max-width: $tabletSmall) { 
                     margin: 0 auto;
                     display: flex;
+                }
+            }
+        }
+    }
+    .hero-images {
+        @include padding;
+        background-color: black;
+        color: white;
+        position: relative;
+        .title {
+            margin: 0 0 64px 0;
+            @media (max-width: $desktop) { 
+                margin: 0 0 32px 0;
+            }
+            @media (max-width: $tabletSmall) { 
+                margin: 0 0 24px 0;
+            }
+            p {
+                width: fit-content;
+            }
+        }
+        &__excerpt {
+            width: calc(40% - 32px);
+            position: absolute;
+            top: 80%;
+            right: 32px;
+            @media (max-width: $desktop) { 
+               position: relative;
+               width: 100%;
+               margin: 40px 0 0 0;
+               right: unset;
+               top: unset;
+            }
+        }
+        &__images {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: flex-start;
+            grid-gap: 32px;
+            width: 100%;
+            height: 1010px;
+            @media (max-width: $desktop) { 
+                max-height: 733px;
+                grid-gap: 24px;
+            }
+            @media (max-width: $tabletLarge) { 
+                max-height: 539px;
+                grid-gap: 16px;
+            }
+            @media (max-width: $tabletSmall) { 
+                max-height: 457px;
+            }
+            img {
+                border-radius: 8px;
+                &:nth-child(1){
+                    width: calc(30% - 32px);
+                    height: calc(50% - 16px);
+                    @media (max-width: $desktop) { 
+                        width: calc(30% - 24px);
+                        height: calc(50% - 12px);
+                    }
+                    @media (max-width: $tabletLarge) { 
+                        width: calc(30% - 16px);
+                        height: calc(50% - 8px);
+                    }
+                }
+                &:nth-child(2){
+                    width: 40%;
+                    height: calc(36% - 16px);
+                    @media (max-width: $desktop) { 
+                        height: calc(36% - 12px);
+                    }
+                    @media (max-width: $tabletLarge) { 
+                        height: calc(36% - 8px);
+                    }
+                }
+                &:nth-child(3){
+                    width: calc(30% - 32px);
+                    height: calc(36% - 16px);
+                    @media (max-width: $desktop) { 
+                        width: calc(30% - 24px);
+                        height: calc(36% - 12px);
+                    }
+                    @media (max-width: $tabletLarge) { 
+                        width: calc(30% - 16px);
+                        height: calc(36% - 8px);
+                    }
+                }
+                &:nth-child(4){
+                    width: calc(30% - 32px);
+                    height: calc(50% - 16px);
+                    @media (max-width: $desktop) { 
+                        width: calc(30% - 24px);
+                        height: calc(50% - 12px);
+                    }
+                    @media (max-width: $tabletLarge) { 
+                        width: calc(30% - 16px);
+                        height: calc(50% - 8px);
+                    }
+                }
+                &:nth-child(5){
+                    width: calc(30% - 32px);
+                    height: calc(64% - 16px);
+                    transform: translateY(-22.5%);
+                    @media (max-width: $desktop) { 
+                        width: calc(30% - 24px);
+                        height: calc(64% - 12px);
+                    }
+                    @media (max-width: $tabletLarge) { 
+                        width: calc(30% - 16px);
+                        height: calc(64% - 8px);
+                    }
+                }
+                &:nth-child(6){
+                    width: 40%;
+                    height: calc(36% - 16px);
+                    transform: translateY(-41%);
+                    @media (max-width: $desktop) { 
+                        height: calc(36% - 12px);
+                    }
+                    @media (max-width: $tabletLarge) { 
+                        height: calc(36% - 8px);
+                    }
                 }
             }
         }

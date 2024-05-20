@@ -13,6 +13,9 @@
             height: 139px;
             background-color: white;
             bottom: 0;
+            @media (max-width: $tabletLarge) {
+                display: none;
+            }
         }
         &::before {
             position: absolute;
@@ -24,14 +27,35 @@
             background-color: black;
             top: 0;
             background: linear-gradient(180deg, #121212 0%, rgba(14, 14, 14, 0.22) 174.82%, black 174.84%, #121212 174.86%, #121212 174.88%);
+            @media (max-width: $desktop) {
+                height: 100%;
+            }
         }
         &__title {
             max-width: 740px;
-            margin: 96px 0;
+            margin: 64px 0 96px;
             color: white;
             z-index: 3;
+            @media (max-width: $desktop) {
+                margin: 64px auto 64px auto;
+            }
+            @media (max-width: $tabletLarge) {
+                margin: 40px auto 100px auto;
+            }
+            @media (max-width: $tabletSmall) {
+                margin: 40px auto 40px auto;
+            }
             h1 {
                 margin: 0 0 16px 0;
+                @media (max-width: $desktop) {
+                    text-align: center;
+                    margin: 0 0 24px 0;
+                }
+            }
+            p {
+                @media (max-width: $desktop) {
+                    text-align: center;
+                }
             }
         }
         &__services {
@@ -39,6 +63,15 @@
             grid-template-columns: repeat(4, 1fr);
             grid-gap: 42px;
             z-index: 2;
+            @media (max-width: $desktop) {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 640px;
+                margin: 0 auto;
+                width: 100%;
+            }
+            @media (max-width: $tabletLarge) {
+                display: none;
+            }
             & > div {
                 height: 182px;
                 border-radius: 8px; 
@@ -61,7 +94,7 @@
                     background-color: rgba(0, 0, 0, 0.5); 
                     bottom: 0;
                 }
-                &::after {
+                span {
                     content: "";
                     display: block;
                     width: 100%;
@@ -70,7 +103,7 @@
                     z-index: 2;
                 }
                 h2 {
-                    margin: 0 0 21px 0;
+                    margin: 0 0 13px 0;
                     z-index: 2;
                 }
             }
@@ -103,6 +136,13 @@
                 margin: 0 0 48px 0;
             }
         }
+        a {
+            text-decoration: none;
+            color: black;
+            &:hover {
+                text-decoration: none;
+            }
+        }
         &__child {
             display: flex;
             align-items: flex-start;
@@ -117,8 +157,13 @@
                 max-width: 181px;
                 width: 100%;
                 text-align: center;
-                h4 {
-                    margin: 16px 0 0 0;
+                grid-gap: 16px;
+                &:hover {
+                    cursor: pointer;
+                    button {
+                        background-color: $darksmoke;
+                        color: white;
+                    }
                 }
                 img {
                     width: 100%;

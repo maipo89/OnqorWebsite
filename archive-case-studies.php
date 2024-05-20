@@ -90,7 +90,7 @@
                         <!-- posts -->
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 						<?php $post_categories = get_the_category(); ?>
-							<article class="article <?php foreach ($post_categories as $cat) { echo esc_attr($cat->slug) . ' '; } ?>" id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article">
+							<article class="article anim-fadeinstagger <?php foreach ($post_categories as $cat) { echo esc_attr($cat->slug) . ' '; } ?>" id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article">
                                 <a href="<?php the_permalink(); ?>">
 									<div >
 										<?php if (has_post_thumbnail()) : ?>

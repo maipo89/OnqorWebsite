@@ -66,6 +66,13 @@
         @media (max-width: $tabletSmall) {
             grid-template-columns: repeat(1, auto);
         }
+        button {
+            border-color: $operations;
+            &:hover {
+                color: white;
+                background-color: $darksmoke;
+            }
+        }
     }
     .spotlight {
         position: fixed;

@@ -54,6 +54,9 @@ h1 {
     @media (max-width: $desktop) { 
         font-size: 75px;
     }
+    @media (max-width: $tabletLarge) { 
+        font-size: 50px;
+    }
     @media (max-width: $tabletSmall) { 
         font-size: 28px;
     }
@@ -266,6 +269,7 @@ h3 {
     background-color: $darksmoke;
     transition: .2s;
     &:hover {
+        border: 1px solid $darksmoke;
         background-color: $offwhite;
         transition: .2s;
         color: $darksmoke;
@@ -324,8 +328,17 @@ h3 {
         font-weight: 500;
         line-height: normal;
         border-radius: 8px;
+        svg {
+            transition: ease .2s;
+        }
         &:hover {
             cursor: pointer;
+        }
+        &.open {
+            svg {
+                transform: scale(-1);
+                transition: ease .2s;
+            }
         }
     }
     &__options {

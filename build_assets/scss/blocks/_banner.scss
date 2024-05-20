@@ -63,10 +63,19 @@
             @media (max-width: $desktop) {
                 max-width: unset;
                 width: 100%;
-                button {
+                a {
                     display: none;
                 }
+                .h3 {
+                    margin: 0;
+                }
             }
+        }
+        .btn-mobile {
+            display: none;
+            @media (max-width: $desktop) {
+                display: block;
+            } 
         }
     }
     .container {

@@ -10,7 +10,7 @@
                <?php if( $basic['number'] ) { ?>
                   <!-- <p class="body1"><?php echo $basic['number'] ?></p> -->
                <?php  } ?>
-               <h2 class="h3"><?php echo $basic['title'] ?></h2>
+               <h2 class="subtitle1"><?php echo $basic['title'] ?></h2>
             </div>
             <?php echo $basic['text'] ?>
         </div>

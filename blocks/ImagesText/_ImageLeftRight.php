@@ -12,13 +12,13 @@
                     <?php if( get_sub_field('image_right') ) { ?> image-right <?php  } ?>
                     <?php if( get_sub_field('narrow') ) { ?> narrow <?php  } ?>
                     ">
-                        <img src="<?php echo $imgVisual ?>"/>
-                        <div class="image-left-right__content__text">
+                        <img class="anim-fadein" src="<?php echo $imgVisual ?>"/>
+                        <div class="image-left-right__content__text anim-horizontal">
                             <div class="title">
                                 <?php if( $basic['number'] ) { ?> 
                                     <!-- <p class="body1"><?php echo $basic['number'] ?></p> -->
                                 <?php  } ?>
-                                <h2 class="h3"><?php echo $basic['title'] ?></h2>
+                                <h2 class="subtitle1"><?php echo $basic['title'] ?></h2>
                             </div>
                             <?php echo get_sub_field('text')?>
                             <?php if(get_sub_field('btn_text')) { ?> 

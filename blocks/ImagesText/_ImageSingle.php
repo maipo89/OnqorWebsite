@@ -22,7 +22,7 @@
                         <div class="<?php if( get_sub_field('columns_text_four') ) { ?> col-four <?php  } ?>
                                     <?php if( get_sub_field('columns_text_three') ) { ?> col-three <?php  } ?>
                         " >
-                            <?php if( get_sub_field('columns_text_four') ) : ?>
+                            <?php if( get_sub_field('text') ) : ?>
                                 <div class="image-single__text">
                                     <?php echo the_sub_field('text') ?>
                                 </div>
@@ -36,7 +36,7 @@
                     </div>
                     <!-- subtitle -->
                     <?php if( get_sub_field('subtitle')) { ?> 
-                        <h2 class="h3 subtitle"><?php echo get_sub_field('subtitle') ?></h2>
+                        <h2 class="subtitle1 subtitle"><?php echo get_sub_field('subtitle') ?></h2>
                     <?php  } ?>
 
                     <!-- subtext -->

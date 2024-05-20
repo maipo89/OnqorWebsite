@@ -2,6 +2,8 @@
     position: relative;
     .articles-wrapper {
         min-height: 1080px;
+        position: relative;
+        z-index: 1;
         #articles-container {
             padding: 48px 32px;
             display: grid;
@@ -25,6 +27,7 @@
         display: flex;
         position: relative;
         overflow: hidden;
+        opacity: 0;
         @media (max-width: $tabletLarge) {
             width: 100%;
         }
@@ -231,6 +234,7 @@
     // casestudies
     &__case-studies {
         &__header {
+            z-index: 1;
             background-color: black;
             color: white;
             margin: 0 0 -356px 0;
@@ -270,7 +274,7 @@
             h1 {
                 margin: 60px 0 81px 0;
                 @media(max-width: $desktop) { 
-                    margin: 135px 0 128px 0;
+                    margin: 135px 0 64px 0;
                 } 
                 @media(max-width: $tabletLarge) { 
                     margin: 72px 0 96px 0;
@@ -301,6 +305,10 @@
                     text-align: center;
                     padding: 0 0 42px 0;
                     margin: 16px 0 72px 0;
+                    button {
+                        margin: 0 auto !important;
+                        display: block;
+                    }
                 }
                 @media(max-width: $tabletLarge) { 
                     margin: 8px 0 64px 0;
@@ -347,6 +355,8 @@
             }
         }
         &__filter {
+            position: relative;
+            z-index: 2;
             color: white;
             @media(max-width: $desktop) { 
                 padding: 32px 0 0 0;

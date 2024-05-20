@@ -3,7 +3,7 @@ $(document).ready(function($) {
     $('.tabs__content__item').hide();
 
     // Show the first tab content and add active class to the first tab button by default
-    $('.tabs__content__item').first().show();
+    $('.tabs__content__item').first().fadeIn(500, 'swing');
     $('.tab-link').first().addClass('active');
 
     // Tab link click function
@@ -23,7 +23,7 @@ $(document).ready(function($) {
         $('.tabs__content__item').hide();
 
         // Show the current tab content
-        $('#' + currentTab).show();
+        $('#' + currentTab).fadeIn(500, 'swing');
     });
 });
 
@@ -33,7 +33,7 @@ $(document).ready(function($) {
     $('.testimonials__tabs__item').hide();
 
     // Show the first tab content and add active class to the first tab button by default
-    $('.testimonials__tabs__item').first().show();
+    $('.testimonials__tabs__item').first().fadeIn(1000);
     $('.testimonials__buttons div').first().addClass('active');
 
     // Tab link click function
@@ -53,9 +53,10 @@ $(document).ready(function($) {
         $('.testimonials__tabs__item').hide();
 
         // Show the current tab content
-        $('#' + currentTab).show();
+        $('#' + currentTab).fadeIn(500, 'swing');
     });
 });
+
 
 window.onload = function() {
     $(document).ready(function($) {
@@ -67,7 +68,7 @@ window.onload = function() {
         // Show the first tab content and add active class to the first tab button by default
         $('.other-services__sub__items').first().show();
         $('.other-services__sub__items__slider').first().addClass('active');
-        $('.other-services__service div').first().show();
+        $('.other-services__service div').first().fadeIn(500, 'swing');
         $('.other-services__sub__buttons button').first().addClass('active');
 
         // Default to Marketing category and trigger tab click
@@ -149,10 +150,10 @@ window.onload = function() {
             // Show the current tab content
             $(".other-services__sub__items").filter(function() {
                 return $(this).data('tab') === currentTab;
-            }).show();
+            }).fadeIn(500, 'swing');
             $(".other-services__service div").filter(function() {
                 return $(this).data('service') === currentTab;
-            }).show();
+            }).fadeIn(500, 'swing');
 
             if ($.fn.slick) {
                 $('.other-services__sub__items__slider').filter(function() {

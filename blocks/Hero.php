@@ -10,6 +10,7 @@
         <?php include('Hero/_PlayVideo.php'); ?>
         <?php include('Hero/_ListImage.php'); ?>
         <?php include('Hero/_HeroBasic.php'); ?>
+        <?php include('Hero/_HeroImages.php'); ?>
     </div>
 
 <?php endwhile; ?> 

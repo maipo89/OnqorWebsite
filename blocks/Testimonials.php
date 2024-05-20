@@ -32,7 +32,7 @@
                     <div class="testimonials__tabs__item" id="tab-<?php echo $tab_count; ?>">
                         <img src="<?php echo $imgVisual ?>"/>
                         <div class="testimonials__tabs__item__text">
-                            <h3><?php echo the_sub_field('title'); ?></h3>
+                            <h3 class="subtitle1"><?php echo the_sub_field('title'); ?></h3>
                             <div class="wizywig">
                                 <?php echo the_sub_field('text'); ?>
                             </div>
@@ -56,7 +56,7 @@
                     <div class="testimonials__tabs__item" >
                         <img src="<?php echo $imgVisual ?>"/>
                         <div class="testimonials__tabs__item__text">
-                            <h3><?php echo the_sub_field('title'); ?></h3>
+                            <h3 class="subtitle1"><?php echo the_sub_field('title'); ?></h3>
                             <div class="wizywig">
                                 <?php echo the_sub_field('text'); ?>
                             </div>

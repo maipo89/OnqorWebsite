@@ -68,7 +68,7 @@
 						<?php $footer= get_field('header', 'options'); 
 							if( have_rows('header', 'options') ): ?>
 								<?php while( have_rows('header', 'options') ): the_row(); 	
-									$link = get_sub_field('button_link');
+									$link = get_sub_field('cta_link');
 							?>
 								<a  href="<?php echo esc_url($link['url']); ?>">
 									<button class="btn-primary"><?php echo get_sub_field('cta_text') ?></button>

@@ -259,7 +259,7 @@ function filter_case_studies() {
       while($query->have_posts()): $query->the_post();
           // Output your custom post HTML structure
           ?>
-          <article class="article" id="post-<?php the_ID(); ?>">
+          <article class="article anim-fadeinstagger" id="post-<?php the_ID(); ?>">
               <a href="<?php the_permalink(); ?>">
               <div >
 					        <?php if (has_post_thumbnail()) : ?>
@@ -311,7 +311,7 @@ function filter_blogs() {
   if($query->have_posts()) : 
       while($query->have_posts()): $query->the_post();
           ?>
- 	          <article class="article id="post-<?php the_ID(); ?>">
+ 	          <article class="article anim-fadeinstagger id="post-<?php the_ID(); ?>">
                 <a href="<?php the_permalink(); ?>">
 										<div >
 											<?php if (has_post_thumbnail()) : ?>

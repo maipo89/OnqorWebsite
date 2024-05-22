@@ -4,6 +4,7 @@ $(document).ready(function() {
     $('.archive__case-studies .dropdown__options__items div').click(function(){
         var categorySlug = $(this).attr('value');
         var $container = $('#articles-container');
+        var $article = $('.article');
 
         // Set the minimum height to prevent collapse
         $container.css('min-height', $container.height() + 'px');
@@ -17,6 +18,7 @@ $(document).ready(function() {
                     category: categorySlug
                 },
                 success: function(response) {
+                    $article.css('opacity', '1')
                     $container.html(response).fadeIn('fast', function() {
                         // Remove min-height after fade-in complete to adjust to new content
                         $container.css('min-height', '');

@@ -61,7 +61,7 @@ if( have_rows('hero_case_studies') ): ?>
                             <p>
                             As a relatively new brand, L’ACTIF’s main challenge was brand awareness. The client needed to build a presence on social media, firmly establishing the brand in the athleisure space. After launching in Saudi Arabia, the client was looking to expand L’ACTIF’s audience, penetrating the UK market and engaging with UK consumers.
                             </p>
-                            <a class="anim-pulse"><button class="btn-primary"><?php echo $basic['cta'] ?>Get in touch</button></a>
+                            <a class=""><button class="btn-primary"><?php echo $basic['cta'] ?>Get in touch</button></a>
                         </div>
                     </div>
                 </div>

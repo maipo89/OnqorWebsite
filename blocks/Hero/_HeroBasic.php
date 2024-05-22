@@ -13,7 +13,7 @@
                 $parent_page_name = get_the_title($parent_id);
             }
         ?>
-            <div class="hero-basic">
+            <div class="hero-basic parallax-container">
                 <!-- Featured image of the current page -->
                 <?php echo get_the_post_thumbnail(get_the_ID(), 'xlarge'); ?>
                 <div class="container">

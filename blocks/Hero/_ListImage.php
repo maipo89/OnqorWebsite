@@ -8,7 +8,8 @@
 
             $background_image = get_the_post_thumbnail_url(get_the_ID(), 'full');
         ?>
-            <div class="list-image" style="background-image: url('<?php echo $background_image; ?>');">
+            <div class="list-image parallax-container" >
+                <?php echo get_the_post_thumbnail(get_the_ID(), 'xlarge'); ?>
                 <div class="container">
                         <h1 class="h3"><?php echo the_sub_field('title') ?></h1>
 

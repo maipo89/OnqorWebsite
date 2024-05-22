@@ -1,4 +1,5 @@
 .hero {
+    overflow: hidden;
     img {
         object-fit: cover;
     }
@@ -297,6 +298,15 @@
         .container {
             overflow: visible;
         }
+        > img {
+            position: absolute;
+            left: 0;
+            top: -129%;
+            z-index: 1;
+            width: 100%;
+            height: 130%;
+            transform: translateY(0%);
+        }
         &::after {
             content: "";
             display: block;
@@ -479,10 +489,11 @@
         img {
             position: absolute;
             left: 0;
-            top: 0;
+            top: -135%;
             z-index: 1;
             width: 100%;
-            height: 100%;
+            height: 130%;
+            transform: translateY(0%);
         }
         .container {
             overflow: visible;

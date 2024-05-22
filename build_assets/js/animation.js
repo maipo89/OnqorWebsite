@@ -8,7 +8,7 @@ $(document).ready(function(){
                 trigger: item,
                 start: "top 80%", 
                 end: "bottom 20%", 
-                markers: true
+                markers: false
             }
         });
         tl.to(item, { x: 0 * index, opacity: 1, duration: 0.5 }); 
@@ -21,23 +21,33 @@ $(document).ready(function(){
                 trigger: fade,
                 start: "top 80%", 
                 end: "bottom 20%", 
-                markers: true
+                markers: false
             }
         });
         tl.to(fade, { opacity: 1, duration: 0.5 }); 
     });
 
-    
+    // parallax
+    gsap.to('.parallax-container > img', {
+        yPercent: 160,
+        ease: 'none',
+        scrollTrigger: {
+            trigger: '.parallax-container',
+            scrub: true
+        }
+    });
+
+    // stagegr fade
     $('.anim-fadeinstagger').each(function(index, item) {
         var tl = gsap.timeline({
             scrollTrigger: {
                 trigger: item,
                 start: "top 90%", 
                 end: "bottom 20%", 
-                markers: true
+                markers: false
             }
         });
-        tl.to(item, { opacity: 1, duration: 0.5, batch: 0.9 }); // Use batch instead of stagger
+        tl.from(item, { opacity: 0, duration: 0.5, batch: 0.9 }); // Use batch instead of stagger
     });
     
     
@@ -51,7 +61,7 @@ $(document).ready(function(){
                 scrollTrigger: {
                     trigger: counter,
                     start: "top 90%",
-                    // markers: true,
+                    // markers: false,
                     onEnter: function() {
                         gsap.to(obj, {
                             duration: 2,

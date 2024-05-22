@@ -7,6 +7,11 @@
     background-size: cover;
     text-align: center;
     overflow: hidden;
+    a {
+        &:hover {
+            text-decoration: none;
+        }
+    }
     img {
         object-fit: cover;
     }

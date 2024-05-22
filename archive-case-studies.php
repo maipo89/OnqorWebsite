@@ -18,6 +18,7 @@
                 <!-- header -->
                 <div class="archive__case-studies__header" >
                     <div class="overlay"></div> 
+                    <div class="bg-image"></div>
                     <div class="container fdc">
                         <h1>Case Studies</h1>
                         <h2 class="subtitle2">Featured Case Studies</h2>

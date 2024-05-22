@@ -229,6 +229,6 @@ function updateHeaderBackground() {
     // Get the cover image URL of the currently active slide
     var coverImageUrl = $('.slick-current .case-study-thumbnail').data('cover-image');
     // Set the background image of archive__case-studies__header
-    $('.archive__case-studies__header').css('background-image', 'url(' + coverImageUrl + ')');
+    $('.archive__case-studies__header .bg-image').css('background-image', 'url(' + coverImageUrl + ')');
 }
 

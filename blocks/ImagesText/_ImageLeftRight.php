@@ -12,7 +12,7 @@
                     <?php if( get_sub_field('image_right') ) { ?> image-right <?php  } ?>
                     <?php if( get_sub_field('narrow') ) { ?> narrow <?php  } ?>
                     ">
-                        <img class="anim-fadein" src="<?php echo $imgVisual ?>"/>
+                        <img class="anim-fadein" src="<?php echo $imgVisual ?>" alt="<?php echo esc_attr($img['alt']); ?>"/>
                         <div class="image-left-right__content__text anim-horizontal">
                             <div class="title">
                                 <?php if( $basic['number'] ) { ?> 

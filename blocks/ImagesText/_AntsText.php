@@ -19,7 +19,7 @@
                     <div class="ants-text__text">
                         <?php echo the_sub_field('text') ?>
                     </div>
-                    <img src="<?php echo $imgVisual ?>"/>
+                    <img src="<?php echo $imgVisual ?>" alt="<?php echo esc_attr($img['alt']); ?>"/>
 
                     <div class="ants-text__subtext">
                         <!-- <svg xmlns="http://www.w3.org/2000/svg" width="612" height="143" viewBox="0 0 612 143" fill="none">

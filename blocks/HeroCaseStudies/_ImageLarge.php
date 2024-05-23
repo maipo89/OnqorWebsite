@@ -9,7 +9,7 @@
             ?>
             <!-- images -->
             <div class="image-large">
-                <img src="<?php echo $imgVisual ?>"/>
+                <img src="<?php echo $imgVisual ?>" alt="<?php echo esc_attr($img['alt']); ?>"/>
             </div>  
                                 
         <?php endwhile; ?> 

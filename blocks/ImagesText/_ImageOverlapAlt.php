@@ -24,9 +24,9 @@
                             <?php echo the_sub_field('text') ?>
                         </div>
                     </div>
-                    <img src="<?php echo $imgVisualOne ?>"/>
-                    <img src="<?php echo $imgVisualTwo ?>"/>
-                    <img src="<?php echo $imgVisualThree ?>"/>
+                    <img src="<?php echo $imgVisualOne ?>" alt="<?php echo esc_attr($imgOne['alt']); ?>"/>
+                    <img src="<?php echo $imgVisualTwo ?>" alt="<?php echo esc_attr($imgTwo['alt']); ?>"/>
+                    <img src="<?php echo $imgVisualThree ?>" alt="<?php echo esc_attr($imgThree['alt']); ?>"/>
                 </div>  
             </div>  
     <?php endwhile; ?> 

@@ -198,6 +198,7 @@ $(document).ready(function() {
     $('.video-gallery__buttons').on('afterChange', function(event, slick, currentSlide) {
         $('.video-gallery__slider').slick('slickGoTo', currentSlide);
     });
+
 });
 
 $(document).ready(function() {

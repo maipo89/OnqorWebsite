@@ -32,7 +32,7 @@
 
                     <!-- image -->
                     <div class="image-single__images">
-                        <img class="<?php if( !get_sub_field('text') ) { ?> margin-top-none <?php  } ?>"  src="<?php echo $imgVisual ?>"/>
+                        <img class="<?php if( !get_sub_field('text') ) { ?> margin-top-none <?php  } ?>"  src="<?php echo $imgVisual ?>" alt="<?php echo esc_attr($img['alt']); ?>"/>
                     </div>
                     <!-- subtitle -->
                     <?php if( get_sub_field('subtitle')) { ?> 

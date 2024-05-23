@@ -15,7 +15,7 @@
         <div class="stats__stats">
             <div class="container center">
                 <div class="stats__stats__title">
-                    <img src="<?php echo $imgVisual ?>"/>
+                    <img src="<?php echo $imgVisual ?>" alt="<?php echo esc_attr($img['alt']); ?>"/>
                     <p>Results</p>
                 </div>
                 <div class="stats__stats__items">

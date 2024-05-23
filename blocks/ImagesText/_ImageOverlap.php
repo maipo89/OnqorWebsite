@@ -9,7 +9,7 @@
             <div class="image-overlap">
                 <div class="container ">
 
-                    <img src="<?php echo $imgVisual ?>"/>
+                    <img src="<?php echo $imgVisual ?>" alt="<?php echo esc_attr($img['alt']); ?>"/>
                     <div class="image-overlap__text">
                         <div class="title">
                             <!-- <p><?php echo $basic['number'] ?></p> -->

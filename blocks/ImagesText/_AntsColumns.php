@@ -19,7 +19,7 @@
                     <div class="ants-columns__text">
                         <?php echo the_sub_field('text') ?>
                     </div>
-                    <img src="<?php echo $imgVisual ?>"/>
+                    <img src="<?php echo $imgVisual ?>" alt="<?php echo esc_attr($img['alt']); ?>"/>
 
                     <div class="ants-columns__subtext">
                         <div class="ants-columns__subtext__wrapper">

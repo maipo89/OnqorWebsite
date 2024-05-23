@@ -5,7 +5,7 @@
          $imgVisual = $img['sizes']['xlarge'];
 ?>
     <div class="testimonials-projects">
-        <img src="<?php echo $imgVisual ?>" />
+        <img src="<?php echo $imgVisual ?>" alt="<?php echo esc_attr($img['alt']); ?>"/>
         <div class="testimonials-projects__text">
             <div class="container aife">
                 <div class="testimonials-projects__text__container">

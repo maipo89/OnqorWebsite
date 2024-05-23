@@ -43,8 +43,10 @@ $(document).ready(function() {
     function playPause() {
         if (!played) {
             video.play();
+            console.log('played')
         } else {
             video.pause();
+            console.log('paused')
         }
     }
     

@@ -38,14 +38,14 @@
                                         <?php endwhile; ?> 
                                     <?php endif; ?> 
                                 </div>
-                                <img src="<?php echo $imgVisualOne ?>"/>
+                                <img src="<?php echo $imgVisualOne ?>" alt="<?php echo esc_attr($imgOne['alt']); ?>"/>
                             </div>
-                            <img src="<?php echo $imgVisualTwo ?>"/>
+                            <img src="<?php echo $imgVisualTwo ?>" alt="<?php echo esc_attr($imgTwo['alt']); ?>"/>
                         </div>
 
                         <!-- right -->
                         <div class="layout-three__images__right">
-                            <img src="<?php echo $imgVisualThree ?>"/>
+                            <img src="<?php echo $imgVisualThree ?>" alt="<?php echo esc_attr($imgThree['alt']); ?>"/>
                             <div class="wizywig">
                                 <?php echo the_sub_field('text') ?>
                             </div>
@@ -61,9 +61,9 @@
                     <!-- slider -->
                         <div class="layout-three__mobile">
                             <div class="layout-three__mobile__slider universal__slider">
-                                <img src="<?php echo $imgVisualOne ?>"/>
-                                <img src="<?php echo $imgVisualTwo ?>"/>
-                                <img src="<?php echo $imgVisualThree ?>"/>
+                                <img src="<?php echo $imgVisualOne ?>" alt="<?php echo esc_attr($imgOne['alt']); ?>"/>
+                                <img src="<?php echo $imgVisualTwo ?>" alt="<?php echo esc_attr($imgTwo['alt']); ?>"/>
+                                <img src="<?php echo $imgVisualThree ?>" alt="<?php echo esc_attr($imgThree['alt']); ?>"/>
                             </div>
                         </div>
                 </div>  

@@ -28,7 +28,7 @@
                             ?>
                         </div>
                         <div class="image-triple-offset__images__column">
-                            <img src="<?php echo $imgVisual ?>"/>
+                            <img src="<?php echo $imgVisual ?>" alt="<?php echo esc_attr($img['alt']); ?>"/>
                             <div class="image-triple-offset__subtext-desktop">
                                 <?php echo the_sub_field('subtext') ?>
                             </div>

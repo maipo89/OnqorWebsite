@@ -7,7 +7,7 @@
     <div class="image-text-columns">
         <div class="container">
             <h2><?php echo $basic['title'] ?></h2>
-            <img src="<?php echo $imgVisual ?>" />
+            <img src="<?php echo $imgVisual ?>"  alt="<?php echo esc_attr($img['alt']); ?>"/>
             <?php echo $basic['text'] ?>
         </div>  
     </div>  

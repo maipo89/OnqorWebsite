@@ -13,7 +13,7 @@
                      $imgVisual = $img['sizes']['small'];
                 ?>
                     <div  data-tab="tab-<?php echo $tab_count; ?>">
-                        <img src="<?php echo $imgVisual ?>"/>
+                        <img src="<?php echo $imgVisual ?>" alt="<?php echo esc_attr($img['alt']); ?>"/>
                     </div>
                     <?php $tab_count++; ?>
                 <?php endwhile; ?> 
@@ -30,7 +30,7 @@
                      $link = get_sub_field('button_link'); // This returns an array
                 ?>
                     <div class="testimonials__tabs__item" id="tab-<?php echo $tab_count; ?>">
-                        <img src="<?php echo $imgVisual ?>"/>
+                        <img src="<?php echo $imgVisual ?>" alt="<?php echo esc_attr($img['alt']); ?>"/>
                         <div class="testimonials__tabs__item__text">
                             <h3 class="subtitle1"><?php echo the_sub_field('title'); ?></h3>
                             <div class="wizywig">
@@ -54,7 +54,7 @@
                      $link = get_sub_field('button_link'); // This returns an array
                 ?>
                     <div class="testimonials__tabs__item" >
-                        <img src="<?php echo $imgVisual ?>"/>
+                        <img src="<?php echo $imgVisual ?>" alt="<?php echo esc_attr($img['alt']); ?>"/>
                         <div class="testimonials__tabs__item__text">
                             <h3 class="subtitle1"><?php echo the_sub_field('title'); ?></h3>
                             <div class="wizywig">

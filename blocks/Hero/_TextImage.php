@@ -12,7 +12,7 @@
                 </div>
                 <div class="container fdr">
                     <div class="wizywig"><?php echo the_sub_field('text') ?></div>
-                    <img src="<?php echo $imgVisual ?>"/>
+                    <img src="<?php echo $imgVisual ?>" alt="<?php echo esc_attr($img['alt']); ?>"/>
                 </div>  
             </div>  
     <?php endwhile; ?> 

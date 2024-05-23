@@ -31,7 +31,7 @@ if( have_rows('tabs') ): ?>
                     ?>
                         <div id="tab-<?php echo $tab_count; ?>" class="tabs__content__item tab-content">
                             <?php if($imgVisual) :?>
-                                <img src="<?php echo $imgVisual?> "/>
+                                <img src="<?php echo $imgVisual?> " alt="<?php echo esc_attr($img['alt']); ?>"/>
                             <?php endif; ?> 
                             <h3 class="subtitle1"><?php echo the_sub_field('tab_title'); ?></h3>
                             <?php echo the_sub_field('tab_text'); ?>

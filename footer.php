@@ -15,7 +15,7 @@
 					<div class="container">
 						<!-- footer columns -->
 						<div class="footer__columns">
-						<a href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo $imgVisual ?>"/></a>
+						<a href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo $imgVisual ?>"  alt="<?php echo esc_attr($img['alt']); ?>"/></a>
 							<nav role="navigation">
 								<?php wp_nav_menu(array(
 								'container' => 'div',                           // enter '' to remove nav container (just make sure .footer-links in _base.scss isn't wrapping)
@@ -58,7 +58,7 @@
 										$logo = get_sub_field('logo');
 										$logoVisual = $logo['sizes']['tiny'];	
 									?>
-									   <img src="<?php echo $logoVisual ?>"/>
+									   <img src="<?php echo $logoVisual ?>"  alt="<?php echo esc_attr($logo['alt']); ?>"/>
 									<?php endwhile; ?> 
 								<?php endif; ?> 
 							</div>
@@ -87,7 +87,9 @@
 										$iconVisual = $icon['sizes']['tiny'];	
 										$link = get_sub_field('link'); // This returns an array
 									?>
-										<a href="<?php echo esc_url($link['url']); ?>" target="_blank"><img src="<?php echo esc_attr($iconVisual); ?>"/></a>
+										<a href="<?php echo esc_url($link['url']); ?>" target="_blank">
+											<img src="<?php echo esc_attr($iconVisual); ?>"  alt="<?php echo esc_attr($icon["alt"]); ?>"/>
+										</a>
 									<?php endwhile; ?> 
 								<?php endif; ?> 
 							</div>

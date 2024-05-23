@@ -56,7 +56,7 @@
                                 </a>
                             </div>
 
-                            <img src="<?php echo $imgVisual ?>"/>
+                            <img src="<?php echo $imgVisual ?>" alt="<?php echo esc_attr($img['alt']); ?>"/>
                         </div>
 
                 </div>  

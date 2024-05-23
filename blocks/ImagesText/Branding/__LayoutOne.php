@@ -13,7 +13,7 @@
 
                     <?php echo the_sub_field('text') ?>
                     <!-- image -->
-                    <img src="<?php echo $imgVisual ?>"/>
+                    <img src="<?php echo $imgVisual ?>" alt="<?php echo esc_attr($img['alt']); ?>"/>
 
                     <!-- colors -->
                     <!-- <div class="layout-one__colors__wrapper">

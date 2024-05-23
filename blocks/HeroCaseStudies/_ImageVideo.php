@@ -10,7 +10,7 @@
             ?>
             <!-- images -->
             <div class="image-video__media">
-                <img src="<?php echo $imgVisual ?>"/>
+                <img src="<?php echo $imgVisual ?>" alt="<?php echo esc_attr($img['alt']); ?>"/>
                 <!-- video -->
                 <?php $link_data = get_sub_field('video'); 
                 if(!empty($link_data)){ $link = $link_data['url'];  ?>
@@ -23,7 +23,7 @@
 
             <!-- mobile slider -->
             <div class="hero-case-studies__slider universal__slider">
-                <img src="<?php echo $imgVisual ?>"/>
+                <img src="<?php echo $imgVisual ?>" alt="<?php echo esc_attr($img['alt']); ?>"/>
                 <!-- video -->
                 <video controls class="video">
                     <source src="<?php echo $link; ?>" type="video/mp4">

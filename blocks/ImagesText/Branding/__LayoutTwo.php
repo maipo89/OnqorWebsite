@@ -32,7 +32,7 @@
                                 ?>
                         </div>
                         <div class="layout-two__images__right">
-                            <img src="<?php echo $imgVisual ?>"/>
+                            <img src="<?php echo $imgVisual ?>" alt="<?php echo esc_attr($img['alt']); ?>"/>
                             <!-- colors -->
                             <div class="layout-two__colors">
                                 <?php if( have_rows('colors') ): ?>

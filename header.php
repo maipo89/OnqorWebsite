@@ -37,7 +37,7 @@
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 	</head>
-
+	
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
 		<div id="container" class="header">
@@ -71,7 +71,7 @@
 									$link = get_sub_field('cta_link');
 							?>
 								<a  href="<?php echo esc_url($link['url']); ?>">
-									<button class="btn-primary"><?php echo get_sub_field('cta_text') ?></button>
+									<button class="btn-secondary"><?php echo get_sub_field('cta_text') ?></button>
 								</a>
 							<?php endwhile; ?> 
 						<?php endif; ?> 

@@ -1,8 +1,10 @@
 <div class="related-projects ">
     <div class="container">
-        <h2 class="h3">Check out some other projects</h2>
-        
-        
+            <?php if( get_field('title') ) { ?>
+                <h2 class="h3"><?php echo get_field('title') ?></h2>
+            <?php  } else { ?>
+                <h2 class="h3">Check out some other projects</h2>
+            <?php  } ?>        
         <div class="related-projects__wrapper">
             <?php 
             $current_id = get_the_ID(); // Get current case study ID to exclude it from the query

@@ -12,7 +12,9 @@
                <?php  } ?>
                <h2 class="subtitle1"><?php echo $basic['title'] ?></h2>
             </div>
-            <?php echo $basic['text'] ?>
+            <div class="wizywig <?php if( $basic['three_columns'] ) { ?> three-col <?php  } ?>">
+               <?php echo $basic['text'] ?>
+            </div>
         </div>
    </div>
 

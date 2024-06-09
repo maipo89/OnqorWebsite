@@ -47,7 +47,7 @@
             position: relative;
             display: flex;
             width: 297px;
-            height: 296px;
+            height: 311px;
             &::after {
                 content: "";
                 background-size: cover;
@@ -110,6 +110,7 @@
                 margin-bottom: 3px;
                 position: relative;
                 padding: 0 0  4px 0;
+                font-weight: 400;
                 span {
                     content: '';
                     position: absolute;

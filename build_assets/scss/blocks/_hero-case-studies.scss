@@ -145,10 +145,11 @@
     &__subtext {
         position: relative;
         display: flex;
-        width: 100%;
+        width: fit-content;
+        align-self: center;
         color: black;
-        padding-left: 16px;
-        margin: 48px 0 0 418px;
+        // padding-left: 16px;
+        margin: 48px auto 0 auto;
         @media (max-width: $desktop) {
             margin: 64px auto 0 auto;
             padding: 0;
@@ -324,6 +325,10 @@
                 background-color: lavender;
                 width: 100%;
                 border-radius: 8px;
+                @media (max-width: $desktop) {
+                    height: auto;
+                    object-fit: contain;
+                }
             }
         }
         // image small

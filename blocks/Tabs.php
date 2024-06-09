@@ -9,7 +9,11 @@ if( have_rows('tabs') ): ?>
     <div class="tabs">  
         <div class="container">
             <!-- tabs buttons -->
-            <div class="tabs__buttons">
+            <?php 
+            // Count total tabs
+            $total_tabs = count(get_sub_field('tab'));
+            ?>
+            <div class="tabs__buttons <?php if ($total_tabs < 3) echo 'grid-2'; ?>">
                 <?php if( have_rows('tab') ): ?>
                     <?php while( have_rows('tab') ): the_row(); ?>
                         <button class="tab-link" data-tab="tab-<?php echo $tab_count; ?>">

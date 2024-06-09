@@ -30,7 +30,7 @@
 		} elseif ($page_color === $production_color) {
 			$pulse_color = 'production';
 		} else {
-			$pulse_color = 'test';
+			$pulse_color = 'development';
 		}
 	?>
 

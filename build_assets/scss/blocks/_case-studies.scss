@@ -23,6 +23,7 @@
         justify-content: center; 
         position: relative;
         padding: 0 24px;
+        border-radius: 8px;
         // &:nth-child(odd) {
         //     transform: translateX(300px);
         // }
@@ -36,10 +37,8 @@
             height: 326px;
         }
         @media (max-width: $tabletSmall) {
-            height: 183px;
-        }
-        @media (max-width: $mobileLarge) {
-            height: 136px;
+            min-height: unset;
+            height: fit-content;
         }
         &.stats-left {
             .case-studies__item {
@@ -51,6 +50,9 @@
                     padding: 0 0 0 296px;
                     @media (max-width: $desktop) {
                         padding: 115px 0 0 0;
+                    }
+                    @media (max-width: $tabletSmall) {
+                        padding: 48px 0 0 0;
                     }
                 }
                 &__links {
@@ -115,13 +117,16 @@
                 align-items: flex-start;
                 padding: 32px 32px 72px 32px;
             }
+            @media (max-width: $tabletSmall) {
+                padding: 32px 32px 48px 32px;
+            }
             div {
                 opacity: 0;
                 &:nth-child(odd) {
                     transform: translateX(300px);
                 }
                 &:nth-child(even) {
-                    transform: translateX(-300px);
+                    transform: translateX(300px);
                 }
                 h3 {
                     font-size: 64px;
@@ -152,6 +157,9 @@
             opacity: 0;
             @media (max-width: $desktop) {
                 padding: 115px 0 0 0;
+            }
+            @media (max-width: $tabletSmall) {
+                padding: 48px 0 0 0;
             }
             button {
                 margin: 24px auto 0 auto;

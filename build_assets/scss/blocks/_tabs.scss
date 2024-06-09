@@ -11,6 +11,9 @@
         @media (max-width: $tabletLarge) {
             margin: 0 0 32px 0;
         }
+        &.grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
         button {
             background-color: white;
             border: 1px solid $darksmoke;

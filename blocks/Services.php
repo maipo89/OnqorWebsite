@@ -17,7 +17,8 @@
                                         $link_title = $link['title'];  // First, get the link title
                                         $page = get_page_by_title($link_title);  // Then, retrieve the page using the title
                                         if ($page) {
-                                            $service_color = get_field('service_color', $page->ID);  // Get the service color from the retrieved page
+                                              // Get the service color from the retrieved page
+                                            $service_color = get_field('service_color', $page->ID);
                                             $style = $service_color ? ' style="color:' . esc_attr($service_color) . ';"' : '';
                                             echo '<a><h2>' . esc_html($link_title) . '<span' . $style . '>.</span></h2></a>';
 
@@ -38,9 +39,13 @@
                                     }
                                 ?>
                             </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="72" height="49" viewBox="0 0 72 49" fill="none">
-                                <path d="M2 24.5L70 24.5M70 24.5L47.7692 2.00001M70 24.5L47.7692 47" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                            <?php if ($page) {
+                                // Get the service color from the retrieved page
+                                $service_colors = get_field('service_color', $page->ID); ?>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="72" height="49" viewBox="0 0 72 49" fill="none">
+                                    <path d="M2 24.5L70 24.5M70 24.5L47.7692 2.00001M70 24.5L47.7692 47" stroke="<?php echo $service_colors ?>" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            <?php } ?>
                         </div>
                     <?php endwhile; ?> 
                 <?php endif; ?>

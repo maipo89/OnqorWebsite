@@ -43,7 +43,9 @@
                                 ?>  
                             </div>
                         </div>
-                        <a><button class="btn-secondary">Discuss a Project</button></a>
+                        <a href="<?php echo get_sub_field('btn_link')['url'] ?>">
+                            <button class="btn-transparent"><?php echo get_sub_field('btn_text') ?></button>
+                        </a>
                     </div>
                 </div>
       

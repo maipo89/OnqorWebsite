@@ -7,7 +7,9 @@
     <div class="contact-form">  
         <!-- text -->
         <div class="container">
-            <p class="body1"><?php echo $basic['text'] ?></p>
+            <div class="wizywig">
+                <?php echo $basic['text'] ?>
+            </div>
         </div>
         <!-- contatc form -->
         <div class="container fdr jcsb no-wrap">

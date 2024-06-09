@@ -114,6 +114,7 @@
                 width: 50%;
                 max-width: 651px;
                 opacity: 0;
+                transform: translateX(700px);
                 @media (max-width: $tabletSmall) {
                     width: 100%;
                 }
@@ -335,16 +336,18 @@
             &__images {
                 width: 796px;
                 height: 770px;
+                position: relative;
+                align-self: flex-end;
                 @media (max-width: $desktop) {
                     max-width: 796px;
-                    width: 100%
+                    width: 100%;
+                    align-self: center;
                 }
                 @media (max-width: $tabletSmall) {
                     margin: 64px 0 0 0;
                     display: none;
                 }
-                position: relative;
-                align-self: flex-end;
+           
                 img {
                     position: absolute;
                     border-radius: 8px;
@@ -399,6 +402,9 @@
                     align-items: center;
                     justify-content: center;
                 }
+            }
+            .slick-dots {
+                bottom: -32px
             }
         } 
     }

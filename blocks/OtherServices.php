@@ -46,7 +46,7 @@ if (have_rows('other_services')):
                                 <button data-button="<?php echo $btnIndex; ?>" 
                                 class="subtitle2">
                                 <?php echo $child->post_title; ?>
-                                <span style="background-color: <?php echo $page_color; ?>"></span>
+                                <span style="background-color: <?php echo get_field('service_color', $child->ID); ?>"></span>
                             </button>
                             <?php $btnIndex ++; ?>
                             <?php endforeach; ?>

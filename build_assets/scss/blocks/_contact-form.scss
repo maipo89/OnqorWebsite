@@ -18,10 +18,23 @@
             grid-gap: 64px;
         }
     }
-    .body1 {
-        text-align: center;
+    .wizywig {
         max-width: 1082px;
-        margin: 0 auto 72px auto
+        margin: 0 auto 72px auto;
+        a {
+            color: white;
+            text-decoration: underline;
+        }
+        p {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 300;
+            line-height: normal;
+            letter-spacing: 0em;
+            @media (max-width: $tabletLarge) { 
+                font-size: 16px;
+            }
+        }
     }
     .or {
         margin: auto;
@@ -53,8 +66,13 @@
         display: flex;
         grid-gap: 24px;
         flex-direction: column;
-        button {
-            width: fit-content;
+        a {
+            &:hover {
+                text-decoration: none;
+            }
+            button {
+                width: fit-content;
+            }
         }
     } 
 } 

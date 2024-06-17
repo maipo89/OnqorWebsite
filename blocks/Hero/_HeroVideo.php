@@ -33,7 +33,10 @@
                     <div class="hero-video__text">
                         <div >
                             <h1 id="dynamicTitle"> <?php echo get_sub_field('title') ?></h1>
-                            <p><?php echo get_sub_field('text') ?></p>
+                            <p class="hero-video__text__subtext"><?php echo get_sub_field('subtext') ?></p>
+                            <div class="wizywig">
+                                <?php echo get_sub_field('text') ?>
+                            </div>
                             <div class="hero-video__text__logos">
                                 <?php
                                     $media = get_sub_field('logos'); 
@@ -43,9 +46,22 @@
                                 ?>  
                             </div>
                         </div>
-                        <a href="<?php echo get_sub_field('btn_link')['url'] ?>">
-                            <button class="btn-transparent"><?php echo get_sub_field('btn_text') ?></button>
-                        </a>
+
+                        <!-- right side -->
+                        <div>
+                            <a href="<?php echo get_sub_field('btn_link')['url'] ?>">
+                                <button class="btn-transparent"><?php echo get_sub_field('btn_text') ?></button>
+                            </a>
+                            <div class="hero-video__text__logos">
+                                <?php
+                                    $media = get_sub_field('logos'); 
+                                    foreach($media as $image) {
+                                        echo '<img src="',esc_url($image['sizes']['medium']),'" alt="',esc_attr($image['alt']),'">';
+                                    }
+                                ?>  
+                            </div>
+                        </div>
+                  
                     </div>
                 </div>
       

@@ -7,9 +7,9 @@
 <?php get_header(); ?>
 	<!-- page color -->
 	<?php 
-    $development_color = 'rgba(102, 16, 242, 1);';
-    $marketing_color = 'rgba(240, 180, 0, 1);';
-    $design_color = 'rgba(229, 0, 126, 1);';
+    $development_color = '#6610f2';
+    $marketing_color = '#f0b400';
+    $design_color = '#e5007e';
     $production_color = '#F00'; 
 	?>
 	<?php 

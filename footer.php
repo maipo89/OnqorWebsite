@@ -36,7 +36,7 @@
 								<?php wp_nav_menu(array(
 								'container' => 'div',                           // enter '' to remove nav container (just make sure .footer-links in _base.scss isn't wrapping)
 								'container_class' => 'footer-links cf',         // class of container (should you choose to use it)
-								'menu' => __( 'footer', 'bonestheme' ),   // nav name
+								'menu' => __( 'footertwo', 'bonestheme' ),   // nav name
 								'menu_class' => 'nav footer-nav cf',            // adding custom nav class
 								'theme_location' => 'footer-links',             // where it's located in the theme
 								'before' => '',                                 // before the menu
@@ -58,7 +58,9 @@
 										$logo = get_sub_field('logo');
 										$logoVisual = $logo['sizes']['tiny'];	
 									?>
-									   <img src="<?php echo $logoVisual ?>"  alt="<?php echo esc_attr($logo['alt']); ?>"/>
+										<a href="<?php echo get_sub_field('link')['url'] ?>">
+											<img src="<?php echo $logoVisual ?>"  alt="<?php echo esc_attr($logo['alt']); ?>"/>
+										</a>
 									<?php endwhile; ?> 
 								<?php endif; ?> 
 							</div>

@@ -1,7 +1,8 @@
 <?php 
 $basic = get_sub_field('other_services'); 
 if (have_rows('other_services')): 
-    while (have_rows('other_services')): the_row(); 
+    while (have_rows('other_services')): 
+        the_row(); 
         $img = get_sub_field('image');
         $imgVisual = $img['sizes']['medium'];
         $selected_value = get_sub_field('options');
@@ -84,14 +85,14 @@ if (have_rows('other_services')):
                             <div class="other-services__sub__items" data-tab="<?php echo $tabIndex; ?>">
                                 <!-- Display grandchildren pages -->
                                 <?php foreach ($grandchildren as $grandchild): ?>
+                                    <?php 
+                                        // Get featured image of the grandchild page
+                                        $grandchild_img = get_the_post_thumbnail($grandchild->ID, 'thumbnail');
+                                        // Get permalink of the grandchild page
+                                        $grandchild_permalink = get_permalink($grandchild->ID);
+                                    ?>
                                     <a href="<?php echo $grandchild_permalink; ?>">
                                         <div>
-                                            <?php 
-                                                // Get featured image of the grandchild page
-                                                $grandchild_img = get_the_post_thumbnail($grandchild->ID, 'thumbnail');
-                                                // Get permalink of the grandchild page
-                                                $grandchild_permalink = get_permalink($grandchild->ID);
-                                            ?>
                                             <?php if ($grandchild_img) : ?>
                                                 <?php echo $grandchild_img; ?>
                                             <?php endif; ?>
@@ -101,7 +102,7 @@ if (have_rows('other_services')):
                                     </a>
                                 <?php endforeach; ?>
                             </div>
-                        <?php $tabIndex ++; ?>
+                            <?php $tabIndex ++; ?>
                         <?php endforeach; ?>
 
                         <!-- slider -->
@@ -133,7 +134,7 @@ if (have_rows('other_services')):
                                     </div>
                                 <?php endforeach; ?>
                             </div>
-                        <?php $tabIndex ++; ?>
+                            <?php $tabIndex ++; ?>
                         <?php endforeach; ?>
                     </div>
                 </div>

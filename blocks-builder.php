@@ -1,5 +1,6 @@
 <?php
 // Check value exists.
+$counters = 1; // Initialize the counter before the loop
 if (have_rows('sections')) :
 	// Loop through rows.
 	while (have_rows('sections')) : the_row();
@@ -22,7 +23,7 @@ if (have_rows('sections')) :
         // Case: Paragraph layout.
         if (get_row_layout() == 'images_text') : ?>
             <?php include 'blocks/ImagesText.php'; ?>
-        <?php endif;
+        <?php $counters++; endif;
 
         // Case: Paragraph layout.
         if (get_row_layout() == 'photography') : ?>
@@ -114,10 +115,9 @@ if (have_rows('sections')) :
             <?php include 'blocks/OtherServices.php'; ?>
         <?php endif;
 
-        // Case: Paragraph layout.
-        if (get_row_layout() == 'related_projects') : ?>
+        if (get_row_layout() == 'related_casestudies') : ?>
             <?php include 'blocks/RelatedProjects.php'; ?>
-         <?php endif;
+        <?php endif;
 
         // Case: Paragraph layout.
         if (get_row_layout() == 'list') : ?>

@@ -32,16 +32,20 @@
 
                     <!-- buttons -->
                     <div class="hero-basic__buttons">
-                        <?php if( have_rows('multi_button') ): ?>
-                            <?php while( have_rows('multi_button') ): the_row(); ?>
-                                <a>
-                                    <button class="btn-primary"><?php echo the_sub_field('btn_text'); ?></button>
+                    <?php if (have_rows('multi_button')): 
+                            $counter = 1; // Initialize the counter before the loop
+                            while (have_rows('multi_button')): 
+                                the_row(); 
+                                $btn_text = get_sub_field('btn_text'); // Get the button text
+                                $btn_id = sanitize_title($btn_text); // Sanitize to use as ID
+                        ?>
+                                <a href="#<?php echo $counter; ?>" class="smooth-scroll">
+                                    <button id="btn-<?php echo $btn_id; ?>" class="btn-primary"><?php echo $btn_text; ?></button>
                                     <span class="pseudo-element" style="background-color: <?php echo $page_color; ?>"></span>
                                 </a>
-                            <?php endwhile; ?> 
-                        <?php endif; ?> 
+                        <?php $counter++; endwhile;
+                        endif; ?>
                     </div>
-            
                     <!-- buttton -->
                     <?php if(get_sub_field('btn_link')) : ?>
                         <a href="<?php echo get_sub_field('btn_link')['url']?>" >

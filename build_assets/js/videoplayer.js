@@ -1,5 +1,5 @@
 $(document).ready(function() {
-   // video playing 
+    // video playing 
     var video = $('video');
     var playBtn = $('.PlayButton'); 
     var pauseBtn = $('.PauseButton'); 
@@ -9,42 +9,42 @@ $(document).ready(function() {
     // Function to show pause button
     var showPauseButton = function() {
         if (played) {
-            pauseBtn.style.display = 'block';
+            pauseBtn.css('display', 'block');
         }
     };
     
     // Function to hide pause button
     var hidePauseButton = function() {
-        pauseBtn.style.display = 'none';
+        pauseBtn.css('display', 'none');
     };
     
     // Event listeners for the video
-    video.addEventListener('playing', function() {
+    video.on('playing', function() {
         played = true;
-        playBtn.style.display = 'none';
-        pauseBtn.style.display = 'none';
+        playBtn.css('display', 'none');
+        pauseBtn.css('display', 'none');
     
-        video.addEventListener('mouseover', showPauseButton);
-        pauseBtn.addEventListener('mouseover', showPauseButton);
+        video.on('mouseover', showPauseButton);
+        pauseBtn.on('mouseover', showPauseButton);
 
-        video.addEventListener('mouseout', hidePauseButton);
-        pauseBtn.addEventListener('mouseout', hidePauseButton);
+        video.on('mouseout', hidePauseButton);
+        pauseBtn.on('mouseout', hidePauseButton);
     });
     
-    video.addEventListener('pause', function() {
+    video.on('pause', function() {
         played = false;
-        playBtn.style.display = 'block';
-        pauseBtn.style.display = 'none';
+        playBtn.css('display', 'block');
+        pauseBtn.css('display', 'none');
     });
     
     // Play/Pause functionality
     function playPause() {
         if (!played) {
-            video.play();
+            video.trigger('play');
         } else {
-            video.pause();
+            video.trigger('pause');
         }
     }
-    playBtn.addEventListener('click', playPause);
-    pauseBtn.addEventListener('click', playPause);
+    playBtn.on('click', playPause);
+    pauseBtn.on('click', playPause);
 });

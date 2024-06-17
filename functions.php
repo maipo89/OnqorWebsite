@@ -338,9 +338,6 @@ function filter_blogs() {
   die();
 }
 
-add_action('wp_ajax_filter_blogs', 'filter_blogs');
-add_action('wp_ajax_nopriv_filter_blogs', 'filter_blogs');
-
 
 
 // menu support
@@ -388,6 +385,8 @@ add_action('init', 'my_add_excerpts_to_pages');
 function my_add_excerpts_to_pages() {
     add_post_type_support('page', 'excerpt');
 }
+
+
 
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

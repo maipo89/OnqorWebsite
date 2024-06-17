@@ -15,6 +15,6 @@
 
 <?php get_header(); ?>
 	<div class="legal">
-		<?php include('blocks-builder.php'); ?>
+		<?php include('blocks/DropdownText.php'); ?>
 	</div>
 <?php get_footer(); ?>

@@ -12,7 +12,7 @@
                      $img = get_sub_field('logo');
                      $imgVisual = $img['sizes']['small'];
                 ?>
-                    <div  data-tab="tab-<?php echo $tab_count; ?>">
+                    <div class="testimonial-tab-link" data-tab="testimonial-tab-<?php echo $tab_count; ?>">
                         <img src="<?php echo $imgVisual ?>" alt="<?php echo esc_attr($img['alt']); ?>"/>
                     </div>
                     <?php $tab_count++; ?>
@@ -29,7 +29,7 @@
                      $imgVisual = $img['sizes']['medium'];
                      $link = get_sub_field('button_link'); // This returns an array
                 ?>
-                    <div class="testimonials__tabs__item" id="tab-<?php echo $tab_count; ?>">
+                    <div class="testimonials__tabs__item" id="testimonial-tab-<?php echo $tab_count; ?>">
                         <img src="<?php echo $imgVisual ?>" alt="<?php echo esc_attr($img['alt']); ?>"/>
                         <div class="testimonials__tabs__item__text">
                             <h3 class="subtitle1"><?php echo the_sub_field('title'); ?></h3>

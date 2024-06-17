@@ -67,12 +67,22 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
+            grid-gap: 31px;
             width: 100%;
             @media (max-width: $tabletSmall) {
                flex-direction: column;
                grid-gap: 24px;
                align-items: center;
                justify-content: center;
+            }
+            .wizywig {
+                margin: 24px 0 0 0;
+                p {
+                    margin: 0;
+                    @media (max-width: $desktop) {
+                        display: none;
+                    }
+                }
             }
             a {
                 &:hover {
@@ -82,8 +92,28 @@
                     width: max-content;
                 }
             }
-            & > div {
+            &__subtext {
+                margin: 0;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 300;
+                @media (max-width: $tabletLarge) {
+                    font-size: 18px;
+                    line-height: normal;
+                }
+                @media (max-width: $tabletSmall) {
+                    text-align: center;
+                    font-size: 16px;
+                 }
+            }
+            & > div:nth-child(1) {
                 width: 100%;
+                .hero-video__text__logos {
+                    display: none;
+                    @media (max-width: $desktop) {
+                        display: flex;
+                    }
+                }
                 @media (max-width: $tabletSmall) {
                     flex-direction: column;
                     display: flex;
@@ -118,26 +148,27 @@
                         }
                     }
                 }
-                p {
-                    margin: 0 0 16px 0;
-                    font-size: 24px;
-                    font-style: normal;
-                    font-weight: 300;
-                    @media (max-width: $tabletLarge) {
-                        font-size: 18px;
-                        line-height: normal;
+            }
+            & > div:nth-child(2) { 
+                width: fit-content;
+                display: flex;
+                flex-direction: column;
+                grid-gap: 74px;
+                align-items: flex-end;
+                .hero-video__text__logos {
+                    display: flex;
+                    @media (max-width: $desktop) {
+                        display: none;
                     }
-                    @media (max-width: $tabletSmall) {
-                        text-align: center;
-                        font-size: 16px;
-                     }
                 }
             }
             &__logos {
-                display: flex;
                 grid-gap: 32px;
                 width: 100%;
-                flex-wrap: wrap;
+                flex-wrap: nowrap;
+                @media (max-width: $desktop) {
+                    flex-wrap: wrap;
+                }
                 @media (max-width: $tabletSmall) {
                     align-items: center;
                     justify-content: center;

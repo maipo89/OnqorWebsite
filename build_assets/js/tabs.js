@@ -6,7 +6,7 @@ $(document).ready(function($) {
     $('.tabs__content__item').first().fadeIn(500, 'swing');
     $('.tab-link').first().addClass('active');
 
-    // Tab link click function
+    // Tab link click function for main tabs
     $('.tab-link').click(function(e) {
         e.preventDefault();
 
@@ -27,35 +27,35 @@ $(document).ready(function($) {
     });
 });
 
-
 $(document).ready(function($) {
-    // Initially hide all tab content
+    // Initially hide all testimonials tab content
     $('.testimonials__tabs__item').hide();
 
-    // Show the first tab content and add active class to the first tab button by default
+    // Show the first testimonials tab content and add active class to the first testimonials tab button by default
     $('.testimonials__tabs__item').first().fadeIn(1000);
     $('.testimonials__buttons div').first().addClass('active');
 
-    // Tab link click function
+    // Tab link click function for testimonials tabs
     $('.testimonials__buttons div').click(function(e) {
         e.preventDefault();
 
-        // Remove active class from all tab buttons
+        // Remove active class from all testimonials tab buttons
         $('.testimonials__buttons div').removeClass('active');
 
-        // Add active class to the current tab button
+        // Add active class to the current testimonials tab button
         $(this).addClass('active');
 
-        // Get the current tab ID
+        // Get the current testimonials tab ID
         var currentTab = $(this).data('tab');
 
-        // Hide all tab content
+        // Hide all testimonials tab content
         $('.testimonials__tabs__item').hide();
 
-        // Show the current tab content
+        // Show the current testimonials tab content
         $('#' + currentTab).fadeIn(500, 'swing');
     });
 });
+
 
 
 window.onload = function() {

@@ -1,7 +1,7 @@
 <div class="related-projects ">
     <div class="container">
-            <?php if( get_field('title') ) { ?>
-                <h2 class="h3"><?php echo get_field('title') ?></h2>
+            <?php if( get_sub_field('title') ) { ?>
+                <h2 class="h3"><?php echo get_sub_field('title') ?></h2>
             <?php  } else { ?>
                 <h2 class="h3">Check out some other projects</h2>
             <?php  } ?>        

@@ -73,26 +73,28 @@ $(document).ready(function() {
         }
     });
 
-
-    // legal dropdown 
-    // Listen for clicks on dropdown options
-    $(".legal .dropdown__options__items div").click(function() {
-        var categorySlug = $(this).attr('value');
-        if(categorySlug === 'all') { // Check if the clicked option is "All Legal"
-            // Show all the dropdown text sections
-            $(".dropdown-text__text").show();
-        } else {
-            // The existing filtering logic for specific categories
-            var filterClassName = $(this).text().trim();
-            $(".dropdown-text__text").hide();
-            $("." + filterClassName).show();
-        }
-    
-        // Existing code to update the dropdown label and hide options
-        $('#category-dropdown').html($(this).text() + '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 1.5L8 8.5L15 1.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
-        $('.dropdown__options').removeClass('active');
-    });
 });
+
+
+// legal dropdown 
+$(document).ready(function() {
+    // Handle clicking on an option
+    $('.legal .dropdown__options__items div').click(function() {
+        var categorySlug = $(this).attr('value'); // Get the category slug from the clicked option
+        // Update the dropdown label with the selected category and re-append the SVG
+        $('.legal #category-dropdown').html($(this).text() + '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 1.5L8 8.5L15 1.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+        $('.legal .dropdown__options').removeClass('active'); // Hide dropdown options
+
+        // Change the URL to navigate to the selected category
+        if (categorySlug === 'all') {
+            window.location.href = '/legal'; // Navigate to /legal
+        } else {
+            window.location.href = '/legal/' + categorySlug; // Navigate to the child page
+        }
+    });
+
+});
+
 
 
 

@@ -386,14 +386,15 @@
         }
     }
     .dot {
-
         a {
             display: flex;
-            align-items: center;
+            align-items: baseline;
             grid-gap: 8px
         }
+        // arrows
         .arrow {
             position: relative;
+            align-self: center;
             svg {
                 display: none;
                 width: 12px;
@@ -407,31 +408,48 @@
                 }
             }
         }
-
+        // colored dots
         .dot-span {
             display: block;
+            width: 5px;
+            height: 5px;
+            display: block;
+            background-color: white;
             @media (max-width: $desktop) {
                 display: none;
             }
         }
+        // colors for dots & arrows
         &-marketing {
-            span {
-                color: $marketing;
+            .dot-span {
+                background-color: $marketing;
+            }
+            path {
+                stroke: $marketing;
             }
         }
         &-production {
-            span {
-                color: $production;
+            .dot-span  {
+                background-color: $production;
+            }
+            path {
+                stroke: $production;
             }
         }
         &-development {
-            span {
-                color: $development;
+            .dot-span  {
+                background-color: $development;
+            }
+            path {
+                stroke: $development;
             }
         }
         &-design {
-            span {
-                color: $design;
+            .dot-span  {
+                background-color: $design;
+            }
+            path {
+                stroke: $design;
             }
         }
     }

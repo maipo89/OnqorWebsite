@@ -68,10 +68,7 @@
             height: 100%;
             z-index: 1;
             img {
-                // border: 32px solid white;
-                // -webkit-transform: scale(0.8);
-                // -moz-transform: scale(0.8);
-                // transform: scale(0.8);
+        
                 margin-top: 50px;
                 transition: height 0.6s ease, width 0.6s ease,  margin 0.6s ease, transform 0.6s ease;
             }
@@ -100,12 +97,6 @@
             overflow: visible;
             z-index: 2;
             img {
-                -webkit-transform: scale(1);
-                -moz-transform: scale(1);
-                transform: scale(1);
-                width: 150%;
-                height: 250px;
-                margin: 0 0 16px -25%;
                 // position: absolute;
                 outline: 16px solid white;
                 transition: height 0.6s ease, width 0.6s ease,  margin 0.6s ease, transform 0.6s ease;

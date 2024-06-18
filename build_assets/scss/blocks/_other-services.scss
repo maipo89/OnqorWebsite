@@ -1,6 +1,10 @@
 .other-services {
     background-color: black;
     @include padding;
+    margin: 48px 0;
+    @media (max-width: $desktop) {
+        margin: 32px 0;
+    }
     color: white;
     h2 {
         margin: 0 0 32px 0;
@@ -28,6 +32,7 @@
         display: flex;
         grid-gap: 32px;
         width: 100%;
+        position: relative;
     }
     // current tab image
     &__service {
@@ -84,9 +89,13 @@
         display: flex;
         flex-direction: column;
         grid-gap: 32px;
-        width: 100%;
+        width: calc(100% - 329px);
+        overflow: hidden;
         @media (max-width: $tabletSmall) {
             grid-gap: 48px;
+        }
+        @media (max-width: $desktop) {
+            width: 100%;
         }
         // tab buttons
         &__buttons {
@@ -163,7 +172,53 @@
             @media (max-width: $desktop) {
                 display: none !important;
             }
-    
+            &--slider {
+                display: block; 
+                grid-template-columns: none;
+                grid-gap: 0px;
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                margin: 0 0 0 0;
+                padding-bottom: 48px;
+                // transform: translateX(16px);
+                @media (max-width: $desktop) {
+                    max-width: 674px;
+                    margin: 0 auto;
+                }
+                &.active {
+                    @media (max-width: $desktop) {
+                        display: block !important;
+                    }
+                }
+                .slick-dots {  
+                    bottom: -42px
+                }
+                .slick-track {
+                    grid-gap: 0px !important;
+                    flex-direction: row;
+                    @media (max-width: $tabletSmall) {
+                        // grid-gap: 16px;
+                    }
+                }
+                .slick-list {
+                    padding: 0 !important;
+                    .slick-track {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+                .slick-slide {
+                    img {
+                        width: 100%;
+                        height: 125px;
+                        border-radius: 8px;
+                        width: 230px;
+                        // margin: 0 16px;
+                    }
+                }
+            }
             &__slider {
                 position: relative;
                 overflow: hidden;
@@ -219,7 +274,7 @@
                     text-decoration: none;
                 }
             }
-            div {
+            &__hover {
                 display: flex;
                 grid-gap: 24px;
                 flex-direction: column;
@@ -241,4 +296,6 @@
             }
         }
     }
+
+
 }

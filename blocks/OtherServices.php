@@ -81,8 +81,11 @@ if (have_rows('other_services')):
                                     'child_of' => $child->ID,
                                     'sort_column' => 'menu_order',
                                 )); 
+                                
+                                // Check if more than 4 grandchildren, then use a slider
+                                $use_slider = (count($grandchildren) > 4);
                             ?>
-                            <div class="other-services__sub__items" data-tab="<?php echo $tabIndex; ?>">
+                            <div class="other-services__sub__items <?php echo $use_slider ? 'other-services__sub__items--slider' : ''; ?>" data-tab="<?php echo $tabIndex; ?>">
                                 <!-- Display grandchildren pages -->
                                 <?php foreach ($grandchildren as $grandchild): ?>
                                     <?php 
@@ -92,7 +95,7 @@ if (have_rows('other_services')):
                                         $grandchild_permalink = get_permalink($grandchild->ID);
                                     ?>
                                     <a href="<?php echo $grandchild_permalink; ?>">
-                                        <div>
+                                        <div class="other-services__sub__items__hover">
                                             <?php if ($grandchild_img) : ?>
                                                 <?php echo $grandchild_img; ?>
                                             <?php endif; ?>
@@ -104,6 +107,7 @@ if (have_rows('other_services')):
                             </div>
                             <?php $tabIndex ++; ?>
                         <?php endforeach; ?>
+
 
                         <!-- slider -->
                         <!-- Items for grandchildren -->
@@ -119,7 +123,7 @@ if (have_rows('other_services')):
                             <div class="other-services__sub__items__slider other-services__sub__items__slider-<?php echo $tabIndex; ?>" data-tab="<?php echo $tabIndex; ?>">
                                 <!-- Display grandchildren pages -->
                                 <?php foreach ($grandchildren as $grandchild): ?>
-                                    <div>
+                                    <div class="other-services__sub__items__hover">
                                         <?php 
                                             // Get featured image of the grandchild page
                                             $grandchild_img = get_the_post_thumbnail($grandchild->ID, 'thumbnail');

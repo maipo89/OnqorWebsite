@@ -14,13 +14,26 @@
                     ">
                         <img class="anim-horizontal" src="<?php echo $imgVisual ?>" alt="<?php echo esc_attr($img['alt']); ?>"/>
                         <div class="image-left-right__content__text anim-horizontal">
+                            <!-- title -->
                             <div class="title">
-                                <?php if( $basic['number'] ) { ?> 
-                                    <!-- <p class="body1"><?php echo $basic['number'] ?></p> -->
-                                <?php  } ?>
                                 <h2 class="subtitle1"><?php echo $basic['title'] ?></h2>
+                                <?php if( $basic['subtitle'] ) { ?> 
+                                    <p class="subtitle1"><?php echo $basic['subtitle'] ?></p>
+                                <?php  } ?>
                             </div>
-                            <?php echo get_sub_field('text')?>
+
+                            <!-- text -->
+                            <div class="<?php if(get_sub_field('read_more')) { ?> cap-height <?php  } ?>">
+                                <div class="wizywig ">
+                                    <?php echo get_sub_field('text')?>
+                                </div>
+                                <!-- read more -->
+                                <?php if(get_sub_field('read_more')) { ?> 
+                                    <p class="read-more">Read more</p>
+                                <?php  } ?>
+                            </div>
+      
+                            <!-- button -->
                             <?php if(get_sub_field('btn_text')) { ?> 
                                 <a href="<?php echo get_sub_field('btn_link')['url'] ?>"><button class="btn-secondary"><?php echo get_sub_field('btn_text') ?></button></a>
                             <?php  } ?>

@@ -123,7 +123,40 @@ $(document).ready(function() {
         ]
     }); 
 
-     //  branding layout two slider
+    // other services if more than 4
+    $('.other-services__sub__items--slider').each(function() {
+        $(this).slick({
+            slidesToShow: 4, // Adjust the number of slides shown per view as needed
+            slidesToScroll: 1,
+            autoplay: true, // Optional autoplay
+            autoplaySpeed: 3000, // Optional autoplay speed
+            arrows: false,
+            infinite: false,
+            dots: true,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }
+            ]
+        });
+    });
+
+    //  branding layout two slider
     $('.layout-two__mobile__slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -178,6 +211,7 @@ $(document).ready(function() {
         cssEase: 'linear',
     });
 
+    // video gallery 
     $('.video-gallery__buttons').slick({
         infinite: true,
         slidesToShow: 4,

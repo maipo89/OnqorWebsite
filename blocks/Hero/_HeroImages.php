@@ -24,12 +24,41 @@
 
                     <!-- images -->
                     <div class="hero-images__images">
+                        <!-- images option -->
+                        <?php if(get_sub_field('imagess')) : ?>
+                            <?php
+                            $logos = get_sub_field('images');
+                            foreach($logos as $image) {
+                                echo '<img src="',esc_url($image['sizes']['small']),'" alt="',esc_attr($image['alt']),'" width="200px">';
+                                }
+                            ?>
+                        <?php endif; ?> 
+
+                        <!-- case studies option -->
                         <?php
-                        $logos = get_sub_field('images');
-                        foreach($logos as $image) {
-                            echo '<img src="',esc_url($image['sizes']['small']),'" alt="',esc_attr($image['alt']),'" width="200px">';
-                            }
+                        // Query arguments to fetch the latest 6 case studies
+                        $args = array(
+                            'post_type' => 'case-studies',
+                            'posts_per_page' => 6,  // Fetch only 6 posts
+                            'orderby' => 'date',   // Order by date
+                            'order' => 'DESC',     // Show latest posts first
+                        );
+
+                        $query = new WP_Query($args);
+
+                        if ($query->have_posts()) :
+                            while ($query->have_posts()) : $query->the_post();
                         ?>
+                            <a href="<?php the_permalink(); ?>">
+                                <?php if (has_post_thumbnail()) : ?>
+                                    <?php the_post_thumbnail('medium'); // Adjust thumbnail size as needed ?>
+                                <?php endif; ?>
+                                <div class="hero-images__hover">
+									<h3 class="subtitle1"><?php the_title(); ?></h3>
+									<button class="btn-secondary">View</button>
+								</div>
+                            </a>
+                        <?php endwhile; wp_reset_postdata(); endif; ?>
                     </div>
 
                     <p class="hero-images__excerpt"><?php echo get_the_excerpt() ?></p>

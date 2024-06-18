@@ -84,14 +84,15 @@
     .image-left-right{
         .title {
             display: flex;
+            flex-direction: column;
+            margin: 0 0 32px 0;
+            @media (max-width: $tabletSmall) {
+                margin: 0 0 24px 0;
+            }
             h2 {
-                margin: 0 0 32px 0;
-                @media (max-width: $tabletSmall) {
-                    margin: 0 0 24px 0;
-                }
             }
             p {
-                 margin: 33px 12px 0 0;
+                font-weight: 300 !important;
             }
         }
         &__content{

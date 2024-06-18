@@ -3,6 +3,9 @@
     video {
         object-fit: cover;
     }
+    img {
+        object-fit: cover;
+    }
     &__slider {
         position: relative;
         overflow: hidden;
@@ -95,7 +98,7 @@
                 width: 25px;
                 position: absolute;
             }
-            video {
+            img {
                 height:100%;
                 width: 100%;
             }

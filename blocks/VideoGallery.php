@@ -35,10 +35,10 @@
                         $poster = $posters[$index]; // Get the corresponding poster image
                     ?>
                         <div class="video-gallery__buttons__item">
-                            <video poster="<?php echo esc_url($poster['url']); ?>">
-                                <source src="<?php echo esc_url($video['url']); ?>" type="<?php echo esc_attr($video['mime_type']); ?>">
-                            </video>
-                            <?php include('Videography/PlayButton.php'); ?>
+                            <img src="<?php echo esc_url($poster['url']); ?>"/>
+                            <svg class="" width="24" height="27" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24 13.5L0.749999 26.9234L0.75 0.0765981L24 13.5Z" fill="#00AAFF"/>
+                            </svg>
                         </div>
                     <?php endforeach; ?>
                 </div>

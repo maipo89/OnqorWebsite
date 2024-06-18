@@ -95,7 +95,15 @@ $(document).ready(function() {
         arrows: false,
         infinite: false,
         cssEase: 'linear',
-        initialSlide: 1
+        initialSlide: 1,
+        responsive: [
+            {
+            breakpoint: 580,
+            settings: {
+                    slidesToShow: 1,
+                }
+            },
+        ]
     }); 
 
     // other services slider

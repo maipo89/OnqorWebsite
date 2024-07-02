@@ -7,10 +7,9 @@
     <div class="text-basic">  
         <div class="container">
              <div class="title">
-               <?php if( $basic['number'] ) { ?>
-                  <!-- <p class="body1"><?php echo $basic['number'] ?></p> -->
+               <?php if( $basic['title'] ) { ?>
+                  <h2 class="subtitle1"><?php echo $basic['title'] ?></h2>
                <?php  } ?>
-               <h2 class="subtitle1"><?php echo $basic['title'] ?></h2>
             </div>
             <div class="wizywig <?php if( $basic['three_columns'] ) { ?> three-col <?php  } ?>">
                <?php echo $basic['text'] ?>

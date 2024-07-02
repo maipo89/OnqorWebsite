@@ -29,29 +29,37 @@ $(document).ready(function() {
     });  
 
     // blogs filter
-    $('.archive__blogs .dropdown__options__items div').click(function(){
-        var categorySlug = $(this).attr('value');
+    function loadBlogs(categorySlug, page) {
         var $container = $('#articles-container'); // Ensure this is your blog container
 
-        $container.css('min-height', $container.height() + 'px');
+        $.ajax({
+            type: 'POST',
+            url: myAjax.ajaxurl,
+            data: {
+                action: 'filter_blogs', // New action for filtering blogs
+                category: categorySlug,
+                page: page
+            },
+            success: function(response) {
+                $container.html(response); // Directly set the new content
 
-        $container.fadeOut('slow', function() {
-            $.ajax({
-                type: 'POST',
-                url: myAjax.ajaxurl,
-                data: {
-                    action: 'filter_blogs', // New action for filtering blogs
-                    category: categorySlug
-                },
-                success: function(response) {
-                    $container.html(response).fadeIn('fast', function() {
-                        $container.css('min-height', '');
-                    });
-                }
-            }); 
+                // Attach click event to pagination buttons
+                $('.pagination .page').click(function() {
+                    var newPage = $(this).data('page');
+                    loadBlogs(categorySlug, newPage);
+                });
+            }
         });
+    }
+
+    $('.archive__blogs .dropdown__options__items div').click(function(){
+        var categorySlug = $(this).attr('value');
+        loadBlogs(categorySlug, 1);
     });
 
+    // Initial load
+    loadBlogs('all', 1);
+    
     // Toggle dropdown options on click of the filter
     $('#category-dropdown').click(function() {
         $('.dropdown__options').toggleClass('active');

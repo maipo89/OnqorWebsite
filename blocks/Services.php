@@ -23,7 +23,7 @@
                                         // Get the service color from the retrieved page
                                         $service_color = get_field('service_color', $page->ID);
                                         $style = $service_color ? ' style="background-color:' . esc_attr($service_color) . ';"' : '';
-                                        echo '<a><h2>' . esc_html($link_title) . '<span' . $style . '></span></h2></a>';
+                                        echo '<a href="/services/' . sanitize_title($link_title) . '"><h2>' . esc_html($link_title) . '<span' . $style . '></span></h2></a>';
 
                                         // Fetch child pages
                                         $child_pages = get_pages(['child_of' => $page->ID]);

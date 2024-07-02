@@ -365,7 +365,7 @@
             }
         }
         &__content {
-            display: flex;
+            display: flex; 
             justify-content: space-between;
             width: 100%;
             z-index: 3;
@@ -377,6 +377,7 @@
             img {
                 height: 556px;
                 width: calc(50% - 81px);
+                object-fit: contain;
                 @media (max-width: $desktop) {
                     display: none;
                 }

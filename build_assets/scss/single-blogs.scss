@@ -5,6 +5,17 @@
         font-weight: 400;
         line-height: normal;
     }
+    h2 {
+        @media (max-width: $desktop) { 
+            font-size: 28px;
+        }
+        @media (max-width: $tabletLarge) { 
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
     &__back {
         padding: 96px 0 0 0;
         @media (max-width: $desktop) {

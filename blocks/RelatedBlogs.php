@@ -19,7 +19,7 @@
                         <div class="related-projects__wrapper__item anim-fadeinstagger">
                             <a href="<?php the_permalink(); ?>">
                                 <?php if(has_post_thumbnail()): ?>
-                                    <?php the_post_thumbnail('thumbnail'); ?>
+                                    <?php the_post_thumbnail('medium'); ?>
                                 <?php endif; ?>
                                 <div>
                                     <h3 class="subtitle2"><?php the_title(); ?></h3>
@@ -44,7 +44,7 @@
                         <div class="related-projects__wrapper__item anim-fadeinstagger">
                             <a href="<?php the_permalink(); ?>">
                                 <?php if(has_post_thumbnail()): ?>
-                                    <?php the_post_thumbnail('thumbnail'); ?>
+                                    <?php the_post_thumbnail('medium'); ?>
                                 <?php endif; ?>
                                 <div>
                                     <h3 class="subtitle2"><?php the_title(); ?></h3>

@@ -2,11 +2,16 @@
    if( have_rows('testimonials') ): ?>
       <?php while( have_rows('testimonials') ): the_row(); 
 ?>
+<?php $test = get_field('testimonials', 'options'); 
+	if( have_rows('testimonials', 'options') ): ?>
+	<?php while( have_rows('testimonials', 'options') ): the_row(); 	
+	
+?>
 <div class="testimonials">
     <div class="container">
         <h2 class="h3">What do our clients think?</h2>
         <div class="testimonials__buttons">
-            <?php $tab_count = 0; // Initialize tab counter ?>
+        <?php $tab_count = 0; // Initialize tab counter ?>
             <?php if( have_rows('client') ): ?>
                 <?php while( have_rows('client') ): the_row(); 
                      $img = get_sub_field('logo');
@@ -20,7 +25,6 @@
             <?php endif; ?> 
         </div>
 
-        <!-- tabs -->
         <div class="testimonials__tabs desk">
             <?php $tab_count = 0; // Reset tab counter for content matching ?>
             <?php if( have_rows('client') ): ?>
@@ -37,7 +41,11 @@
                                 <?php echo the_sub_field('text'); ?>
                             </div>
                             <p class="subtitle3"><?php echo the_sub_field('author'); ?></p>
-                            <a href="<?php echo esc_url($link['url']); ?>"><button class="btn-primary"><?php echo the_sub_field('button_text'); ?></button></a>
+                            <?php if ( $link ) { ?>
+                                <a href="<?php echo esc_url($link['url']); ?>">
+                                    <button class="btn-primary"><?php echo the_sub_field('button_text'); ?></button>
+                                </a>
+                            <?php } ?> 
                         </div>
                         <?php $tab_count++; ?>
                     </div>
@@ -45,7 +53,6 @@
             <?php endif; ?> 
         </div>
 
-        <!-- slider -->
         <div class="testimonials__tabs testimonials__tabs__slider">
             <?php if( have_rows('client') ): ?>
                 <?php while( have_rows('client') ): the_row(); 
@@ -61,15 +68,20 @@
                                 <?php echo the_sub_field('text'); ?>
                             </div>
                             <p class="subtitle3"><?php echo the_sub_field('author'); ?></p>
-                            <a href="<?php echo esc_url($link['url']); ?>"><button class="btn-primary"><?php echo the_sub_field('button_text'); ?></button></a>
+                            <?php if ( $link ) { ?>
+                                <a href="<?php echo esc_url($link['url']); ?>">
+                                    <button class="btn-primary"><?php echo the_sub_field('button_text'); ?></button>
+                                </a>
+                            <?php } ?> 
                         </div>
                     </div>
                 <?php endwhile; ?> 
             <?php endif; ?> 
         </div>
-
-
     </div>
 </div>
+<?php endwhile; ?> 
+<?php endif; ?> 
+
 <?php endwhile; ?> 
 <?php endif; ?> 

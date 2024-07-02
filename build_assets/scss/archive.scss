@@ -5,6 +5,29 @@
             text-decoration: none;
         }
     }
+    .pagination {
+        grid-gap: 8px;
+        grid-column: span 3;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        // padding:0 0 48px 0;
+        // @media (max-width: $desktop) {
+        //     padding: 0 0 32px 0;
+        // }
+        @media (max-width: $tabletSmall) {
+            grid-column: span 1;
+        }
+        button {
+            color: black;
+            background-color: white !important;
+            outline: none !important;
+            box-shadow: none !important;
+            border: none !important;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
     .articles-wrapper {
         min-height: 1080px;
         position: relative;
@@ -88,9 +111,11 @@
                 align-items: center;
                 justify-content: center; 
                 flex-direction: column;
+                padding: 16px;
                 h3 {
                     color: white !important;
                     margin: 0 0 14px;
+                    text-align: center;
                 }
                 button {
                     background-color: transparent;

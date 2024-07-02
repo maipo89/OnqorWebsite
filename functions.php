@@ -259,7 +259,7 @@ function filter_case_studies() {
       while($query->have_posts()): $query->the_post();
           // Output your custom post HTML structure
           ?>
-          <article class="article anim-fadeinstagger" id="post-<?php the_ID(); ?>">
+          <article class="article" id="post-<?php the_ID(); ?>">
               <a href="<?php the_permalink(); ?>">
               <div >
 					        <?php if (has_post_thumbnail()) : ?>
@@ -286,13 +286,15 @@ function filter_case_studies() {
 add_action('wp_ajax_filter_case_studies', 'filter_case_studies');
 add_action('wp_ajax_nopriv_filter_case_studies', 'filter_case_studies');
 
-// filter blogs 
+// Filter blogs
 function filter_blogs() {
-  $categorySlug = $_POST['category'];
+  $categorySlug = isset($_POST['category']) ? sanitize_text_field($_POST['category']) : 'all';
+  $paged = isset($_POST['page']) ? intval($_POST['page']) : 1;
 
   $args = array(
       'post_type' => 'blogs', // Adjusted to target 'blogs' custom post type
-      'posts_per_page' => -1, // You can adjust this as necessary
+      'posts_per_page' => 5, // Number of posts per page, adjust as necessary
+      'paged' => $paged,
   );
 
   // Check if a specific category is selected and it's not 'all'
@@ -308,35 +310,49 @@ function filter_blogs() {
 
   $query = new WP_Query($args);
 
-  if($query->have_posts()) : 
-      while($query->have_posts()): $query->the_post();
+  if ($query->have_posts()) : 
+      while ($query->have_posts()) : $query->the_post();
           ?>
- 	          <article class="article anim-fadeinstagger id="post-<?php the_ID(); ?>">
-                <a href="<?php the_permalink(); ?>">
-										<div >
-											<?php if (has_post_thumbnail()) : ?>
-												<div class="article__img">
-													<?php the_post_thumbnail(); ?>
-													<div class="article__img__hover">
-														<h3 class="subtitle1"><?php the_title(); ?></h3>
-														<button class="btn-secondary">View Blog</button>
-													</div>
-												</div>
-											<?php endif; ?>
-											<h3 class="subtitle2"><?php the_title(); ?></h3>
-										</div>
-									</a>
-							</article>
+          <article class="article anim-fadeinstagger" id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article">
+              <a href="<?php the_permalink(); ?>">
+                  <div>
+                      <?php if (has_post_thumbnail()) : ?>
+                          <div class="article__img">
+                              <?php the_post_thumbnail(); ?>
+                              <div class="article__img__hover">
+                                  <h3 class="subtitle1"><?php the_title(); ?></h3>
+                                  <button class="btn-secondary">View Blog</button>
+                              </div>
+                          </div>
+                      <?php endif; ?>
+                      <h3 class="subtitle2"><?php the_title(); ?></h3>
+                  </div>
+              </a>
+          </article>
           <?php
       endwhile;
-  else:
+      
+      // Pagination
+      $total_pages = $query->max_num_pages;
+      if ($total_pages > 1) {
+          echo '<div class="pagination">';
+          for ($i = 1; $i <= $total_pages; $i++) {
+              echo '<button class="page" data-page="' . $i . '">' . $i . '</button>';
+          }
+          echo '</div>';
+      }
+  else {
       // Optionally, echo a message if no posts were found
-      echo '<p>No blogs found in this category.</p>';
+      echo '';
+  }
   endif;
 
   wp_reset_postdata();
   die();
 }
+
+add_action('wp_ajax_filter_blogs', 'filter_blogs');
+add_action('wp_ajax_nopriv_filter_blogs', 'filter_blogs');
 
 
 

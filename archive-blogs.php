@@ -35,7 +35,7 @@
 										<div class="archive__blogs__hero__slider__item">
 											<a href="<?php the_permalink(); ?>">
 												<?php if(has_post_thumbnail()): ?>
-													<?php the_post_thumbnail('thumbnail'); ?>
+													<?php the_post_thumbnail('medium'); ?>
 												<?php endif; ?>
 												<div class="text">
 													<p>Featured Blog</p>
@@ -81,11 +81,20 @@
                 <!-- posts -->
 				<div class="articles-wrapper">
 					<div id="articles-container">
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-							<?php $post_categories = get_the_category(); ?>
-								<article class="article anim-fadeinstagger <?php foreach ($post_categories as $cat) { echo esc_attr($cat->slug) . ' '; } ?>" id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article">
+						<?php
+						$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+						$args = array(
+							'post_type' => 'blogs',
+							'posts_per_page' => 5,
+							'paged' => $paged,
+						);
+						$query = new WP_Query($args);
+						if ($query->have_posts()) :
+							while ($query->have_posts()) : $query->the_post();
+								?>
+								<article class="article anim-fadeinstagger" id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article">
 									<a href="<?php the_permalink(); ?>">
-										<div >
+										<div>
 											<?php if (has_post_thumbnail()) : ?>
 												<div class="article__img">
 													<?php the_post_thumbnail(); ?>
@@ -99,10 +108,23 @@
 										</div>
 									</a>
 								</article>
-							<?php endwhile; ?>
-							<?php endif; ?>
+								<?php
+							endwhile;?>
 					</div>
 				</div>
+							<!-- pagination
+							<?php $total_pages = $query->max_num_pages;
+							if ($total_pages > 1) {
+								echo '<div class="container"><div class="pagination">';
+								for ($i = 1; $i <= $total_pages; $i++) {
+									echo '<button class="page" data-page="' . $i . '">' . $i . '</button>';
+								}
+								echo '</div></div>';
+							}
+							endif;
+							wp_reset_postdata();
+							?> -->
+
 
 				<?php include('blocks/RelatedBlogs.php'); ?>
 			</div>

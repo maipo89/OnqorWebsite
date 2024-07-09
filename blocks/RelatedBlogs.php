@@ -1,6 +1,6 @@
 <div class="related-projects ">
     <div class="container">
-        <h2 class="h3">Check out some other projects</h2>
+        <h2 class="h3">Check out some other blogs</h2>
         
         <div class="related-projects__wrapper">
             <?php 

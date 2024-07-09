@@ -186,6 +186,6 @@ window.onload = function() {
                 // You can retry initialization or show an error message here
             }
         });
-        $('.other-services__sub__buttons button[data-button="3"]').trigger('click');
+        $('.other-services__sub__buttons button[data-button="2"]').trigger('click');
     });
 };

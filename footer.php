@@ -49,7 +49,12 @@
 							</nav>
 
 							<div class="footer__columns__location">
-								<p><?php echo get_sub_field('location') ?></p>
+								<?php if( have_rows('location') ): ?>
+									<?php while( have_rows('location') ): the_row(); 
+									?>
+										<p><?php echo get_sub_field('text') ?></p>
+									<?php endwhile; ?> 
+                				<?php endif; ?> 
 							</div>
 
 							<div class="footer__columns__logos">

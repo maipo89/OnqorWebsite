@@ -293,7 +293,7 @@ function filter_blogs() {
 
   $args = array(
       'post_type' => 'blogs', // Adjusted to target 'blogs' custom post type
-      'posts_per_page' => 5, // Number of posts per page, adjust as necessary
+      'posts_per_page' => 21, // Number of posts per page, adjust as necessary
       'paged' => $paged,
   );
 

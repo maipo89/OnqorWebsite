@@ -1,6 +1,6 @@
 <?php
 /*
- * CUSTOM POST TYPE ARCHIVE TEMPLATE
+ * Archive Blogs
  *
  * This is the custom post type archive template. If you edit the custom post type name,
  * you've got to change the name of this template to reflect that name change.
@@ -85,7 +85,7 @@
 						$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 						$args = array(
 							'post_type' => 'blogs',
-							'posts_per_page' => 5,
+							'posts_per_page' => 21,
 							'paged' => $paged,
 						);
 						$query = new WP_Query($args);

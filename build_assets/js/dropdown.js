@@ -30,7 +30,7 @@ $(document).ready(function() {
 
     // blogs filter
     function loadBlogs(categorySlug, page) {
-        var $container = $('#articles-container'); // Ensure this is your blog container
+        var $container = $('.archive__blogs #articles-container'); // Ensure this is your blog container
 
         $.ajax({
             type: 'POST',
@@ -42,7 +42,7 @@ $(document).ready(function() {
             },
             success: function(response) {
                 $container.html(response); // Directly set the new content
-
+ 
                 // Attach click event to pagination buttons
                 $('.pagination .page').click(function() {
                     var newPage = $(this).data('page');
@@ -57,9 +57,11 @@ $(document).ready(function() {
         loadBlogs(categorySlug, 1);
     });
 
-    // Initial load
-    loadBlogs('all', 1);
-    
+    // Initial load for blogs
+    if ($('.archive__blogs').length) {
+        loadBlogs('all', 1);
+    }
+
     // Toggle dropdown options on click of the filter
     $('#category-dropdown').click(function() {
         $('.dropdown__options').toggleClass('active');

@@ -20,7 +20,9 @@
             </div>
 
             <div class="banner__text">
-                <?php echo the_sub_field('text') ?>
+                <div class="wizywig">
+                    <?php echo the_sub_field('text') ?>
+                </div>
             </div>
 
             <?php if( $basic['btn_text'] ) : ?>  

@@ -83,8 +83,8 @@ $(document).ready(function(){
     var oldContent = document.getElementById('dynamicTitle').textContent;
     var words = oldContent.split(' ');
 
-    words[2] = '<span>' + words[2] + '</span>';
-    words[4] = '<span>' + words[4] + '</span>';
+    words[1] = '<span>' + words[1] + '</span>';
+    words[3] = '<span>' + words[3] + '</span>';
 
     var newContent = words.join(' ');
     document.getElementById('dynamicTitle').innerHTML = newContent;

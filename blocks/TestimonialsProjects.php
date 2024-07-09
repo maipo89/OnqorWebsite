@@ -7,7 +7,7 @@
     <div class="testimonials-projects">
         <img src="<?php echo $imgVisual ?>" alt="<?php echo esc_attr($img['alt']); ?>"/>
         <div class="testimonials-projects__text">
-            <div class="container aife">
+            <div class="container center">
                 <div class="testimonials-projects__text__container">
                     <!-- <svg xmlns="http://www.w3.org/2000/svg" width="462" height="214" viewBox="0 0 462 214" fill="none">
                         <path d="M3.44922 0L3.44921 211L461.779 211" stroke="white" stroke-width="5" stroke-dasharray="50 50"/>

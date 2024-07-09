@@ -38,7 +38,9 @@ if( have_rows('tabs') ): ?>
                                 <img src="<?php echo $imgVisual?> " alt="<?php echo esc_attr($img['alt']); ?>"/>
                             <?php endif; ?> 
                             <h3 class="subtitle1"><?php echo the_sub_field('tab_title'); ?></h3>
-                            <?php echo the_sub_field('tab_text'); ?>
+                            <div class="wizywig">
+                                <?php echo the_sub_field('tab_text'); ?>
+                            </div>
                         </div>
                         <?php $tab_count++; ?>
                     <?php endwhile; ?> 

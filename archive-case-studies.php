@@ -1,6 +1,6 @@
 <?php
 /*
- * CUSTOM POST TYPE ARCHIVE TEMPLATE
+ * Archive Cast Studies
  *
  * This is the custom post type archive template. If you edit the custom post type name,
  * you've got to change the name of this template to reflect that name change.

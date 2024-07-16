@@ -1,4 +1,4 @@
-    <div class="contact-form-footer <?php if (is_front_page()) echo 'home-footer'; ?>">  
+    <div class="contact contact-form-footer <?php if (is_front_page()) echo 'home-footer'; ?>">  
         <div class="container">
             <div class="contact-form-footer__wrapper">
                 <h2>Have a project you want to discuss?</h2>
@@ -73,7 +73,7 @@
                     </div>
 
                     <!-- service interests -->
-                    <div class="form-input-wrap">
+                    <!-- <div class="form-input-wrap">
                         <label for="serviceinterests">Service Interests:</label><select  id="00N8d00000WqA9l" multiple="multiple" name="00N8d00000WqA9l" title="Service Interests"><option value="Animation">Animation</option>
                         <option value="APP Development">APP Development</option>
                         <option value="Branding">Branding</option>
@@ -91,6 +91,27 @@
                         <option value="Videography">Videography</option>
                         <option value="Website Development">Website Development</option>
                         </select>
+                    </div> -->
+                    <div class="form-input-wrap">
+                        <label for="serviceinterests">Service Interests:</label>
+                        <div id="serviceinterests">
+                            <label><input type="checkbox" id="00N8d00000WqA9l_Animation" name="00N8d00000WqA9l" value="Animation" title="Service Interests"> Animation</label>
+                            <label><input type="checkbox" id="00N8d00000WqA9l_APP_Development" name="00N8d00000WqA9l" value="APP Development" title="Service Interests"> APP Development</label>
+                            <label><input type="checkbox" id="00N8d00000WqA9l_Branding" name="00N8d00000WqA9l" value="Branding" title="Service Interests"> Branding</label>
+                            <label><input type="checkbox" id="00N8d00000WqA9l_Content_Creation" name="00N8d00000WqA9l" value="Content Creation" title="Service Interests"> Content Creation</label>
+                            <label><input type="checkbox" id="00N8d00000WqA9l_Copywriting" name="00N8d00000WqA9l" value="Copywriting" title="Service Interests"> Copywriting</label>
+                            <label><input type="checkbox" id="00N8d00000WqA9l_Digital_Advertising" name="00N8d00000WqA9l" value="Digital Advertising" title="Service Interests"> Digital Advertising</label>
+                            <label><input type="checkbox" id="00N8d00000WqA9l_Email_Marketing" name="00N8d00000WqA9l" value="Email Marketing" title="Service Interests"> Email Marketing</label>
+                            <label><input type="checkbox" id="00N8d00000WqA9l_Graphic_Design" name="00N8d00000WqA9l" value="Graphic Design" title="Service Interests"> Graphic Design</label>
+                            <label><input type="checkbox" id="00N8d00000WqA9l_Photography" name="00N8d00000WqA9l" value="Photography" title="Service Interests"> Photography</label>
+                            <label><input type="checkbox" id="00N8d00000WqA9l_Print_Work" name="00N8d00000WqA9l" value="Print Work" title="Service Interests"> Print Work</label>
+                            <label><input type="checkbox" id="00N8d00000WqA9l_SEO" name="00N8d00000WqA9l" value="SEO" title="Service Interests"> SEO</label>
+                            <label><input type="checkbox" id="00N8d00000WqA9l_Social_Media_Management" name="00N8d00000WqA9l" value="Social Media Management" title="Service Interests"> Social Media Management</label>
+                            <label><input type="checkbox" id="00N8d00000WqA9l_Strategy" name="00N8d00000WqA9l" value="Strategy" title="Service Interests"> Strategy</label>
+                            <label><input type="checkbox" id="00N8d00000WqA9l_UI_UX_Design" name="00N8d00000WqA9l" value="UI/UX Design" title="Service Interests"> UI/UX Design</label>
+                            <label><input type="checkbox" id="00N8d00000WqA9l_Videography" name="00N8d00000WqA9l" value="Videography" title="Service Interests"> Videography</label>
+                            <label><input type="checkbox" id="00N8d00000WqA9l_Website_Development" name="00N8d00000WqA9l" value="Website Development" title="Service Interests"> Website Development</label>
+                        </div>
                     </div>
                     
                     <!-- submit -->

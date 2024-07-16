@@ -1,0 +1,19 @@
+.thank-you {
+    @include padding;
+    @media (max-width: $tabletLarge) {
+        h1, p {
+            text-align: center;
+        }
+    }
+    h1 {
+        font-size: 197px;
+        line-height: normal;
+        margin: 0 0 16px 0;
+        @media (max-width: $desktop) {
+            font-size: 100px;
+        }
+        @media (max-width: $tabletLarge) {
+            font-size: 75px;
+        }
+    }
+}

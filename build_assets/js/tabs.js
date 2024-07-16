@@ -129,7 +129,6 @@ window.onload = function() {
             }
         });
         
-
         // Tab link click function
         $('.other-services__sub__buttons button').click(function(e) {
             e.preventDefault();
@@ -144,7 +143,6 @@ window.onload = function() {
 
             // Hide all tab content
             $('.other-services__sub__items').hide();
-      
             $('.other-services__service div').hide();
 
             // Show the current tab content
@@ -156,36 +154,43 @@ window.onload = function() {
             }).fadeIn(500, 'swing');
 
             if ($.fn.slick) {
+                // Destroy any existing slick instances before reinitializing
                 $('.other-services__sub__items__slider').filter(function() {
                     return $(this).data('tab') === currentTab;
-                }).addClass('active').slick('unslick').slick({
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    dots: true,
-                    cssEase: 'linear',
-                    infinite: false,
-                    loop: true,
-                    arrows: false,
-                    responsive: [
-                        {
-                        breakpoint: 430,
-                        settings: {
-                                slidesToShow: 1,
-                            }
-                        },
-                        {
-                        breakpoint: 768,
-                        settings: { 
-                            slidesToShow: 2,
-                            }
-                        },
-                    ]
+                }).each(function() {
+                    if ($(this).hasClass('slick-initialized')) {
+                        $(this).slick('unslick');
+                    }
+                    $(this).addClass('active').slick({
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        dots: true,
+                        cssEase: 'linear',
+                        infinite: false,
+                        arrows: false,
+                        responsive: [
+                            {
+                                breakpoint: 430,
+                                settings: {
+                                    slidesToShow: 1,
+                                }
+                            },
+                            {
+                                breakpoint: 768,
+                                settings: {
+                                    slidesToShow: 2,
+                                }
+                            },
+                        ]
+                    });
                 });
             } else {
                 console.log('Slick slider library not loaded yet.');
                 // You can retry initialization or show an error message here
             }
         });
+
+        // Trigger click on the initial tab
         $('.other-services__sub__buttons button[data-button="2"]').trigger('click');
     });
 };

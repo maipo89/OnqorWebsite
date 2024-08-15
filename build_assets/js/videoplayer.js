@@ -11,11 +11,11 @@ $(document).ready(function() {
 
     // Play/Pause functionality
     function playPause(video, playBtn, pauseBtn) {
-        if (video[0].paused) {
+        if (video.length && video[0].paused) {
             console.log('Playing video');
             video.trigger('play');
             playBtn.css('display', 'none');
-            pauseBtn.css('display', 'none');
+            pauseBtn.css('display', 'block');
 
             video.on('mouseover', function() { showPauseButton(pauseBtn); });
             video.on('mouseout', function() { hidePauseButton(pauseBtn); });
@@ -27,10 +27,8 @@ $(document).ready(function() {
                 playBtn.css('display', 'block');
                 pauseBtn.css('display', 'none');
 
-                video.off('mouseover');
-                video.off('mouseout');
-                pauseBtn.off('mouseover');
-                pauseBtn.off('mouseout');
+                video.off('mouseover mouseout');
+                pauseBtn.off('mouseover mouseout');
             });
         } else {
             console.log('Pausing video');
@@ -38,11 +36,17 @@ $(document).ready(function() {
         }
     }
 
-    // Event delegation for play buttons in video gallery
-    $('.video-gallery').on('click', '.PlayButton', function() {
+    // Event delegation for play buttons in video sections
+    $('.video-gallery, .videography__video, .video-play__video').on('click', '.PlayButton', function() {
         var playBtn = $(this);
         var pauseBtn = playBtn.siblings('.PauseButton');
-        var video = playBtn.closest('.video-gallery__slider__item').find('video');
+        var video = playBtn.closest('.video-gallery__slider__item, .videography__video, .video-play__video').find('video');
+
+        // Ensure the video element was found
+        if (video.length === 0) {
+            console.log('No video element found');
+            return;
+        }
 
         // Pause all videos except the one to be played
         $('video').each(function() {
@@ -56,17 +60,23 @@ $(document).ready(function() {
         playPause(video, playBtn, pauseBtn);
     });
 
-    // Event delegation for pause buttons in video gallery
-    $('.video-gallery').on('click', '.PauseButton', function() {
+    // Event delegation for pause buttons in video sections
+    $('.video-gallery, .videography__video, .video-play__video').on('click', '.PauseButton', function() {
         var pauseBtn = $(this);
         var playBtn = pauseBtn.siblings('.PlayButton');
-        var video = pauseBtn.closest('.video-gallery__slider__item').find('video');
+        var video = pauseBtn.closest('.video-gallery__slider__item, .videography__video, .video-play__video').find('video');
+
+        // Ensure the video element was found
+        if (video.length === 0) {
+            console.log('No video element found');
+            return;
+        }
 
         playPause(video, playBtn, pauseBtn);
     });
 
     // Initial state setup for all videos
-    $('.video-gallery__slider__item').each(function() {
+    $('.video-gallery__slider__item, .videography__video, .video-play__video').each(function() {
         var playBtn = $(this).find('.PlayButton');
         var pauseBtn = $(this).find('.PauseButton');
         hidePauseButton(pauseBtn);
@@ -76,6 +86,11 @@ $(document).ready(function() {
     // Slider initialization (assuming Slick)
     $('.video-gallery__slider').slick({
         // Your Slick slider settings here
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: true,
     });
 
     // Reset and pause videos on slide change

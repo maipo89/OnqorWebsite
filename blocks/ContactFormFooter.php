@@ -28,7 +28,7 @@
                     <!--  ----------------------------------------------------------------------  -->
 
                     <!-- Salutation -->
-                    <div class="form-input-wrap">
+                    <!-- <div class="form-input-wrap">
                         <label for="salutation">Salutation</label><select  id="salutation" name="salutation"><option value="">--None--</option><option value="Dr.">Dr.</option>
                         <option value="Miss">Miss</option>
                         <option value="Mr.">Mr.</option>
@@ -36,7 +36,7 @@
                         <option value="Ms.">Ms.</option>
                         <option value="Prof.">Prof.</option>
                         </select>
-                    </div>
+                    </div> -->
 
                     <div class="form-wrap">
                         <!-- first name -->

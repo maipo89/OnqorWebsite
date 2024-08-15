@@ -21,7 +21,7 @@
                         <?php 
                             $link_data = get_sub_field('video'); 
                             if(!empty($link_data)){ $link = $link_data['url'];  ?>
-                            <video playsinline autoplay muted loop class="video">
+                            <video playsinline autoplay muted loop>
                                 <source src="<?php echo $link; ?>">   
                             </video>
                         <?php } ?>

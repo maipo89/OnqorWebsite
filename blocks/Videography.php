@@ -22,12 +22,12 @@
                 <?php 
                     $link_data = get_sub_field('video'); 
                     if(!empty($link_data)){ $link = $link_data['url'];  ?>
-                    <video playsinline class="video">
+                    <video playsinline class="videoplayer">
                         <source src="<?php echo $link; ?>">   
                     </video>
                 <?php } ?>
 
-                <div class="videoplayer">
+                <div class="videoplayer-buttons">
                     <?php include('Videography/PlayButton.php'); ?>
                     <?php include('Videography/PauseButton.php'); ?>
                 </div>

@@ -6,7 +6,7 @@ if( have_rows('tabs') ): ?>
         $selected_value = get_sub_field('options');
     ?>
 
-    <div class="tabs">  
+    <div class="tabs" id="tabs">  
         <div class="container">
             <!-- tabs buttons -->
             <?php 

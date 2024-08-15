@@ -41,7 +41,7 @@
                     <!--  ----------------------------------------------------------------------  -->
 
                     <!-- Salutation -->
-                    <div class="form-input-wrap">
+                    <!-- <div class="form-input-wrap">
                         <label for="salutation">Salutation</label><select  id="salutation" name="salutation"><option value="">--None--</option><option value="Dr.">Dr.</option>
                         <option value="Miss">Miss</option>
                         <option value="Mr.">Mr.</option>
@@ -49,7 +49,7 @@
                         <option value="Ms.">Ms.</option>
                         <option value="Prof.">Prof.</option>
                         </select>
-                    </div>
+                    </div> -->
 
                     <div class="form-wrap">
                         <!-- first name -->
@@ -136,7 +136,7 @@
             <div class="contact-form__book">
                 <h2 class="h3"><?php echo $basic['subtitle'] ?></h2>
                 <p><?php echo $basic['subtext'] ?></p>
-                <a href="#"><button class="btn-primary"><?php echo $basic['btn_text'] ?></button></a>
+                <a href="<?php echo $basic['btn_link']['url'] ?>"><button class="btn-primary"><?php echo $basic['btn_text'] ?></button></a>
             </div>
         </div>
      

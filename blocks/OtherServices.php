@@ -44,7 +44,7 @@ if (have_rows('other_services')):
                                 <a href="<?php echo $child_permalink; ?>">
                                     <div data-service="<?php echo $serviceIndex; ?>">
                                     <?php echo $child_img; ?>
-                                            <button class="btn-secondary">View</button>
+                                            <!-- <button class="btn-secondary">View</button> -->
                                     </div>
                                 </a>
                             <?php endif; ?>

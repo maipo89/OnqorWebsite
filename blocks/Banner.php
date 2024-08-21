@@ -15,7 +15,7 @@
                     </span>    
                 </h2>
                 <?php if( $basic['btn_text'] ) : ?>  
-                    <a class="anim-pulse anim-pulse-<?php echo $pulse_color; ?>"><button class="btn-secondary" style="border-color: <?php echo $page_color; ?>"><?php echo $basic['btn_text'] ?></button></a>
+                    <a href="<?php echo $basic['btn_link']['url']?>" class="anim-pulse anim-pulse-<?php echo $pulse_color; ?>"><button class="btn-secondary" style="border-color: <?php echo $page_color; ?>"><?php echo $basic['btn_text'] ?></button></a>
                 <?php endif; ?> 
             </div>
 
@@ -26,7 +26,7 @@
             </div>
 
             <?php if( $basic['btn_text'] ) : ?>  
-                <a class="anim-pulse btn-mobile anim-pulse-<?php echo $pulse_color; ?>"><button class="btn-secondary" style="border-color: <?php echo $page_color; ?>"><?php echo $basic['btn_text'] ?></button></a>
+                <a class="anim-pulse btn-mobile anim-pulse-<?php echo $pulse_color; ?>" href="<?php echo $basic['btn_link']['url']?>"><button class="btn-secondary" style="border-color: <?php echo $page_color; ?>"><?php echo $basic['btn_text'] ?></button></a>
             <?php endif; ?> 
         </div>  
     </div>  

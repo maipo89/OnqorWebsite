@@ -9,7 +9,8 @@
         	<div class="container center">
             	<!-- title -->
 				<h1><?php the_title(); ?></h1>
-          		<p class="body1"><?php the_author(); ?></p>
+          		<p class="body1 author"><?php the_author(); ?></p>
+				<p class="date"><?php the_date(); ?></p>
         	</div>
       	</div>
 

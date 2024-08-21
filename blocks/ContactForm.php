@@ -54,7 +54,7 @@
                     <div class="form-wrap">
                         <!-- first name -->
                         <div class="form-input-wrap">
-                            <label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
+                            <label for="first_name">First Name</label><input required id="first_name" maxlength="40" name="first_name" size="20" type="text" />
                         </div>
 
                         <!-- last name -->
@@ -76,9 +76,9 @@
                     </div>
 
                     <!-- position -->
-                    <div class="form-input-wrap">
+                    <!-- <div class="form-input-wrap">
                         <label for="position">Position:</label><input  id="00NJ7000000hvnL" maxlength="128" name="00NJ7000000hvnL" size="20" type="text" />
-                    </div>
+                    </div> -->
 
                     <!-- company -->
                     <div class="form-input-wrap">
@@ -136,7 +136,7 @@
             <div class="contact-form__book">
                 <h2 class="h3"><?php echo $basic['subtitle'] ?></h2>
                 <p><?php echo $basic['subtext'] ?></p>
-                <a href="<?php echo $basic['btn_link']['url'] ?>"><button class="btn-primary"><?php echo $basic['btn_text'] ?></button></a>
+                <a target="_blank"href="<?php echo $basic['btn_link']['url'] ?>"><button class="btn-primary"><?php echo $basic['btn_text'] ?></button></a>
             </div>
         </div>
      

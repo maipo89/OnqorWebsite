@@ -6,9 +6,8 @@
         border-radius: 8px;
     }
     a {
-        &:hover {
-            text-decoration: none;
-        }
+        text-decoration: underline;
+        color: black;
     }
     .images-offset {
         &__text {

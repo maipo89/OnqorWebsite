@@ -14,6 +14,18 @@
         &.grid-2 {
             grid-template-columns: repeat(2, 1fr);
         }
+        &:has(button:nth-child(4)) {
+            button {
+                &:nth-child(-n+3) {
+                    border-bottom-left-radius: 0 !important;
+                    border-bottom-right-radius: 0 !important;
+                }
+                &:nth-last-child(-n+3) {
+                    border-top-left-radius: 0 !important;
+                    border-top-right-radius: 0 !important;
+                }
+            }
+        }
         button {
             background-color: white;
             border: 1px solid $darksmoke;
@@ -23,6 +35,11 @@
             font-weight: 300;
             line-height: normal;
             height: fit-content;
+            &:hover {
+                background-color: $darksmoke;
+                color: white;
+                transition: 0.2s;
+            }
             &:nth-child(3n-2){
                 border-top-left-radius: 8px;
                 border-bottom-left-radius: 8px;
@@ -35,6 +52,16 @@
                 border-top-right-radius: 8px;
                 border-bottom-right-radius: 8px;
             }
+            // // first three 
+            // &:nth-child(-n+3) {
+            //     border-bottom-left-radius: 0 !important;
+            //     border-bottom-right-radius: 0 !important;
+            // }
+            // // last three
+            // :nth-last-child(-n+3) {
+            //     border-top-left-radius: 0 !important;
+            //     border-top-right-radius: 0 !important;
+            // }
             &:focus {
                 outline: none !important;
             }
@@ -53,17 +80,21 @@
                 margin: 0 0 48px 0;
                 object-fit: cover;
                 @media (max-width: $desktop) {
-                    height: 457px;
+                    // height: 457px;
+                    height: 407px;
                 }
                 @media (max-width: $tabletLarge) {
-                    height: 360px;
+                    // height: 360px;
+                    height: 310px;
                     margin: 0 0 32px 0;
                 }
                 @media (max-width: $tabletSmall) {
-                    height: 366px;
+                    // height: 366px;
+                    height: 316px;
                 }
                 @media (max-width: $mobileLarge) {
-                    height: 250px;
+                    // height: 250px;
+                    height: 200px;
                 }
             }
             h3 {

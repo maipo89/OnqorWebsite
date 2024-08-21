@@ -7,8 +7,8 @@
     }
     .text-basic {
         h3 {
-            font-size: 50px;
-            font-weight: 300;
+            font-size: 28px;
+            font-weight: 400;
             line-height: normal;
             letter-spacing: 0em;
             text-align: left;
@@ -24,9 +24,9 @@
             } 
         }
     }
-    h2 {
-        font-size: 50px;
-        font-weight: 300;
+    h2,h3 {
+        font-size: 28px;
+        font-weight: 400;
         line-height: normal;
         letter-spacing: 0em;
         text-align: left;
@@ -38,7 +38,7 @@
             font-size: 28px;
             font-style: normal;
             font-weight: 400;
-            line-height: normal;
+            line-height: normal; 
         }
     }
     &__back {
@@ -68,6 +68,22 @@
         text-align: center;
         h1 {
             margin: 0 0 32px 0;
+            text-align: center;
+        }
+        .date {
+            margin: 24px 0 0 0;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 300;
+            @media (max-width: $desktop) {
+                margin: 16px 0 0 0;
+            }
+            @media (max-width: $tabletLarge) {
+                margin: 8px 0 0 0;
+            }
+        }
+        .author {
+            font-weight: 700;
         }
         .container {
             z-index: 1;

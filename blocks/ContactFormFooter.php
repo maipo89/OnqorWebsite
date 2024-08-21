@@ -46,7 +46,7 @@
 
                         <!-- last name -->
                         <div class="form-input-wrap">
-                            <label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" />
+                            <label for="last_name">Last name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" />
                         </div>
                     </div>
 
@@ -63,9 +63,9 @@
                     </div>
 
                     <!-- position -->
-                    <div class="form-input-wrap">
+                    <!-- <div class="form-input-wrap">
                         <label for="position">Position:</label><input  id="00NJ7000000hvnL" maxlength="128" name="00NJ7000000hvnL" size="20" type="text" />
-                    </div>
+                    </div> -->
 
                     <!-- company -->
                     <div class="form-input-wrap">

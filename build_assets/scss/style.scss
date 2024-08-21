@@ -184,11 +184,12 @@ h3 {
 // read more 
 .read-more {
     margin: 24px 0 0 0;
-    text-decoration: underline;
     position: relative;
     cursor: pointer;
+    text-decoration: underline;
     &:hover {
         cursor: pointer;
+        font-weight: 500;
     }
 }
 

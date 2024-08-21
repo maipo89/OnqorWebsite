@@ -146,7 +146,7 @@
             }
         }
         input, select {
-            border-radius: 8px;
+            border-radius: 16px;
             border: 1px solid #FFF;
             background: #2E2E2E;
             color: white;
@@ -159,7 +159,6 @@
         input[type="submit"] {
             width: fit-content;
             padding: 8px 24px;
-            border-radius: 8px;
             border-radius: 8px;
             border: 1px solid $darksmoke;
             background: #F8F8F8;
@@ -176,7 +175,7 @@
                 align-items: center;
                 justify-content: center;
                 background-color: #2E2E2E;
-                border-radius: 8px;
+                border-radius: 16px;
                 border: 1px solid $offwhite;
                 padding: 4px 8px;
                 cursor: pointer;
@@ -191,7 +190,7 @@
                     width: 16px;
                     height: 16px;
                     border: 1px solid $offwhite;
-                    border-radius: 3px;
+                    border-radius: 8px;
                     background: $darksmoke;
                     margin-right: 8px;
                     box-sizing: border-box;

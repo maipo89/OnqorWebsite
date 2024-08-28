@@ -3,7 +3,7 @@
       <?php while( have_rows('images_text') ): the_row(); 
          $selected_value = get_sub_field('options');
 ?>
-    <div id="<?php echo $counters?>" class="images-text">
+    <div id="<?php echo $basic['smooth_scroll_id']?>" class="images-text">
         <?php include('ImagesText/_ImagesOffset.php'); ?>
         <?php include('ImagesText/_ImageLeftRight.php'); ?>
         <?php include('ImagesText/_ImageSingle.php'); ?>

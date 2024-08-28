@@ -10,7 +10,7 @@
         }
     }
     .h3 {
-        font-size: 50px !important;
+        font-size: 50px;
         font-weight: 300 !important;
         @media (max-width: $desktop) { 
             font-size: 28px;
@@ -30,11 +30,13 @@
         &__item {
             width: 100%;
             opacity: 1;
-            &:hover {
-                button {
-                    background-color: white;
-                    color: $darksmoke;
-                    border-color: $darksmoke;
+            button {
+                &:hover {
+                    button {
+                        background-color: white;
+                        color: $darksmoke;
+                        border-color: $darksmoke;
+                    }
                 }
             }
             h3, a {

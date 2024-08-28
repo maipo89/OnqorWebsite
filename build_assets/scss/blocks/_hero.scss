@@ -77,11 +77,11 @@
             }
             .wizywig {
                 margin: 24px 0 0 0;
+                @media (max-width: $desktop) {
+                    display: none;
+                }
                 p {
                     margin: 0;
-                    @media (max-width: $desktop) {
-                        display: none;
-                    }
                 }
             }
             a {

@@ -34,9 +34,11 @@
                         <div >
                             <h1 id="dynamicTitle"> <?php echo get_sub_field('title') ?></h1>
                             <p class="hero-video__text__subtext"><?php echo get_sub_field('subtext') ?></p>
-                            <div class="wizywig">
-                                <?php echo get_sub_field('text') ?>
-                            </div>
+                            <?php if( get_sub_field('text') ) { ?> 
+                                <div class="wizywig">
+                                    <?php echo get_sub_field('text') ?>
+                                </div>
+                            <?php } ?>
                             <div class="hero-video__text__logos">
                                 <?php
                                     $media = get_sub_field('logos'); 

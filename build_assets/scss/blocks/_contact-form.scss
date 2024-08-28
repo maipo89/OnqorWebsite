@@ -25,6 +25,9 @@
         a {
             color: white;
             text-decoration: underline;
+            &:hover {
+                color: $operations;
+            }
         }
         p {
             text-align: center;
@@ -72,20 +75,37 @@
 } 
 // footer contact css
 .contact-form-footer {
-    @include padding;
+    padding: 96px 0;
+    @media (max-width: $tabletLarge) {
+        padding: 64px 0 64px 0;
+    }
     &.contact.home-footer {
         background-color: white;
         color: black;
         form {
-            input, select {
-                border: 1px solid $darksmoke;
-                background: $offwhite;
+            label {
+                border-bottom: 1px solid black;
+            }
+            .subtitle1 a {
                 color: black;
+            }
+            input, textarea {
+                border-bottom: 1px solid black;
+                background: white;
+                color: black;
+                &::placeholder {
+                    color: black;
+                }
             }
             input[type="submit"] {
                 border: 1px solid black;
                 background: black;
                 color: white;
+                &:hover {
+                    background: white;
+                    color: black;
+                    transition: ease .2s;
+                }
             }
             #serviceinterests {
                 label {
@@ -123,84 +143,136 @@
     form {
         display: flex;
         flex-direction: column;
-        grid-gap: 24px;
+        grid-gap: 32px;
         width: 100%;
         max-width: 570px;
+        .error {
+            border-bottom: 1px solid red;
+        }
+        .subtitle1 a {
+            color: white;
+            text-decoration: underline;
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+                color: $operations;
+            }
+        }
         label {
             margin: 0;
+            font-family: Poppins;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+            border-bottom: 1px solid white;
         }
         .form {
             &-wrap {
                 display: flex;
                 flex-direction: row;
                 width: 100%;
-                grid-gap: 24px;
+                grid-gap: 40px;
+                @media (max-width: $mobileLarge) {
+                    grid-gap: 32px;
+                    flex-direction: column;
+                }
                 .form-input-wrap {
                     width: calc(50% - 12px);
+                    @media (max-width: $mobileLarge) {
+                        width: 100%;
+                    }
                 }
+                
             }
             &-input-wrap {
                 display: flex;
                 flex-direction: column;
-                grid-gap: 8px;
+                // grid-gap: 8px;
             }
         }
-        input, select {
-            border-radius: 16px;
-            border: 1px solid #FFF;
-            background: #2E2E2E;
+        input, textarea {
+            // border-radius: 16px;
+            border: none;
+            border-bottom: 1px solid #FFF;
+            background: transparent;
             color: white;
-            padding: 0 8px;
-            height: 28px;
+            padding: 0 8px 0 0;
+            height: 24px;
+            font-family: Poppins;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+            &::placeholder {
+                color: white;
+                font-family: Poppins;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: normal;
+            }
             &:focus-visible {
                 outline: none;
             }
+            // &:invalid {
+            //     border-bottom: 1px solid red;
+            // }
+        }
+        textarea {
+            height: 72px;
         }
         input[type="submit"] {
             width: fit-content;
             padding: 8px 24px;
             border-radius: 8px;
-            border: 1px solid $darksmoke;
-            background: #F8F8F8;
-            color: black;
+            border: 1px solid white;
+            background: black;
+            color: white;
             height: fit-content;
+            transition: ease .2s;
             font-weight: 300;
-        }
-        #serviceinterests {
-            display: flex;
-            grid-gap: 8px;
-            flex-wrap: wrap;
-            label {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background-color: #2E2E2E;
-                border-radius: 16px;
-                border: 1px solid $offwhite;
-                padding: 4px 8px;
-                cursor: pointer;
-                position: relative;
-        
-                input[type="checkbox"] {
-                    display: none;
-                }
-                &::before {
-                    content: '';
-                    display: inline-block;
-                    width: 16px;
-                    height: 16px;
-                    border: 1px solid $offwhite;
-                    border-radius: 8px;
-                    background: $darksmoke;
-                    margin-right: 8px;
-                    box-sizing: border-box;
-                    transition: background-color 0.2s, border-color 0.2s;
-                }
-                &.checked::before {
-                    background-color: $store;
-                    border-color: $store;
-                }
+            &:hover {
+                background: white;
+                color: black;
+                transition: ease .2s;
             }
         }
+        // #serviceinterests {
+        //     display: flex;
+        //     grid-gap: 8px;
+        //     flex-wrap: wrap;
+        //     label {
+        //         display: flex;
+        //         align-items: center;
+        //         justify-content: center;
+        //         background-color: #2E2E2E;
+        //         border-radius: 16px;
+        //         border: 1px solid $offwhite;
+        //         padding: 4px 8px;
+        //         cursor: pointer;
+        //         position: relative;
+        
+        //         input[type="checkbox"] {
+        //             display: none;
+        //         }
+        //         &::before {
+        //             content: '';
+        //             display: inline-block;
+        //             width: 16px;
+        //             height: 16px;
+        //             border: 1px solid $offwhite;
+        //             border-radius: 8px;
+        //             background: $darksmoke;
+        //             margin-right: 8px;
+        //             box-sizing: border-box;
+        //             transition: background-color 0.2s, border-color 0.2s;
+        //         }
+        //         &.checked::before {
+        //             background-color: $store;
+        //             border-color: $store;
+        //         }
+        //     }
+        // }
     }
 }

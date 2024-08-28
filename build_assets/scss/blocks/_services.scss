@@ -11,6 +11,12 @@
                 cursor: pointer;
             }
         }
+        svg {
+            @media (max-width: $tabletLarge) { 
+                height: 20px;
+                width: 30px;
+            }
+        }
     }
     h2 {
         span {
@@ -32,7 +38,7 @@
             display: flex;
             grid-gap: 48px;
             width: 100%;
-            @media (max-width: $tabletSmall) { 
+            @media (max-width: $desktop) { 
                 flex-direction: column;
                 grid-gap: 10px;
             }
@@ -45,8 +51,9 @@
                 padding: 0;
                 flex-wrap: wrap;
                 grid-gap: 8px;
-                @media (max-width: $tabletSmall) { 
-                    justify-content: flex-start;
+                @media (max-width: $desktop) {  
+                    flex-direction: column;
+                    align-items: flex-start;
                 }
                 a {
                     color: white;

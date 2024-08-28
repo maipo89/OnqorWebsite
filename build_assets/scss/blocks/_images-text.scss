@@ -8,6 +8,9 @@
     a {
         text-decoration: underline;
         color: black;
+        &:hover {
+            color: $operations;
+        }
     }
     .images-offset {
         &__text {

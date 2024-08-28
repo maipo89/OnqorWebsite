@@ -1,7 +1,7 @@
 .video-gallery {
     @include padding;
     video {
-        object-fit: cover;
+        object-fit: contain;
     }
     img {
         object-fit: cover;
@@ -26,7 +26,7 @@
         }
         &__item {
             height: 742px;
-     
+            background-color: black;
             video {
                 height:100%;
                 width: 100%;
@@ -55,6 +55,9 @@
         width: 100%;
         margin: 0 0 0 0;
         display: block;
+        &:hover {
+            cursor: pointer;
+        }
         .slick-dots {
             display: none !important;
         }

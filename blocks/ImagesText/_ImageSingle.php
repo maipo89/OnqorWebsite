@@ -45,6 +45,7 @@
                                     <?php if( get_sub_field('columns_text_three') ) { ?> col-three <?php  } ?>
                                     <?php if( get_sub_field('subtitle') ) { ?> small-margin <?php  } ?>
                                     subtext
+                                    wizywig
                         " >
                             <?php echo the_sub_field('subtext') ?>
                         </div>

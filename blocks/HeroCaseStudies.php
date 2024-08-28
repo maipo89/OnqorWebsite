@@ -3,6 +3,11 @@ $basic = get_sub_field('hero_case_studies');
 if( have_rows('hero_case_studies') ): ?>
     <?php while( have_rows('hero_case_studies') ): the_row(); 
         $selected_value = get_sub_field('options');
+        $title = $basic['title'];
+        $subtitle = $basic['subtitle'];
+        $subtext = $basic['subtext'];
+        $cta = $basic['cta'];
+        $ctalink = $basic['cta_link']['url']
     ?>
         <!-- hero section -->
 	   <!-- background -->
@@ -15,12 +20,13 @@ if( have_rows('hero_case_studies') ): ?>
         endif; ?>
             <div class="container aic fdc title">
             <!-- title -->
-                <h1><?php the_title(); ?> <span>Case Study</span></h1>
+                    
+                <h1><?php the_title(); ?> <br><span>Case Study</span></h1>
                 <?php the_excerpt(); ?>
             </div>
             <div class="container">
                 <!-- list -->
-                <h2><?php echo $basic['title'] ?></h2>
+                <h2><?php echo $title ?></h2>
                 <ul class="hero-case-studies__list">
                     <?php if( have_rows('list') ): ?>
                         <?php while( have_rows('list') ): the_row(); ?>
@@ -52,16 +58,16 @@ if( have_rows('hero_case_studies') ): ?>
                     <div class="hero-case-studies__subtext 
                     <?php if ($selected_value == 'image_stats'): ?> svg-shift <?php endif; ?> 
                     ">
+               
                         <!-- <svg xmlns="http://www.w3.org/2000/svg" width="413" height="138" viewBox="0 0 413 138" fill="none">
                                 <path d="M3 0L2.99999 135L413 135" stroke="black" stroke-width="5" stroke-dasharray="50 50"/>
                         </svg> -->
                         <div>
-                            <h4 class="subtitle1"><?php echo $basic['subtitle'] ?>The Challenge</h4>
-                            <?php echo $basic['subtext'] ?>
-                            <p>
-                            As a relatively new brand, L’ACTIF’s main challenge was brand awareness. The client needed to build a presence on social media, firmly establishing the brand in the athleisure space. After launching in Saudi Arabia, the client was looking to expand L’ACTIF’s audience, penetrating the UK market and engaging with UK consumers.
-                            </p>
-                            <a class=""><button class="btn-primary"><?php echo $basic['cta'] ?>Get in touch</button></a>
+                            <h4 class="subtitle1"><?php echo $subtitle ?></h4>
+                            <div class="wizywig">
+                                <?php echo $subtext ?>
+                            </div>
+                            <a href="<?php echo $ctalink ?>"><button class="btn-primary"><?php echo $cta ?></button></a>
                         </div>
                     </div>
                 </div>

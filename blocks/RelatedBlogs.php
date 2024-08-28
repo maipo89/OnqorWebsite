@@ -17,15 +17,15 @@
                 if($related_blogs->have_posts()) : 
                     while($related_blogs->have_posts()) : $related_blogs->the_post(); ?>
                         <div class="related-projects__wrapper__item anim-fadeinstagger">
-                            <a href="<?php the_permalink(); ?>">
                                 <?php if(has_post_thumbnail()): ?>
                                     <?php the_post_thumbnail('medium'); ?>
                                 <?php endif; ?>
                                 <div>
                                     <h3 class="subtitle2"><?php the_title(); ?></h3>
-                                    <button class="btn-secondary">View</button>
+                                    <a href="<?php the_permalink(); ?>">
+                                        <button class="btn-secondary">View</button>
+                                    </a>
                                 </div>
-                            </a>
                         </div>
                     <?php endwhile; ?>
                 <?php else: ?>
@@ -42,15 +42,15 @@
                 if($related_blogs->have_posts()) : 
                     while($related_blogs->have_posts()) : $related_blogs->the_post(); ?>
                         <div class="related-projects__wrapper__item anim-fadeinstagger">
-                            <a href="<?php the_permalink(); ?>">
                                 <?php if(has_post_thumbnail()): ?>
                                     <?php the_post_thumbnail('medium'); ?>
                                 <?php endif; ?>
                                 <div>
                                     <h3 class="subtitle2"><?php the_title(); ?></h3>
-                                    <button class="btn-secondary">View</button>
+                                    <a href="<?php the_permalink(); ?>">
+                                        <button class="btn-secondary">View</button>
+                                    </a>
                                 </div>
-                            </a>
                         </div>
                     <?php endwhile; ?>
                 <?php else: ?>

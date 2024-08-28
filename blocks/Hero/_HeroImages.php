@@ -25,7 +25,7 @@
                     <!-- images -->
                     <div class="hero-images__images">
                         <!-- images option -->
-                        <?php if(get_sub_field('imagess')) : ?>
+                        <?php if(get_sub_field('images')) : ?>
                             <?php
                             $logos = get_sub_field('images');
                             foreach($logos as $image) {
@@ -35,6 +35,7 @@
                         <?php endif; ?> 
 
                         <!-- case studies option -->
+                        <?php if(get_sub_field('images') == false) : ?>
                         <?php
                         // Query arguments to fetch the latest 6 case studies
                         $args = array(
@@ -42,6 +43,14 @@
                             'posts_per_page' => 6,  // Fetch only 6 posts
                             'orderby' => 'date',   // Order by date
                             'order' => 'DESC',     // Show latest posts first
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'study_category', // Adjust if using a custom taxonomy
+                                    'field' => 'slug',
+                                    'terms' => 'photography', // Replace 'photography' with your actual category slug
+                                    'operator' => 'IN',
+                                ),
+                            ),
                         );
 
                         $query = new WP_Query($args);
@@ -59,6 +68,7 @@
 								</div>
                             </a>
                         <?php endwhile; wp_reset_postdata(); endif; ?>
+                        <?php endif; ?> 
                     </div>
 
                     <p class="hero-images__excerpt"><?php echo get_the_excerpt() ?></p>

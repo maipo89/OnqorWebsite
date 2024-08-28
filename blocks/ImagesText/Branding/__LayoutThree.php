@@ -46,9 +46,9 @@
                         <!-- right -->
                         <div class="layout-three__images__right">
                             <img src="<?php echo $imgVisualThree ?>" alt="<?php echo esc_attr($imgThree['alt']); ?>"/>
-                            <div class="wizywig">
+                            <!-- <div class="wizywig">
                                 <?php echo the_sub_field('text') ?>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     

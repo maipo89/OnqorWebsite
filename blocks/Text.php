@@ -4,7 +4,7 @@
          $selected_value = get_sub_field('options');
 ?>
 
-    <div class="text-basic">  
+    <div id="<?php echo $basic['smooth_scroll_id']?>" class="text-basic">  
         <div class="container">
              <div class="title">
                <?php if( $basic['title'] ) { ?>

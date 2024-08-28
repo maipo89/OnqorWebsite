@@ -16,7 +16,7 @@
                         <div class="image-left-right__content__text anim-horizontal">
                             <!-- title -->
                             <div class="title">
-                                <h2 class="subtitle1"><?php echo $basic['title'] ?></h2>
+                                <h2 class="h3"><?php echo $basic['title'] ?></h2>
                                 <?php if( $basic['subtitle'] ) { ?> 
                                     <p class="subtitle1"><?php echo $basic['subtitle'] ?></p>
                                 <?php  } ?>

@@ -73,7 +73,7 @@ if (have_rows('sections')) :
         // Case: Paragraph layout.
         if (get_row_layout() == 'text') : ?>
             <?php include 'blocks/Text.php'; ?>
-        <?php endif;
+        <?php $counters++; endif;
 
         // Case: Paragraph layout.
         if (get_row_layout() == 'cta') : ?>

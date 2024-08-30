@@ -82,7 +82,7 @@
             z-index: 1;
             div {
                 @media (max-width: $desktop) {
-                    opacity: 0;
+                    // opacity: 0;
                     transition: ease .4s;
                     display: flex;
                     align-items: center;
@@ -132,7 +132,7 @@
                 display: flex;
                 align-items: flex-start;
                 justify-content: center;
-                grid-gap: 0;
+                grid-gap: 16px;
             }
         }
     } 

@@ -22,7 +22,7 @@
             a {
                  text-decoration: none;
             }
-            @media (max-width: $desktop) {
+            @media (max-width: $tabletLarge) {
                 position: absolute;
                 background-color: black;
                 top: 100%;
@@ -62,18 +62,27 @@
                 }
             }
             button {
-                @media (max-width: $desktop) {
+                @media (max-width: $tabletLarge) {
                     display: none;
                 } 
             }
             nav {
-                @media (max-width: $desktop) {
+                @media (max-width: $tabletLarge) {
                     width: 100%;
                 }
                 > ul {
                     display: flex;
                     grid-gap: 85px;
-                    @media (max-width: $desktop) {
+                    > li {
+                        &:hover {
+                            text-decoration: underline;
+                            text-decoration-color: white;
+                            @media (max-width: $tabletLarge) {
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                    @media (max-width: $tabletLarge) {
                         flex-direction: column;
                         grid-gap: 16px;
                         width: 100%;
@@ -88,7 +97,7 @@
                     }
                     li {
                         // position: relative; 
-                        @media (max-width: $desktop) {
+                        @media (max-width: $tabletLarge) {
                             &:not(.menu-item-has-children) {
                                 display: flex;
                                 align-items: center;
@@ -111,7 +120,7 @@
                         // position: relative;
                         display: flex;
                         align-items: center;
-                        @media (max-width: $desktop) {
+                        @media (max-width: $tabletLarge) {
                             position: relative;
                             display: block;
                         }
@@ -125,7 +134,7 @@
                             background-color: transparent;
                             width: 100px;
                             height: 100px;
-                            @media (max-width: $desktop) {
+                            @media (max-width: $tabletLarge) {
                                 display: none;
                             }
                         }
@@ -142,7 +151,7 @@
                             top: 7px; /* Adjust based on your layout */
                             transition: .4s ease;
                             transform: translateY(0%); /* Adjust for precise positioning */
-                            @media (max-width: $desktop) {
+                            @media (max-width: $tabletLarge) {
                                 right: 0;
                                 top: 10px; /* Adjust based on your layout */
                                 position: absolute;
@@ -185,14 +194,14 @@
                             right: 0;
                             margin: 0 auto;
                             padding: 0 64px;
-                            @media (max-width: $desktop) {
+                            @media (max-width: $tabletLarge) {
                                 display: flex;
                                 background-color: black;
                                 flex-direction: column;
                                 width: 100%;
                                 grid-gap: 16px;
                             }
-                            @media (max-width: $desktop) {
+                            @media (max-width: $tabletLarge) {
                                 position: relative;
                                 left: unset;
                                 padding: 0;
@@ -216,14 +225,14 @@
                             }
                             > li {
                                 // padding: 0 0 16px 0;
-                                @media (max-width: $desktop) {
+                                @media (max-width: $tabletLarge) {
                                     position: relative;
                                 }
                                 border-bottom: 1px solid white;
                                 &:last-child {
                                     border: none;
                                 }
-                                @media (max-width: $desktop) { 
+                                @media (max-width: $tabletLarge) { 
                                     border: none;
                                     padding: 0;
                                 }
@@ -238,7 +247,7 @@
                                 padding: 0 32px 0 0;
                                 min-width: 25%;
                                 margin: 64px 0;
-                                @media (max-width: $desktop) {
+                                @media (max-width: $tabletLarge) {
                                     position: relative;
                                     border-right: none;
                                     padding: 0;
@@ -256,7 +265,7 @@
                                         text-decoration: underline;
                                         cursor: pointer;
                                     }
-                                    @media (max-width: $desktop) {
+                                    @media (max-width: $tabletLarge) {
                                         font-size: 18px;
                                         font-style: normal;
                                         font-weight: 300;
@@ -279,7 +288,7 @@
                                 display: flex;
                                 top: 0;
                                 padding: 32px 0 0 0;
-                                @media (max-width: $desktop) {
+                                @media (max-width: $tabletLarge) {
                                     padding: 16px 0 0 0;
                                     display: none;
                                     width: 100%;
@@ -304,7 +313,7 @@
                         &:hover {
                             text-decoration: none;
                         }
-                        @media (max-width: $desktop) {
+                        @media (max-width: $tabletLarge) {
                             font-size: 18px;
                             font-style: normal;
                             font-weight: 300;
@@ -329,7 +338,7 @@
             -o-transition: .5s ease-in-out;
             transition: .5s ease-in-out;
             cursor: pointer;
-            @media (max-width: $desktop) {
+            @media (max-width: $tabletLarge) {
                 display: block;
             }
             span {
@@ -406,7 +415,7 @@
                 left: 0 !important;
                 background-size: contain;
                 background-repeat: no-repeat;
-                @media (max-width: $desktop) {
+                @media (max-width: $tabletLarge) {
                     display: block;
                 }
             }
@@ -418,7 +427,7 @@
             height: 5px;
             display: block;
             background-color: white;
-            @media (max-width: $desktop) {
+            @media (max-width: $tabletLarge) {
                 display: none;
             }
         }

@@ -25,6 +25,10 @@
             height: 10px;
             display: inline-block;
             margin-left: 8px;
+            @media (max-width: $desktop) { 
+                width: 5px;
+                height: 5px;
+            }
         }
     }
     &__item {
@@ -32,8 +36,11 @@
         align-items: center;
         justify-content: space-between;
         border-bottom: 1px solid white;
-        padding: 16px 0;
+        padding: 0;
         width: 100%;
+        @media (max-width: $desktop) { 
+            padding: 16px 0;
+        }
         div {
             display: flex;
             grid-gap: 48px;
@@ -45,15 +52,16 @@
             ul {
                 display: flex;
                 list-style: none;
-                align-items: center;
+                align-items: flex-end;
                 justify-content: flex-start;
                 margin: 0;
-                padding: 0;
+                padding: 0 0 30px 0;
                 flex-wrap: wrap;
                 grid-gap: 8px;
                 @media (max-width: $desktop) {  
                     flex-direction: column;
                     align-items: flex-start;
+                    padding: 0;
                 }
                 a {
                     color: white;

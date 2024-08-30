@@ -158,6 +158,19 @@
         }
         @media (max-width: $tabletLarge) {
             margin: 48px auto 0 auto;
+            div {
+                h4 {
+                    text-align: center;
+                }
+                div {
+                    p {
+                        text-align: center;
+                    }
+                }
+                button {
+                    margin: 0 auto;
+                }
+            }
         }
 
         svg {
@@ -325,9 +338,15 @@
                 background-color: lavender;
                 width: 100%;
                 border-radius: 8px;
+                object-fit: cover;
                 @media (max-width: $desktop) {
-                    height: auto;
-                    object-fit: contain;
+                    height: 580px;
+                }
+                @media (max-width: $tabletLarge) {
+                    height: 479px;
+                }
+                @media (max-width: $tabletSmall) {
+                    height: 350px;
                 }
             }
         }
@@ -403,6 +422,9 @@
             &__media {
                 display: flex;
                 width: 100%;
+                position: relative;
+                align-items: center;
+                justify-content: center;
                 video {
                     height: 685px;
                     background-color: lavender;

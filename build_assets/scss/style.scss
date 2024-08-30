@@ -240,7 +240,7 @@ h3 {
         position: absolute;
         width: 100%;
         height: 100%;
-        background-color: $operations; /* Transparent initially */
+        background-color: white; /* Transparent initially */
         border-radius: 8px;
         opacity: 1;
         z-index: 1; /* Lower z-index to sit behind the button */

@@ -17,7 +17,7 @@
                 // Default to random case studies if no specific ones have been selected
                 $args = array(
                     'post_type' => 'case-studies', // Your custom post type
-                    'posts_per_page' => 3, // Number of posts to show
+                    'posts_per_page' => 5, // Number of posts to show
                     'post__not_in' => array($current_id), // Exclude current post
                     'orderby' => 'rand', // Order by random
                 );

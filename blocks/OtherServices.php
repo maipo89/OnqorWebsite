@@ -36,7 +36,7 @@ if (have_rows('other_services')):
                         <?php foreach ($children as $child): ?>
                              <?php 
                                 // Get featured image of the child page
-                                $child_img = get_the_post_thumbnail($child->ID, 'thumbnail');
+                                $child_img = get_the_post_thumbnail($child->ID, 'medium');
                                 // Get permalink of the child page
                                 $child_permalink = get_permalink($child->ID);
                             ?>
@@ -101,7 +101,7 @@ if (have_rows('other_services')):
                                 <?php foreach ($grandchildren as $grandchild): ?>
                                     <?php 
                                         // Get featured image of the grandchild page
-                                        $grandchild_img = get_the_post_thumbnail($grandchild->ID, 'thumbnail');
+                                        $grandchild_img = get_the_post_thumbnail($grandchild->ID, 'medium');
                                         // Get permalink of the grandchild page
                                         $grandchild_permalink = get_permalink($grandchild->ID);
                                     ?>

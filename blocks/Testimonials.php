@@ -43,7 +43,7 @@
                             <p class="subtitle3"><?php echo the_sub_field('author'); ?></p>
                             <?php if ( $link ) { ?>
                                 <a href="<?php echo esc_url($link['url']); ?>">
-                                    <button class="btn-primary"><?php echo the_sub_field('button_text'); ?></button>
+                                    <button class="btn-secondary"><?php echo the_sub_field('button_text'); ?></button>
                                 </a>
                             <?php } ?> 
                         </div>
@@ -70,7 +70,7 @@
                             <p class="subtitle3"><?php echo the_sub_field('author'); ?></p>
                             <?php if ( $link ) { ?>
                                 <a href="<?php echo esc_url($link['url']); ?>">
-                                    <button class="btn-primary"><?php echo the_sub_field('button_text'); ?></button>
+                                    <button class="btn-secondary"><?php echo the_sub_field('button_text'); ?></button>
                                 </a>
                             <?php } ?> 
                         </div>

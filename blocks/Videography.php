@@ -14,25 +14,26 @@
                 <?php echo $basic['text'] ?>
             </div>
         </div>  
-        <div class="videography__video">
-            <?php if( get_sub_field('embed') ) { ?> 
-                <?php echo $basic['embed'] ?>
-            <?php  } ?>
-            <?php if( get_sub_field('video') ) { ?> 
-                <?php 
-                    $link_data = get_sub_field('video'); 
-                    if(!empty($link_data)){ $link = $link_data['url'];  ?>
-                    <video playsinline class="videoplayer">
-                        <source src="<?php echo $link; ?>">   
-                    </video>
-                <?php } ?>
+        <div class="container">
+            <div class="videography__video">
+                <?php if( get_sub_field('embed') ) { ?> 
+                    <?php echo $basic['embed'] ?>
+                <?php  } ?>
+                <?php if( get_sub_field('video') ) { ?> 
+                    <?php 
+                        $link_data = get_sub_field('video'); 
+                        if(!empty($link_data)){ $link = $link_data['url'];  ?>
+                        <video playsinline class="videoplayer">
+                            <source src="<?php echo $link; ?>">   
+                        </video>
+                    <?php } ?>
 
-                <div class="videoplayer-buttons">
-                    <?php include('Videography/PlayButton.php'); ?>
-                    <?php include('Videography/PauseButton.php'); ?>
-                </div>
-            <?php  } ?>
-
+                    <div class="videoplayer-buttons">
+                        <?php include('Videography/PlayButton.php'); ?>
+                        <?php include('Videography/PauseButton.php'); ?>
+                    </div>
+                <?php  } ?>
+            </div>
         </div>
     </div>  
 

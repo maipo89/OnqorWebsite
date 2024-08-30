@@ -5,13 +5,15 @@
         if( have_rows('video') ): ?>
             <?php while( have_rows('video') ): the_row(); 
                 $selected_value = get_sub_field('options');
+                $img = get_sub_field('poster');
+                $imgVisual = $img['sizes']['large'];
             ?>
             <!-- images -->
             <div class="video__media">
                 <!-- video -->
                 <?php $link_data = get_sub_field('video'); 
                     if(!empty($link_data)){ $link = $link_data['url'];  ?>
-                    <video >
+                    <video poster="<?php echo $imgVisual ?>">
                         <source src="<?php echo $link; ?>" type="video/mp4">
                     </video>
                 <?php } ?>

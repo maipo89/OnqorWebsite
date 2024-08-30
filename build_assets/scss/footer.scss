@@ -48,17 +48,24 @@
         &__logos {
             display: flex;
             grid-gap: 24px;
+            a {
+                width: fit-content;
+            }
             img {
                 max-height: 50px;
                 object-fit: contain;
             }
             @media (max-width: $tabletLarge) {
                 flex-direction: column;
+                align-items: center;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
             }
             @media (max-width: $tabletSmall) {
                 flex-direction: row;
                 margin: 0 auto;
                 grid-gap: 16px;
+                display: flex;
             }
         }
         &__location {
@@ -112,7 +119,7 @@
                 height: 30px;
                 max-width: 30px;
                 object-fit: contain;
-                @media (max-width: $tabletLarge) {
+                @media (max-width: $mobileLarge) {
                     height: 20px;
                     max-width: 20px;
                 }
@@ -125,7 +132,7 @@
         font-size: 14px;
         font-style: normal;
         font-weight: 300;
-        color: $darksmokelightest;
+        color: #ABABAB;
         text-align: center;
     }
 }

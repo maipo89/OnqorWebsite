@@ -426,22 +426,59 @@
                  margin: 33px 12px 0 0;
             }
         }
+        &__mobile {
+            display: none;
+            margin-top: 32px;
+            @media (max-width: $desktop) {
+                display: block;
+            }
+        }
         &__steps {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-gap: 32px;
+            position: relative;
+            @media (max-width: $desktop) {
+                // height: 400px;
+                height: 30%;
+             }
+             @media (max-width: $tabletLarge) {
+                grid-gap: 16px;
+             }
             &__item {
+                height: fit-content;
+                @media (max-width: $desktop) {
+                    // position: absolute;
+                 }
                 img {
                     width: 100%;
                     height: 420px;
                     position: relative;
                     z-index: 1;
+                    @media (max-width: $desktop) {
+                       height: 300px;
+                    }
+                    @media (max-width: $tabletLarge) {
+                        height: 250px;
+                     }
+                     @media (max-width: $tabletSmall) {
+                        height: 200px;
+                     }
+                     @media (max-width: $mobileLarge) {
+                        height: 100px;
+                     }
                 }
                 p {
                     margin: 0 0 16px 0;
+                    @media (max-width: $desktop) {
+                        display: none;
+                    }
                 }
                 &:nth-child(3n) {
                     margin: 65% 0 0 0;
+                    @media (max-width: $desktop) {
+                        margin: 0;
+                    }
                 }
             }
         }
@@ -593,6 +630,11 @@
     }
     // image overlap 
     .image-overlap {
+        .container {
+            @media (max-width: $tabletLarge) {
+                flex-direction: column-reverse;
+            }
+        }
         .title {
             display: flex;
             position: relative;
@@ -622,6 +664,9 @@
                         column-count: 1;
                     }
                 }
+            }
+            @media (max-width: $tabletLarge) {
+                margin-bottom: 48px;
             }
         }
     }

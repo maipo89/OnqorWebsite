@@ -55,18 +55,22 @@
         width: 100%;
         margin: 0 0 0 0;
         display: block;
+        padding-bottom: 32px;
         &:hover {
             cursor: pointer;
         }
         .slick-dots {
-            display: none !important;
+            // display: none !important;
+            display: flex !important;
+            bottom: -30px;
+            // @media (max-width: $tabletSmall) { 
+            //     display: flex !important;
+            //     bottom: -30px;
+            // }
         }
-        @media (max-width: $tabletSmall) { 
-            padding-bottom: 32px;
-            .slick-dots {
-                display: flex !important;
-                bottom: -30px;
-            }
+        .slick-dots {
+            display: flex !important;
+            bottom: -30px;
         }
         .slick-list {
             padding: 0 !important;

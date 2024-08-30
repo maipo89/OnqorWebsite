@@ -62,6 +62,11 @@
                         right: unset;
                         left: 0;
                     }
+                    @media (max-width: $tabletLarge) {
+                        left: unset !important;
+                        margin: 0 auto;
+                        align-self: center;
+                    }
                 }
             }
         }
@@ -86,6 +91,11 @@
             opacity: 0;
             @media (max-width: $tabletSmall) {
                 display: none;
+            }
+            @media (max-width: $tabletLarge) {
+                left: unset !important;
+                margin: 0 auto;
+                align-self: center;
             }
             button {
                 background-color: transparent;

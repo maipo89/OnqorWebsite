@@ -17,7 +17,7 @@ $(document).ready(function($) {
         $(this).addClass('active');
 
         // Get the current tab ID
-        var currentTab = $(this).data('tab');
+        var currentTab = $(this).data('tab'); 
 
         // Hide all tab content
         $('.tabs__content__item').hide();
@@ -58,53 +58,85 @@ $(document).ready(function($) {
 
 
 
-window.onload = function() {
-    $(document).ready(function($) {
-        // Initially hide all tab content
-        $('.other-services__sub__items').hide();
-        $('.other-services__sub__items__slider').hide();
-        $('.other-services__service div').hide();
+$(document).ready(function($) {
+    // Initially hide all tab content and sliders
+    $('.other-services__sub__items').hide();
+    $('.other-services__sub__items__slider').hide();
+    $('.other-services__service div').hide();
+
+    // Show the first tab content and add active class to the first tab button by default
+    $('.other-services__sub__items').first().show();
+    $('.other-services__sub__service div').first().fadeIn(500, 'swing');
+    $('.other-services__sub__buttons button').first().addClass('active');
+
+    // Default to Marketing category and trigger tab click
+    var defaultCategoryIndex = 0; // Index of Marketing category
+    $('.other-services__sub__buttons button').eq(defaultCategoryIndex).trigger('click');
+
+    // Dropdown functionality
+    $('#category-dropdown').on('click', function() {
+        $(this).toggleClass('open');
+    });
+
+    $('.other-services .dropdown__options__items div').on('click', function() {
+        var tabIndex = $(this).data('button');
+        var categoryName = $(this).text();
+        
+        // Update dropdown text
+        $('#category-dropdown').html(categoryName + '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 1.5L8 8.5L15 1.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
     
-        // Show the first tab content and add active class to the first tab button by default
-        $('.other-services__sub__items').first().show();
-        $('.other-services__sub__items__slider').first().addClass('active');
-        $('.other-services__service div').first().fadeIn(500, 'swing');
-        $('.other-services__sub__buttons button').first().addClass('active');
+        // Trigger click event on corresponding tab button
+        $('.other-services__sub__buttons button').eq(tabIndex).trigger('click');
+    
+        // Close dropdown
+        $('#category-dropdown').removeClass('open');
+        $('.dropdown__options').removeClass('active');
+    });
+    
+    // Tab link click function
+    $('.other-services__sub__buttons button').click(function(e) {
+        e.preventDefault();
+        // Remove active class from all tab buttons
+        $('.other-services__sub__buttons button').removeClass('active');
+        $(this).addClass('active');
 
-        // Default to Marketing category and trigger tab click
-        var defaultCategoryIndex = 0; // Index of Marketing category
-        $('.other-services__sub__buttons button').eq(defaultCategoryIndex).trigger('click');
+        // Get the current tab ID
+        var currentTab = $(this).data('button');
 
-        // Dropdown functionality
-        $('#category-dropdown').on('click', function() {
-            $(this).toggleClass('open');
-        });
+        // Hide all tab content
+        $('.other-services__sub__items').hide();
+        $('.other-services__service div').hide();
 
-        $('.other-services .dropdown__options__items div').on('click', function() {
-            var tabIndex = $(this).data('button');
-            var categoryName = $(this).text();
-            
-            // Update dropdown text
-            $('#category-dropdown').html(categoryName + '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 1.5L8 8.5L15 1.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
-        
-            // Trigger click event on corresponding tab button
-            $('.other-services__sub__buttons button').eq(tabIndex).trigger('click');
-        
-            // Close dropdown
-            $('#category-dropdown').removeClass('open');
-            $('.dropdown__options').removeClass('active');
-        
-            // Initialize the slider for the selected category
-            if ($.fn.slick) {
-                $('.other-services__sub__items__slider').filter(function() {
-                    return $(this).data('tab') === tabIndex;
-                }).addClass('active').slick('unslick').slick({
+        // Show the current tab content
+        $(".other-services__sub__items").filter(function() {
+            return $(this).data('tab') === currentTab;
+        }).fadeIn(500, 'swing');
+
+        $(".other-services__service div").filter(function() {
+            return $(this).data('service') === currentTab;
+        }).fadeIn(500, 'swing');
+
+        if ($.fn.slick) {
+            // Destroy any existing slick instances before reinitializing
+            $('.other-services__sub__items__slider').filter(function() {
+                return $(this).data('tab') === currentTab;
+            }).each(function() {
+                var $slider = $(this);
+
+                if ($slider.hasClass('slick-initialized')) {
+                    $slider.slick('unslick');
+                }
+
+                // Hide the slider initially
+                $slider.hide();
+
+                // Reinitialize the slider and show it only after initialization is complete
+                $slider.slick({
                     slidesToShow: 3,
                     slidesToScroll: 1,
                     dots: true,
                     cssEase: 'linear',
                     infinite: false,
-                    loop: true,
                     arrows: false,
                     responsive: [
                         {
@@ -115,82 +147,24 @@ window.onload = function() {
                         },
                         {
                             breakpoint: 768,
-                            settings: { 
+                            settings: {
                                 slidesToShow: 2,
                             }
                         },
                     ]
+                }).on('init', function(event, slick) {
+                    // Show the slider after it has fully initialized
+                    $slider.fadeIn(500);
                 });
-                 // Show the SVG chevron
-                $('#category-dropdown .dropdown__icon').show();
-            } else {
-                console.log('Slick slider library not loaded yet.');
-                // You can retry initialization or show an error message here
-            }
-        });
-        
-        // Tab link click function
-        $('.other-services__sub__buttons button').click(function(e) {
-            e.preventDefault();
-            // Remove active class from all tab buttons
-            $('.other-services__sub__buttons button').removeClass('active');
-            $('.other-services__sub__items__slider').removeClass('active');
-            // Add active class to the current tab button
-            $(this).addClass('active');
-
-            // Get the current tab ID
-            var currentTab = $(this).data('button');
-
-            // Hide all tab content
-            $('.other-services__sub__items').hide();
-            $('.other-services__service div').hide();
-
-            // Show the current tab content
-            $(".other-services__sub__items").filter(function() {
-                return $(this).data('tab') === currentTab;
-            }).fadeIn(500, 'swing');
-            $(".other-services__service div").filter(function() {
-                return $(this).data('service') === currentTab;
-            }).fadeIn(500, 'swing');
-
-            if ($.fn.slick) {
-                // Destroy any existing slick instances before reinitializing
-                $('.other-services__sub__items__slider').filter(function() {
-                    return $(this).data('tab') === currentTab;
-                }).each(function() {
-                    if ($(this).hasClass('slick-initialized')) {
-                        $(this).slick('unslick');
-                    }
-                    $(this).addClass('active').slick({
-                        slidesToShow: 3,
-                        slidesToScroll: 1,
-                        dots: true,
-                        cssEase: 'linear',
-                        infinite: false,
-                        arrows: false,
-                        responsive: [
-                            {
-                                breakpoint: 430,
-                                settings: {
-                                    slidesToShow: 1,
-                                }
-                            },
-                            {
-                                breakpoint: 768,
-                                settings: {
-                                    slidesToShow: 2,
-                                }
-                            },
-                        ]
-                    });
-                });
-            } else {
-                console.log('Slick slider library not loaded yet.');
-                // You can retry initialization or show an error message here
-            }
-        });
-
-        // Trigger click on the initial tab
-        $('.other-services__sub__buttons button[data-button="2"]').trigger('click');
+            });
+        } else {
+            console.log('Slick slider library not loaded yet.');
+            // You can retry initialization or show an error message here
+        }
     });
-};
+
+    // Trigger click on the initial tab
+    $('.other-services__sub__buttons button[data-button="2"]').trigger('click');
+});
+
+

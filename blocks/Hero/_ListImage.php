@@ -21,7 +21,7 @@
                                     <?php if( have_rows('list') ): ?>
                                         <?php while( have_rows('list') ): the_row(); ?>
                                             <div class="list-image__list__item">
-                                                <h2 class="subtitle1" style="color: <?php echo $page_color; ?>"><?php echo the_sub_field('title'); ?></h2>
+                                                <h2 class="subtitle1" ><?php echo the_sub_field('title'); ?></h2>
                                                 <div class="wizywig">
                                                     <?php
                                                     $list_items_content = get_sub_field('list_items');
@@ -40,13 +40,12 @@
                                     <?php if( have_rows('list') ): ?>
                                         <?php while( have_rows('list') ): the_row(); ?>
                                             <div class="list-image__list__item">
-                                                <h2 class="subtitle1" style="color: <?php echo $page_color; ?>"><?php echo the_sub_field('title'); ?></h2>
+                                                <h2 class="subtitle1"><?php echo the_sub_field('title'); ?></h2>
                                                 <?php echo the_sub_field('list_items'); ?>
                                             </div>
                                         <?php endwhile; ?> 
                                     <?php endif; ?> 
                                 </div>
-
 
                                 <div class="wizywig">
                                     <?php echo the_sub_field('text') ?>

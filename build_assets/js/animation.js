@@ -68,7 +68,7 @@ $(document).ready(function(){
                             val: end,
                             roundProps: "val",
                             onUpdate: function() {
-                                counter.textContent = "" + obj.val + "%";
+                                counter.textContent = "" + obj.val + "";
                             }
                         });
                     }

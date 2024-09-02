@@ -15,7 +15,7 @@
                                 <!-- <p class="body1"><?php echo $basic['number'] ?></p> -->
                             <?php  } ?>
                             <?php if( $basic['title'] ) { ?> 
-                                <h2 class="h3"><?php echo $basic['title'] ?></h2>
+                                <h2 class="subtitle1"><?php echo $basic['title'] ?></h2>
                             <?php  } ?>
 
                         </div>

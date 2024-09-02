@@ -46,6 +46,9 @@
                 padding: 32px;
             }
             @media (max-width: $tabletSmall) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @media (max-width: $mobileLarge) {
                 grid-template-columns: repeat(1, 1fr);
             }
         }
@@ -99,7 +102,7 @@
                 height: 100%;
                 background-color: rgba(0, 0, 0, 0); /* Transparent initially */
                 transition: 0.3s ease;
-                @media (max-width: $tabletSmall) {
+                @media (max-width: $tabletLarge) {
                     background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
                 }
             }
@@ -115,7 +118,7 @@
                 justify-content: center; 
                 flex-direction: column;
                 padding: 16px;
-                @media (max-width: $tabletSmall) {
+                @media (max-width: $tabletLarge) {
                     opacity: 1;
                 }
                 h3 {
@@ -391,7 +394,7 @@
                 }
                 .slick-dots-container {
                     left: unset;
-                    top: 59px;
+                    top: 48px;
                     z-index: 2000;
                     @media(max-width: $desktop) { 
                         top: unset;

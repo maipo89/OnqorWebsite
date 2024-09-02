@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    // blocks js
+ // Slider for other-services-js
     // SliderClients
     $('.slider-clients__slider').slick({
         slidesToShow: 6,

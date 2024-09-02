@@ -89,6 +89,7 @@
             grid-gap: 8px;
             z-index: 3;
             opacity: 0;
+            
             @media (max-width: $tabletSmall) {
                 display: none;
             }
@@ -98,6 +99,8 @@
                 align-self: center;
             }
             button {
+                padding: 8px 16px;
+                height: 30px;
                 background-color: transparent;
                 &:hover {
                     border-color: transparent;

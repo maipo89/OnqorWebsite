@@ -49,7 +49,7 @@
                                         $counter_index = 0;
                                 ?>
                                     <div class="anim-horizontal">
-                                       <h3><?php the_sub_field('sign') ?><span class="anim-counter" data-end="<?php echo $end_value; ?>" >0%</span></h3> 
+                                       <h3><?php the_sub_field('sign') ?><span class="anim-counter" data-end="<?php echo $end_value; ?>" >0</span><?php the_sub_field('suffix') ?></h3> 
                                         <p class="body1"><?php the_sub_field('title') ?></p>
                                     </div>
                                     <?php $counter_index++; ?>

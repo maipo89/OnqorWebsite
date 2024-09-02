@@ -24,9 +24,9 @@ if( have_rows('hero_case_studies') ): ?>
                 <h1><?php the_title(); ?> <br><span>Case Study</span></h1>
                 <?php the_excerpt(); ?>
             </div>
-            <div class="container">
+            <div class="container center">
                 <!-- list -->
-                <h2><?php echo $title ?></h2>
+                <h2 class="h3"><?php echo $title ?></h2>
                 <ul class="hero-case-studies__list">
                     <?php if( have_rows('list') ): ?>
                         <?php while( have_rows('list') ): the_row(); ?>

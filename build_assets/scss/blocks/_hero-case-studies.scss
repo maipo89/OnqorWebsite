@@ -15,6 +15,11 @@
     img {
         object-fit: cover;
     }
+    h2 {
+        @media (min-width: $tabletLarge) {
+            font-size: 50px !important;
+        }
+    }
     &::before {
         content: '';
         position: absolute;

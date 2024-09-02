@@ -15,9 +15,7 @@
             margin: 0 0 48px 0;
         }
     }
-    .slick-dots {
-        // bottom: -32px
-    }
+
     // slider
     &__slider {
         position: relative;
@@ -128,6 +126,11 @@
         height: 1702px;
         @media (max-width: $desktop) {
             display: none !important;
+        }
+        &__slider {
+            .slick-dots {
+                bottom: -32px
+            }
         }
         img {
             height: 819px;

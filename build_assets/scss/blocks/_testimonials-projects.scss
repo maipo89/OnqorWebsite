@@ -1,8 +1,5 @@
 .testimonials-projects {
-    padding: 0 0 48px 0;
-    @media (max-width: $desktop) {
-        padding: 0 0 32px 0;
-    }
+    @include padding;
     .container {
         overflow: visible;
     }

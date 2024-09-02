@@ -30,6 +30,13 @@
         .wizywig {
             width: 50%;
             min-width: 650px;
+            a {
+                // color: white;
+                text-decoration: underline;
+                &:hover {
+                    color:  $operations;
+                }
+            }
             @media (max-width: $desktop) {
                 width: 100%;
                 min-width: unset;
@@ -587,6 +594,13 @@
             max-width: 800px;
             z-index: 3;
             width: 100%;
+            a {
+                color: white;
+                text-decoration: underline;
+                &:hover {
+                    color:  $operations;
+                }
+            }
             @media (max-width: $tabletSmall) { 
                 margin: 16px 0;
                 p {

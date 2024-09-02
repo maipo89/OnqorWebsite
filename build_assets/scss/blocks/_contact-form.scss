@@ -87,7 +87,10 @@
                 border-bottom: 1px solid black;
             }
             .subtitle1 a {
-                color: black;
+                color: black; 
+                &:hover {
+                    color: $operations !important;
+                }
             }
             input, textarea {
                 border-bottom: 1px solid black;
@@ -130,9 +133,9 @@
         flex-direction: row;
         grid-gap: 60px;
         width: 100%;
-        @media (max-width: $tabletLarge) {
+        @media (max-width: $tabletSmall) {
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
         }
     }
@@ -146,6 +149,9 @@
         grid-gap: 32px;
         width: 100%;
         max-width: 570px;
+        @media (max-width: $tabletSmall) {
+            max-width: unset;
+        }
         .error {
             border-bottom: 1px solid red;
         }
@@ -155,7 +161,7 @@
             &:hover {
                 text-decoration: underline;
                 cursor: pointer;
-                color: $operations;
+                color: $operations !important;
             }
         }
         label {

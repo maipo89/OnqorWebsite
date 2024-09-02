@@ -2,11 +2,27 @@
     background-color: black;
     @include padding;
     margin: 48px 0;
+    height: 696px;
+    color: white;
     @media (max-width: $desktop) {
         margin: 32px 0;
+        height: 572px;
     }
-    color: white;
+    @media (max-width: 737px) {
+        height: 607px;
+    }
+    @media (max-width: 544px) {
+        height: 639px;
+    }
+    @media (max-width: 418px) {
+        height: 639px;
+    }
+    .dropdown__options {
+        position: relative !important;
+    }
     .container {
+        height: 100%;
+        overflow: visible;
         @media (max-width: $desktop) {
             max-width: 800px;
         }
@@ -16,12 +32,15 @@
         @media (max-width: $desktop) {
            text-align: center;
         }
+        @media (max-width: $tabletLarge) {
+            margin: 0 0 16px 0;
+         }
     }
     .wizywig {
         margin: 0 0 64px 0;
         max-width: 748px;
         @media (max-width: $desktop) {
-            margin: 0 auto 64px auto;
+            margin: 0 auto 44px auto;
             p {
                 text-align: center;
             }
@@ -44,13 +63,13 @@
         @media (max-width: $desktop) {
             display: none;
         }
-        &:hover {
-            cursor: pointer;
-            button {
-                background-color: white;
-                color: black;
-            }
-        }
+        // &:hover {
+        //     cursor: pointer;
+        //     button {
+        //         background-color: white;
+        //         color: black;
+        //     }
+        // }
         div {
             align-items: center;
             justify-content: center;
@@ -58,6 +77,9 @@
             display: flex;
             width: 297px;
             height: 311px;
+            position: absolute;
+            left: 0;
+            top: 0;
             &::after {
                 content: "";
                 background-size: cover;
@@ -106,9 +128,12 @@
         &__buttons {
             display: flex;
             grid-gap: 16px;
+            z-index: 3;
+            transform: translateX(297px);
             @media (max-width: $desktop) {
                 align-items: center;
                 justify-content: center;
+                transform: translateX(0px);
             }
             @media (max-width: $tabletSmall) {
                 display: none;
@@ -125,6 +150,9 @@
                 position: relative;
                 padding: 0 0  4px 0;
                 font-weight: 400;
+                @media (max-width: $desktop) {
+                    font-size: 22px;
+                }
                 span {
                     content: '';
                     position: absolute;
@@ -173,32 +201,53 @@
             display: grid; 
             grid-template-columns: repeat( 4, 1fr);
             grid-gap: 16px;
-            width: 100%;
-            @media (max-width: $mobileLarge) {
+            width: calc(100% - 329px);
+            position: absolute;
+            top: 56px;
+            left: 329px;
+            @media (max-width: $desktop) {
+                width: 100%;
+                left: 0;
+            }
+            @media (max-width: $tabletSmall) {
+                top: 72px;
+            }
+            @media (max-width: $desktop) {
                 // display: none !important;
-                grid-template-columns: repeat( 2, 1fr);
+                grid-template-columns: repeat( 3, 1fr);
+            }
+            &-mobile {
+                display: none;
+                @media (max-width: $desktop) {
+                    display: block;
+                }
+            }
+            &-desktop {
+                @media (max-width: $desktop) {
+                    display: none;
+                }
             }
             &--slider {
                 display: block; 
                 grid-template-columns: none;
-                grid-gap: 0px;
-                position: relative;
+                grid-gap: 0px; 
                 overflow: hidden;
-                width: 100%;
+                width: calc(100% - 329px);
                 margin: 0 0 0 0;
                 padding-bottom: 48px;
-                // transform: translateX(16px);
                 @media (max-width: $desktop) {
-                    // max-width: 674px;
                     margin: 0 auto;
+                    width: 100%;
+                    left: 0;
                 }
                 &.active {
                     @media (max-width: $desktop) {
                         display: block !important;
-                    }
+                    } 
                 }
                 .slick-dots {  
-                    bottom: -42px
+                    bottom: -42px;
+                    z-index: 5
                 }
                 .slick-track {
                     grid-gap: 16px !important;
@@ -284,13 +333,13 @@
                 display: flex;
                 grid-gap: 24px;
                 flex-direction: column;
-                &:hover {
-                    button {
-                        color: white;
-                        background-color: $darksmoke;
-                        border-color: white;
-                    }
-                }
+                // &:hover {
+                //     button {
+                //         color: white;
+                //         background-color: $darksmoke;
+                //         border-color: white;
+                //     }
+                // }
                 button {
                     width: fit-content;
                 }
@@ -302,6 +351,5 @@
             }
         }
     }
-
-
 }
+

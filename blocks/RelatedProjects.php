@@ -1,9 +1,9 @@
 <div class="related-projects">
     <div class="container">
         <?php if( get_sub_field('title') ) { ?>
-            <h2 class="h3"><?php echo get_sub_field('title'); ?></h2>
+            <h2 class="subtitle1"><?php echo get_sub_field('title'); ?></h2>
         <?php  } else { ?>
-            <h2 class="h3">Check out some other projects</h2>
+            <h2 class="subtitle1">Check out some other projects</h2>
         <?php  } ?>        
         <div class="related-projects__wrapper">
             <?php 
@@ -17,7 +17,7 @@
                 // Default to random case studies if no specific ones have been selected
                 $args = array(
                     'post_type' => 'case-studies', // Your custom post type
-                    'posts_per_page' => 5, // Number of posts to show
+                    'posts_per_page' => 3, // Number of posts to show
                     'post__not_in' => array($current_id), // Exclude current post
                     'orderby' => 'rand', // Order by random
                 );

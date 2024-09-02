@@ -59,18 +59,29 @@ $(document).ready(function($) {
 
 
 $(document).ready(function($) {
-    // Initially hide all tab content and sliders
-    $('.other-services__sub__items').hide();
-    $('.other-services__sub__items__slider').hide();
-    $('.other-services__service div').hide();
+    // Initially set opacity to 0 and z-index to 1 for all tab content and sliders
+    $('.other-services__sub__items').css({
+        'opacity': 0,
+        'z-index': 1
+    });
+    $('.other-services__service div').css({
+        'opacity': 0,
+        'z-index': 1
+    });
 
-    // Show the first tab content and add active class to the first tab button by default
-    $('.other-services__sub__items').first().show();
-    $('.other-services__sub__service div').first().fadeIn(500, 'swing');
+    // Show the first tab content by setting opacity to 1 and z-index to 4, and add active class to the first tab button by default
+    $('.other-services__sub__items').first().css({
+        'opacity': 1,
+        'z-index': 2
+    });
+    $('.other-services__service div').first().css({
+        'opacity': 1,
+        'z-index': 2
+    });
     $('.other-services__sub__buttons button').first().addClass('active');
 
-    // Default to Marketing category and trigger tab click
-    var defaultCategoryIndex = 0; // Index of Marketing category
+    // Default to the first category and trigger tab click
+    var defaultCategoryIndex = 0; // Index of the default category
     $('.other-services__sub__buttons button').eq(defaultCategoryIndex).trigger('click');
 
     // Dropdown functionality
@@ -103,21 +114,33 @@ $(document).ready(function($) {
         // Get the current tab ID
         var currentTab = $(this).data('button');
 
-        // Hide all tab content
-        $('.other-services__sub__items').hide();
-        $('.other-services__service div').hide();
+        // Hide all tab content by setting opacity to 0 and z-index to 1
+        $('.other-services__sub__items').css({
+            'opacity': 0,
+            'z-index': 1
+        });
+        $('.other-services__service div').css({
+            'opacity': 0,
+            'z-index': 1
+        });
 
-        // Show the current tab content
+        // Show the current tab content by setting opacity to 1 and z-index to 4
         $(".other-services__sub__items").filter(function() {
             return $(this).data('tab') === currentTab;
-        }).fadeIn(500, 'swing');
+        }).css({
+            'opacity': 1,
+            'z-index': 2
+        });
 
         $(".other-services__service div").filter(function() {
             return $(this).data('service') === currentTab;
-        }).fadeIn(500, 'swing');
+        }).css({
+            'opacity': 1,
+            'z-index': 2
+        });
 
         if ($.fn.slick) {
-            // Destroy any existing slick instances before reinitializing
+            // Reinitialize the slider if necessary
             $('.other-services__sub__items__slider').filter(function() {
                 return $(this).data('tab') === currentTab;
             }).each(function() {
@@ -127,8 +150,11 @@ $(document).ready(function($) {
                     $slider.slick('unslick');
                 }
 
-                // Hide the slider initially
-                $slider.hide();
+                // Set opacity to 0 initially
+                $slider.css({
+                    'opacity': 0,
+                    'z-index': 1
+                });
 
                 // Reinitialize the slider and show it only after initialization is complete
                 $slider.slick({
@@ -153,18 +179,25 @@ $(document).ready(function($) {
                         },
                     ]
                 }).on('init', function(event, slick) {
-                    // Show the slider after it has fully initialized
-                    $slider.fadeIn(500);
+                    // Fade in the slider after it has fully initialized
+                    $slider.fadeTo(500, 1);
+
+                    // Ensure the active slide in the slider has z-index 4
+                    $slider.find('.slick-current').css('z-index', 2);
+                }).on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+                    // Reset z-index for all slides
+                    $slider.find('.slick-slide').css('z-index', 1);
+                }).on('afterChange', function(event, slick, currentSlide) {
+                    // Set the z-index of the active slide to 4
+                    $slider.find('.slick-current').css('z-index', 2);
                 });
             });
         } else {
             console.log('Slick slider library not loaded yet.');
-            // You can retry initialization or show an error message here
         }
     });
 
     // Trigger click on the initial tab
     $('.other-services__sub__buttons button[data-button="2"]').trigger('click');
 });
-
 

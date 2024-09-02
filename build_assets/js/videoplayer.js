@@ -8,14 +8,15 @@ $(document).ready(function() {
     var hidePauseButton = function(pauseBtn) {
         setTimeout(function() {
             pauseBtn.css('opacity', '0');
-        }, 4000); // 2000 milliseconds = 2 seconds
+        }, 4000); // 4000 milliseconds = 4 seconds
     };
 
-    // Play/Pause functionality
+    // Play/Pause functionality with control toggle
     function playPause(video, playBtn, pauseBtn) {
         if (video.length && video[0].paused) {
             console.log('Playing video');
             video[0].play(); // Using native play method
+            video.attr('controls', true); // Add controls when the video is playing
             playBtn.css('display', 'none');
             pauseBtn.css('display', 'block');
             pauseBtn.css('opacity', '1'); // Ensure opacity is visible initially
@@ -31,6 +32,7 @@ $(document).ready(function() {
                 playBtn.css('display', 'block');
                 pauseBtn.css('display', 'none');
                 pauseBtn.css('opacity', '0'); // Ensure opacity is zero when paused
+                video.removeAttr('controls'); // Remove controls when the video is paused
 
                 // Clear all event handlers
                 video.off('mouseover touchstart mouseout touchend');
@@ -39,6 +41,7 @@ $(document).ready(function() {
         } else {
             console.log('Pausing video');
             video[0].pause(); // Using native pause method
+            video.removeAttr('controls'); // Ensure controls are removed when paused
         }
     }
 
@@ -59,6 +62,7 @@ $(document).ready(function() {
                 console.log('Pausing other video');
                 $(this)[0].pause();
                 this.currentTime = 0; // Reset the video to the beginning
+                $(this).removeAttr('controls'); // Remove controls from paused videos
             }
         });
 
@@ -102,6 +106,7 @@ $(document).ready(function() {
         $('.video-gallery__slider__item video').each(function() {
             $(this)[0].pause();
             this.currentTime = 0; // Reset the video to the beginning
+            $(this).removeAttr('controls'); // Remove controls when changing slides
         });
 
         $('.video-gallery__slider__item .PlayButton').css('display', 'block');

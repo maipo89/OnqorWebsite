@@ -69,7 +69,7 @@ $(document).ready(function($) {
         'z-index': 1
     });
 
-    // Show the first tab content by setting opacity to 1 and z-index to 4, and add active class to the first tab button by default
+    // Show the first tab content by setting opacity to 1 and z-index to 2, and add active class to the first tab button by default
     $('.other-services__sub__items').first().css({
         'opacity': 1,
         'z-index': 2
@@ -83,6 +83,10 @@ $(document).ready(function($) {
     // Default to the first category and trigger tab click
     var defaultCategoryIndex = 0; // Index of the default category
     $('.other-services__sub__buttons button').eq(defaultCategoryIndex).trigger('click');
+
+    // Update the dropdown text to match the default selected tab
+    var initialCategoryName = $('.other-services__sub__buttons button').eq(defaultCategoryIndex).text();
+    $('#category-dropdown').html(initialCategoryName + '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 1.5L8 8.5L15 1.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
 
     // Dropdown functionality
     $('#category-dropdown').on('click', function() {
@@ -124,7 +128,7 @@ $(document).ready(function($) {
             'z-index': 1
         });
 
-        // Show the current tab content by setting opacity to 1 and z-index to 4
+        // Show the current tab content by setting opacity to 1 and z-index to 2
         $(".other-services__sub__items").filter(function() {
             return $(this).data('tab') === currentTab;
         }).css({
@@ -139,9 +143,9 @@ $(document).ready(function($) {
             'z-index': 2
         });
 
+        // Reinitialize the slider for the current tab
         if ($.fn.slick) {
-            // Reinitialize the slider if necessary
-            $('.other-services__sub__items__slider').filter(function() {
+            $('.other-services__sub__items').filter(function() {
                 return $(this).data('tab') === currentTab;
             }).each(function() {
                 var $slider = $(this);
@@ -150,13 +154,7 @@ $(document).ready(function($) {
                     $slider.slick('unslick');
                 }
 
-                // Set opacity to 0 initially
-                $slider.css({
-                    'opacity': 0,
-                    'z-index': 1
-                });
-
-                // Reinitialize the slider and show it only after initialization is complete
+                // Reinitialize the slider
                 $slider.slick({
                     slidesToShow: 3,
                     slidesToScroll: 1,
@@ -178,18 +176,6 @@ $(document).ready(function($) {
                             }
                         },
                     ]
-                }).on('init', function(event, slick) {
-                    // Fade in the slider after it has fully initialized
-                    $slider.fadeTo(500, 1);
-
-                    // Ensure the active slide in the slider has z-index 4
-                    $slider.find('.slick-current').css('z-index', 2);
-                }).on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-                    // Reset z-index for all slides
-                    $slider.find('.slick-slide').css('z-index', 1);
-                }).on('afterChange', function(event, slick, currentSlide) {
-                    // Set the z-index of the active slide to 4
-                    $slider.find('.slick-current').css('z-index', 2);
                 });
             });
         } else {
@@ -199,5 +185,8 @@ $(document).ready(function($) {
 
     // Trigger click on the initial tab
     $('.other-services__sub__buttons button[data-button="2"]').trigger('click');
-});
 
+    // Update the dropdown text to match the tab that was just triggered
+    var initialTabText = $('.other-services__sub__buttons button[data-button="2"]').text();
+    $('#category-dropdown').html(initialTabText + '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 1.5L8 8.5L15 1.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+});

@@ -12,10 +12,13 @@
         height: 607px;
     }
     @media (max-width: 544px) {
-        height: 639px;
+        height: 629px;
     }
     @media (max-width: 418px) {
-        height: 639px;
+        height: 649px;
+    }
+    @media (max-width: 363px) {
+        height: 672px;
     }
     .dropdown__options {
         position: relative !important;
@@ -80,6 +83,7 @@
             position: absolute;
             left: 0;
             top: 0;
+            transition: opacity 0.4s ease-in-out;
             &::after {
                 content: "";
                 background-size: cover;
@@ -116,7 +120,7 @@
         display: flex;
         flex-direction: column;
         grid-gap: 32px;
-        width: calc(100% - 329px);
+        width: calc(100% - 313px);
         overflow: hidden;
         @media (max-width: $tabletSmall) {
             grid-gap: 48px;
@@ -201,10 +205,11 @@
             display: grid; 
             grid-template-columns: repeat( 4, 1fr);
             grid-gap: 16px;
-            width: calc(100% - 329px);
+            width: calc(100% - 297px);
             position: absolute;
             top: 56px;
-            left: 329px;
+            left: 313px;
+            transition: opacity 0.4s ease-in-out;
             @media (max-width: $desktop) {
                 width: 100%;
                 left: 0;
@@ -232,7 +237,7 @@
                 grid-template-columns: none;
                 grid-gap: 0px; 
                 overflow: hidden;
-                width: calc(100% - 329px);
+                width: calc(100% - 297px);
                 margin: 0 0 0 0;
                 padding-bottom: 48px;
                 @media (max-width: $desktop) {
@@ -250,14 +255,16 @@
                     z-index: 5
                 }
                 .slick-track {
-                    grid-gap: 16px !important;
                     flex-direction: row;
-                    @media (max-width: $tabletSmall) {
-                        // grid-gap: 16px;
+                    @media (max-width: $desktop) {
+                        justify-self: center;
                     }
                 }
                 .slick-list {
                     padding: 0 !important;
+                    @media (max-width: $desktop) {
+                        display: grid;
+                    } 
                     .slick-track {
                         display: flex;
                         align-items: flex-start;
@@ -265,6 +272,10 @@
                     }
                 }
                 .slick-slide {
+                    margin: 0 16px;
+                    @media (max-width: $mobileLarge) {
+                        margin: 0 8px;
+                    }
                     img {
                         width: 100%;
                         height: 125px;
@@ -294,9 +305,9 @@
                     bottom: -32px
                 }
                 .slick-track {
-                    grid-gap: 32px;
+                    // grid-gap: 32px;
                     @media (max-width: $tabletSmall) {
-                        grid-gap: 16px;
+                        // grid-gap: 16px;
                     }
                 }
                 .slick-list {

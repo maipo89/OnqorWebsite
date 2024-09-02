@@ -7,7 +7,7 @@
                 <?php
                     $media = get_sub_field('images'); 
                     foreach($media as $image) {
-                        echo '<img src="',esc_url($image['sizes']['medium']),'" alt="',esc_attr($image['alt']),'">';
+                        echo '<img src="',esc_url($image['sizes']['large']),'" alt="',esc_attr($image['alt']),'">';
                     }
                 ?>
             </div>
@@ -16,7 +16,7 @@
                 <?php
                     $media = get_sub_field('images'); 
                     foreach($media as $image) {
-                        echo '<img src="',esc_url($image['sizes']['medium']),'" alt="',esc_attr($image['alt']),'">';
+                        echo '<img src="',esc_url($image['sizes']['large']),'" alt="',esc_attr($image['alt']),'">';
                     }
                 ?>  
             </div>

@@ -15,7 +15,7 @@ if (have_rows('other_services')):
 
         // Get only the immediate children of the Services page
         $children = get_pages(array(
-            'parent' => $services_page_id, // use 'parent' instead of 'child_of'
+            'parent' => $services_page_id,
             'sort_column' => 'menu_order',
         )); 
 
@@ -44,7 +44,6 @@ if (have_rows('other_services')):
                                 <a href="<?php echo $child_permalink; ?>">
                                     <div data-service="<?php echo $serviceIndex; ?>">
                                     <?php echo $child_img; ?>
-                                            <!-- <button class="btn-secondary">View</button> -->
                                     </div>
                                 </a>
                             <?php endif; ?>
@@ -83,45 +82,6 @@ if (have_rows('other_services')):
                             </div>
                         </div>
 
-            
-                        <?php $tabIndex = 0; ?>
-                        <?php foreach ($children as $child): ?>
-                            <?php 
-                                // Get the grandchildren of the current child page
-                                $grandchildren = get_pages(array(
-                                    'child_of' => $child->ID,
-                                    'sort_column' => 'menu_order',
-                                )); 
-                                
-                                // Check if more than 4 grandchildren, then use a slider
-                                $use_slider = (count($grandchildren) > 4); 
-                            ?>
-                            <div class="other-services-js other-services__sub__items <?php echo $use_slider ? 'other-services__sub__items--slider' : ''; ?>" data-item-count="<?php echo count($grandchildren); ?>">
-                                <!-- Display grandchildren pages -->
-                                <?php foreach ($grandchildren as $grandchild): ?>
-                                    <?php 
-                                        // Get featured image of the grandchild page
-                                        $grandchild_img = get_the_post_thumbnail($grandchild->ID, 'medium');
-                                        // Get permalink of the grandchild page
-                                        $grandchild_permalink = get_permalink($grandchild->ID);
-                                    ?>
-                                    
-                                        <div class="other-services__sub__items__hover">
-                                            <?php if ($grandchild_img) : ?>
-                                                <?php echo $grandchild_img; ?>
-                                            <?php endif; ?>
-                                            <p><?php echo $grandchild->post_title; ?></p>
-                                            <a href="<?php echo $grandchild_permalink; ?>">
-                                                <button class="btn-primary">View</button>
-                                            </a>
-                                        </div>
-                                <?php endforeach; ?>
-                            </div>
-                            <?php $tabIndex ++; ?>
-                        <?php endforeach; ?>
-
-
-
                         <!-- Items for grandchildren --> 
                         <?php $tabIndex = 0; ?>
                         <?php foreach ($children as $child): ?>
@@ -131,11 +91,8 @@ if (have_rows('other_services')):
                                     'child_of' => $child->ID,
                                     'sort_column' => 'menu_order',
                                 )); 
-                                
-                                // Check if more than 4 grandchildren, then use a slider
-                                $use_slider = (count($grandchildren) > 4);
                             ?>
-                            <div class="other-services-js other-services__sub__items <?php echo $use_slider ? 'other-services__sub__items--slider' : ''; ?>" data-tab="<?php echo $tabIndex; ?>">
+                            <div class="other-services-js other-services__sub__items other-services__sub__items--slider" data-tab="<?php echo $tabIndex; ?>">
                                 <!-- Display grandchildren pages -->
                                 <?php foreach ($grandchildren as $grandchild): ?>
                                     <?php 
@@ -157,47 +114,6 @@ if (have_rows('other_services')):
                             </div>
                             <?php $tabIndex ++; ?>
                         <?php endforeach; ?>
-
-
-                        <!-- slider -->
-                        <!-- Items for grandchildren -->
-                        <?php foreach ($children as $child): ?>
-                                <?php 
-                                    // Get the grandchildren of the current child page
-                                    $grandchildren = get_pages(array(
-                                        'child_of' => $child->ID,
-                                        'sort_column' => 'menu_order',
-                                    )); 
-                                    
-                                    // Check if the current page is the parent of these grandchildren
-                                    $is_parent_active = ($current_page_id === $child->ID);
-                                ?>
-                                
-                                <?php if (!$is_parent_active): ?>
-                                    <div class="other-services-js other-services__sub__items <?php echo $use_slider ? 'other-services__sub__items--slider' : ''; ?>" data-tab="<?php echo $tabIndex; ?>">
-                                        <!-- Display grandchildren pages -->
-                                        <?php foreach ($grandchildren as $grandchild): ?>
-                                            <?php 
-                                                // Get featured image of the grandchild page
-                                                $grandchild_img = get_the_post_thumbnail($grandchild->ID, 'thumbnail');
-                                                // Get permalink of the grandchild page
-                                                $grandchild_permalink = get_permalink($grandchild->ID);
-                                            ?>
-                                                <div class="other-services__sub__items__hover">
-                                                    <?php if ($grandchild_img) : ?>
-                                                        <?php echo $grandchild_img; ?>
-                                                    <?php endif; ?>
-                                                    <p><?php echo $grandchild->post_title; ?></p>
-                                                    <a href="<?php echo $grandchild_permalink; ?>">
-                                                        <button class="btn-primary">View</button>
-                                                    </a>
-                                                </div>
-                                        <?php endforeach; ?>
-                                    </div>
-                                <?php endif; ?>
-
-                                <?php $tabIndex++; ?>
-                            <?php endforeach; ?>
 
                     </div>
                 </div>

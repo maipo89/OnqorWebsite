@@ -141,6 +141,7 @@
                 grid-gap: 32px;
                 @media (max-width: $tabletSmall) {
                     grid-gap: 16px;
+                    align-items: flex-start;
                 }
             }
             .slick-list {
@@ -149,6 +150,9 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    @media (max-width: $tabletSmall) {
+                        align-items: flex-start;
+                    }
                 }
             }
             .slick-slide {

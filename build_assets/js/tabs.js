@@ -86,10 +86,10 @@ $(document).ready(function($) {
 
     // Update the dropdown text to match the default selected tab
     var initialCategoryName = $('.other-services__sub__buttons button').eq(defaultCategoryIndex).text();
-    $('#category-dropdown').html(initialCategoryName + '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 1.5L8 8.5L15 1.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    $('.other-services #category-dropdown').html(initialCategoryName + '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 1.5L8 8.5L15 1.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
 
     // Dropdown functionality
-    $('#category-dropdown').on('click', function() {
+    $('.other-services #category-dropdown').on('click', function() {
         $(this).toggleClass('open');
     });
 
@@ -98,13 +98,13 @@ $(document).ready(function($) {
         var categoryName = $(this).text();
         
         // Update dropdown text
-        $('#category-dropdown').html(categoryName + '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 1.5L8 8.5L15 1.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+        $('.other-services #category-dropdown').html(categoryName + '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 1.5L8 8.5L15 1.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
     
         // Trigger click event on corresponding tab button
         $('.other-services__sub__buttons button').eq(tabIndex).trigger('click');
     
         // Close dropdown
-        $('#category-dropdown').removeClass('open');
+        $('.other-services #category-dropdown').removeClass('open');
         $('.dropdown__options').removeClass('active');
     });
     
@@ -186,7 +186,5 @@ $(document).ready(function($) {
     // Trigger click on the initial tab
     $('.other-services__sub__buttons button[data-button="2"]').trigger('click');
 
-    // Update the dropdown text to match the tab that was just triggered
-    var initialTabText = $('.other-services__sub__buttons button[data-button="2"]').text();
-    $('#category-dropdown').html(initialTabText + '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 1.5L8 8.5L15 1.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  
 });

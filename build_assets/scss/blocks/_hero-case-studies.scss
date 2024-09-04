@@ -319,9 +319,14 @@
                 display: grid;
                 grid-gap: 32px;
                 grid-template-columns: repeat(2, auto);
-                @media (max-width: $desktop) {
+                @media (max-width: $tabletSmall) {
                     display: none;
                 }
+                // .hero-case-studies__slider {
+                //     @media (max-width: $desktop) {
+                //         display: block;
+                //     }
+                // }
                 img {
                     height: 470px;
                     width: 100%;

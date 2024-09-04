@@ -32,3 +32,18 @@ $(document).ready(function(){
     });
 });
   
+// prevents break on resize
+(function() {
+    var previousWidth = window.innerWidth;
+
+    window.addEventListener('resize', function() {
+        var currentWidth = window.innerWidth;
+
+        if ((previousWidth <= 1024 && currentWidth > 1024) || (previousWidth > 1024 && currentWidth <= 1024)) {
+            location.reload();
+        }
+
+        previousWidth = currentWidth;
+    });
+})();
+

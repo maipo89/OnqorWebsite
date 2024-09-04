@@ -10,7 +10,7 @@
                 <!-- <p class="body1"><?php echo $basic['number'] ?></p> -->
                 <h2 class="h3"><?php echo $basic['title'] ?></h2>
             </div>
-            <div class="videography__text <?php if( get_sub_field('text_columns') ) { ?> text-columns <?php  } ?>">
+            <div class="videography__text wizywig <?php if( get_sub_field('text_columns') ) { ?> text-columns <?php  } ?>">
                 <?php echo $basic['text'] ?>
             </div>
         </div>  

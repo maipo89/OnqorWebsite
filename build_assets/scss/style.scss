@@ -180,6 +180,23 @@ h3 {
     h3 {
         font-size: 16px;
     }
+    h2 {
+        font-size: 50px;
+        font-weight: 300;
+        line-height: normal;
+        letter-spacing: 0em;
+        text-align: left;
+        margin-bottom: 0;
+        @media (max-width: $desktop) { 
+            font-size: 28px;
+        }
+        @media (max-width: $tabletLarge) { 
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
     @media (max-width: $tabletSmall) {
         grid-gap: 16px; 
     }

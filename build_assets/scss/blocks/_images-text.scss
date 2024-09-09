@@ -129,9 +129,15 @@
                 width: 100%;
                 transform: translateX(500px);
                 opacity: 0;
-                button {
-                    margin: 32px 0 0 0;
+                a {
+                    &:hover {
+                        text-decoration: none;
+                    }
+                    button {
+                        margin: 32px 0 0 0;
+                    }
                 }
+    
             }
             // image right option
             &.image-right {

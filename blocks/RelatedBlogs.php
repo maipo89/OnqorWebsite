@@ -7,7 +7,7 @@
             $current_id = get_the_ID(); // Get current post ID to exclude it from the query
 
             $args = array(
-                'post_type' => 'blogs', // Updated to your custom post type for blogs
+                'post_type' => 'post', // Updated to your custom post type for blogs
                 'posts_per_page' => 3, // Number of posts to show
                 'post__not_in' => array($current_id), // Exclude current post
                 'orderby' => 'rand', // Order by random

@@ -172,12 +172,6 @@ function create_custom_post_type_case_studies() {
         'exclude_from_search' => false,
         'publicly_queryable' => true,
         'capability_type' => 'post',
-        'rewrite'               => array(
-            // 'slug' => 'case-studies/category', // Custom URL base for 'books' will be /library/
-            'with_front' => false, // Removes the default `/blog/` prefix if your WordPress is set to it
-            'pages' => true, // Enable paginated URLs like /library/page/2/
-            'feeds' => true, // Enable feeds for this custom post type
-        ),
     );
     register_post_type('case-studies', $args);
   }
@@ -199,31 +193,31 @@ function create_custom_post_type_case_studies() {
         'not_found_in_trash' => __('Not found in Trash', 'text_domain'),
     );
     
-    // $args = array(
-    //     'label' => __('Blogs', 'text_domain'),
-    //     'description' => __('Blog posts and their details', 'text_domain'),
-    //     'labels' => $labels,
-    //     'supports' => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields'),
-    //     'taxonomies' => array('category', 'post_tag'), // assuming you want to use standard categories and tags
-    //     'hierarchical' => false,
-    //     'public' => true,
-    //     'show_ui' => true,
-    //     'show_in_menu' => true,
-    //     'show_in_nav_menus' => true,
-    //     'show_in_admin_bar' => true,
-    //     'menu_position' => 5,
-    //     'can_export' => true,
-    //     'has_archive' => true,
-    //     'exclude_from_search' => false,
-    //     'publicly_queryable' => true,
-    //     'capability_type' => 'post',
-    // );
-    // register_post_type('blogs', $args);
+    $args = array(
+        'label' => __('Blogs', 'text_domain'),
+        'description' => __('Blog posts and their details', 'text_domain'),
+        'labels' => $labels,
+        'supports' => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields'),
+        'taxonomies' => array('category', 'post_tag'), // assuming you want to use standard categories and tags
+        'hierarchical' => false,
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => true,
+        'show_in_admin_bar' => true,
+        'menu_position' => 5,
+        'can_export' => true,
+        'has_archive' => true,
+        'exclude_from_search' => false,
+        'publicly_queryable' => true,
+        'capability_type' => 'post',
+    );
+    register_post_type('blogs', $args);
 }
 
 // Hook into the 'init' action
 add_action('init', 'create_custom_post_type_case_studies');
-// add_action('init', 'create_custom_post_type_blogs');
+add_action('init', 'create_custom_post_type_blogs');
 
 // custom taxonomy
 function theme_slug_register_taxonomy() {
@@ -232,7 +226,7 @@ function theme_slug_register_taxonomy() {
       'case-studies',    // Post type
       array(
           'label'        => __('Study Categories', 'theme-slug'),
-          'rewrite'      => array('slug' => 'case-studies'),
+          'rewrite'      => array('slug' => 'study-category'),
           'hierarchical' => true,
       )
   );
@@ -268,17 +262,17 @@ function filter_case_studies() {
           <article class="article" id="post-<?php the_ID(); ?>">
               <a href="<?php the_permalink(); ?>">
               <div >
-                    <?php if (has_post_thumbnail()) : ?>
-                                <div class="article__img">
-                                <?php the_post_thumbnail(); ?>
-                        <div class="article__img__hover">
-                            <h3 class="subtitle1"><?php the_title(); ?></h3>
-                                <button class="btn-secondary">View Project</button>
+					        <?php if (has_post_thumbnail()) : ?>
+						          <div class="article__img">
+						            <?php the_post_thumbnail(); ?>
+                            <div class="article__img__hover">
+                                <h3 class="subtitle1"><?php the_title(); ?></h3>
+                                 <button class="btn-secondary">View Project</button>
+                            </div>
                         </div>
-                    </div>
-                            <?php endif; ?>
-                            <h3 class="subtitle2"><?php the_title(); ?></h3>
-                    </div>
+						        <?php endif; ?>
+						      <h3 class="subtitle2"><?php the_title(); ?></h3>
+				        </div>
               </a>
           </article>
           <?php
@@ -294,11 +288,11 @@ add_action('wp_ajax_nopriv_filter_case_studies', 'filter_case_studies');
 
 // Filter blogs
 function filter_blogs() {
-  $categorySlug = isset($_POST['category']) ? sanitize_text_field($_POST['category']) : 'all';
-  $paged = isset($_POST['page']) ? intval($_POST['page']) : 1;
+    $categorySlug = isset($_POST['category']) ? sanitize_text_field($_POST['category']) : 'all';
+    $paged = isset($_POST['page']) ? intval($_POST['page']) : 1;
 
   $args = array(
-      'post_type' => 'blogs', // Adjusted to target 'blogs' custom post type
+      'post_type' => 'post', // Adjusted to target 'blogs' custom post type
       'posts_per_page' => 21, // Number of posts per page, adjust as necessary
       'paged' => $paged,
   );
@@ -356,7 +350,7 @@ function filter_blogs() {
   wp_reset_postdata();
   die();
 }
-add_action( 'init', 'flush_rewrite_rules' );
+
 add_action('wp_ajax_filter_blogs', 'filter_blogs');
 add_action('wp_ajax_nopriv_filter_blogs', 'filter_blogs');
 
@@ -407,8 +401,6 @@ add_action('init', 'my_add_excerpts_to_pages');
 function my_add_excerpts_to_pages() {
     add_post_type_support('page', 'excerpt');
 }
-
-
 
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

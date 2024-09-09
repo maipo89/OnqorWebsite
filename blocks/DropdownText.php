@@ -48,7 +48,7 @@
                 <div>
                     <h2 class="subtitle1"><?php echo get_the_title(); ?></h2>
                     <div class="wizywig">
-                        <?php echo get_the_excerpt(); ?>
+                        <?php echo apply_filters('the_excerpt', $page->post_excerpt); ?>
                     </div>
                 </div>
             </div>

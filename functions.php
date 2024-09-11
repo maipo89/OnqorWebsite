@@ -165,6 +165,7 @@ function create_custom_post_type_case_studies() {
         'show_ui' => true,
         'show_in_menu' => true,
         'show_in_nav_menus' => true,
+        'has_archive' => true,
         'show_in_admin_bar' => true,
         'menu_position' => 5,
         'can_export' => true,
@@ -173,7 +174,7 @@ function create_custom_post_type_case_studies() {
         'publicly_queryable' => true,
         'capability_type' => 'post',
         'rewrite'   => array(
-            'slug' => 'case-studies/category', // Custom URL base for 'books' will be /library/
+            'slug' => 'case-studies', // Custom URL base for 'books' will be /library/
             'with_front' => false, // Removes the default `/blog/` prefix if your WordPress is set to it
             'pages' => true, // Enable paginated URLs like /library/page/2/
             'feeds' => true, // Enable feeds for this custom post type
@@ -263,7 +264,15 @@ function filter_blogs() {
   );
 
   // Check if a specific category is selected and it's not 'all'
-
+  if ($categorySlug !== 'all') {
+    $args['tax_query'] = array(
+        array(
+            'taxonomy' => 'category', // 'category' is correct for WordPress posts
+            'field'    => 'slug',
+            'terms'    => $categorySlug, // This should be the slug of the category
+        ),
+    );
+}
   $query = new WP_Query($args);
 
   if ($query->have_posts()) : 

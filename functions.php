@@ -172,52 +172,17 @@ function create_custom_post_type_case_studies() {
         'exclude_from_search' => false,
         'publicly_queryable' => true,
         'capability_type' => 'post',
+        'rewrite'   => array(
+            'slug' => 'case-studies/category', // Custom URL base for 'books' will be /library/
+            'with_front' => false, // Removes the default `/blog/` prefix if your WordPress is set to it
+            'pages' => true, // Enable paginated URLs like /library/page/2/
+            'feeds' => true, // Enable feeds for this custom post type
+        ),
+
     );
     register_post_type('case-studies', $args);
   }
-  // Function to create a custom post type for Blogs
-  function create_custom_post_type_blogs() {
-      $labels = array(
-        'name' => _x('Blogs', 'Post Type General Name', 'text_domain'),
-        'singular_name' => _x('Blog', 'Post Type Singular Name', 'text_domain'),
-        'menu_name' => __('Blogs', 'text_domain'),
-        'parent_item_colon' => __('Parent Blog', 'text_domain'),
-        'all_items' => __('All Blogs', 'text_domain'),
-        'view_item' => __('View Blog', 'text_domain'),
-        'add_new_item' => __('Add New Blog', 'text_domain'),
-        'add_new' => __('Add New', 'text_domain'),
-        'edit_item' => __('Edit Blog', 'text_domain'),
-        'update_item' => __('Update Blog', 'text_domain'),
-        'search_items' => __('Search Blogs', 'text_domain'),
-        'not_found' => __('Not Found', 'text_domain'),
-        'not_found_in_trash' => __('Not found in Trash', 'text_domain'),
-    );
-    
-    $args = array(
-        'label' => __('Blogs', 'text_domain'),
-        'description' => __('Blog posts and their details', 'text_domain'),
-        'labels' => $labels,
-        'supports' => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields'),
-        'taxonomies' => array('category', 'post_tag'), // assuming you want to use standard categories and tags
-        'hierarchical' => false,
-        'public' => true,
-        'show_ui' => true,
-        'show_in_menu' => true,
-        'show_in_nav_menus' => true,
-        'show_in_admin_bar' => true,
-        'menu_position' => 5,
-        'can_export' => true,
-        'has_archive' => true,
-        'exclude_from_search' => false,
-        'publicly_queryable' => true,
-        'capability_type' => 'post',
-    );
-    register_post_type('blogs', $args);
-}
-
-// Hook into the 'init' action
 add_action('init', 'create_custom_post_type_case_studies');
-add_action('init', 'create_custom_post_type_blogs');
 
 // custom taxonomy
 function theme_slug_register_taxonomy() {
@@ -298,15 +263,6 @@ function filter_blogs() {
   );
 
   // Check if a specific category is selected and it's not 'all'
-  if ($categorySlug !== 'all') {
-      $args['tax_query'] = array(
-          array(
-              'taxonomy' => 'category', // Ensure this is the correct taxonomy for your CPT
-              'field'    => 'slug',
-              'terms'    => $categorySlug,
-          ),
-      );
-  }
 
   $query = new WP_Query($args);
 
@@ -342,7 +298,6 @@ function filter_blogs() {
           echo '</div>';
       }
   else {
-      // Optionally, echo a message if no posts were found
       echo '';
   }
   endif;
@@ -397,10 +352,66 @@ if (class_exists('MultiPostThumbnails')) {
     );
 }
 
+function flush_permalinks() {
+    flush_rewrite_rules();
+}
+add_action('init', 'flush_permalinks');
+
+add_action( 'init', 'flush_rewrite_rules' );
+add_action('init', function() { flush_rewrite_rules(); });
+
 add_action('init', 'my_add_excerpts_to_pages');
 function my_add_excerpts_to_pages() {
     add_post_type_support('page', 'excerpt');
 }
+
+// add_action('admin_init', function() {
+//     global $wp_rewrite;
+//     echo '<pre>';
+//     print_r($wp_rewrite->rules);
+//     echo '</pre>';
+// });
+
+/**
+ * Rewrite WordPress URLs to Include /blog/ in Post Permalink Structure
+ *
+ * @author   Golden Oak Web Design <info@goldenoakwebdesign.com>
+ * @license  https://www.gnu.org/licenses/gpl-2.0.html GPLv2+
+ */
+function golden_oak_web_design_blog_generate_rewrite_rules( $wp_rewrite ) {
+    $new_rules = array(
+      '(([^/]+/)*blog)/([^/]+)/page/?([0-9]{1,})/?$' => 'index.php?pagename=$matches[1]&category_name=$matches[2]&paged=$matches[4]',
+      'blog/([^/]+)/([^/]+)/?$' => 'index.php?post_type=post&category_name=$matches[1]&name=$matches[2]',
+      'blog/([^/]+)/([^/]+)/attachment/([^/]+)/?$' => 'index.php?post_type=post&category_name=$matches[1]&attachment=$matches[3]',
+      'blog/([^/]+)/([^/]+)/attachment/([^/]+)/trackback/?$' => 'index.php?post_type=post&category_name=$matches[1]&attachment=$matches[3]&tb=1',
+      'blog/([^/]+)/([^/]+)/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$' => 'index.php?post_type=post&category_name=$matches[1]&attachment=$matches[3]&feed=$matches[4]',
+      'blog/([^/]+)/([^/]+)/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$' => 'index.php?post_type=post&category_name=$matches[1]&attachment=$matches[3]&feed=$matches[4]',
+      'blog/([^/]+)/([^/]+)/attachment/([^/]+)/comment-page-([0-9]{1,})/?$' => 'index.php?post_type=post&category_name=$matches[1]&attachment=$matches[3]&cpage=$matches[4]',		
+      'blog/([^/]+)/([^/]+)/attachment/([^/]+)/embed/?$' => 'index.php?post_type=post&category_name=$matches[1]&attachment=$matches[3]&embed=true',
+      'blog/([^/]+)/([^/]+)/embed/([^/]+)/?$' => 'index.php?post_type=post&category_name=$matches[1]&attachment=$matches[3]&embed=true',
+      'blog/([^/]+)/([^/]+)/embed/?$' => 'index.php?post_type=post&category_name=$matches[1]&name=$matches[2]&embed=true',
+      'blog/([^/]+)/([^/]+)/trackback/?$' => 'index.php?post_type=post&category_name=$matches[1]&name=$matches[2]&tb=1',
+      'blog/([^/]+)/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$' => 'index.php?post_type=post&category_name=$matches[1]&name=$matches[2]&feed=$matches[3]',
+      'blog/([^/]+)/([^/]+)/(feed|rdf|rss|rss2|atom)/?$' => 'index.php?post_type=post&category_name=$matches[1]&name=$matches[2]&feed=$matches[3]',
+      'blog/([^/]+)/([^/]+)/page/([0-9]{1,})/?$' => 'index.php?post_type=post&category_name=$matches[1]&name=$matches[2]&paged=$matches[3]',
+      'blog/([^/]+)/([^/]+)/comment-page-([0-9]{1,})/?$' => 'index.php?post_type=post&category_name=$matches[1]&name=$matches[2]&cpage=$matches[3]',
+      'blog/([^/]+)/([^/]+)(/[0-9]+)?/?$' => 'index.php?post_type=post&category_name=$matches[1]&name=$matches[2]&page=$matches[3]',
+    );
+    $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
+}
+add_action( 'generate_rewrite_rules', 'golden_oak_web_design_blog_generate_rewrite_rules' );
+
+function golden_oak_web_design_update_post_link( $post_link, $post, $leavename ) {
+    if ( is_object( $post ) && $post->post_type == 'post' ) {
+        $terms = wp_get_object_terms( $post->ID, 'category' );
+        if ( $terms && ! is_wp_error( $terms ) ) {
+            $category_slug = $terms[0]->slug;
+            return home_url( '/blog/' . $category_slug . '/' . $post->post_name );
+        }
+    }
+    return $post_link;
+}
+add_filter( 'post_link', 'golden_oak_web_design_update_post_link', 10, 3 );
 
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

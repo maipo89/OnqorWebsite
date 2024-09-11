@@ -264,7 +264,15 @@ function filter_blogs() {
   );
 
   // Check if a specific category is selected and it's not 'all'
-
+  if ($categorySlug !== 'all') {
+    $args['tax_query'] = array(
+        array(
+            'taxonomy' => 'category', // 'category' is correct for WordPress posts
+            'field'    => 'slug',
+            'terms'    => $categorySlug, // This should be the slug of the category
+        ),
+    );
+}
   $query = new WP_Query($args);
 
   if ($query->have_posts()) : 

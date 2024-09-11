@@ -1,4 +1,4 @@
-hello<?php get_header(); ?>
+<?php get_header(); ?>
 
 <div id="content" class="single single-blogs">
     <?php while ( have_posts() ) : the_post(); ?>

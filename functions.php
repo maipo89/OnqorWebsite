@@ -336,7 +336,7 @@ function theme_slug_setup() {
 add_action('after_setup_theme', 'theme_slug_setup');
 
 // Hook the custom taxonomy registration function to the 'init' action
-add_action('init', 'my_custom_taxonomy_department', 0);
+// add_action('init', 'my_custom_taxonomy_department', 0);
 
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page(); 

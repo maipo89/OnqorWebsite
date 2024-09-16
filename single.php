@@ -17,7 +17,7 @@
 	  	<!-- back to archive -->
 		<div class="single-blogs__back">
 			<div class="container">
-				<a href="<?php echo home_url(); ?>/blogs">
+				<a href="<?php echo home_url(); ?>/blog">
 					<svg xmlns="http://www.w3.org/2000/svg" width="19" height="13" viewBox="0 0 19 13" fill="none">
 						<path d="M18 6.5L1 6.5M1 6.5L6.55769 12M1 6.5L6.55769 1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 					</svg>

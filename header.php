@@ -1,10 +1,10 @@
 <!doctype html>
 
-<!--[if lt IE 7]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9"><![endif]-->
-<!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
-
+<!--[if lt IE 7]><html lang="en-gb" class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html lang="en-gb" class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html lang="en-gb" class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-gb" class="no-js"><!--<![endif]-->
+ 
 	<head>
 		<meta charset="utf-8">
 		<?php // force Internet Explorer to use the latest rendering engine available ?>
@@ -29,6 +29,7 @@
 		<?php wp_head(); ?>
 		<?php // end of wordpress head ?>
 		<?php // drop Google Analytics Here ?>
+		<script src="https://www.googletagmanager.com/gtm.js?id=GTM-KQPZCGZ"></script>
 		<?php // end analytics ?>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	    <script src="//cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>

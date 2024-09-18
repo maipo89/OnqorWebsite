@@ -192,7 +192,7 @@ function theme_slug_register_taxonomy() {
       'case-studies',    // Post type
       array(
           'label'        => __('Study Categories', 'theme-slug'),
-          'rewrite'      => array('slug' => 'study-category'),
+          'rewrite'      => array('slug' => ''),
           'hierarchical' => true,
       )
   );

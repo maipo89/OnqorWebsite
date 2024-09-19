@@ -194,7 +194,7 @@ function theme_slug_register_taxonomy() {
           'label'        => __('Study Categories', 'theme-slug'),
           'rewrite'      => array('slug' => ''),
           'hierarchical' => true,
-      )
+      ) 
   );
 }
 add_action('init', 'theme_slug_register_taxonomy');

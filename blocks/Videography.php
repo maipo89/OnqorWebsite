@@ -3,9 +3,9 @@
       <?php while( have_rows('videography') ): the_row(); 
          $img = get_sub_field('img');
          $imgVisual = $img['sizes']['xlarge'];
-?>
+?> 
     <div class="videography ">
-        <div class="container">
+        <div class="container"> 
             <div class="title">
                 <!-- <p class="body1"><?php echo $basic['number'] ?></p> -->
                 <h2 class="h3"><?php echo $basic['title'] ?></h2>
@@ -23,7 +23,7 @@
                     <?php 
                         $link_data = get_sub_field('video'); 
                         if(!empty($link_data)){ $link = $link_data['url'];  ?>
-                        <video playsinline class="videoplayer">
+                        <video preload="none" playsinline class="videoplayer">
                             <source src="<?php echo $link; ?>">   
                         </video>
                     <?php } ?>

@@ -26,17 +26,11 @@
             <meta name="theme-color" content="#121212">
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 		<?php // wordpress head functions ?> 
-		<?php wp_head(); ?>
+		<?php wp_head(); ?> 
 		<?php // end of wordpress head ?>
 		<!-- Google tag (gtag.js) --> 
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-0TSJYXWE6V"></script> 
 		<script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-0TSJYXWE6V'); </script>	
-		<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	    <script src="//cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    	<script src="//cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script> 
-		<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
 	</head> 
 	
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">

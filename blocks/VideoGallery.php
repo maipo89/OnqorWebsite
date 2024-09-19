@@ -3,9 +3,9 @@
       <?php while( have_rows('video_gallery') ): the_row(); 
          $selected_value = get_sub_field('options');
 ?>
-
+ 
 <div class="video-gallery">  
-    <div class="container center">
+    <div class="container center"> 
         <!-- slider -->
         <?php
             $videos = get_sub_field('videos');
@@ -17,7 +17,7 @@
                         $poster = $posters[$index]; // Get the corresponding poster image
                     ?>
                         <div class="video-gallery__slider__item">
-                            <video poster="<?php echo esc_url($poster['url']); ?>">
+                            <video preload="none" poster="<?php echo esc_url($poster['url']); ?>">
                                 <source src="<?php echo esc_url($video['url']); ?>" type="<?php echo esc_attr($video['mime_type']); ?>">
                             </video>
                             <?php include('Videography/PlayButton.php'); ?>

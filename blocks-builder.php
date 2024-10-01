@@ -124,6 +124,11 @@ if (have_rows('sections')) :
             <?php include 'blocks/List.php'; ?>
         <?php endif; 
 
+        // Case: CLients.
+        if (get_row_layout() == 'clients') : ?>
+            <?php include 'blocks/Clients.php'; ?>
+        <?php endif; 
+
 	// End loop.
 	endwhile; 
 endif;

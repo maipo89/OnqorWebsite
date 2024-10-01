@@ -1,0 +1,35 @@
+.clients {
+    background-color: black;
+    &__wrapper {
+        height: 90px;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        bottom: 20px;
+    }
+    &__inner {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+    &__image {
+        height: 100%;
+        flex: 0 0 auto;
+        white-space: nowrap;
+        position: relative;  // Changed from absolute to relative for smoother layout
+        display: flex;
+        align-items: center;
+        img {
+            padding-left: 26px;
+            padding-right: 26px;
+            height: 32px;
+            width: auto;
+
+            @media (max-width: 450px) {
+                height: 28px;
+                width: auto;
+            }
+        }
+    }
+}

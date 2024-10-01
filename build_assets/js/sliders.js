@@ -275,3 +275,55 @@ function updateHeaderBackground() {
     $('.archive__case-studies__header .bg-image').css('background-image', 'url(' + coverImageUrl + ')');
 }
 
+// Slider Clients
+
+$(window).on('load', function() {
+    let animation;
+
+    const recalculateSlider = function() {
+
+        const $wrapper = $('.clients__wrapper');
+        const $inner = $('.clients__inner');
+        const $items = $('.clients__image');
+
+        let wrapWidth = 0;
+        let viewWidth = 0;
+
+        // Stop any previous animation before recalculating
+        if (animation) {
+            animation.kill();  // Stop the previous animation
+        }
+
+        // Check if wrapper exists before accessing its width
+        if ($wrapper.length > 0) {
+            viewWidth = $wrapper.width();
+        }
+
+        // Get total wrap width and duplicate items for seamless scrolling
+        $items.each(function() {
+            const $item = $(this);
+            const width = $item.outerWidth(true); // Use outerWidth to include padding/margin
+            wrapWidth += width; // Increment wrapWidth by item width
+        });
+
+        // Duplicate the items inside the inner container to make the loop seamless
+        $inner.append($inner.html());
+
+        // Animate the entire inner container
+        animation = gsap.to($inner, {
+            duration: 60,
+            x: `-=${wrapWidth}`,  // Move items to the left by wrapWidth
+            ease: 'none',
+            repeat: -1,           // Infinite repeat
+            paused: false,
+            modifiers: {
+                x: function(x) {
+                    return parseFloat(x) % wrapWidth + 'px';  // Calculate continuous scroll
+                }
+            }
+        });
+    };
+
+    // Recalculate the slider dimensions and animation
+    recalculateSlider();
+});

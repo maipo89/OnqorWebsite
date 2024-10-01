@@ -35,11 +35,18 @@
     	<script src="//cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script> 
 		<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
+		<script>
+		  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		  })(window,document,'script','dataLayer','GTM-KQPZCGZ');
+		</script>
 	</head>
 	
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
-
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQPZCGZ"
+		  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<div id="container" class="header">
 			<header  role="banner" itemscope itemtype="http://schema.org/WPHeader">
 				<div class="container">

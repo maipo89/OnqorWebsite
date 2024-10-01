@@ -7,7 +7,7 @@
             $selected_value = get_sub_field('options');
         ?>
             <div class="hero-video">
-                <!-- embed option -->
+                <!-- embed option --> 
                 <?php if( get_sub_field('embed') ) { ?> 
                     <?php echo $basic['embed'] ?>
                 <?php  } ?>
@@ -21,7 +21,7 @@
                         <?php 
                             $link_data = get_sub_field('video'); 
                             if(!empty($link_data)){ $link = $link_data['url'];  ?>
-                            <video playsinline autoplay muted loop>
+                            <video preload="none" playsinline autoplay muted loop>
                                 <source src="<?php echo $link; ?>">   
                             </video>
                         <?php } ?>

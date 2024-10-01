@@ -192,9 +192,9 @@ function theme_slug_register_taxonomy() {
       'case-studies',    // Post type
       array(
           'label'        => __('Study Categories', 'theme-slug'),
-          'rewrite'      => array('slug' => 'study-category'),
+          'rewrite'      => array('slug' => ''),
           'hierarchical' => true,
-      )
+      ) 
   );
 }
 add_action('init', 'theme_slug_register_taxonomy');
@@ -421,6 +421,17 @@ function golden_oak_web_design_update_post_link( $post_link, $post, $leavename )
     return $post_link;
 }
 add_filter( 'post_link', 'golden_oak_web_design_update_post_link', 10, 3 );
+
+// lowercase urls 
+function force_lowercase_urls() {
+    $request_uri = $_SERVER['REQUEST_URI'];
+    if (preg_match('/[A-Z]/', $request_uri)) {
+        $lowercase_url = strtolower($request_uri);
+        wp_redirect(site_url($lowercase_url), 301);
+        exit;
+    }
+}
+add_action('template_redirect', 'force_lowercase_urls');
 
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

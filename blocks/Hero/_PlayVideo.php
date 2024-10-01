@@ -11,7 +11,7 @@
                 <?php if( get_sub_field('embed') ) { ?> 
                     <?php echo $basic['embed'] ?>
                 <?php  } ?>
-
+ 
                 <!-- video_play file option -->
                 <div class="video-play__video">
                     <?php if( get_sub_field('embed') ) { ?> 
@@ -21,7 +21,7 @@
                         <?php 
                             $link_data = get_sub_field('video'); 
                             if(!empty($link_data)){ $link = $link_data['url'];  ?>
-                            <video playsinline  loop class="videoplayer">
+                            <video preload="none" playsinline  loop class="videoplayer">
                                 <source src="<?php echo $link; ?>">   
                             </video>
                         <?php } ?>

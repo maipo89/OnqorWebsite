@@ -1,10 +1,10 @@
 <!doctype html>
 
-<!--[if lt IE 7]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9"><![endif]-->
-<!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
-
+<!--[if lt IE 7]><html lang="en-gb" class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html lang="en-gb" class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html lang="en-gb" class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-gb" class="no-js"><!--<![endif]-->
+ 
 	<head>
 		<meta charset="utf-8">
 		<?php // force Internet Explorer to use the latest rendering engine available ?>
@@ -25,28 +25,16 @@
 		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
             <meta name="theme-color" content="#121212">
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-		<?php // wordpress head functions ?>
-		<?php wp_head(); ?>
+		<?php // wordpress head functions ?> 
+		<?php wp_head(); ?> 
 		<?php // end of wordpress head ?>
-		<?php // drop Google Analytics Here ?>
-		<?php // end analytics ?>
-		<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	    <script src="//cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    	<script src="//cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script> 
-		<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-		<script>
-		  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		  })(window,document,'script','dataLayer','GTM-KQPZCGZ');
-		</script>
-	</head>
+		<!-- Google tag (gtag.js) --> 
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-0TSJYXWE6V"></script> 
+		<script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-0TSJYXWE6V'); </script>	
+	</head> 
 	
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQPZCGZ"
-		  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
 		<div id="container" class="header">
 			<header  role="banner" itemscope itemtype="http://schema.org/WPHeader">
 				<div class="container">

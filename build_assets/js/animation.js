@@ -55,20 +55,32 @@ $(document).ready(function(){
     gsap.utils.toArray(".anim-counter").forEach(function(counter) {
         var end = parseInt(counter.getAttribute('data-end'));
         var obj = { val: 0 };
+        var hasCounted = false;
     
         if (!isNaN(end)) { // Check if end is a valid number
             gsap.to(obj, {
                 scrollTrigger: {
                     trigger: counter,
                     start: "top 90%",
-                    // markers: false,
+                    markers: true,
                     onEnter: function() {
                         gsap.to(obj, {
                             duration: 2,
                             val: end,
                             roundProps: "val",
                             onUpdate: function() {
+                                if (hasCounted && obj.val === 2) {
+                                    return;
+                                }
                                 counter.textContent = "" + obj.val + "";
+                            },
+                            onComplete: function() {
+                                // If end is 2, set the displayed value to 2.23
+                                if (end === 2) {
+                                    obj.val = 2.23; // Set to 2.23 at the end of the count
+                                    counter.textContent = "" + obj.val.toFixed(2) + ""; // Update the display
+                                    hasCounted = true;
+                                }
                             }
                         });
                     }

@@ -53,34 +53,36 @@ $(document).ready(function(){
     
     // number counter (use class anim-counter)
     gsap.utils.toArray(".anim-counter").forEach(function(counter) {
-        var end = parseInt(counter.getAttribute('data-end'));
+        var end = parseFloat(counter.getAttribute('data-end'));
         var obj = { val: 0 };
         var hasCounted = false;
     
         if (!isNaN(end)) { // Check if end is a valid number
+            var integerPart = Math.floor(end);
+            var decimalPart = end % 1;
             gsap.to(obj, {
                 scrollTrigger: {
                     trigger: counter,
                     start: "top 90%",
-                    markers: true,
                     onEnter: function() {
                         gsap.to(obj, {
                             duration: 2,
-                            val: end,
+                            val: integerPart,
                             roundProps: "val",
                             onUpdate: function() {
-                                if (hasCounted && obj.val === 2) {
-                                    return;
+                                if (!hasCounted) {
+                                    counter.textContent = "" + obj.val;
                                 }
-                                counter.textContent = "" + obj.val + "";
                             },
                             onComplete: function() {
-                                // If end is 2, set the displayed value to 2.23
-                                if (end === 2) {
-                                    obj.val = 2.23; // Set to 2.23 at the end of the count
-                                    counter.textContent = "" + obj.val.toFixed(2) + ""; // Update the display
-                                    hasCounted = true;
+                                if (decimalPart > 0) {
+                                    var formattedDecimal = decimalPart.toFixed(2).substring(1);
+
+                                    formattedDecimal = formattedDecimal.replace(/0+$/, '');
+
+                                    counter.textContent = obj.val + formattedDecimal;
                                 }
+                                hasCounted = true;
                             }
                         });
                     }

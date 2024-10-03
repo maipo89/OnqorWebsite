@@ -135,6 +135,9 @@
         &__icons {
             display: flex;
             grid-gap: 72px;
+            @media (max-width: 1200px) {
+                grid-gap: 45px;
+            }
             @media (max-width: $tabletSmall) {
                 grid-gap: 12px;
             }

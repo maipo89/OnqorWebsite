@@ -164,10 +164,10 @@
                             }
                             .sub-menu {
                                 max-height: 2000px;
-                                transition: ease.4s;
+                                transition: ease .4s;
                                 li {
                                     opacity: 1;
-                                    transition: ease.6s;
+                                    transition: ease .6s;
                                 }
                             }
                         }
@@ -221,7 +221,7 @@
                             } 
                             li {
                                 opacity: 0;
-                                transition: ease.6s;
+                                transition: ease .6s;
                             }
                             > li {
                                 // padding: 0 0 16px 0;

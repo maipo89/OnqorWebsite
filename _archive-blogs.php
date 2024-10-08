@@ -87,6 +87,8 @@
 							'post_type' => 'blogs',
 							'posts_per_page' => 21,
 							'paged' => $paged,
+							'orderby' => 'date',
+							'order' => 'ASC',
 						);
 						$query = new WP_Query($args);
 						if ($query->have_posts()) :

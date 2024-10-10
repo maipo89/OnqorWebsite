@@ -22,7 +22,7 @@
                                 <?php endif; ?>
                                 <div>
                                     <h3 class="subtitle2"><?php the_title(); ?></h3>
-                                    <a href="<?php the_permalink(); ?>">
+                                    <a href="<?php the_permalink(); ?>/">
                                         <button class="btn-secondary">View</button>
                                     </a>
                                 </div>
@@ -47,7 +47,7 @@
                                 <?php endif; ?>
                                 <div>
                                     <h3 class="subtitle2"><?php the_title(); ?></h3>
-                                    <a href="<?php the_permalink(); ?>">
+                                    <a href="<?php the_permalink(); ?>/">
                                         <button class="btn-secondary">View</button>
                                     </a>
                                 </div>

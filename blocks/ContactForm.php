@@ -62,7 +62,7 @@
                     <!-- Description -->
                     <div class="form-input-wrap">
                         <!-- <label for="description">Tell us about your project*</label> -->
-                        <textarea placeholder="Tell us about your project*" required name="description"></textarea>
+                        <textarea placeholder="Tell us about your project*" id="description" required name="description"></textarea>
                     </div>
 
                     <!-- submit -->

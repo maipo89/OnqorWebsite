@@ -7,33 +7,33 @@
     }
     .text-basic {
         h3 {
-            font-size: 28px;
-            font-weight: 400;
+            font-size: 28px; 
+            font-weight: 400; 
             line-height: normal;
             letter-spacing: 0em;
             text-align: left;
             margin-bottom: 0;
             @media (max-width: $desktop) { 
-                font-size: 28px;
+                font-size: 28px; 
             }
             @media (max-width: $tabletLarge) { 
                 font-size: 28px;
                 font-style: normal;
-                font-weight: 400;
+                font-weight: 400; 
                 line-height: normal;
             } 
         }
     }
-    h2,h3 {
-        font-size: 28px;
-        font-weight: 400;
+    .wizywig h2,h3 {
+        font-size: 28px !important; 
+        font-weight: 400; 
         line-height: normal;
         letter-spacing: 0em;
         text-align: left;
         margin-bottom: 0;
         @media (max-width: $desktop) { 
             font-size: 28px;
-        }
+        } 
         @media (max-width: $tabletLarge) { 
             font-size: 28px;
             font-style: normal;

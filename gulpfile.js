@@ -10,7 +10,8 @@ const {
 
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
-const sass = require('gulp-sass')(require('sass'));
+const dartSass = require('gulp-dart-sass');
+// const sass = require('gulp-sass')(require('sass'));
 const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
 const concat = require('gulp-concat');
@@ -73,7 +74,7 @@ function css() {
   return src(build.plugins.css)
       .pipe(src(source))
       .pipe(concat('all.min.css'))
-      .pipe(sass())
+      .pipe(dartSass().on('error', dartSass.logError)) 
       .pipe(autoprefixer({
           overrideBrowserslist: ['last 2 versions'],
           cascade: false

@@ -48,8 +48,120 @@
             @media (max-width: $tabletSmall) {
                 grid-template-columns: repeat(2, 1fr);
             }
-            @media (max-width: $mobileLarge) {
+            @media (max-width: 500px) {
                 grid-template-columns: repeat(1, 1fr);
+            }
+            &.casestudies {
+                grid-gap: 48px 48px;
+                @media (max-width: $tabletSmall) {
+                    grid-gap: 30px 30px;
+                }
+                .article {
+                    @media (max-width: $tabletLarge) {
+                        height: 450px;
+                    }
+                    @media (max-width: $tabletSmall) {
+                        height: 396px;
+                    }
+                    &:hover {
+                        button {
+                            border-color: black;
+                            color: black;
+                            background-color: white;
+                        }
+                    }
+                    img {
+                        height: 533px !important;
+                        @media (max-width: $tabletLarge) {
+                            height: 450px !important;
+                        }
+              
+                        @media (max-width: $tabletSmall) {
+                            height: 396px !important;
+                        }
+                    }
+                }
+                .article__img__hover {
+                    opacity: 1;
+                }
+                .article__img {
+                    &::after {
+                        background-color: rgba(0, 0, 0, 0.5); /* Transparent initially */
+                    }
+                    &__hover {
+                        height: 100%;
+                        justify-content: space-between;
+                        padding: 41px 21px;
+                        .container-subtitle {
+                            h3 {
+                                color: white !important;
+                                margin: 0 0 4px 0;
+                                text-align: center;
+                                font-size: 28px;
+                                @media (max-width: $desktop) {
+                                    font-size: 20px;
+                                    line-height: 30px;
+                                    font-weight: 400;
+                                }
+                            }
+                            .industry {
+                                color: white !important;
+                                text-align: center;
+                                font-size: 18px;
+                                font-weight: 300;
+                                @media (max-width: $desktop) {
+                                    font-size: 16px;
+                                    line-height: 24px;
+                                    font-weight: 300;
+                                }
+                            }
+                        }
+                        .container-headline {
+                            .headline-copy {
+                                color: white !important;
+                                text-align: center;
+                                font-size: 28px;
+                                font-weight: 400;
+                                margin: 0 0 4px 0;
+                                line-height: 42px;
+                                @media (max-width: $desktop) {
+                                    font-size: 18px;
+                                    line-height: 27px;
+                                    font-weight: 400;
+                                }
+                                @media (max-width: 550px) {
+                                    font-size: 14px;
+                                }
+                                @media (max-width: 500px) {
+                                    font-size: 18px;
+                                }
+                                @media (max-width: 300px) {
+                                    font-size: 14px;
+                                }
+                            }
+                            .department {
+                                color: white !important;
+                                text-align: center;
+                                font-size: 18px;
+                                font-weight: 300;
+                                @media (max-width: $desktop) {
+                                    font-size: 16px;
+                                    line-height: 24px;
+                                    font-weight: 300;
+                                }
+                                @media (max-width: 550px) {
+                                    font-size: 12px;
+                                }
+                                @media (max-width: 500px) {
+                                    font-size: 16px;
+                                }
+                                @media (max-width: 300px) {
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -69,8 +181,7 @@
             // background-color: lavender;
             width: 100%;
             height: 533px;
-            object-fit: cover;
-  
+            object-fit: cover; 
             @media (max-width: $desktop) {
                 height: 372px;
             }

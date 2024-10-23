@@ -227,18 +227,37 @@ function filter_case_studies() {
           ?>
           <article class="article" id="post-<?php the_ID(); ?>">
               <a href="<?php the_permalink(); ?>">
-              <div >
-					        <?php if (has_post_thumbnail()) : ?>
-						          <div class="article__img">
-						            <?php the_post_thumbnail(); ?>
+                    <div>
+                        <?php if (has_post_thumbnail()) : ?>
+                        <div class="article__img">
+                            <?php the_post_thumbnail(); ?>
                             <div class="article__img__hover">
-                                <h3 class="subtitle1"><?php the_title(); ?></h3>
-                                 <button class="btn-secondary">View Project</button>
+                                <?php 
+                                    $headline_copy = get_field('headline_copy');
+                                    $industry = get_field('industry');
+                                    $department = get_field('department');
+                                ?>
+                                <div class="container-subtitle">
+                                    <h3 class="subtitle1"><?php the_title(); ?></h3>
+                                    <?php if($industry) : ?>
+                                        <p class="industry"><?php echo $industry ?></p>
+                                    <?php endif; ?>
+                                </div>
+                                <?php if($department || $headline_copy) : ?>
+                                    <div class="container-headline">
+                                        <?php if($headline_copy) : ?>
+                                            <p class="headline-copy"><?php echo $headline_copy ?></p>
+                                        <?php endif; ?>
+                                        <?php if($department) : ?>
+                                            <p class="department"><?php echo $department ?></p>
+                                        <?php endif; ?>
+                                    </div>
+                                <?php endif; ?>
+                                <button class="btn-secondary">View Project</button>
                             </div>
                         </div>
-						        <?php endif; ?>
-						      <h3 class="subtitle2"><?php the_title(); ?></h3>
-				        </div>
+                        <?php endif; ?>
+                    </div>
               </a>
           </article>
           <?php

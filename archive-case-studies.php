@@ -87,7 +87,7 @@
  
                 <!-- casestudies -->
                 <div class="articles-wrapper">
-                    <div id="articles-container">
+                    <div id="articles-container" class="casestudies">
                         <!-- posts -->
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 						<?php $post_categories = get_the_category(); ?>
@@ -98,12 +98,31 @@
 										    <div class="article__img">
 											    <?php the_post_thumbnail(); ?>
                                                 <div class="article__img__hover">
-                                                    <h3 class="subtitle1"><?php the_title(); ?></h3>
+                                                    <?php 
+                                                        $headline_copy = get_field('headline_copy');
+                                                        $industry = get_field('industry');
+                                                        $department = get_field('department');
+                                                    ?>
+                                                    <div class="container-subtitle">
+                                                        <h3 class="subtitle1"><?php the_title(); ?></h3>
+                                                        <?php if($industry) : ?>
+                                                            <p class="industry"><?php echo $industry ?></p>
+                                                        <?php endif; ?>
+                                                    </div>
+                                                    <?php if($department || $headline_copy) : ?>
+                                                        <div class="container-headline">
+                                                            <?php if($headline_copy) : ?>
+                                                                <p class="headline-copy"><?php echo $headline_copy ?></p>
+                                                            <?php endif; ?>
+                                                            <?php if($department) : ?>
+                                                                <p class="department"><?php echo $department ?></p>
+                                                            <?php endif; ?>
+                                                        </div>
+                                                    <?php endif; ?>
                                                     <button class="btn-secondary">View Project</button>
                                                 </div>
                                             </div>
 										<?php endif; ?>
-										<h3 class="subtitle2"><?php the_title(); ?></h3>
 									</div>
                                 </a>
 							</article>

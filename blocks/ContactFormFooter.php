@@ -47,7 +47,7 @@
                     </div>
 
                     <!-- Description -->
-                    <div class="form-input-wrap">
+                    <div class="form-input-wrap"> 
                         <!-- <label for="description">Tell us about your project*</label> -->
                         <textarea placeholder="Tell us about your project*"  equired name="description"></textarea>
                     </div>
@@ -55,7 +55,7 @@
                     <!-- submit -->
                     <input type="submit" name="submit" value="Send">
 
-                    <p class="subtitle1">or call <a href="tel:+44 020 3927 7377">+44 020 3927 7377</a></p>
+                    <p class="subtitle1">or call <a href="tel:+44 020 3927 7377">+44 (0)20 3927 7377</a></p>
                 </form>
                 <!-- end form  -->
             </div>

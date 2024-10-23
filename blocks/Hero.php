@@ -11,6 +11,7 @@
         <?php include('Hero/_ListImage.php'); ?>
         <?php include('Hero/_HeroBasic.php'); ?>
         <?php include('Hero/_HeroImages.php'); ?>
+        <?php include('Hero/_DevLanding.php'); ?>
     </div>
 
 <?php endwhile; ?> 

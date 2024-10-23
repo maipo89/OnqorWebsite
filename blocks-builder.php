@@ -129,6 +129,21 @@ if (have_rows('sections')) :
             <?php include 'blocks/Clients.php'; ?>
         <?php endif; 
 
+        // Case: CLients.
+        if (get_row_layout() == 'portfolio') : ?>
+            <?php include 'blocks/Portfolio.php'; ?>
+        <?php endif; 
+
+        // Case: CLients.
+        if (get_row_layout() == 'cards') : ?>
+            <?php include 'blocks/Cards.php'; ?>
+        <?php endif; 
+
+        // Case: CLients.
+        if (get_row_layout() == 'icons') : ?>
+            <?php include 'blocks/Icons.php'; ?>
+        <?php endif; 
+
 	// End loop.
 	endwhile; 
 endif;

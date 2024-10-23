@@ -27,6 +27,22 @@ $(document).ready(function(){
         tl.to(fade, { opacity: 1, duration: 0.5 }); 
     });
 
+    // stripe-pulse smooth animation
+        gsap.fromTo('.stripe-pulse__item', 
+        { height: '0%', opacity: 0 },  // Start state
+        { 
+            opacity: 1,  
+            ease: 'power2.out',  
+            duration: 2,
+            stagger: 0.5,  // Stagger between each item
+            height: (index) => {
+            // Set different heights based on the index of each element
+            return ['100%', '80%', '60%'][index];
+            }
+        }
+        );
+
+    
     // parallax
     gsap.to('.parallax-container > img', {
         yPercent: 160,

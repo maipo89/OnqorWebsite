@@ -1,0 +1,55 @@
+.sitemap {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    @media (max-width: 450px) {
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
+    h1 {
+        @media(max-width: $desktop) {
+            font-size: 60px !important;
+        }
+        @media (max-width: 450px) {
+            font-size: 45px !important;
+        }
+    }
+    h2 {
+        font-size: 50px;
+        margin-bottom: 30px;
+        margin-top: 30px;
+        @media (max-width: 450px) {
+            font-size: 30px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+    }
+    .container {
+        display: flex;
+        flex-direction: row !important;
+        @media (max-width: 1200px) {
+            display: block !important;
+        }
+    }
+    ul {
+        padding: 0;
+        list-style: none;
+        a {
+            text-decoration: none;
+            text-transform: none;
+            outline: none;
+            color: black;
+            &:hover {
+                color: rgba(0, 170, 255, 1);
+            }
+            @media (max-width: 450px) {
+                font-size: 14px;
+            }
+        }
+    }
+    &-content {
+        width: 50%;
+        @media (max-width: 1200px) {
+            width: 100%;
+        }
+    }
+}

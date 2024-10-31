@@ -144,6 +144,11 @@ if (have_rows('sections')) :
             <?php include 'blocks/Icons.php'; ?>
         <?php endif; 
 
+        // Case: Sitemap.
+        if (get_row_layout() == 'sitemap') : ?>
+            <?php include 'blocks/Sitemap.php'; ?>
+        <?php endif; 
+
 	// End loop.
 	endwhile; 
 endif;

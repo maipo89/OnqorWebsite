@@ -37,7 +37,7 @@
                         <!-- case study relation title here -->
                         <div class="case-studies__item__text anim-fadein">
                             <h2><?php echo $title; ?></h2>
-                            <p><?php echo $excerpt; ?></p>
+                            <p><?php echo get_sub_field('text') ?></p>
                             <a href="<?php echo $case_study_link; ?>"><button class="btn-secondary">View Case Study</button></a>
                         </div>
     

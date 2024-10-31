@@ -44,7 +44,12 @@
                                         ?>
                                         <!-- Set the cover image URL as a data attribute -->
                                         <img class="case-study-thumbnail" src="<?php echo $thumbnail_url; ?>" data-cover-image="<?php echo $cover_image_url; ?>" alt="<?php the_title(); ?>">
-                                        <p><?php the_excerpt(); ?></p>
+                                        <?php if( get_field('excerpt_two') ): ?>
+                                            <div class="wizywig">
+                                                <?php the_field('excerpt_two'); ?>
+                                            </div>
+                                        <?php endif; ?>
+
                                         <a  href="<?php the_permalink(); ?>"><button class="button btn-secondary">View Full Case Study</button></a>
                                     </div>
                                 <?php endwhile; ?>

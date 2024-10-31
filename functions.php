@@ -361,6 +361,10 @@ if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page(); 
 }
 
+add_filter('wpseo_xml_sitemap_post_url', function($url) {
+    return trailingslashit($url);
+});
+
 // Multiple thumbnails for case studies
 if (class_exists('MultiPostThumbnails')) {
     new MultiPostThumbnails(
